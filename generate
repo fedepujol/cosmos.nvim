@@ -1,0 +1,87 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/colors'
+require_relative 'lib/util'
+
+$highlights = $data[:highlights]
+$terminal = $data[:terminal]
+
+class Highlight
+  def initialize(name, conf)
+    @name = name.to_s
+    return if !conf
+    fg, bg, style, sp = conf.split(' ')
+    @params = {}
+    @params.merge!(hi_color('fg', fg))
+    @params.merge!(hi_color('bg', bg))
+    @params.merge!(hi_style(style))
+    @params.merge!(hi_color('sp', sp))
+  end
+
+  def to_s
+    "hi #{@name} " + @params.map { |e| '%s=%s' % e }.join(' ')
+  end
+
+  private
+
+  def hi_color(kind, color)
+    return {} if color == '.'
+    return {} if kind == 'sp' and !color
+    if color and color != '-'
+      rgb = get_color_rgb(color)
+      color = rgb_to_hex(*rgb)
+      c_color = rgb_to_x256(*rgb)
+    else
+      color = 'NONE'
+      c_color = 'NONE'
+    end
+    params = { 'gui' + kind => color }
+    params['cterm' + kind] = c_color unless kind == 'sp'
+    return params
+  end
+
+  def hi_style(style)
+    return {} if style == '.'
+    if style and style != '-'
+      attributes = {
+        b: 'bold',
+        u: 'underline',
+        r: 'reverse',
+        i: 'italic',
+        c: 'undercurl',
+        s: 'standout',
+      }
+      style = style.chars.map { |e| attributes[e.to_sym] }.join(',')
+    else
+      style = 'NONE'
+    end
+    return { 'gui' => style, 'cterm' => style }
+  end
+
+end
+
+$highlights = $highlights.map { |e| Highlight.new(*e) }
+
+puts <<EOL
+" Maintainer: #{$information[:author]}
+
+set background=#{$information[:background]}
+hi clear
+if exists('syntax_on')
+  syntax reset
+endif
+let g:colors_name='#{$information[:name]}'
+
+EOL
+
+puts $highlights
+
+colors = $terminal&.split(' ') || []
+
+exit unless colors.size == 16
+
+colors.map! do |e|
+  "'%s'" % get_color(e)
+end
+
+puts "\nlet g:terminal_ansi_colors = [ %s ]" % colors.join(', ')
