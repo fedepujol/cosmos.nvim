@@ -10,19 +10,29 @@ palette:
   black0: '#000000'
   black1: '#1E1E1E'
   black2: '#262626'
+  black3: '#161616'
 
-  blue0: '#1D4D70'
-  blue1: '#3295B5'
+  blue0: '#3975a7'
+  blue1: '#569CD6'
+  blue2: '#9CDCFE'
+  blue3: '#4EC9B0'
 
   gray0: '#2F2F2F'
   gray1: '#6C6C6C'
   gray2: '#808080'
   gray3: '#B1B1B1'
+  gray4: '#E2E2E2'
+  gray5: '#C5C5C5'
+  gray6: '#928374'
 
   green0: '#4B6E2A'
   green1: '#6CAC78'
+  green2: '#96E098'
+  green3: '#31A835'
+  green4: '#69D36B'
+  green5: '#60FF60'
 
-  orange0: '#AE5541'
+  orange0: '#CE9178'
   orange1: '#D44609'
 
   purple0: '#AE57A9'
@@ -30,155 +40,133 @@ palette:
 
   red0: '#C12D28'
   red1: '#D40909'
+  red2: '#FF3B3B'
 
   white: '#FFFFFF'
 
-  yellow0: '#D1D568'
+  yellow0: '#DCDCAA'
   yellow1: '#CCCC00'
+  yellow2: '#FFAA0D'
+  yellow3: '#FFB327'
+  yellow4: '#FFDA97'
+  yellow5: '#D79921'
 
 highlights:
-  Boolean: 'red0 - b'
+  Boolean: 'blue0 - b'
 
+  Character: 'gray5'
   ColorColumn: '- gray1'
   Comment: 'green0 - i'
-  Constant: 'red0'
+  Constant: 'blue2'
+  Conditional: 'purple0'
   Cursor: '- - r'
   CursorColumn: '- gray1'
-  CursorLine: 'gray0'
+  CursorLine: '- gray0'
   CursorLineNr: 'white gray0'
 
+  Define: 'yellow0'
+  Delimiter: 'blue0'
   DiffAdd: '- -'
   DiffChange: '- -'
   DiffDelete: '- -'
   DiffText: '- -'
-  Directory: 'blue0 - b'
+  Directory: 'blue1 - b'
 
   Error: 'red1 - br'
   ErrorMsg: 'red1 - br'
   EndOfBuffer: 'gray3'
+  Exception: 'red0'
 
-  FoldColumn: 'blue1 bg'
-  Folded: 'blue1 gray1 i'
-  Function: 'blue0 - b'
+  Float: 'green5'
+  FoldColumn: 'blue2 bg'
+  Folded: 'blue2 gray1 i'
+  Function: 'yellow0 - b'
 
-  Identifier: 'purple0'
+  Identifier: 'blue3'
+  Include: 'blue2'
 
-  Keyword: 'blue0'
+  Keyword: 'blue1'
 
   LineNr: 'gray3 black1'
+  Label: 'blue1'
 
+  Macro: 'yellow0 - b'
   MatchParen: 'red0 - b'
   ModeMsg: 'yellow1 - br'
   MoreMsg: 'green1 - br'
 
-  NonText: 'yellow1 gray1'
-  Normal: 'black1'
+  NonText: '- white'
+  Normal: 'gray5 black1'
+  Number: 'green5'
 
-  Pmenu: 'black2'
+  Operator: 'white'
+
+  Pmenu: 'gray2'
   PmenuSbar: 'gray2'
-  PmenuSel: 'gray0'
+  PmenuSel: 'gray0 green1'
   PmenuThumb: 'gray1'
-  PreProc: 'purple'
+  PreProc: 'blue2'
 
-  Question: 'blue1 - br'
-  QuickFixLine: '- blue1'
+  Question: 'blue2 - br'
+  QuickFixLine: '- blue2'
+
+  Repeat: 'purple0'
 
   Search: '- orange0 br'
   SignColumn: 'gray3 black2'
-  Special: 'orange1 - i'
+  Special: 'purple0 -'
+  SpecialChar: 'orange0'
   SpecialKey: 'orange1'
   SpellBad: '. . . red0'
   SpellCap: '. . . purple1'
-  SpellLocal: '. . . blue1'
+  SpellLocal: '. . . blue2'
   SpellRare: '. . . orange1'
-  Statement: 'orange1'
-  StatusLine: 'gray1 fg r'
-  StatusLineNC: 'gray1 gray1 r'
+  Statement: 'purple0'
+  StatusLine: '- black3'
+  StatusLineNC: '- black3'
   StatusLineTerm: 'gray1 green0 r'
   StatusLineTermNC: 'gray1 gray1 r'
-  String: 'green0 - i'
+  String: 'orange0 -'
+  Structure: 'blue0'
 
   TabLine: 'gray0 gray1'
   TabLineFill: ''
-  TabLineSel: 'blue0 gray1'
-  Title: 'blue0'
+  TabLineSel: 'blue1 gray1'
+  Title: 'blue1'
   Todo: 'red0 gray1 bi'
   ToolbarButton: 'green0 - r'
   ToolbarLine: '. gray1'
-  Type: 'yellow0'
+  Type: 'blue1'
 
-  Underlined: 'blue1 . u'
+  Underlined: 'blue2 . u'
 
   VertSplit: 'gray1 fg r'
   Visual: '- gray1'
 
   WarningMsg: 'orange1 - br'
-  WildMenu: 'blue1 gray1 br'
+  WildMenu: 'blue2 gray1 br'
   Whitespace: 'gray0'
 
- # -- Start Treesitter --
-  # Misc
-  TSComment: green0
-  TSError: "red0"
-  TSPunctBracket: "white"
-  TSPunctDelimiter: "white"
-  TSPunctSpecial: "white"
-  
-  # Constants
-  TSAnnotation: "green0"
-  TSAttribute: "blue1"
-  TSBoolean: "blue0"
-  TSCharacter: "orange0"
-  TSConstBuiltin: "blue0"
-  TSConstMacro: "blue1"
-  TSConstant: "blue0"
-  TSFloat: "green1"
-  TSNamespace: "blue0"
-  TSNumber: "green1"
-  TSString: "orange0"
-  TSStringEscape: "orange0"
-  TSStringRegex: "orange0"
-  
-  # Functions
-  TSConstructor: "blue0"
-  TSField: "blue1"
-  TSFuncBuiltin: "yellow0"
-  TSFuncMacro: "yellow0"
-  TSFunction: "yellow0"
-  TSMethod: "yellow0"
-  TSParameter: "blue1"
-  TSParameterReference: "blue1"
-  TSProperty: "blue1"
-  
-  # Keywords
-  TSConditional: "purple0"
-  TSException: "purple0"
-  TSInclude: "purple0"
-  TSKeyword: "blue0"
-  TSKeywordFunction: "purple0"
-  TSKeywordOperator: "blue0"
-  TSLabel: "blue1"
-  TSOperator: "white"
-  TSRepeat: "purple0"
-  TSStructure: "purple0"
-  TSType: "blue1"
-  TSTypeBuiltin: "blue0"
-  
-  # Variable
-  TSVariable: "blue1"
-  TSVariableBuiltin: "blue1"
-  
-  # Text
-  TSEmphasis: "yellow1"
-  TSLiteral: "orange0"
-  TSStrong: "yellow1"
-  TSText: "yellow1"
-  TSTitle: "yellow1"
-  TSURI: "- - u"
-  TSUnderline: "yellow1"
-  
-  # Tags
-  TSTag: "blue0"
-  TSTagDelimiter: "gray1"
-  TSQueryLinterError: "yellow1"
-# -- END Treesitter --
+# -- BEG NvimTree --
+  NvimTreeFolderName: 'white'
+  NvimTreeRootFolder: 'yellow2'
+  NvimTreeFolderIcon: 'yellow3'
+  NvimTreeEmptyFolderName: 'gray4'
+  NvimTreeOpenedFolderName: 'gray3'
+  NvimTreeOpenedFile: 'gray3'
+  NvimTreeExecFile: '. .'
+  NvimTreeGitNew: 'green2'
+  NvimTreeGitDeleted: 'red2'
+  NvimTreeGitDirty: 'yellow4'
+  NvimTreeGitIgnored: 'gray5 - i'
+# -- END NvimTree --
+
+# -- BEG Telescope --
+  TelescopeSelection: 'yellow5 - b'
+  TelescopeSelectionCaret: 'green3'
+  TelescopeMultiSelection: 'gray6'
+  TelescopeBorder: 'green4'
+  TelescopePromptBorder: 'green4'
+  TelescopeResultsBorder: 'green4'
+  TelescopePreviewBorder: 'green4'
+# -- END Telescope --
