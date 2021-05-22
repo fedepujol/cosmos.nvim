@@ -1,0 +1,66 @@
+ # -- Start Treesitter --
+  # Misc
+  TSComment: green0
+  TSError: "red0"
+  TSPunctBracket: "white"
+  TSPunctDelimiter: "white"
+  TSPunctSpecial: "white"
+  
+  # Constants
+  TSAnnotation: "green0"
+  TSAttribute: "blue1"
+  TSBoolean: "blue0"
+  TSCharacter: "orange0"
+  TSConstBuiltin: "blue0"
+  TSConstMacro: "blue1"
+  TSConstant: "blue0"
+  TSFloat: "green1"
+  TSNamespace: "blue0"
+  TSNumber: "green1"
+  TSString: "orange0"
+  TSStringEscape: "orange0"
+  TSStringRegex: "orange0"
+  
+  # Functions
+  TSConstructor: "blue0"
+  TSField: "blue1"
+  TSFuncBuiltin: "yellow0"
+  TSFuncMacro: "yellow0"
+  TSFunction: "yellow0"
+  TSMethod: "yellow0"
+  TSParameter: "blue1"
+  TSParameterReference: "blue1"
+  TSProperty: "blue1"
+  
+  # Keywords
+  TSConditional: "purple0"
+  TSException: "purple0"
+  TSInclude: "purple0"
+  TSKeyword: "blue0"
+  TSKeywordFunction: "purple0"
+  TSKeywordOperator: "blue0"
+  TSLabel: "blue1"
+  TSOperator: "white"
+  TSRepeat: "purple0"
+  TSStructure: "purple0"
+  TSType: "blue1"
+  TSTypeBuiltin: "blue0"
+  
+  # Variable
+  TSVariable: "blue1"
+  TSVariableBuiltin: "blue1"
+  
+  # Text
+  TSEmphasis: "yellow1"
+  TSLiteral: "orange0"
+  TSStrong: "yellow1"
+  TSText: "yellow1"
+  TSTitle: "yellow1"
+  TSURI: "- - u"
+  TSUnderline: "yellow1"
+  
+  # Tags
+  TSTag: "blue0"
+  TSTagDelimiter: "gray1"
+  TSQueryLinterError: "yellow1"
+# -- END Treesitter --
