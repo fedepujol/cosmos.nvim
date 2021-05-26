@@ -56,7 +56,7 @@ highlights:
 
   Character: 'gray5'
   ColorColumn: '- gray1'
-  Comment: 'green0 - i'
+  Comment: 'green0'
   Constant: 'blue2'
   Conditional: 'purple0'
   Cursor: '- - r'
@@ -101,7 +101,7 @@ highlights:
 
   Operator: 'white'
 
-  Pmenu: 'gray2'
+  Pmenu: 'gray5 black2'
   PmenuSbar: 'gray2'
   PmenuSel: 'gray0 green1'
   PmenuThumb: 'gray1'
@@ -140,13 +140,43 @@ highlights:
 
   Underlined: 'blue2 . u'
 
-  VertSplit: 'gray1 fg r'
-  Visual: '- gray1'
+  VertSplit: 'gray1 -'
+  Visual: '- black0 r'
 
   WarningMsg: 'orange1 - br'
   WildMenu: 'blue2 gray1 br'
   Whitespace: 'gray0'
 
+# -- BEG Buffer --
+  BufferInactive: 'gray3 black3'
+  BufferVisible: 'blue2 black3'
+  BufferVisibleIndex: 'blue2 black3'
+  BufferVisibleSign: 'blue2 black3'
+# -- END Buffer --
+
+# -- BEG GitSigns --
+  GitSignsAdd: 'green5'
+  GitSignsChange: 'yellow2'
+  GitSignsDelete: 'red0'
+# -- END GitSigns --
+
+# -- BEG LSP --
+  LspDiagnosticsFloatingError: 'red0'
+  LspDiagnosticsFloatingHint: ''
+  LspDiagnosticsFloatingInformation: 'green4'
+  LspDiagnosticsFloatingWarning: 'yellow2'
+
+  LspDiagnosticsVirtualTextError: 'red0'
+  LspDiagnosticsVirtualTextHint: ''
+  LspDiagnosticsVirtualTextInformation: 'green4'
+  LspDiagnosticsVirtualTextWarning: 'yellow2 '
+
+  LspDiagnosticsSignError: 'red0'
+  LspDiagnosticsSignHint: ''
+  LspDiagnosticsSignInformation: 'green4'
+  LspDiagnosticsSignWarning: 'yellow2'
+
+# -- END LSP --
 # -- BEG NvimTree --
   NvimTreeFolderName: 'white'
   NvimTreeRootFolder: 'yellow2'
