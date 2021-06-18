@@ -10,7 +10,7 @@ let g:colors_name='fpcolor'
 hi Boolean guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi Character guifg=#c5c5c5 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi ColorColumn guifg=NONE ctermfg=NONE guibg=#6c6c6c ctermbg=242 gui=NONE cterm=NONE
-hi Comment guifg=#4b6e2a ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Comment guifg=#6f9847 ctermfg=65 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Constant guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Conditional guifg=#ae57a9 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Cursor guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
@@ -65,8 +65,8 @@ hi SpellRare guisp=#d44609
 hi Statement guifg=#ae57a9 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi StatusLine guifg=NONE ctermfg=NONE guibg=#161616 ctermbg=233 gui=NONE cterm=NONE
 hi StatusLineNC guifg=NONE ctermfg=NONE guibg=#161616 ctermbg=233 gui=NONE cterm=NONE
-hi StatusLineTerm guifg=#6c6c6c ctermfg=242 guibg=#4b6e2a ctermbg=239 gui=reverse cterm=reverse
-hi StatusLineTermNC guifg=#6c6c6c ctermfg=242 guibg=#6c6c6c ctermbg=242 gui=reverse cterm=reverse
+hi StatusLineTerm guifg=NONE ctermfg=NONE guibg=#161616 ctermbg=233 gui=NONE cterm=NONE
+hi StatusLineTermNC guifg=NONE ctermfg=NONE guibg=#161616 ctermbg=233 gui=NONE cterm=NONE
 hi String guifg=#ce9178 ctermfg=174 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Structure guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TabLine guifg=#2f2f2f ctermfg=236 guibg=#6c6c6c ctermbg=242 gui=NONE cterm=NONE

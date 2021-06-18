@@ -31,6 +31,7 @@ palette:
   green3: '#31A835'
   green4: '#69D36B'
   green5: '#60FF60'
+  green6: '#6F9847'
 
   orange0: '#CE9178'
   orange1: '#D44609'
@@ -56,7 +57,7 @@ highlights:
 
   Character: 'gray5'
   ColorColumn: '- gray1'
-  Comment: 'green0'
+  Comment: 'green6'
   Constant: 'blue2'
   Conditional: 'purple0'
   Cursor: '- - r'
@@ -113,7 +114,7 @@ highlights:
   Repeat: 'purple0'
 
   Search: '- orange0 br'
-  SignColumn: 'gray3 black2'
+  SignColumn: 'gray3 black1'
   Special: 'purple0 -'
   SpecialChar: 'orange0'
   SpecialKey: 'orange1'
@@ -124,8 +125,8 @@ highlights:
   Statement: 'purple0'
   StatusLine: '- black3'
   StatusLineNC: '- black3'
-  StatusLineTerm: 'gray1 green0 r'
-  StatusLineTermNC: 'gray1 gray1 r'
+  StatusLineTerm: '- black3' 
+  StatusLineTermNC: '- black3'
   String: 'orange0 -'
   Structure: 'blue0'
 
