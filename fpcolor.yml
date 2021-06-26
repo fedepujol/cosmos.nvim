@@ -4,9 +4,6 @@ information:
   author: 'Fede Pujol <fpujol@protonmail.com>'
 
 palette:
-  fg: '#FFFFFF'
-  bg: '#1E1E1E'
-
   black0: '#000000'
   black1: '#1E1E1E'
   black2: '#262626'
@@ -37,7 +34,6 @@ palette:
   orange1: '#D44609'
 
   purple0: '#AE57A9'
-  purple1: '#8835A5'
 
   red0: '#C12D28'
   red1: '#D40909'
@@ -53,20 +49,20 @@ palette:
   yellow5: '#D79921'
 
 highlights:
-  Boolean: 'blue0 - b'
+  Boolean: 'blue1 - b'
 
   Character: 'gray5'
   ColorColumn: '- gray1'
   Comment: 'green6'
-  Constant: 'blue2'
+  Constant: 'blue0 - b'
   Conditional: 'purple0'
   Cursor: '- - r'
-  CursorColumn: '- gray1'
+  CursorColumn: '- white'
   CursorLine: '- gray0'
   CursorLineNr: 'white gray0'
 
   Define: 'yellow0'
-  Delimiter: 'blue0'
+  Delimiter: 'white'
   DiffAdd: '- -'
   DiffChange: '- -'
   DiffDelete: '- -'
@@ -78,15 +74,15 @@ highlights:
   EndOfBuffer: 'gray3'
   Exception: 'red0'
 
-  Float: 'green5'
-  FoldColumn: 'blue2 bg'
+  Float: 'green2'
+  FoldColumn: 'blue2 black1'
   Folded: 'blue2 gray1 i'
   Function: 'yellow0 - b'
 
   Identifier: 'blue3'
-  Include: 'blue2'
+  Include: 'purple0'
 
-  Keyword: 'blue1'
+  Keyword: 'blue0'
 
   LineNr: 'gray3 black1'
   Label: 'blue1'
@@ -97,8 +93,8 @@ highlights:
   MoreMsg: 'green1 - br'
 
   NonText: '- white'
-  Normal: 'gray5 black1'
-  Number: 'green5'
+  Normal: 'gray3 black1'
+  Number: 'green2'
 
   Operator: 'white'
 
@@ -113,20 +109,20 @@ highlights:
 
   Repeat: 'purple0'
 
-  Search: '- orange0 br'
+  Search: '- black0 br'
   SignColumn: 'gray3 black1'
-  Special: 'purple0 -'
+  Special: 'blue1 -'
   SpecialChar: 'orange0'
   SpecialKey: 'orange1'
-  SpellBad: '. . . red0'
-  SpellCap: '. . . purple1'
-  SpellLocal: '. . . blue2'
-  SpellRare: '. . . orange1'
+  SpellBad: '. . u red1'
+  SpellCap: '. . u blue2'
+  SpellLocal: '. . u green2'
+  SpellRare: '. . u yellow2'
   Statement: 'purple0'
   StatusLine: '- black3'
-  StatusLineNC: '- black3'
+  StatusLineNC: 'gray0 black3'
   StatusLineTerm: '- black3' 
-  StatusLineTermNC: '- black3'
+  StatusLineTermNC: 'gray0 black3'
   String: 'orange0 -'
   Structure: 'blue0'
 
@@ -134,12 +130,9 @@ highlights:
   TabLineFill: ''
   TabLineSel: 'blue1 gray1'
   Title: 'blue1'
-  Todo: 'red0 gray1 bi'
   ToolbarButton: 'green0 - r'
   ToolbarLine: '. gray1'
   Type: 'blue1'
-
-  Underlined: 'blue2 . u'
 
   VertSplit: 'gray1 -'
   Visual: '- black0 r'
