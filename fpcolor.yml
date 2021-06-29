@@ -13,6 +13,7 @@ palette:
   blue1: '#569CD6'
   blue2: '#9CDCFE'
   blue3: '#4EC9B0'
+  blue4: '#84B7E1'
 
   gray0: '#2F2F2F'
   gray1: '#6C6C6C'
@@ -33,7 +34,8 @@ palette:
   orange0: '#CE9178'
   orange1: '#D44609'
 
-  purple0: '#AE57A9'
+  purple0: '#B667B1'
+  purple1: '#CB94C8'
 
   red0: '#C12D28'
   red1: '#D40909'
@@ -93,7 +95,7 @@ highlights:
   MoreMsg: 'green1 - br'
 
   NonText: '- white'
-  Normal: 'gray3 black1'
+  Normal: 'white black1'
   Number: 'green2'
 
   Operator: 'white'
@@ -111,7 +113,7 @@ highlights:
 
   Search: '- black0 br'
   SignColumn: 'gray3 black1'
-  Special: 'blue1 -'
+  Special: 'blue2 -'
   SpecialChar: 'orange0'
   SpecialKey: 'orange1'
   SpellBad: '. . u red1'
@@ -132,7 +134,7 @@ highlights:
   Title: 'blue1'
   ToolbarButton: 'green0 - r'
   ToolbarLine: '. gray1'
-  Type: 'blue1'
+  Type: 'blue4'
 
   VertSplit: 'gray1 -'
   Visual: '- black0 r'
@@ -194,3 +196,42 @@ highlights:
   TelescopeResultsBorder: 'green4'
   TelescopePreviewBorder: 'green4'
 # -- END Telescope --
+
+# -- BEG TreeSitter --
+  TSBoolean: 'blue1 - b'
+  TSCharacter: 'orange0'
+  TSComment: 'green6'
+  TSConditional: 'purple0'
+  TSConstant: 'blue0 - b'
+  TSConstBuiltin: 'blue0'
+  TSConstructor: 'blue3'
+  TSError: 'red1 - b'
+  TSException: 'red1'
+  TSFloat: 'green2'
+  TSFunction: 'blue3'
+  TSFuncBuiltin: 'yellow0 - b'
+  TSInclude: 'purple0'
+  TSKeyword: 'blue1'
+  TSKeywordFunction: 'purple0'
+  TSKeywordOperator: 'blue1'
+  TSMethod: 'yellow0 - b'
+  TSNumber: 'green2'
+  TSOperator: 'white'
+  TSParameter: 'blue2'
+  TSParameterReference: 'blue0'
+  TSProperty: 'blue2'
+  TSPunctDelimiter: 'white'
+  TSPunctBracket: 'white'
+  TSPunctSpecial: 'white'
+  TSRepeat: 'purple0'
+  TSString: 'orange0'
+  TSStringRegex: 'orange1'
+  TSTag: 'blue1'
+  TSTagDelimiter: 'gray2'
+  TSText: 'white'
+  TSLiteral: 'orange0'
+  TSType: 'blue3'
+  TSTypeBuiltin: 'blue3'
+  TSVariable: 'blue2'
+  TSVariableBuiltin: 'blue0'
+# -- END TreeSitter --
