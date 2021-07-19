@@ -94,7 +94,7 @@ highlights:
   ModeMsg: 'yellow1 - br'
   MoreMsg: 'green1 - br'
 
-  NonText: '- white'
+  NonText: '- black1'
   Normal: 'white black1'
   Number: 'green2'
 
@@ -154,6 +154,7 @@ highlights:
   GitSignsAdd: 'green5'
   GitSignsChange: 'yellow2'
   GitSignsDelete: 'red0'
+  GitSignsCurrentLineBlame: 'gray3 gray0 i'
 # -- END GitSigns --
 
 # -- BEG LSP --
