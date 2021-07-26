@@ -38,7 +38,8 @@ vim.o.termuicolors = true 	-- Enable 24Bit colors
 ## Customization 
 
 To customize this colorscheme even further, you’ve got to modify `fpcolor.yml`. Then run the `generate` script like:
-`generate fpcolor.yaml > fpcolor.vim`
+
+	generate fpcolor.yaml > fpcolor.vim
 
 And that’s it!
 
