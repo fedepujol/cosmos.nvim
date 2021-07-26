@@ -1,4 +1,5 @@
-# FpColor Colorscheme
+# Fpcolor Colorscheme
+![example](https://github.com/fedepujol/fpcolor/blob/main/media/image01.jpg)
 
 This colorscheme is based on `VSCode` colorscheme and
 [nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
@@ -49,9 +50,9 @@ If you wish to create your own, just do this:
 
 ``` yaml
 information:
-	name:
-	background:
-	author:
+    name:
+    background:
+    author:
 ```
 
 -   The `name` it’s going to be your new colorscheme (make the file name
