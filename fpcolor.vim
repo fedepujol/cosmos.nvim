@@ -101,17 +101,18 @@ hi LspDiagnosticsSignError guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui
 hi LspDiagnosticsSignHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspDiagnosticsSignInformation guifg=#69d36b ctermfg=77 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspDiagnosticsSignWarning guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NvimTreeFolderName guifg=#ffffff ctermfg=231 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NvimTreeRootFolder guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NvimTreeFolderIcon guifg=#ffb327 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeEmptyFolderName guifg=#e2e2e2 ctermfg=254 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NvimTreeOpenedFolderName guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi NvimTreeOpenedFile guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeExecFile gui=NONE cterm=NONE
-hi NvimTreeGitNew guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeFolderIcon guifg=#ffb327 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeFolderName guifg=#ffffff ctermfg=231 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeGitDeleted guifg=#ff3b3b ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeGitDirty guifg=#ffda97 ctermfg=222 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeGitIgnored guifg=#c5c5c5 ctermfg=251 guibg=NONE ctermbg=NONE gui=italic cterm=italic
+hi NvimTreeGitNew guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeIndentMarker guifg=#2f2f2f ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeOpenedFolderName guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeOpenedFile guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeRootFolder guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TelescopeSelection guifg=#d79921 ctermfg=172 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi TelescopeSelectionCaret guifg=#31a835 ctermfg=71 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TelescopeMultiSelection guifg=#928374 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

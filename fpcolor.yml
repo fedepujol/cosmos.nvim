@@ -175,17 +175,18 @@ highlights:
 
 # -- END LSP --
 # -- BEG NvimTree --
-  NvimTreeFolderName: 'white'
-  NvimTreeRootFolder: 'yellow2'
-  NvimTreeFolderIcon: 'yellow3'
   NvimTreeEmptyFolderName: 'gray4'
-  NvimTreeOpenedFolderName: 'gray3'
-  NvimTreeOpenedFile: 'gray3'
   NvimTreeExecFile: '. .'
-  NvimTreeGitNew: 'green2'
+  NvimTreeFolderIcon: 'yellow3'
+  NvimTreeFolderName: 'white'
   NvimTreeGitDeleted: 'red2'
   NvimTreeGitDirty: 'yellow4'
   NvimTreeGitIgnored: 'gray5 - i'
+  NvimTreeGitNew: 'green2'
+  NvimTreeIndentMarker: 'gray0'
+  NvimTreeOpenedFolderName: 'gray3'
+  NvimTreeOpenedFile: 'gray3'
+  NvimTreeRootFolder: 'yellow2'
 # -- END NvimTree --
 
 # -- BEG Telescope --
