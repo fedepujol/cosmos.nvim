@@ -65,14 +65,14 @@ highlights:
 
   Define: 'yellow0'
   Delimiter: 'white'
-  DiffAdd: '- -'
-  DiffChange: '- -'
-  DiffDelete: '- -'
-  DiffText: '- -'
+  DiffAdd: 'green5'
+  DiffChange: 'yellow2'
+  DiffDelete: 'red0'
+  DiffText: 'white - i'
   Directory: 'blue1 - b'
 
-  Error: 'red1 - br'
-  ErrorMsg: 'red1 - br'
+  Error: 'red1 -'
+  ErrorMsg: 'red1 - b'
   EndOfBuffer: 'gray3'
   Exception: 'red0'
 
@@ -90,7 +90,7 @@ highlights:
   Label: 'blue1'
 
   Macro: 'yellow0 - b'
-  MatchParen: 'red0 - b'
+  MatchParen: 'yellow2 - b'
   ModeMsg: 'yellow1 - br'
   MoreMsg: 'green1 - br'
 
@@ -111,7 +111,7 @@ highlights:
 
   Repeat: 'purple0'
 
-  Search: '- black0 br'
+  Search: '- black0 b'
   SignColumn: 'gray3 black1'
   Special: 'blue2 -'
   SpecialChar: 'orange0'
@@ -154,7 +154,7 @@ highlights:
   GitSignsAdd: 'green5'
   GitSignsChange: 'yellow2'
   GitSignsDelete: 'red0'
-  GitSignsCurrentLineBlame: 'gray3 gray0 i'
+  GitSignsCurrentLineBlame: 'gray3 gray0'
 # -- END GitSigns --
 
 # -- BEG LSP --
@@ -187,6 +187,7 @@ highlights:
   NvimTreeOpenedFolderName: 'gray3'
   NvimTreeOpenedFile: 'gray3'
   NvimTreeRootFolder: 'yellow2'
+  NvimTreeSpecialFile: 'blue3'
 # -- END NvimTree --
 
 # -- BEG Telescope --

@@ -19,13 +19,13 @@ hi CursorLine guifg=NONE ctermfg=NONE guibg=#2f2f2f ctermbg=236 gui=NONE cterm=N
 hi CursorLineNr guifg=#ffffff ctermfg=231 guibg=#2f2f2f ctermbg=236 gui=NONE cterm=NONE
 hi Define guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Delimiter guifg=#ffffff ctermfg=231 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiffAdd guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiffChange guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiffDelete guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiffAdd guifg=#60ff60 ctermfg=83 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiffChange guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiffDelete guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiffText guifg=#ffffff ctermfg=231 guibg=NONE ctermbg=NONE gui=italic cterm=italic
 hi Directory guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi Error guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
-hi ErrorMsg guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
+hi Error guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi ErrorMsg guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi EndOfBuffer guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Exception guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Float guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -38,7 +38,7 @@ hi Keyword guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LineNr guifg=#b1b1b1 ctermfg=249 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Label guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Macro guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi MatchParen guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi MatchParen guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi ModeMsg guifg=#cccc00 ctermfg=184 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
 hi MoreMsg guifg=#6cac78 ctermfg=72 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
 hi NonText guifg=NONE ctermfg=NONE guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
@@ -53,7 +53,7 @@ hi PreProc guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Question guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
 hi QuickFixLine guifg=NONE ctermfg=NONE guibg=#9cdcfe ctermbg=153 gui=NONE cterm=NONE
 hi Repeat guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Search guifg=NONE ctermfg=NONE guibg=#000000 ctermbg=16 gui=bold,reverse cterm=bold,reverse
+hi Search guifg=NONE ctermfg=NONE guibg=#000000 ctermbg=16 gui=bold cterm=bold
 hi SignColumn guifg=#b1b1b1 ctermfg=249 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Special guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi SpecialChar guifg=#ce9178 ctermfg=174 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -88,7 +88,7 @@ hi BufferVisibleSign guifg=#9cdcfe ctermfg=153 guibg=#161616 ctermbg=233 gui=NON
 hi GitSignsAdd guifg=#60ff60 ctermfg=83 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitSignsChange guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitSignsDelete guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitSignsCurrentLineBlame guifg=#b1b1b1 ctermfg=249 guibg=#2f2f2f ctermbg=236 gui=italic cterm=italic
+hi GitSignsCurrentLineBlame guifg=#b1b1b1 ctermfg=249 guibg=#2f2f2f ctermbg=236 gui=NONE cterm=NONE
 hi LspDiagnosticsFloatingError guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspDiagnosticsFloatingHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspDiagnosticsFloatingInformation guifg=#69d36b ctermfg=77 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -113,6 +113,7 @@ hi NvimTreeIndentMarker guifg=#2f2f2f ctermfg=236 guibg=NONE ctermbg=NONE gui=NO
 hi NvimTreeOpenedFolderName guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeOpenedFile guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NvimTreeRootFolder guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi NvimTreeSpecialFile guifg=#4ec9b0 ctermfg=79 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TelescopeSelection guifg=#d79921 ctermfg=172 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi TelescopeSelectionCaret guifg=#31a835 ctermfg=71 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TelescopeMultiSelection guifg=#928374 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
