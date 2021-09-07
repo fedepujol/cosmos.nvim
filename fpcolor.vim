@@ -7,12 +7,12 @@ if exists('syntax_on')
 endif
 let g:colors_name='fpcolor'
 
-hi Boolean guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Boolean guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Character guifg=#c5c5c5 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi ColorColumn guifg=NONE ctermfg=NONE guibg=#6c6c6c ctermbg=242 gui=NONE cterm=NONE
 hi Comment guifg=#6f9847 ctermfg=65 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Constant guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi Conditional guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Constant guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Cursor guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
 hi CursorColumn guifg=NONE ctermfg=NONE guibg=#ffffff ctermbg=231 gui=NONE cterm=NONE
 hi CursorLine guifg=NONE ctermfg=NONE guibg=#2f2f2f ctermbg=236 gui=NONE cterm=NONE
@@ -23,24 +23,22 @@ hi DiffAdd guifg=#60ff60 ctermfg=83 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiffChange guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiffDelete guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiffText guifg=#ffffff ctermfg=231 guibg=NONE ctermbg=NONE gui=italic cterm=italic
-hi Directory guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi Error guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi ErrorMsg guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Directory guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi EndOfBuffer guifg=#b1b1b1 ctermfg=249 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Error guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi ErrorMsg guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Exception guifg=#c12d28 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Float guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi FoldColumn guifg=#9cdcfe ctermfg=153 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Folded guifg=#9cdcfe ctermfg=153 guibg=#6c6c6c ctermbg=242 gui=italic cterm=italic
-hi Function guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Function guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Identifier guifg=#4ec9b0 ctermfg=79 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Include guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Keyword guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi LineNr guifg=#b1b1b1 ctermfg=249 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Label guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Macro guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi MatchParen guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi ModeMsg guifg=#cccc00 ctermfg=184 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
-hi MoreMsg guifg=#6cac78 ctermfg=72 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
+hi LineNr guifg=#b1b1b1 ctermfg=249 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
+hi Macro guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi MatchParen guifg=#ffaa0d ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NonText guifg=NONE ctermfg=NONE guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Normal guifg=#ffffff ctermfg=231 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Number guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -50,10 +48,10 @@ hi PmenuSbar guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE gui=NONE cterm=NO
 hi PmenuSel guifg=#2f2f2f ctermfg=236 guibg=#6cac78 ctermbg=72 gui=NONE cterm=NONE
 hi PmenuThumb guifg=#6c6c6c ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi PreProc guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Question guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
+hi Question guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
 hi QuickFixLine guifg=NONE ctermfg=NONE guibg=#9cdcfe ctermbg=153 gui=NONE cterm=NONE
 hi Repeat guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Search guifg=NONE ctermfg=NONE guibg=#000000 ctermbg=16 gui=bold cterm=bold
+hi Search guifg=NONE ctermfg=NONE guibg=#000000 ctermbg=16 gui=NONE cterm=NONE
 hi SignColumn guifg=#b1b1b1 ctermfg=249 guibg=#1e1e1e ctermbg=234 gui=NONE cterm=NONE
 hi Special guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi SpecialChar guifg=#ce9178 ctermfg=174 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -76,10 +74,11 @@ hi Title guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi ToolbarButton guifg=#4b6e2a ctermfg=239 guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
 hi ToolbarLine guibg=#6c6c6c ctermbg=242 gui=NONE cterm=NONE
 hi Type guifg=#84b7e1 ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Underline gui=underline cterm=underline
 hi VertSplit guifg=#6c6c6c ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Visual guifg=NONE ctermfg=NONE guibg=#000000 ctermbg=16 gui=reverse cterm=reverse
-hi WarningMsg guifg=#d44609 ctermfg=166 guibg=NONE ctermbg=NONE gui=bold,reverse cterm=bold,reverse
-hi WildMenu guifg=#9cdcfe ctermfg=153 guibg=#6c6c6c ctermbg=242 gui=bold,reverse cterm=bold,reverse
+hi WarningMsg guifg=#d44609 ctermfg=166 guibg=NONE ctermbg=NONE gui=reverse cterm=reverse
+hi WildMenu guifg=#9cdcfe ctermfg=153 guibg=#6c6c6c ctermbg=242 gui=reverse cterm=reverse
 hi Whitespace guifg=#2f2f2f ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi BufferInactive guifg=#b1b1b1 ctermfg=249 guibg=#161616 ctermbg=233 gui=NONE cterm=NONE
 hi BufferVisible guifg=#9cdcfe ctermfg=153 guibg=#161616 ctermbg=233 gui=NONE cterm=NONE
@@ -121,23 +120,23 @@ hi TelescopeBorder guifg=#69d36b ctermfg=77 guibg=NONE ctermbg=NONE gui=NONE cte
 hi TelescopePromptBorder guifg=#69d36b ctermfg=77 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TelescopeResultsBorder guifg=#69d36b ctermfg=77 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TelescopePreviewBorder guifg=#69d36b ctermfg=77 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSBoolean guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi TSBoolean guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSCharacter guifg=#ce9178 ctermfg=174 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSComment guifg=#6f9847 ctermfg=65 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSConditional guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSConstant guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi TSConstant guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSConstBuiltin guifg=#3975a7 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSConstructor guifg=#4ec9b0 ctermfg=79 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSError guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi TSError guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSException guifg=#d40909 ctermfg=160 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSFloat guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSFunction guifg=#4ec9b0 ctermfg=79 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSFuncBuiltin guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi TSFuncBuiltin guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSInclude guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSKeyword guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSKeywordFunction guifg=#b667b1 ctermfg=133 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSKeywordOperator guifg=#569cd6 ctermfg=74 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSMethod guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi TSMethod guifg=#dcdcaa ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSNumber guifg=#96e098 ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSOperator guifg=#ffffff ctermfg=231 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSParameter guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

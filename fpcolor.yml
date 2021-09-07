@@ -51,13 +51,13 @@ palette:
   yellow5: '#D79921'
 
 highlights:
-  Boolean: 'blue1 - b'
+  Boolean: 'blue1 -'
 
   Character: 'gray5'
   ColorColumn: '- gray1'
   Comment: 'green6'
-  Constant: 'blue0 - b'
   Conditional: 'purple0'
+  Constant: 'blue0 -'
   Cursor: '- - r'
   CursorColumn: '- white'
   CursorLine: '- gray0'
@@ -69,30 +69,28 @@ highlights:
   DiffChange: 'yellow2'
   DiffDelete: 'red0'
   DiffText: 'white - i'
-  Directory: 'blue1 - b'
+  Directory: 'blue1 -'
 
-  Error: 'red1 -'
-  ErrorMsg: 'red1 - b'
   EndOfBuffer: 'gray3'
+  Error: 'red1 -'
+  ErrorMsg: 'red1 -'
   Exception: 'red0'
 
   Float: 'green2'
   FoldColumn: 'blue2 black1'
   Folded: 'blue2 gray1 i'
-  Function: 'yellow0 - b'
+  Function: 'yellow0 -'
 
   Identifier: 'blue3'
   Include: 'purple0'
 
   Keyword: 'blue0'
 
-  LineNr: 'gray3 black1'
   Label: 'blue1'
+  LineNr: 'gray3 black1'
 
-  Macro: 'yellow0 - b'
-  MatchParen: 'yellow2 - b'
-  ModeMsg: 'yellow1 - br'
-  MoreMsg: 'green1 - br'
+  Macro: 'yellow0 -' 
+  MatchParen: 'yellow2 -'
 
   NonText: '- black1'
   Normal: 'white black1'
@@ -106,12 +104,12 @@ highlights:
   PmenuThumb: 'gray1'
   PreProc: 'blue2'
 
-  Question: 'blue2 - br'
+  Question: 'blue2 - r'
   QuickFixLine: '- blue2'
 
   Repeat: 'purple0'
 
-  Search: '- black0 b'
+  Search: '- black0 '
   SignColumn: 'gray3 black1'
   Special: 'blue2 -'
   SpecialChar: 'orange0'
@@ -136,11 +134,13 @@ highlights:
   ToolbarLine: '. gray1'
   Type: 'blue4'
 
+  Underline: ". . u"
+
   VertSplit: 'gray1 -'
   Visual: '- black0 r'
 
-  WarningMsg: 'orange1 - br'
-  WildMenu: 'blue2 gray1 br'
+  WarningMsg: 'orange1 - r'
+  WildMenu: 'blue2 gray1 r'
   Whitespace: 'gray0'
 
 # -- BEG Buffer --
@@ -201,23 +201,23 @@ highlights:
 # -- END Telescope --
 
 # -- BEG TreeSitter --
-  TSBoolean: 'blue1 - b'
+  TSBoolean: 'blue1 -'
   TSCharacter: 'orange0'
   TSComment: 'green6'
   TSConditional: 'purple0'
-  TSConstant: 'blue0 - b'
+  TSConstant: 'blue0 -'
   TSConstBuiltin: 'blue0'
   TSConstructor: 'blue3'
-  TSError: 'red1 - b'
+  TSError: 'red1 -'
   TSException: 'red1'
   TSFloat: 'green2'
   TSFunction: 'blue3'
-  TSFuncBuiltin: 'yellow0 - b'
+  TSFuncBuiltin: 'yellow0 -' 
   TSInclude: 'purple0'
   TSKeyword: 'blue1'
   TSKeywordFunction: 'purple0'
   TSKeywordOperator: 'blue1'
-  TSMethod: 'yellow0 - b'
+  TSMethod: 'yellow0 -'
   TSNumber: 'green2'
   TSOperator: 'white'
   TSParameter: 'blue2'
