@@ -1,0 +1,174 @@
+information:
+  name: sky
+  background: dark
+  author: 'Fede Pujol <fpujol@protonmail.com>'
+
+palette:
+  black0: '#181818'
+
+  blue0: '#04B1FF'
+  blue1: '#0F5175'
+  blue2: '#073350'
+  blue3: '#011826'
+
+  cyan0: '#7DD5E5'
+  cyan1: '#37F0E4'
+  cyan2: '#53B7ED'
+
+  gray0: '#6C6C6C'
+  gray3: '#5C83A0'
+  gray1: '#BCCCEE'
+  gray2: '#B0D6F5'
+  gray4: '#9EBFE0'
+
+  orange0: '#FF6A2A'
+  orange1: '#D14D0F'
+
+  pink0: '#A36584'
+  pink1: '#D97E96'
+  pink2: '#FB877E'
+  purple5: '#C0A3B9'
+
+  purple0: '#30308C'
+  purple1: '#615EBC'
+  purple2: '#A454AE'
+  purple3: '#5B2C6F'
+
+  red2: '#E74C3C'
+  red0: '#D4382E'
+  red1: '#FF5635'
+
+  white0: '#FBFAE2'
+  white1: '#DDEEF8'
+
+  yellow0: '#FEB674'
+  yellow1: '#FAB144'
+  yellow2: '#FBBE39'
+
+highlights:
+  Boolean: "blue0"
+
+  Character: "orange1"
+  ColorColumn: "- gray1"
+  Comment: "cyan2"
+  Conceal: "- - i"
+  Conditional: "purple0"
+  Constant: "blue1"
+  Cursor: "gray0 black0"
+  CursorColumn: "- white0"
+  CursorLine: "- -"
+  CursorLineNr: "white0 - r"
+
+  Define: "purple2"
+  DiffAdd: "cyan2"
+  DiffChange: "yellow0"
+  DiffDelete: "orange0"
+  DiffText: "white0 - i"
+  Directory: "cyan0"
+
+  EndOfBuffer: "black0"
+  Error: "red0 - b"
+  ErrorMsg: "red1 -"
+  Exception: "orange0"
+
+  Float: "cyan2"
+  FoldColumn: ""
+  Folded: "gray0"
+  Function: "yellow2"
+
+  Identifier: "blue2"
+  Include: "purple1"
+
+  Keyword: "cyan1"
+
+  Label: "orange0"
+  LineNr: "white0 black0"
+
+  Macro: "yellow2"
+
+  NonText: "- black0"
+  Normal: "white0 black0"
+  Number: "cyan2"
+
+  Operator: "white0"
+
+  Pmenu: "gray0 black0"
+  PmenuSbar: "gray0 black0"
+  PmenuSel: "cyan0 blue3"
+  PmenuThumb: "- white0"
+  PreProc: "purple0"
+
+  Question: "purple1"
+  QuickFixLine: "- gray1"
+
+  Repeat: "purple2"
+
+  Search: "- gray0"
+  SignColumn: "- black0"
+  Special: "blue0 - i"
+  SpecialKey: "orange0"
+  SpellBad: "red1 - u"
+  SpellCap: "yellow1 - u"
+  SpellLocal: "blue2 - u"
+  SpellRare: "gray1 - u"
+  Statement: "purple2"
+  StatusLine: "white0 gray0"
+  StatusLineNC: "pink0"
+  StatusLineTerm: "white0 pink1"
+  StatusLineTermNC: "purple2"
+  StorageClass: "blue2"
+  String: "orange0"
+  Structure: "yellow0"
+
+  TabLine: "gray1"
+  TabLineFill: ''
+  TabLineSel: "white0"
+  Terminal: "white0 blue3"
+  Title: "cyan0"
+  Type: "blue2"
+  Typedef: "yellow2"
+
+  VertSplit: "gray0"
+  Visual: "- black0"
+
+  WarningMsg: "orange1"
+  WildMenu: "black0 blue2"
+
+# -- BEG TreeSitter --
+  TSBoolean: 'cyan0 -'
+  TSCharacter: 'orange0'
+  TSComment: 'cyan2'
+  TSConditional: 'pink1'
+  TSConstant: 'blue0 -'
+  TSConstBuiltin: 'blue1'
+  TSConstructor: 'blue2'
+  TSError: 'red1 -'
+  TSException: 'orange0'
+  TSFloat: 'cyan2'
+  TSFunction: 'yellow0'
+  TSFuncBuiltin: 'yellow0 -' 
+  TSInclude: 'purple2'
+  TSKeyword: 'cyan0'
+  TSKeywordFunction: 'purple2'
+  TSKeywordOperator: 'blue0'
+  TSMethod: 'yellow0 -'
+  TSNumber: 'cyan2'
+  TSOperator: 'white0'
+  TSParameter: 'blue0'
+  TSParameterReference: 'blue0'
+  TSProperty: 'purple0'
+  TSPunctDelimiter: 'white0'
+  TSPunctBracket: 'white0'
+  TSPunctSpecial: 'white0'
+  TSRepeat: 'purple2'
+  TSString: 'orange0'
+  TSStringRegex: 'orange0'
+  TSTag: 'cyan1'
+  TSTagDelimiter: 'gray0'
+  TSText: 'white0'
+  TSLiteral: 'orange0'
+  TSType: 'blue2'
+  TSTypeBuiltin: 'blue1'
+  TSVariable: 'cyan0'
+  TSVariableBuiltin: 'cyan1'
+# -- END TreeSitter --
