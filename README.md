@@ -1,4 +1,4 @@
-# Fpcolor Colorscheme
+# NV-Themes
 ![example](https://github.com/fedepujol/fpcolor/blob/main/media/image01.jpg)
 
 This colorscheme is based on `VSCode` colorscheme and
