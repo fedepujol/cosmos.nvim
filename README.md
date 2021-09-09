@@ -1,5 +1,5 @@
 # NV-Themes
-![example](https://github.com/fedepujol/fpcolor/blob/main/media/image01.jpg)
+![example](https://github.com/fedepujol/nv-themes/blob/main/media/image01.jpg)
 
 This colorscheme is based on `VSCode` colorscheme and
 [nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
@@ -31,23 +31,23 @@ And then:
 
 ``` lua
 vim.bo.syntax = "ON" 		-- Enable syntax
-vim.cmd(":colo fpcolor") 	-- Change the colorscheme
+vim.cmd(":colo vcdark") 	-- Change the colorscheme
 vim.o.termuicolors = true 	-- Enable 24Bit colors
 ```
 
 ## Customization 
 
-To customize this colorscheme even further, you’ve got to modify `fpcolor.yml`. Then run the `generate` script like:
+To customize this colorscheme even further, you’ve got to modify `vcdark.yml`. Then run the `generate` script like:
 
-	generate fpcolor.yaml > fpcolor.vim
+	generate vcdark.yml > vcdark.vim
 
 And that’s it!
 
 If you wish to create your own, just do this:
 
 1.  Install `ruby`
-2.  Copy and rename the file `fpcolor.yml`
-3.  Inside `fpcolor.yml` there is a `information` section:
+2.  Copy and rename the file `vcdark.yml`
+3.  Inside `vcdark.yml` there is a `information` section:
 
 ``` yaml
 information:
