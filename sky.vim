@@ -65,7 +65,6 @@ hi Structure guifg=#feb674 ctermfg=216 guibg=NONE ctermbg=NONE gui=NONE cterm=NO
 hi TabLine guifg=#b0b8bf ctermfg=250 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TabLineFill guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TabLineSel guifg=#e2e5fb ctermfg=189 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Terminal guifg=#e2e5fb ctermfg=189 guibg=#000e16 ctermbg=232 gui=NONE cterm=NONE
 hi Type guifg=#615ebc ctermfg=61 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Typedef guifg=#fbbe39 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi VertSplit guifg=#6c6c6c ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

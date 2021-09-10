@@ -118,7 +118,6 @@ highlights:
   TabLine: "gray1"
   TabLineFill: ''
   TabLineSel: "white0"
-  Terminal: "white0 blue6"
   Type: "purple1"
   Typedef: "yellow2"
 
