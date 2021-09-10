@@ -68,7 +68,7 @@ hi TabLineSel guifg=#e2e5fb ctermfg=189 guibg=NONE ctermbg=NONE gui=NONE cterm=N
 hi Type guifg=#615ebc ctermfg=61 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Typedef guifg=#fbbe39 ctermfg=215 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi VertSplit guifg=#6c6c6c ctermfg=242 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Visual guifg=NONE ctermfg=NONE guibg=#011826 ctermbg=233 gui=NONE cterm=NONE
+hi Visual guifg=NONE ctermfg=NONE guibg=#011826 ctermbg=233 gui=reverse cterm=reverse
 hi WarningMsg guifg=#d14d0f ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi WildMenu guifg=#011826 ctermfg=233 guibg=#9ebfe0 ctermbg=146 gui=NONE cterm=NONE
 hi TSBoolean guifg=#7dd5e5 ctermfg=116 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

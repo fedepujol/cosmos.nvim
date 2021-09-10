@@ -122,7 +122,7 @@ highlights:
   Typedef: "yellow2"
 
   VertSplit: "gray0"
-  Visual: "- blue4"
+  Visual: "- blue4 r"
 
   WarningMsg: "orange1"
   WildMenu: "blue4 gray4"
@@ -133,7 +133,7 @@ highlights:
   TSCharacter: "pink2"          # Characters
   TSNumber: "orange0"           # All numbers
   TSString: "pink2"             # Strings
-  TSStringEscape: "orange1"       # Escape characters within a string
+  TSStringEscape: "orange1"     # Escape characters within a string
   TSStringRegex: "pink1"        # Regexes
 
   # Variables
