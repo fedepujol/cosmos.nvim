@@ -108,10 +108,10 @@ highlights:
   SpellLocal: "blue0 - u"
   SpellRare: "gray4 - u"
   Statement: "purple2"
-  StatusLine: "white0 blue6"
-  StatusLineNC: "gray4"
-  StatusLineTerm: "white0 blue5"
-  StatusLineTermNC: "purple2"
+  StatusLine: "- blue6"
+  StatusLineNC: "gray4 blue6"
+  StatusLineTerm: "- blue6"
+  StatusLineTermNC: "gray4 blue6"
   String: "pink2"
   Structure: "yellow0"
 
@@ -224,9 +224,9 @@ highlights:
 # -- END Buffer --
 
 # -- BEG GitSigns --
-  GitSignsAdd: 'cyan1'
-  GitSignsChange: 'yellow2'
-  GitSignsDelete: 'red0'
+  GitSignsAdd: 'cyan1 blue6'
+  GitSignsChange: 'yellow2 blue6'
+  GitSignsDelete: 'red0 blue6'
   GitSignsCurrentLineBlame: 'blue0 blue4'
 # -- END GitSigns --
 
