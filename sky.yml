@@ -17,7 +17,7 @@ palette:
 
   gray0: '#6C6C6C'
   gray1: '#B0B8BF'
-  gray2: '#BCCCEE'
+  gray2: '#A9CEB7'
   gray3: '#B0D6F5'
   gray4: '#9EBFE0'
 
@@ -26,7 +26,7 @@ palette:
 
   pink0: '#A36584'
   pink1: '#D97E96'
-  pink2: '#FB877E'
+  pink2: '#E29993'
   pink3: '#C0A3B9'
 
   purple1: '#615EBC'
@@ -40,7 +40,7 @@ palette:
   white0: '#E2E5FB'
   white1: '#D2FFFE'
 
-  yellow0: '#FEB674'
+  yellow0: '#FFC998'
   yellow1: '#FAB144'
   yellow2: '#FBBE39'
 
@@ -49,7 +49,7 @@ highlights:
 
   Character: "pink2"
   ColorColumn: "- gray0"
-  Comment: "gray1"
+  Comment: "gray2"
   Conditional: "orange0"
   Constant: "blue1"
   CursorColumn: "- white1"
@@ -157,7 +157,7 @@ highlights:
   # Miscelaneous
   TSAnnotation: ""              # For attributes, annotations that can be attached to the code (meta info)
   TSAttribute: ""               # Unstable (missing docs)
-  TSComment: "gray1"            # Comments
+  TSComment: "gray2"            # Comments
   TSError: "red0"               # Syntax/Parser errors
   TSException: "red1"           # Exception related keywords
   TSFloat: "orange0"            # Floats
@@ -227,7 +227,7 @@ highlights:
   GitSignsAdd: 'cyan1 blue6'
   GitSignsChange: 'yellow2 blue6'
   GitSignsDelete: 'red0 blue6'
-  GitSignsCurrentLineBlame: 'blue0 blue4'
+  GitSignsCurrentLineBlame: 'gray1 blue4'
 # -- END GitSigns --
 
 # -- BEG LSP --
