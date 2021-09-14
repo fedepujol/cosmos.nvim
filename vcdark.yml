@@ -35,7 +35,6 @@ palette:
   orange1: '#D44609'
 
   purple0: '#B667B1'
-  purple1: '#CB94C8'
 
   red0: '#C12D28'
   red1: '#D40909'
@@ -44,7 +43,6 @@ palette:
   white: '#FFFFFF'
 
   yellow0: '#DCDCAA'
-  yellow1: '#CCCC00'
   yellow2: '#FFAA0D'
   yellow3: '#FFB327'
   yellow4: '#FFDA97'
