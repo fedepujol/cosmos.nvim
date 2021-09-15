@@ -76,7 +76,7 @@ highlights:
 
   Float: 'green2'
   FoldColumn: 'blue2 black1'
-  Folded: 'blue2 gray1 i'
+  Folded: 'blue2 black1 i'
   Function: 'yellow0 -'
 
   Identifier: 'blue3'
