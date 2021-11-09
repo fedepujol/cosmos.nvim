@@ -1,24 +1,27 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-
 local amber_800 = hsl('#FF8F00')
 local black = hsl('#000000')
 local blue_600 = hsl('#1E88E5')
 local blue_900 = hsl('#0D47A1')
+local blue_gray_700 = hsl('#455A64')
 local blue_gray_900 = hsl('#263238')
 local deep_orange_500 = hsl('#FF5722')
 local deep_orange_800 = hsl('#D84315')
+local gray_300 = hsl('#E0E0E0')
 local gray_400 = hsl('#B0B0B0')
 local gray_700 = hsl('#616161')
+local gray_800 = hsl('#424242')
 local gray_900 = hsl('#212121')
 local green_800 = hsl('#2E7D32')
 local green_a700 = hsl('#00C853')
 local lime_600 = hsl('#C0CA33')
 local pink_700 = hsl('#C2185B')
-local white = hsl('#CFD8DC')
-local yellow_a100 = hsl('#FFFF8D')
 local red_900 = hsl('#B71C1C')
+local teal_300 = hsl('#4DB6AC')
+local yellow_600 = hsl('#FDD835')
+local yellow_a100 = hsl('#FFFF8D')
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -44,12 +47,12 @@ local theme = lush(function()
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn { fg = gray_700 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine   { bg = gray_900.da(10).sa(4) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine   { bg = blue_gray_900.da(10).sa(4) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     -- Directory    { }, -- directory names (and other special names in listings)
     DiffAdd      { fg = green_a700.da(2).sa(1) }, -- diff mode: Added line |diff.txt|
     DiffChange   { fg = amber_800.li(3)}, -- diff mode: Changed line |diff.txt|
     DiffDelete   { fg = deep_orange_500.da(5) }, -- diff mode: Deleted line |diff.txt|
-    DiffText     { fg = white.da(10) }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText     { fg = gray_300.da(10) }, -- diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
@@ -58,7 +61,7 @@ local theme = lush(function()
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
     -- SignColumn   { }, -- column where |signs| are displayed
-    -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch    { fg = black, bg = teal_300 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     LineNr       { fg = black.li(27).sa(4) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { fg = gray_400.da(10), bg = gray_900.sa(8) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -68,11 +71,11 @@ local theme = lush(function()
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
     NonText      { fg = blue_gray_900.da(40) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal       { fg = white.da(10), bg = blue_gray_900.da(40) }, -- normal text
+    Normal       { fg = gray_300.da(10), bg = blue_gray_900.da(40) }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    Pmenu        { fg = blue_600.da(10), bg = gray_900.da(20) }, -- Popup menu: normal item.
-    PmenuSel     { fg = gray_900.da(20), bg = blue_600.da(10) }, -- Popup menu: selected item.
+    Pmenu        { fg = blue_600.da(10), bg = gray_900.da(5) }, -- Popup menu: normal item.
+    PmenuSel     { fg = gray_900.da(5), bg = blue_600.da(10) }, -- Popup menu: selected item.
     PmenuSbar    { bg = blue_900.da(25) }, -- Popup menu: scrollbar.
     PmenuThumb   { fg = blue_600.sa(10) }, -- Popup menu: Thumb of the scrollbar.
     Question     { Normal }, -- |hit-enter| prompt and yes/no questions
@@ -93,7 +96,7 @@ local theme = lush(function()
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = black, bg = deep_orange_800 }, -- warning messages
     Whitespace   { fg = LineNr.fg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    -- WildMenu     { }, -- current match in 'wildmenu' completion
+    WildMenu     { fg = yellow_600 }, -- current match in 'wildmenu' completion
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
@@ -247,4 +250,3 @@ end)
 -- return our parsed theme for extension or use else where.
 return theme
 
--- vi:nowrap
