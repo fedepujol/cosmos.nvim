@@ -4,11 +4,15 @@
 This colorscheme is based on `VSCode` colorscheme and
 [nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
 
+## Disclaimer
+This is a work in progress, the main goal is to migrate the \*.yaml files into lush_spec and use `lush`
+to transform them into \*.vim files.
+
 ## Requirements
 
 -   [NeoVim](https://github.com/neovim/neovim) 0.5 or nightly
--   [Nvim-Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
--   Ruby interpreter (if you wish to modify or create your own!)
+-   [Nvim-Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (optional)
+-   [Lush](https://github.com/rktjmp/lush.nvim)
 
 ## Configuration
 
@@ -37,36 +41,23 @@ vim.o.termuicolors = true 	-- Enable 24Bit colors
 
 ## Customization 
 
-To customize this colorscheme even further, you’ve got to modify `vcdark.yml`. Then run the `generate` script like:
+All of the themes are being re-written to use `lush`, mainly because I don't like 
+the ruby dependency (the script to generate \*.vim files).
 
-	generate vcdark.yml > vcdark.vim
+Inside the folder named `lua/lush_theme/` you'll find all of the `lush-spec's` of all the 
+themes.
 
-And that’s it!
+To be able to customize, install the `lush` dependency in your NeoVim.
 
-If you wish to create your own, just do this:
+Open the lush_spec and do `:Lushify` to enable `lush` in the theme, and start customizing it.
 
-1.  Install `ruby`
-2.  Copy and rename the file `vcdark.yml`
-3.  Inside `vcdark.yml` there is a `information` section:
-
-``` yaml
-information:
-    name:
-    background:
-    author:
+To export your custom theme run:
+```lua
+:lua require('lush').export_to_buffer(require('lush_theme.name_of_theme_to_export'))
 ```
-
--   The `name` it’s going to be your new colorscheme (make the file name
-    and this the same)
--   The `background` tag tells the script wich type of background you’re
-    gonna use
--   The `author` your info
-
-4.  Change the colors
-5.  Run the script
-6.  Profit
+A floating window will open with the vim-esque highlights. Copy and paste into a \*.vim file.
 
 ## Credit
 
-This repo is based on
+This repo was orignally based on
 [vim-felipec](https://github.com/felipec/vim-felipec)
