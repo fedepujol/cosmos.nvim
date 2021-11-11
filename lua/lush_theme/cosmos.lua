@@ -6,6 +6,7 @@ local bgray_900 = hsl('#263238')
 local black = hsl('#000000')
 local blue_200 = hsl('#90CAF9')
 local blue_700 = hsl('#1976D2')
+local brown_200 = hsl('#BCAAA4')
 local brown_400 = hsl('#8D6E63')
 local cyan_200 = hsl('#80DEEA')
 local cyan_400 = hsl('#26C6DA')
@@ -212,7 +213,7 @@ local cosmos = lush(function()
       TSBoolean            { Boolean };    -- For booleans.
       TSCharacter          { Character };    -- For characters.
       TSComment            { Comment };    -- For comment blocks.
-      TSConstructor        { fg = Conditional.fg.da(5) };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+      TSConstructor        { fg = brown_400.li(10) };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
       TSConditional        { Conditional };    -- For keywords related to conditionnals.
       TSConstant           { Constant };    -- For constants
       TSConstBuiltin       { fg = Constant.fg.da(10) };    -- For constant that are built in the language: `nil` in Lua.
@@ -224,7 +225,7 @@ local cosmos = lush(function()
       TSFunction           { Function };    -- For function (calls and definitions).
       TSFuncBuiltin        { fg = Function.fg.da(20)};    -- For builtin functions: `table.insert` in Lua.
       TSFuncMacro          { fg = Function.fg.li(20)};    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-     -- TSInclude            { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+      TSInclude            { fg = brown_200 };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
      -- TSKeyword            { };    -- For keywords that don't fall in previous categories.
      -- TSKeywordFunction    { };    -- For keywords used to define a fuction.
      -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
@@ -260,6 +261,13 @@ local cosmos = lush(function()
      TSURI                { fg = blue_200.da(10), gui = "underline" };    -- Any URI like a link or email.
 
     -- Plugin specifics
+     -- CmpItemAbbr              { };
+     CmpItemAbbrDeprecated    { gui = "strikethrough" };
+     CmpItemAbbrMatch         { fg = orange_200 };
+     CmpItemAbbrMatchFuzzy    { fg = orange_200 };
+     CmpItemKind              { fg = black };
+     CmpItemMenu              { fg = black };
+
      GitSignsAdd              { DiffAdd };
      GitSignsChange           { DiffChange };
      GitSignsDelete           { DiffDelete };
@@ -269,17 +277,19 @@ local cosmos = lush(function()
      BufferCurrent            { fg = blue_700.li(20) };
      BufferVisible            { fg = blue_200 };
 
-     NvimTreeEmptyFolderName  { fg = gray_700 };
      NvimTreeFolderIcon       { fg = yellow_700 };
      NvimTreeFolderName       { fg = gray_400.da(15) };
+     NvimTreeRootFolder       { fg = amber_800 };
+     NvimTreeEmptyFolderName  { fg = gray_700 };
+     NvimTreeOpenedFolderName { fg = gray_400.da(5) };
+	 NvimTreeExecFile         { fg = gray_300.da(10) };
+	 NvimTreeOpenedFile       { bg = CursorLine.bg };
+     NvimTreeIndentMarker     { Whitespace };
+     NvimTreeSpecialFile      { fg = teal_300 };
      NvimTreeGitDeleted       { DiffDelete };
-     NvimTreeGitDirty         { DiffChange };
+     NvimTreeGitDirty         { fg = orange_200 };
      NvimTreeGitIgnored       { fg = gray_700 };
      NvimTreeGitNew           { fg = green_a700.desaturate(20) };
-     NvimTreeIndentMarker     { Whitespace };
-     NvimTreeOpenedFolderName { fg = gray_400.da(5) };
-     NvimTreeRootFolder       { fg = yellow_800 };
-     NvimTreeSpecialFile      { fg = teal_300 };
 
      TelescopeSelection       { fg = dpurple_200 };
      TelescopeSelectionCaret  { fg = purple_300 };
