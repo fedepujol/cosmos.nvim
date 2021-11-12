@@ -9,14 +9,18 @@ let g:colors_name='cosmos'
 
 highlight Boolean guifg=#28B5F6 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight BufferCurrent guifg=#3B91E8 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight BufferCurrentMod guifg=#CB9343 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight BufferInactive guifg=#616161 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight BufferInactiveMod guifg=#AC7A39 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight BufferVisible guifg=#90CAF9 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight BufferVisibleMod guifg=#C5A56D guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Character guifg=#FFAD33 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrough blend=NONE
-highlight CmpItemAbbrMatch guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE blend=NONE
-highlight CmpItemAbbrMatchFuzzy guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight CmpItemAbbrMatch guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight CmpItemAbbrMatchFuzzy guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight CmpItemKind guifg=#000000 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight CmpItemMenu guifg=#000000 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight ColorColumn guifg=#D54215 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Comment guifg=#328636 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Conditional guifg=#B053C1 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Constant guifg=#3B91E8 guibg=NONE guisp=NONE gui=NONE blend=NONE
@@ -31,7 +35,7 @@ highlight DiffDelete guifg=#FF4B14 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight DiffText guifg=#C9C9C9 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Directory guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight ErrorMsg guifg=#1F1F1F guibg=#CF2020 guisp=NONE gui=NONE blend=NONE
-highlight Function guifg=#00838F guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight Function guifg=#0096A3 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight GitSignsCurrentLineBlame guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Identifier guifg=#7CC0F8 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight IncSearch guifg=#000000 guibg=#4EB7AC guisp=NONE gui=NONE blend=NONE
@@ -87,7 +91,7 @@ highlight TSConstBuiltin guifg=#1F82E5 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TSConstructor guifg=#9B7A6F guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TSException guifg=#212121 guibg=#B51C1C guisp=NONE gui=NONE blend=NONE
 highlight TSField guifg=#8D6E62 guibg=NONE guisp=NONE gui=NONE blend=NONE
-highlight TSFuncBuiltin guifg=#006770 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight TSFuncBuiltin guifg=#008894 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TSFuncMacro guifg=#00C4D6 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TSInclude guifg=#BCAAA4 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TSPunctDelimiter guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE blend=NONE
@@ -102,9 +106,11 @@ highlight TelescopePromptBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE ble
 highlight TelescopeResultsBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TelescopeSelection guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight TelescopeSelectionCaret guifg=#BB69C9 guibg=NONE guisp=NONE gui=NONE blend=NONE
+highlight TermCursor guifg=NONE guibg=#E0E0E0 guisp=NONE gui=NONE blend=NONE
+highlight TermCursorNC guifg=NONE guibg=#B3B3B3 guisp=NONE gui=NONE blend=NONE
 highlight Type guifg=#7B88CC guibg=NONE guisp=NONE gui=NONE blend=NONE
 highlight Typedef guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE blend=NONE
-highlight VertSplit guifg=#424242 guibg=#253137 guisp=NONE gui=NONE blend=NONE
+highlight VertSplit guifg=#424242 guibg=#171E21 guisp=NONE gui=NONE blend=NONE
 highlight Visual guifg=NONE guibg=NONE guisp=NONE gui=reverse blend=NONE
 highlight WarningMsg guifg=#000000 guibg=#D54215 guisp=NONE gui=NONE blend=NONE
 highlight Whitespace guifg=#484242 guibg=NONE guisp=NONE gui=NONE blend=NONE
