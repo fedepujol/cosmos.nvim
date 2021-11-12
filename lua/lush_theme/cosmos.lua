@@ -57,7 +57,7 @@ local cosmos = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
      Comment      { fg = green_800.li(3) }, -- any comment
-    -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
+     ColorColumn  { fg = dorange_800 }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { fg = gray_300 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { gui="reverse" }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -70,10 +70,10 @@ local cosmos = lush(function()
      DiffDelete   { fg = dorange_500.da(5) }, -- diff mode: Deleted line |diff.txt|
      DiffText     { fg = gray_300.da(10) }, -- diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-    -- TermCursor   { }, -- cursor in a focused terminal
-    -- TermCursorNC { }, -- cursor in an unfocused terminal
+     TermCursor   { bg = gray_300 }, -- cursor in a focused terminal
+     TermCursorNC { bg = gray_300.da(20) }, -- cursor in an unfocused terminal
      ErrorMsg     { fg = gray_900.da(5), bg = red_900.li(10) }, -- error messages on the command line
-     VertSplit    { fg = gray_800, bg = bgray_900 }, -- the column separating vertically split windows
+     VertSplit    { fg = gray_800, bg = bgray_900.da(40) }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
      SignColumn   { bg = bgray_900.da(40) }, -- column where |signs| are displayed
@@ -128,7 +128,7 @@ local cosmos = lush(function()
      Float          { Number }, --    a floating point constant: 2.3e10
 
      Identifier     { fg = blue_200.da(5) }, -- (preferred) any variable name
-     Function       { fg = cyan_800 }, -- function name (also: methods for classes)
+     Function       { fg = cyan_800.li(5) }, -- function name (also: methods for classes)
 
      Statement      { fg = pink_100 }, -- (preferred) any statement
      Conditional    { fg = purple_300.da(10) }, --  if, then, else, endif, switch, etc.
@@ -223,8 +223,8 @@ local cosmos = lush(function()
       TSField              { fg = brown_400 };    -- For fields.
       TSFloat              { Float };    -- For floats.
       TSFunction           { Function };    -- For function (calls and definitions).
-      TSFuncBuiltin        { fg = Function.fg.da(20)};    -- For builtin functions: `table.insert` in Lua.
-      TSFuncMacro          { fg = Function.fg.li(20)};    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+      TSFuncBuiltin        { fg = Function.fg.da(10)};    -- For builtin functions: `table.insert` in Lua.
+      TSFuncMacro          { fg = Function.fg.li(15)};    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
       TSInclude            { fg = brown_200 };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
      -- TSKeyword            { };    -- For keywords that don't fall in previous categories.
      -- TSKeywordFunction    { };    -- For keywords used to define a fuction.
@@ -274,8 +274,11 @@ local cosmos = lush(function()
      GitSignsCurrentLineBlame { fg = gray_400 };
 
      BufferInactive           { fg = gray_700 };
+	 BufferInactiveMod        { fg = DiffChange.fg.mix(gray_700, 50) };
      BufferCurrent            { fg = blue_700.li(20) };
+	 BufferCurrentMod         { fg = DiffChange.fg.mix(blue_700, 24).li(5) };
      BufferVisible            { fg = blue_200 };
+	 BufferVisibleMod         { fg = DiffChange.fg.mix(blue_200, 30) };
 
      NvimTreeFolderIcon       { fg = yellow_700 };
      NvimTreeFolderName       { fg = gray_400.da(15) };
