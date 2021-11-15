@@ -72,7 +72,7 @@ local cosmos = lush(function()
     -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
      TermCursor   { bg = gray_300 }, -- cursor in a focused terminal
      TermCursorNC { bg = gray_300.da(20) }, -- cursor in an unfocused terminal
-    -- ErrorMsg     { fg = red_900.li(10) }, -- error messages on the command line
+     ErrorMsg     { fg = red_900.li(10) }, -- error messages on the command line
      VertSplit    { fg = gray_800, bg = bgray_900.da(40) }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
@@ -134,7 +134,7 @@ local cosmos = lush(function()
      Conditional    { fg = purple_300.da(10) }, --  if, then, else, endif, switch, etc.
      Repeat         { Conditional }, --   for, do, while, etc.
      Label          { Conditional }, --    case, default, etc.
-     Operator       { fg = pink_100 }, -- "sizeof", "+", "*", etc.
+     Operator       { fg = gray_400.mix(teal_600, 20) }, -- "sizeof", "+", "*", etc.
      Keyword        { fg = cyan_200.da(10) }, --  any other keyword
      Exception      { Conditional }, --  try, catch, throw
 
@@ -208,7 +208,7 @@ local cosmos = lush(function()
      TSComment            { Comment },    -- For comment blocks.
      TSConditional        { Conditional },    -- For keywords related to conditionnals.
      TSConstant           { Constant },    -- For constants
-     TSConstBuiltin       { fg = Constant.fg.da(20) },    -- For constant that are built in the language: nil in Lua.
+     TSConstBuiltin       { fg = Constant.fg.da(15) },    -- For constant that are built in the language: nil in Lua.
      TSConstMacro         { TSConstBuiltin },    -- For constants that are defined by macros: NULL in C.
      TSConstructor        { fg = brown_400.li(10) },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
      TSError              { fg = red_900.li(10) },    -- For syntax/parser errors.
@@ -216,10 +216,10 @@ local cosmos = lush(function()
      TSField              { fg = brown_400 },    -- For fields.
      TSFloat              { Float },    -- For floats.
      TSFunction           { Function },    -- For function (calls and definitions).
-     TSFuncBuiltin        { fg = Function.fg.da(10)},    -- For builtin functions: `table.insert` in Lua.
-     TSFuncMacro          { fg = Function.fg.li(15)},    -- For macro defined fuctions (calls and definitions): each macro_rules in Rust.
+     TSFuncBuiltin        { fg = Function.fg.li(10)},    -- For builtin functions: `table.insert` in Lua.
+     TSFuncMacro          { fg = Function.fg.li(5)},    -- For macro defined fuctions (calls and definitions): each macro_rules in Rust.
      TSInclude            { fg = brown_200 },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
-     TSKeyword            { fg = purple_300.mix(pink_300, 30).da(2) },    -- For keywords that don't fall in previous categories.
+     TSKeyword            { fg = indigo_400.mix(pink_100, 30).da(2) },    -- For keywords that don't fall in previous categories.
     -- TSKeywordFunction    { },    -- For keywords used to define a fuction.
      TSKeywordOperator    { TSConstBuiltin },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
      TSKeywordReturn      { TSKeywordOperator },    -- Keywords like return and yield.
@@ -243,7 +243,7 @@ local cosmos = lush(function()
     -- TSSymbol             { },    -- For identifiers referring to symbols or atoms.
     -- TSType               { },    -- For types.
     -- TSTypeBuiltin        { },    -- For builtin types.
-     TSVariable           { fg = pink_100 },    -- Any variable name that does not have another highlight.
+     TSVariable           { fg = pink_100.da(5) },    -- Any variable name that does not have another highlight.
     -- TSVariableBuiltin    { },    -- Variable names that are defined by the languages, like this or self.
 
      TSTag                { TSFunction },    -- Tags like html tag names.
@@ -265,51 +265,49 @@ local cosmos = lush(function()
     -- TSDanger             { },    -- Text representation of a danger note.
      TSURI                { fg = blue_200.da(10), gui = "underline" },    -- Any URI like a link or email.
 
+    -- Plugin specifics
+    -- CmpItemAbbr              { },
+     CmpItemAbbrDeprecated    { gui = "strikethrough" },
+     CmpItemAbbrMatch         { fg = orange_200 },
+     CmpItemAbbrMatchFuzzy    { fg = orange_200 },
+     CmpItemKind              { fg = black },
+     CmpItemMenu              { fg = black },
+
+     GitSignsAdd              { DiffAdd },
+     GitSignsChange           { DiffChange },
+     GitSignsDelete           { DiffDelete },
+     GitSignsCurrentLineBlame { fg = gray_400 },
+
+     BufferInactive           { fg = gray_700 },
+	 BufferInactiveMod        { fg = DiffChange.fg.mix(gray_700, 50) },
+     BufferCurrent            { fg = blue_700.li(20) },
+	 BufferCurrentMod         { fg = DiffChange.fg.mix(blue_700, 24).li(5) },
+     BufferVisible            { fg = blue_200 },
+	 BufferVisibleMod         { fg = DiffChange.fg.mix(blue_200, 30) },
+
+     NvimTreeFolderIcon       { fg = yellow_700 },
+     NvimTreeFolderName       { fg = gray_400.da(15) },
+     NvimTreeRootFolder       { fg = amber_800 },
+     NvimTreeEmptyFolderName  { fg = gray_700 },
+     NvimTreeOpenedFolderName { fg = gray_400.da(5) },
+	 NvimTreeExecFile         { fg = gray_300.da(10) },
+	 NvimTreeOpenedFile       { bg = CursorLine.bg },
+     NvimTreeIndentMarker     { Whitespace },
+     NvimTreeSpecialFile      { fg = teal_300 },
+     NvimTreeGitDeleted       { DiffDelete },
+     NvimTreeGitDirty         { fg = orange_200 },
+     NvimTreeGitIgnored       { fg = gray_700 },
+     NvimTreeGitNew           { fg = green_a700.desaturate(20) },
+
+     TelescopeSelection       { fg = dpurple_200 },
+     TelescopeSelectionCaret  { fg = purple_300 },
+     TelescopeMultiSelection  { fg = yellow_a100 },
+     TelescopeBorder          { fg = pink_300 },
+     TelescopePromptBorder    { fg = indigo_400 },
+     TelescopeResultsBorder   { fg = indigo_400 },
+     TelescopePreviewBorder   { fg = indigo_400 },
   }
 end)
 
 -- return our parsed theme for extension or use else where.
 return cosmos
-
-
-  --   -- Plugin specifics
-  --   -- CmpItemAbbr              { },
-  --    CmpItemAbbrDeprecated    { gui = "strikethrough" },
-  --    CmpItemAbbrMatch         { fg = orange_200 },
-  --    CmpItemAbbrMatchFuzzy    { fg = orange_200 },
-  --    CmpItemKind              { fg = black },
-  --    CmpItemMenu              { fg = black },
-
-  --    GitSignsAdd              { DiffAdd },
-  --    GitSignsChange           { DiffChange },
-  --    GitSignsDelete           { DiffDelete },
-  --    GitSignsCurrentLineBlame { fg = gray_400 },
-
-  --    BufferInactive           { fg = gray_700 },
-	 -- BufferInactiveMod        { fg = DiffChange.fg.mix(gray_700, 50) },
-  --    BufferCurrent            { fg = blue_700.li(20) },
-	 -- BufferCurrentMod         { fg = DiffChange.fg.mix(blue_700, 24).li(5) },
-  --    BufferVisible            { fg = blue_200 },
-	 -- BufferVisibleMod         { fg = DiffChange.fg.mix(blue_200, 30) },
-
-  --    NvimTreeFolderIcon       { fg = yellow_700 },
-  --    NvimTreeFolderName       { fg = gray_400.da(15) },
-  --    NvimTreeRootFolder       { fg = amber_800 },
-  --    NvimTreeEmptyFolderName  { fg = gray_700 },
-  --    NvimTreeOpenedFolderName { fg = gray_400.da(5) },
-	 -- NvimTreeExecFile         { fg = gray_300.da(10) },
-	 -- NvimTreeOpenedFile       { bg = CursorLine.bg },
-  --    NvimTreeIndentMarker     { Whitespace },
-  --    NvimTreeSpecialFile      { fg = teal_300 },
-  --    NvimTreeGitDeleted       { DiffDelete },
-  --    NvimTreeGitDirty         { fg = orange_200 },
-  --    NvimTreeGitIgnored       { fg = gray_700 },
-  --    NvimTreeGitNew           { fg = green_a700.desaturate(20) },
-
-  --    TelescopeSelection       { fg = dpurple_200 },
-  --    TelescopeSelectionCaret  { fg = purple_300 },
-  --    TelescopeMultiSelection  { fg = yellow_a100 },
-  --    TelescopeBorder          { fg = pink_300 },
-  --    TelescopePromptBorder    { fg = indigo_400 },
-  --    TelescopeResultsBorder   { fg = indigo_400 },
-  --    TelescopePreviewBorder   { fg = indigo_400 },
