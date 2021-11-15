@@ -1,7 +1,7 @@
-local theme = require('lush_theme.cosmos')
+local theme = require('lush_theme.vcdark.vcdark')
 local lushwright = require('shipwright.transform.lush')
 -- local lush = require('lush')
-local name = 'cosmos'
+local name = 'vcdark'
 
 -- lush.export_to_buffer(theme)
 
