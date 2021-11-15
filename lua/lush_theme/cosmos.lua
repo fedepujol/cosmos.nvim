@@ -72,19 +72,19 @@ local cosmos = lush(function()
     -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
      TermCursor   { bg = gray_300 }, -- cursor in a focused terminal
      TermCursorNC { bg = gray_300.da(20) }, -- cursor in an unfocused terminal
-     ErrorMsg     { fg = gray_900.da(5), bg = red_900.li(10) }, -- error messages on the command line
+    -- ErrorMsg     { fg = red_900.li(10) }, -- error messages on the command line
      VertSplit    { fg = gray_800, bg = bgray_900.da(40) }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
      SignColumn   { bg = bgray_900.da(40) }, -- column where |signs| are displayed
-     IncSearch    { fg = black, bg = teal_300 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+     IncSearch    { fg = black, bg = teal_300 }, -- 'incsearch' highlighting, also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
      LineNr       { fg = black.li(27).sa(4) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
      CursorLineNr { fg = gray_400.da(10) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
      ModeMsg      { fg = gray_300 }, -- 'showmode' message (e.g., "-- INSERT -- ")
      MsgArea      { bg = bgray_900.da(20)}, -- Area for messages and cmdline
-     MsgSeparator { fg = lblue_700.li(10) }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+     MsgSeparator { fg = lblue_700.li(10) }, -- Separator for scrolled messages, msgsep flag of 'display'
      MoreMsg      { fg = cyan_400 }, -- |more-prompt|
      NonText      { fg = bgray_900.da(40) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
      Normal       { fg = gray_300.da(10), bg = bgray_900.da(40) }, -- normal text
@@ -165,144 +165,151 @@ local cosmos = lush(function()
 
     -- Error          { }, -- (preferred) any erroneous construct
 
-    -- Todo           { }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    -- Todo           { }, -- (preferred) anything that needs extra attention, mostly the keywords TODO FIXME and XXX
 
-    -- These groups are for the native LSP client. Some other LSP clients may
-    -- use these groups, or use their own. Consult your LSP client's
-    -- documentation.
+ 	-- LSP Highlights
 
     -- LspReferenceText                     { }, -- used for highlighting "text" references
     -- LspReferenceRead                     { }, -- used for highlighting "read" references
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
-     LspDiagnosticsDefaultError           { fg = red_900 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-     LspDiagnosticsDefaultWarning         { fg = dorange_500 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-     LspDiagnosticsDefaultInformation     { fg = gray_300 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-     LspDiagnosticsDefaultHint            { fg = green_a700 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    -- LspDiagnosticsDefaultError           { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    -- LspDiagnosticsDefaultWarning         { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    -- LspDiagnosticsDefaultInformation     { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    -- LspDiagnosticsDefaultHint            { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-     LspDiagnosticsVirtualTextError       { LspDiagnosticsDefaultError }, -- Used for "Error" diagnostic virtual text
-     LspDiagnosticsVirtualTextWarning     { LspDiagnosticsDefaultWarning }, -- Used for "Warning" diagnostic virtual text
-     LspDiagnosticsVirtualTextInformation { LspDiagnosticsDefaultInformation }, -- Used for "Information" diagnostic virtual text
-     LspDiagnosticsVirtualTextHint        { LspDiagnosticsDefaultHint }, -- Used for "Hint" diagnostic virtual text
+    LspDiagnosticsVirtualTextError       { fg = red_900 }, -- Used for "Error" diagnostic virtual text
+    LspDiagnosticsVirtualTextWarning     { fg = dorange_500 }, -- Used for "Warning" diagnostic virtual text
+    LspDiagnosticsVirtualTextInformation { fg = gray_300 }, -- Used for "Information" diagnostic virtual text
+    LspDiagnosticsVirtualTextHint        { fg = green_a700.da(10) }, -- Used for "Hint" diagnostic virtual text
 
-     -- LspDiagnosticsUnderlineError         {  }, -- Used to underline "Error" diagnostics
-     -- LspDiagnosticsUnderlineWarning       {  }, -- Used to underline "Warning" diagnostics
-     -- LspDiagnosticsUnderlineInformation   {  }, -- Used to underline "Information" diagnostics
-     -- LspDiagnosticsUnderlineHint          {  }, -- Used to underline "Hint" diagnostics
+    -- LspDiagnosticsUnderlineError         {  }, -- Used to underline "Error" diagnostics
+    -- LspDiagnosticsUnderlineWarning       {  }, -- Used to underline "Warning" diagnostics
+    -- LspDiagnosticsUnderlineInformation   {  }, -- Used to underline "Information" diagnostics
+    -- LspDiagnosticsUnderlineHint          {  }, -- Used to underline "Hint" diagnostics
 
-     LspDiagnosticsFloatingError          { LspDiagnosticsVirtualTextError }, -- Used to color "Error" diagnostic messages in diagnostics float
-     LspDiagnosticsFloatingWarning        { LspDiagnosticsVirtualTextWarning }, -- Used to color "Warning" diagnostic messages in diagnostics float
-     LspDiagnosticsFloatingInformation    { LspDiagnosticsVirtualTextInformation }, -- Used to color "Information" diagnostic messages in diagnostics float
-     LspDiagnosticsFloatingHint           { LspDiagnosticsVirtualTextHint }, -- Used to color "Hint" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingError          { LspDiagnosticsVirtualTextError }, -- Used to color "Error" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingWarning        { LspDiagnosticsVirtualTextWarning }, -- Used to color "Warning" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingInformation    { LspDiagnosticsVirtualTextInformation }, -- Used to color "Information" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingHint           { LspDiagnosticsVirtualTextHint }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-     LspDiagnosticsSignError              { LspDiagnosticsVirtualTextError }, -- Used for "Error" signs in sign column
-     LspDiagnosticsSignWarning            { LspDiagnosticsVirtualTextWarning }, -- Used for "Warning" signs in sign column
-     LspDiagnosticsSignInformation        { LspDiagnosticsVirtualTextInformation }, -- Used for "Information" signs in sign column
-     LspDiagnosticsSignHint               { LspDiagnosticsVirtualTextHint }, -- Used for "Hint" signs in sign column
+    LspDiagnosticsSignError              { LspDiagnosticsVirtualTextError }, -- Used for "Error" signs in sign column
+    LspDiagnosticsSignWarning            { LspDiagnosticsVirtualTextWarning }, -- Used for "Warning" signs in sign column
+    LspDiagnosticsSignInformation        { LspDiagnosticsVirtualTextInformation }, -- Used for "Information" signs in sign column
+    LspDiagnosticsSignHint               { LspDiagnosticsVirtualTextHint }, -- Used for "Hint" signs in sign column
 
     -- LspCodeLens                          { }, -- Used to color the virtual text of the codelens
 
-    -- These groups are for the neovim tree-sitter highlights.
-    -- As of writing, tree-sitter support is a WIP, group names may change.
-    -- By default, most of these groups link to an appropriate Vim group,
-    -- TSError -> Error for example, so you do not have to define these unless
-    -- you explicitly want to support Treesitter's improved syntax awareness.
+	-- Treesitter Highlights
 
-     -- TSAnnotation         { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-     -- TSAttribute          { };    -- (unstable) TODO: docs
-      TSBoolean            { Boolean };    -- For booleans.
-      TSCharacter          { Character };    -- For characters.
-      TSComment            { Comment };    -- For comment blocks.
-      TSConstructor        { fg = brown_400.li(10) };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-      TSConditional        { Conditional };    -- For keywords related to conditionnals.
-      TSConstant           { Constant };    -- For constants
-      TSConstBuiltin       { fg = Constant.fg.da(10) };    -- For constant that are built in the language: `nil` in Lua.
-      TSConstMacro         { TSConstBuiltin };    -- For constants that are defined by macros: `NULL` in C.
-      TSError              { ErrorMsg };    -- For syntax/parser errors.
-      TSException          { fg = gray_900, bg = red_900 };    -- For exception related keywords.
-      TSField              { fg = brown_400 };    -- For fields.
-      TSFloat              { Float };    -- For floats.
-      TSFunction           { Function };    -- For function (calls and definitions).
-      TSFuncBuiltin        { fg = Function.fg.da(10)};    -- For builtin functions: `table.insert` in Lua.
-      TSFuncMacro          { fg = Function.fg.li(15)};    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-      TSInclude            { fg = brown_200 };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-     -- TSKeyword            { };    -- For keywords that don't fall in previous categories.
-     -- TSKeywordFunction    { };    -- For keywords used to define a fuction.
-     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
-      TSMethod             { Function };    -- For method calls and definitions.
-     -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
-     -- TSNone               { };    -- TODO: docs
-      TSNumber             { Number };    -- For all numbers
-      TSOperator           { Operator };    -- For any operator: `+`, but also `->` and `*` in C.
-     -- TSParameter          { };    -- For parameters of a function.
-     -- TSParameterReference { };    -- For references to parameters of a function.
-     -- TSProperty           { };    -- Same as `TSField`.
-      TSPunctDelimiter     { fg = gray_400 };    -- For delimiters ie: `.`
-      TSPunctBracket       { TSPunctDelimiter };    -- For brackets and parens.
-      TSPunctSpecial       { TSPunctDelimiter };    -- For special punctutation that does not fall in the catagories before.
-      TSRepeat             { Repeat };    -- For keywords related to loops.
-      TSString             { String };    -- For strings.
-      TSStringRegex        { Special };    -- For regexes.
-      TSStringEscape       { SpecialChar };    -- For escape characters within a string.
-     -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-     -- TSType               { };    -- For types.
-     -- TSTypeBuiltin        { };    -- For builtin types.
-      TSVariable           { fg = pink_100 };    -- Any variable name that does not have another highlight.
-     -- TSVariableBuiltin    { };    -- Variable names that are defined by the languages, like `this` or `self`.
+    -- TSAttribute        { },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+     TSBoolean            { Boolean },    -- For booleans.
+     TSCharacter          { Character },    -- For characters.
+     TSComment            { Comment },    -- For comment blocks.
+     TSConditional        { Conditional },    -- For keywords related to conditionnals.
+     TSConstant           { Constant },    -- For constants
+     TSConstBuiltin       { fg = Constant.fg.da(20) },    -- For constant that are built in the language: nil in Lua.
+     TSConstMacro         { TSConstBuiltin },    -- For constants that are defined by macros: NULL in C.
+     TSConstructor        { fg = brown_400.li(10) },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+     TSError              { fg = red_900.li(10) },    -- For syntax/parser errors.
+     TSException          { fg = gray_900, bg = red_900 },    -- For exception related keywords.
+     TSField              { fg = brown_400 },    -- For fields.
+     TSFloat              { Float },    -- For floats.
+     TSFunction           { Function },    -- For function (calls and definitions).
+     TSFuncBuiltin        { fg = Function.fg.da(10)},    -- For builtin functions: `table.insert` in Lua.
+     TSFuncMacro          { fg = Function.fg.li(15)},    -- For macro defined fuctions (calls and definitions): each macro_rules in Rust.
+     TSInclude            { fg = brown_200 },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
+     TSKeyword            { fg = purple_300.mix(pink_300, 30).da(2) },    -- For keywords that don't fall in previous categories.
+    -- TSKeywordFunction    { },    -- For keywords used to define a fuction.
+     TSKeywordOperator    { TSConstBuiltin },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
+     TSKeywordReturn      { TSKeywordOperator },    -- Keywords like return and yield.
+    -- TSLabel              { },    -- For labels: `label:` in C and `:label:` in Lua.
+     TSMethod             { Function },    -- For method calls and definitions.
+    -- TSNamespace          { },    -- For identifiers referring to modules and namespaces.
+    -- TSNone               { },    -- TODO: docs
+     TSNumber             { Number },    -- For all numbers
+     TSOperator           { Operator },    -- For any operator: `+`, but also `->` and `*` in C.
+    -- TSParameter          { },    -- For parameters of a function.
+    -- TSParameterReference { },    -- For references to parameters of a function.
+    -- TSProperty           { },    -- Same as TSField.
+     TSPunctDelimiter     { fg = gray_400 },    -- For delimiters ie: `.`
+     TSPunctBracket       { TSPunctDelimiter },    -- For brackets and parens.
+     TSPunctSpecial       { TSPunctDelimiter },    -- For special punctutation that does not fall in the catagories before.
+     TSRepeat             { Repeat },    -- For keywords related to loops.
+     TSString             { String },    -- For strings.
+     TSStringRegex        { Special },    -- For regexes.
+     TSStringEscape       { SpecialChar },    -- For escape characters within a string.
+     TSStringSpecial      { fg = TSStringEscape.fg.da(15) },    -- Strings with special meaning that don't fit into the previous categories.
+    -- TSSymbol             { },    -- For identifiers referring to symbols or atoms.
+    -- TSType               { },    -- For types.
+    -- TSTypeBuiltin        { },    -- For builtin types.
+     TSVariable           { fg = pink_100 },    -- Any variable name that does not have another highlight.
+    -- TSVariableBuiltin    { },    -- Variable names that are defined by the languages, like this or self.
 
-    -- TSTag                { };    -- Tags like html tag names.
-     TSTagDelimiter       { Normal };    -- Tag delimiter like `<` `>` `/`
-     TSText               { Normal };    -- For strings considered text in a markup language.
-    -- TSEmphasis           { };    -- For text to be represented with emphasis.
-     TSUnderline          { gui = "underline" };    -- For text to be represented with an underline.
-    -- TSStrike             { };    -- For strikethrough text.
-    -- TSTitle              { };    -- Text that is part of a title.
-     TSLiteral            { Normal };    -- Literal text.
-     TSURI                { fg = blue_200.da(10), gui = "underline" };    -- Any URI like a link or email.
+     TSTag                { TSFunction },    -- Tags like html tag names.
+     TSTagAttribute       { fg = TSFunction.fg.li(15).mix(gray_300, 50) },    -- HTML tag attributes.
+     TSTagDelimiter       { Normal },    -- Tag delimiter like `<` `>` `/`
+     TSText               { Normal },    -- For strings considered text in a markup language.
+     TSStrong             { gui = "bold" },    -- Text to be represented in bold.
+     TSEmphasis           { gui = "bold,reverse" },    -- For text to be represented with emphasis.
+     TSUnderline          { gui = "underline" },    -- For text to be represented with an underline.
+     TSStrike             { gui = "strikethrough" },    -- For strikethrough text.
+    -- TSTitle              { },    -- Text that is part of a title.
+     TSLiteral            { Normal },    -- Literal text.
+    -- TSMath               { },    -- Math environments like LaTeX's `$ ... $`
+    -- TSTextReference      { },    -- Footnotes, text references, citations, etc.
+    -- TSEnvironment        { },    -- Text environments of markup languages.
+    -- TSEnvironmentName    { },    -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
+    -- TSNote               { },    -- Text representation of an informational note.
+    -- TSWarning            { },    -- Text representation of a warning note.
+    -- TSDanger             { },    -- Text representation of a danger note.
+     TSURI                { fg = blue_200.da(10), gui = "underline" },    -- Any URI like a link or email.
 
-    -- Plugin specifics
-     -- CmpItemAbbr              { };
-     CmpItemAbbrDeprecated    { gui = "strikethrough" };
-     CmpItemAbbrMatch         { fg = orange_200 };
-     CmpItemAbbrMatchFuzzy    { fg = orange_200 };
-     CmpItemKind              { fg = black };
-     CmpItemMenu              { fg = black };
-
-     GitSignsAdd              { DiffAdd };
-     GitSignsChange           { DiffChange };
-     GitSignsDelete           { DiffDelete };
-     GitSignsCurrentLineBlame { fg = gray_400 };
-
-     BufferInactive           { fg = gray_700 };
-	 BufferInactiveMod        { fg = DiffChange.fg.mix(gray_700, 50) };
-     BufferCurrent            { fg = blue_700.li(20) };
-	 BufferCurrentMod         { fg = DiffChange.fg.mix(blue_700, 24).li(5) };
-     BufferVisible            { fg = blue_200 };
-	 BufferVisibleMod         { fg = DiffChange.fg.mix(blue_200, 30) };
-
-     NvimTreeFolderIcon       { fg = yellow_700 };
-     NvimTreeFolderName       { fg = gray_400.da(15) };
-     NvimTreeRootFolder       { fg = amber_800 };
-     NvimTreeEmptyFolderName  { fg = gray_700 };
-     NvimTreeOpenedFolderName { fg = gray_400.da(5) };
-	 NvimTreeExecFile         { fg = gray_300.da(10) };
-	 NvimTreeOpenedFile       { bg = CursorLine.bg };
-     NvimTreeIndentMarker     { Whitespace };
-     NvimTreeSpecialFile      { fg = teal_300 };
-     NvimTreeGitDeleted       { DiffDelete };
-     NvimTreeGitDirty         { fg = orange_200 };
-     NvimTreeGitIgnored       { fg = gray_700 };
-     NvimTreeGitNew           { fg = green_a700.desaturate(20) };
-
-     TelescopeSelection       { fg = dpurple_200 };
-     TelescopeSelectionCaret  { fg = purple_300 };
-     TelescopeMultiSelection  { fg = yellow_a100 };
-     TelescopeBorder          { fg = pink_300 };
-     TelescopePromptBorder    { fg = indigo_400 };
-     TelescopeResultsBorder   { fg = indigo_400 };
-     TelescopePreviewBorder   { fg = indigo_400 };
   }
 end)
 
 -- return our parsed theme for extension or use else where.
 return cosmos
+
+
+  --   -- Plugin specifics
+  --   -- CmpItemAbbr              { },
+  --    CmpItemAbbrDeprecated    { gui = "strikethrough" },
+  --    CmpItemAbbrMatch         { fg = orange_200 },
+  --    CmpItemAbbrMatchFuzzy    { fg = orange_200 },
+  --    CmpItemKind              { fg = black },
+  --    CmpItemMenu              { fg = black },
+
+  --    GitSignsAdd              { DiffAdd },
+  --    GitSignsChange           { DiffChange },
+  --    GitSignsDelete           { DiffDelete },
+  --    GitSignsCurrentLineBlame { fg = gray_400 },
+
+  --    BufferInactive           { fg = gray_700 },
+	 -- BufferInactiveMod        { fg = DiffChange.fg.mix(gray_700, 50) },
+  --    BufferCurrent            { fg = blue_700.li(20) },
+	 -- BufferCurrentMod         { fg = DiffChange.fg.mix(blue_700, 24).li(5) },
+  --    BufferVisible            { fg = blue_200 },
+	 -- BufferVisibleMod         { fg = DiffChange.fg.mix(blue_200, 30) },
+
+  --    NvimTreeFolderIcon       { fg = yellow_700 },
+  --    NvimTreeFolderName       { fg = gray_400.da(15) },
+  --    NvimTreeRootFolder       { fg = amber_800 },
+  --    NvimTreeEmptyFolderName  { fg = gray_700 },
+  --    NvimTreeOpenedFolderName { fg = gray_400.da(5) },
+	 -- NvimTreeExecFile         { fg = gray_300.da(10) },
+	 -- NvimTreeOpenedFile       { bg = CursorLine.bg },
+  --    NvimTreeIndentMarker     { Whitespace },
+  --    NvimTreeSpecialFile      { fg = teal_300 },
+  --    NvimTreeGitDeleted       { DiffDelete },
+  --    NvimTreeGitDirty         { fg = orange_200 },
+  --    NvimTreeGitIgnored       { fg = gray_700 },
+  --    NvimTreeGitNew           { fg = green_a700.desaturate(20) },
+
+  --    TelescopeSelection       { fg = dpurple_200 },
+  --    TelescopeSelectionCaret  { fg = purple_300 },
+  --    TelescopeMultiSelection  { fg = yellow_a100 },
+  --    TelescopeBorder          { fg = pink_300 },
+  --    TelescopePromptBorder    { fg = indigo_400 },
+  --    TelescopeResultsBorder   { fg = indigo_400 },
+  --    TelescopePreviewBorder   { fg = indigo_400 },
