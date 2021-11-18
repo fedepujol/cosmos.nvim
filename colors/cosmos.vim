@@ -126,7 +126,6 @@ highlight! link TSString String
 highlight Structure guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSConstBuiltin guifg=#1A7ADB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSConstMacro TSConstBuiltin
-highlight! link TSKeywordOperator TSConstBuiltin
 highlight TSConstructor guifg=#9B7A6F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSEmphasis guifg=NONE guibg=NONE guisp=NONE gui=bold,reverse cterm=bold,reverse
 highlight TSError guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -137,6 +136,7 @@ highlight TSFuncMacro guifg=#00A4B3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSTag TSFunction
 highlight TSInclude guifg=#BCAAA4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSKeyword guifg=#A985C1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSKeywordOperator guifg=#3F94E9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSKeywordReturn TSKeywordOperator
 highlight TSPunctDelimiter guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSPunctBracket TSPunctDelimiter

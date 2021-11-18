@@ -1,9 +1,6 @@
-local theme = require('lush_theme.vcdark.vcdark')
+local theme = require('lush_theme.cosmos.cosmos')
 local lushwright = require('shipwright.transform.lush')
--- local lush = require('lush')
-local name = 'vcdark'
-
--- lush.export_to_buffer(theme)
+local name = 'cosmos'
 
 -- Call run and give the colorscheme theme
 ---@diagnostic disable = undefined-global

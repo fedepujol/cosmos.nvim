@@ -221,7 +221,7 @@ local cosmos = lush(function()
      TSInclude            { fg = brown_200 },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
      TSKeyword            { fg = indigo_400.mix(pink_100, 30).da(2) },    -- For keywords that don't fall in previous categories.
     -- TSKeywordFunction    { },    -- For keywords used to define a fuction.
-     TSKeywordOperator    { TSConstBuiltin },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
+     TSKeywordOperator    { fg = TSConstBuiltin.fg.li(20) },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
      TSKeywordReturn      { TSKeywordOperator },    -- Keywords like return and yield.
     -- TSLabel              { },    -- For labels: `label:` in C and `:label:` in Lua.
      TSMethod             { Function },    -- For method calls and definitions.
@@ -244,7 +244,7 @@ local cosmos = lush(function()
     -- TSType               { },    -- For types.
     -- TSTypeBuiltin        { },    -- For builtin types.
      TSVariable           { fg = pink_100.da(5) },    -- Any variable name that does not have another highlight.
-    -- TSVariableBuiltin    { },    -- Variable names that are defined by the languages, like this or self.
+     TSVariableBuiltin    { fg = blue_200.da(10) },    -- Variable names that are defined by the languages, like this or self.
 
      TSTag                { TSFunction },    -- Tags like html tag names.
      TSTagAttribute       { fg = TSFunction.fg.li(15).mix(gray_300, 50) },    -- HTML tag attributes.
