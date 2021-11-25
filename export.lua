@@ -1,4 +1,4 @@
-local theme = require('lush_theme.cosmos.cosmos')
+local theme = require('lush_theme.cosmos')
 local lushwright = require('shipwright.transform.lush')
 local name = 'cosmos'
 
