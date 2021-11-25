@@ -148,6 +148,7 @@ highlight TSTagAttribute guifg=#79CBD2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSURI guifg=#69B7F7 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight TSUnderline guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight TSVariable guifg=#F6A7C3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSVariableBuiltin guifg=#69B7F7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#CC7400 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeBorder guifg=#F06090 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#FFFF8F guibg=NONE guisp=NONE gui=NONE cterm=NONE
