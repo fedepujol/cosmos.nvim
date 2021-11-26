@@ -187,12 +187,12 @@ local dracula = lush(function()
 		 TSConstant           { Constant },    -- For constants
 		-- TSConstBuiltin       { },    -- For constant that are built in the language: nil in Lua.
 		-- TSConstMacro         { },    -- For constants that are defined by macros: NULL in C.
-		-- TSConstructor        { }     -- Constructor calls and definitions: {} in Lua, and Java constructors.
+		 TSConstructor        { fg = cyan },     -- Constructor calls and definitions: {} in Lua, and Java constructors.
 		-- TSError              { },    -- For syntax/parser errors.
 		-- TSException          { },    -- For exception related keywords.
 		-- TSField              { },    -- For fields.
 		-- TSFloat              { },    -- For floats.
-		-- TSFunction           { },    -- For function (calls and definitions).
+		 TSFunction           { fg = cyan, gui = "italic" },    -- For function (calls and definitions).
 		 TSFuncBuiltin        { fg = cyan },    -- For builtin functions: `table.insert` in Lua.
 		-- TSFuncMacro          { },    -- For macro defined fuctions (calls and definitions): each macro_rules in Rust.
 		-- TSInclude            { },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
@@ -207,7 +207,7 @@ local dracula = lush(function()
 		-- TSNumber             { },    -- For all numbers
 		-- TSOperator           { },    -- For any operator: `+`, but also `->` and `*` in C.
 		 TSParameter          { fg = orange },    -- For parameters of a function.
-		-- TSParameterReference { },    -- For references to parameters of a function.
+		 TSParameterReference { fg = orange },    -- For references to parameters of a function.
 		-- TSProperty           { },    -- Same as TSField.
 		-- TSPunctDelimiter     { },    -- For delimiters ie: `.`
 		-- TSPunctBracket       { },    -- For brackets and parens.
