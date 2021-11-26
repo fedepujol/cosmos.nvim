@@ -86,9 +86,12 @@ highlight SpellRare guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=unde
 highlight StatusLine guifg=NONE guibg=#434551 guisp=NONE gui=NONE cterm=NONE
 highlight StatusLineNC guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
 highlight String guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSConstructor guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSFuncBuiltin guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSFunction guifg=#8BE8FD guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight TSKeyword guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSParameter guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSParameterReference guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSStringRegex guifg=#FF5757 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSTag guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSTagAttribute guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
