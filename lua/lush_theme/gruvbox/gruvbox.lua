@@ -63,7 +63,7 @@ local gruvbox = lush(function()
 		 Question       { fg = bright_orange, gui = "bold" }, -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine   {}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		 Search         { fg = bright_yellow, bg = dark0, gui = "inverse" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		-- SignColumn     {}, -- column where |signs| are displayed
+		 SignColumn     { fg = dark4 }, -- column where |signs| are displayed
 		 SpecialKey     { fg = dark2 }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		 SpellBad       { fg = bright_blue, gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		 SpellCap       { fg = bright_green, gui = "italic" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -262,25 +262,25 @@ local gruvbox = lush(function()
 
 		-- NvimTreeEmptyFolderName  {},
 		-- NvimTreeExecFile         {},
-		-- NvimTreeFolderIcon       {},
-		-- NvimTreeFolderName       {},
-		-- NvimTreeGitDeleted       {},
-		-- NvimTreeGitDirty         {},
-		-- NvimTreeGitIgnored       {},
-		-- NvimTreeGitNew           {},
-		-- NvimTreeIndentMarker     {},
-		-- NvimTreeOpenedFile       {},
+		 NvimTreeFolderIcon       { fg = bright_yellow },
+		 NvimTreeFolderName       { fg = light1 },
+		 NvimTreeGitDeleted       { fg = bright_red },
+		 NvimTreeGitDirty         { fg = bright_orange },
+		 NvimTreeGitIgnored       { fg = light4, gui = "italic" },
+		 NvimTreeGitNew           { fg = bright_green },
+		 NvimTreeIndentMarker     { fg = dark4 },
+		 NvimTreeOpenedFile       { fg = light4 },
 		-- NvimTreeOpenedFolderName {},
-		-- NvimTreeRootFolder       {},
-		-- NvimTreeSpecialFile      {},
+		 NvimTreeRootFolder       { fg = bright_orange },
+		 NvimTreeSpecialFile      { fg = bright_aqua },
 
-		-- TelescopeBorder          {},
-		-- TelescopeMultiSelection  {},
-		-- TelescopePreviewBorder   {},
-		-- TelescopePromptBorder    {},
-		-- TelescopeResultsBorder   {},
-		-- TelescopeSelection       {},
-		-- TelescopeSelectionCaret  {},
+		 TelescopeBorder          { fg = dark4 },
+		 TelescopeMultiSelection  { fg = bright_orange },
+		 TelescopePreviewBorder   { TelescopeBorder },
+		 TelescopePromptBorder    { TelescopeBorder },
+		 TelescopeResultsBorder   { TelescopeBorder },
+		 TelescopeSelection       { fg = bright_aqua },
+		 TelescopeSelectionCaret  { fg = bright_green },
 	}
 end)
 
