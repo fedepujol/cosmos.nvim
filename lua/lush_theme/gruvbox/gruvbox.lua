@@ -36,9 +36,9 @@ local gruvbox = lush(function()
 		-- CursorIM       {}, -- like Cursor, but used when in IME mode |CursorIM|
 		 CursorLine     { bg = dark1 }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		 CursorLineNr   { fg = bright_yellow, bg = dark1 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		 DiffAdd        { fg = bright_green, bg = dark0, gui = "inverse" }, -- diff mode: Added line |diff.txt|
-		 DiffChange     { fg = bright_aqua, bg = dark0, gui = "inverse" }, -- diff mode: Changed line |diff.txt|
-		 DiffDelete     { fg = bright_red, bg = dark0, gui = "inverse" }, -- diff mode: Deleted line |diff.txt|
+		 DiffAdd        { fg = bright_green, bg = dark0}, -- diff mode: Added line |diff.txt|
+		 DiffChange     { fg = bright_aqua, bg = dark0 }, -- diff mode: Changed line |diff.txt|
+		 DiffDelete     { fg = bright_red, bg = dark0 }, -- diff mode: Deleted line |diff.txt|
 		 DiffText       { fg = bright_yellow, bg = dark0, gui = "inverse" }, -- diff mode: Changed text within a changed line |diff.txt|
 		 Directory      { fg = bright_green, gui = "bold" }, -- directory names (and other special names in listings)
 		-- EndOfBuffer    {}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -248,10 +248,10 @@ local gruvbox = lush(function()
 		-- CmpItemKind              {},
 		-- CmpItemMenu              {},
 
-		-- GitSignsAdd              {},
-		-- GitSignsChange           {},
-		-- GitSignsCurrentLineBlame {},
-		-- GitSignsDelete           {},
+		 GitSignsAdd              { DiffAdd },
+		 GitSignsChange           { DiffChange },
+		 GitSignsCurrentLineBlame { DiffText },
+		 GitSignsDelete           { DiffDelete },
 
 		-- BufferCurrent            {},
 		-- BufferCurrentMod         {},

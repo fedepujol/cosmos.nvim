@@ -46,12 +46,23 @@ highlight! link MoreMsg ModeMsg
 highlight NonText guifg=#4F4945 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Normal guifg=#EBDBB2 guibg=#292929 guisp=NONE gui=NONE cterm=NONE
 highlight! link Operator Normal
+highlight NvimTreeFolderIcon guifg=#FABD2E guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeFolderName guifg=#EBDBB2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeGitDeleted guifg=#FB4632 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeGitDirty guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeGitIgnored guifg=#A89985 guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight NvimTreeGitNew guifg=#B8BA26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeIndentMarker guifg=#7D6F64 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeOpenedFile guifg=#A89985 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeRootFolder guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeSpecialFile guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Pmenu guifg=#EBDBB2 guibg=#4F4945 guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSbar guifg=NONE guibg=#4F4945 guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSel guifg=#4F4945 guibg=#83A598 guisp=NONE gui=NONE cterm=NONE
 highlight PmenuThumb guifg=NONE guibg=#7D6F64 guisp=NONE gui=NONE cterm=NONE
 highlight Question guifg=#FE811B guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Search guifg=#FABD2E guibg=#292929 guisp=NONE gui=inverse cterm=inverse
+highlight SignColumn guifg=#7D6F64 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialKey guifg=#4F4945 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpellBad guifg=#83A598 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight SpellCap guifg=#B8BA26 guibg=NONE guisp=NONE gui=italic cterm=italic
@@ -62,6 +73,13 @@ highlight StatusLineNC guifg=#7D6F64 guibg=#A89985 guisp=NONE gui=inverse cterm=
 highlight StorageClass guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight String guifg=#EBDBB2 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight Structure guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeBorder guifg=#7D6F64 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link TelescopePreviewBorder TelescopeBorder
+highlight! link TelescopePromptBorder TelescopeBorder
+highlight! link TelescopeResultsBorder TelescopeBorder
+highlight TelescopeMultiSelection guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeSelection guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeSelectionCaret guifg=#B8BA26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Title guifg=#B8BA26 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Type guifg=#FABD2E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Typedef guifg=#FABD2E guibg=NONE guisp=NONE gui=NONE cterm=NONE

@@ -1,6 +1,6 @@
-local theme = require('lush_theme.cosmos')
+local theme = require('lush_theme.gruvbox.gruvbox')
 local lushwright = require('shipwright.transform.lush')
-local name = 'cosmos'
+local name = 'gruvbox'
 
 -- Call run and give the colorscheme theme
 ---@diagnostic disable = undefined-global
