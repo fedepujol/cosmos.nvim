@@ -4,8 +4,14 @@
 
 ## Disclaimer
 
-This is a work in progress, the main goal is to migrate the \*.yaml
-files into lush_spec and use `lush` to transform them into \*.vim files.
+This is a work in progress, the main goal is to have a collection of
+commonly used colorschemes in one repo maintained in Lush.
+
+A lot of the what’s in here, is based on their originals (gruvbox,
+dracula, vcdark, etc).
+
+If you’ve got your own theme and want to distributed in here, just make
+a PR and I’ll gladly merged it.
 
 ## Requirements
 
@@ -20,10 +26,30 @@ For creating and exporting your custom colorschemes: -
 [Lush](https://github.com/rktjmp/lush.nvim) -
 [Shipwright](https://github.com/rktjmp/shipwright.nvim)
 
-## Configuration
+## Installation
 
-You’ve to configure `treesitter` in order to have a more complete
-hightlight:
+Add this repo as a plugin to your nvim/vim config:
+
+-   Vundle
+
+    Plugin 'fedepujol/nv-themes'
+
+-   Vim-Plug
+
+    Plug 'fedepujol/nv-themes'
+
+-   Paq
+
+    'fedepujol/nv-themes';
+
+-   Packer
+
+    use 'fedepujol/nv-themes'
+
+### Treesitter
+
+If you’re already using treesitter and want an enhanced hightlight, just
+make sure to enable the `hightlight` option:
 
 ``` lua
 require('nvim-treesiter.configs').setup{
@@ -37,13 +63,15 @@ require('nvim-treesiter.configs').setup{
 }
 ```
 
-And then:
+Finally, enable the theme in your settings:
 
 ``` lua
-vim.bo.syntax = "ON" 		-- Enable syntax
-vim.cmd(":colo vcdark") 	-- Change the colorscheme
-vim.o.termuicolors = true 	-- Enable 24Bit colors
+vim.bo.syntax = "ON" 		 	 -- Enable syntax
+vim.cmd(":colo name_of_theme") 	 -- Change the colorscheme
+vim.o.termuicolors = true 	 	-- Enable 24Bit colors
 ```
+
+Or use the command `:colo name_of_theme`
 
 ## Customization
 
