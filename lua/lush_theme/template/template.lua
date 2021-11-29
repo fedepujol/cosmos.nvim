@@ -168,7 +168,7 @@ local theme = lush(function()
 		-- TSConstant           {},    -- For constants
 		-- TSConstBuiltin       {},    -- For constant that are built in the language: nil in Lua.
 		-- TSConstMacro         {},    -- For constants that are defined by macros: NULL in C.
-		-- TSConstructor        {}, -- Constructo calls and definitions: {} in Lua, and Java constructors.
+		-- TSConstructor        {},    -- Constructor calls and definitions: {} in Lua, and Java constructors.
 		-- TSError              {},    -- For syntax/parser errors.
 		-- TSException          {},    -- For exception related keywords.
 		-- TSField              {},    -- For fields.
@@ -224,16 +224,48 @@ local theme = lush(function()
 		-- TSURI                {},    -- Any URI like a link or email.
 
 		-- Plugin specifics
-		-- CmpItemAbbrDeprecated    {},
-		-- CmpItemAbbrMatch         {},
-		-- CmpItemAbbrMatchFuzzy    {},
-		-- CmpItemKind              {},
-		-- CmpItemMenu              {},
+
+		-- CmpItemAbbr              {}, -- The abbr field's highlight
+		-- CmpItemAbbrDeprecated    {}, -- The abbr field's highlight only used for deprecated items
+		-- CmpItemAbbrMatch         {}, -- Matched character's highlight
+		-- CmpItemAbbrMatchFuzzy    {}, -- Fuzzy matched character's
+		-- CmpItemKind              {}, -- Kind field's group
+		-- CmpItemMenu              {}, -- Menu field's group
+
+		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
+		-- CmpItemKindClass         {},
+		-- CmpItemKindColor         {},
+		-- CmpItemKindConstant      {},
+		-- CmpItemKindConstructor   {},
+		-- CmpItemKindEnum          {},
+		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEvent         {},
+		-- CmpItemKindField         {},
+		-- CmpItemKindFile          {},
+		-- CmpItemKindFolder        {},
+		-- CmpItemKindFunction      {},
+		-- CmpItemKindInterface     {},
+		-- CmpItemKindKeyword       {},
+		-- CmpItemKindMethod        {},
+		-- CmpItemKindModule        {},
+		-- CmpItemKindOperator      {},
+		-- CmpItemKindProperty      {},
+		-- CmpItemKindReference     {},
+		-- CmpItemKindSnippet       {},
+		-- CmpItemKindStruct        {},
+		-- CmpItemKindText          {},
+		-- CmpItemKindTypeParameter {},
+		-- CmpItemKindUnit          {},
+		-- CmpItemKindValue         {},
+		-- CmpItemKindVariable      {},
 
 		-- GitSignsAdd              {},
+		-- GitSignsAddLn            {},
 		-- GitSignsChange           {},
+		-- GitSignsChangeLn         {},
 		-- GitSignsCurrentLineBlame {},
 		-- GitSignsDelete           {},
+		-- GitSignsDeleteLn         {},
 
 		-- BufferCurrent            {},
 		-- BufferCurrentMod         {},
