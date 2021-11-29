@@ -32,20 +32,22 @@ Add this repo as a plugin to your nvim/vim config:
 
 -   Vundle
 
+```vim-script
     Plugin 'fedepujol/nv-themes'
+```
 
 -   Vim-Plug
-
+```vim-script
     Plug 'fedepujol/nv-themes'
-
+```
 -   Paq
-
+```lua
     'fedepujol/nv-themes';
-
+```
 -   Packer
-
+```lua
     use 'fedepujol/nv-themes'
-
+```
 ### Treesitter
 
 If you’re already using treesitter and want an enhanced hightlight, just
