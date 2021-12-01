@@ -31,6 +31,7 @@ highlight! link Label Conditional
 highlight! link Repeat Conditional
 highlight! link TSConditional Conditional
 highlight Constant guifg=#3B91E8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindConstant Constant
 highlight! link TSConstant Constant
 highlight CursorColumn guifg=#616161 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CursorLine guifg=NONE guibg=#212B31 guisp=NONE gui=NONE cterm=NONE
@@ -50,6 +51,8 @@ highlight Directory guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ErrorMsg guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSFloat Float
 highlight Function guifg=#0096A3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindFunction Function
+highlight! link CmpItemKindMethod Function
 highlight! link Macro Function
 highlight! link TSFunction Function
 highlight! link TSMethod Function
@@ -99,6 +102,7 @@ highlight NvimTreeOpenedFolderName guifg=#A8A8A8 guibg=NONE guisp=NONE gui=NONE 
 highlight NvimTreeRootFolder guifg=#FF9100 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeSpecialFile guifg=#4EB7AC guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Operator guifg=#88AFAB guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindOperator Operator
 highlight! link TSOperator Operator
 highlight Pmenu guifg=#000000 guibg=#008577 guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSbar guifg=NONE guibg=#008577 guisp=NONE gui=NONE cterm=NONE
@@ -127,6 +131,7 @@ highlight Structure guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSConstBuiltin guifg=#1A7ADB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSConstMacro TSConstBuiltin
 highlight TSConstructor guifg=#9B7A6F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindConstructor TSConstructor
 highlight TSEmphasis guifg=NONE guibg=NONE guisp=NONE gui=bold,reverse cterm=bold,reverse
 highlight TSError guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSException guifg=#212121 guibg=#B51C1C guisp=NONE gui=NONE cterm=NONE
@@ -148,6 +153,7 @@ highlight TSTagAttribute guifg=#79CBD2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSURI guifg=#69B7F7 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight TSUnderline guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight TSVariable guifg=#F6A7C3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindVariable TSVariable
 highlight TSVariableBuiltin guifg=#69B7F7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#CC7400 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeBorder guifg=#F06090 guibg=NONE guisp=NONE gui=NONE cterm=NONE
