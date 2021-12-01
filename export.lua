@@ -1,3 +1,5 @@
+package.loaded["lush_theme.gruvbox.gruvbox"] = nil
+
 local theme = require('lush_theme.gruvbox.gruvbox')
 local lushwright = require('shipwright.transform.lush')
 local name = 'gruvbox'
