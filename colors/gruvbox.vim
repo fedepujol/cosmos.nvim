@@ -30,13 +30,13 @@ highlight! link Include Define
 highlight! link Macro Define
 highlight! link PreCondit Define
 highlight! link PreProc Define
-highlight DiffAdd guifg=#B8BA26 guibg=#292929 guisp=NONE gui=NONE cterm=NONE
+highlight DiffAdd guifg=#B8BA26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
-highlight DiffChange guifg=#8EC07C guibg=#292929 guisp=NONE gui=NONE cterm=NONE
+highlight DiffChange guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsChange DiffChange
-highlight DiffDelete guifg=#FB4632 guibg=#292929 guisp=NONE gui=NONE cterm=NONE
+highlight DiffDelete guifg=#FB4632 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsDelete DiffDelete
-highlight DiffText guifg=#FABD2E guibg=#292929 guisp=NONE gui=inverse cterm=inverse
+highlight DiffText guifg=#FABD2E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsCurrentLineBlame DiffText
 highlight Directory guifg=#B8BA26 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight ErrorMsg guifg=#292929 guibg=#FB4632 guisp=NONE gui=NONE cterm=NONE
