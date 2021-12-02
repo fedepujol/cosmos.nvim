@@ -1,8 +1,8 @@
-package.loaded["lush_theme.gruvbox.gruvbox"] = nil
+package.loaded["lush_theme.cosmos.cosmos"] = nil
 
-local theme = require('lush_theme.gruvbox.gruvbox')
+local theme = require('lush_theme.cosmos.cosmos')
 local lushwright = require('shipwright.transform.lush')
-local name = 'gruvbox'
+local name = 'cosmos'
 
 -- Call run and give the colorscheme theme
 ---@diagnostic disable = undefined-global
