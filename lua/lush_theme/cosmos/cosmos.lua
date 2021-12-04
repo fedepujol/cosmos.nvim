@@ -91,9 +91,9 @@ local cosmos = lush(function()
 		NormalFloat  { fg = gray_700.li(5) }, -- Normal text in floating windows.
 		NormalNC     { fg = gray_400.da(5) }, -- normal text in non-current windows
 		Pmenu        { fg = teal_600.li(10), bg = bgray_900 }, -- Popup menu: normal item.
-		PmenuSel     { fg = cyan_400.da(5), bg = black }, -- Popup menu: selected item.
-		PmenuSbar    { bg = teal_600.da(5) }, -- Popup menu: scrollbar.
-		PmenuThumb   { bg = cyan_400.sa(10) }, -- Popup menu: Thumb of the scrollbar.
+		PmenuSel     { fg = cyan_400.da(5), bg = gray_900 }, -- Popup menu: selected item.
+		PmenuSbar    { bg = teal_600 }, -- Popup menu: scrollbar.
+		PmenuThumb   { bg = teal_300.sa(10) }, -- Popup menu: Thumb of the scrollbar.
 		Question     { Normal }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine { fg = yellow_a100.da(5) }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- Search       { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -173,32 +173,36 @@ local cosmos = lush(function()
 		-- LspReferenceRead                     { }, -- used for highlighting "read" references
 		-- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
-		-- LspDiagnosticsDefaultError           { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultWarning         { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultInformation     { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultHint            { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticError           { fg = red_900 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+	 	DiagnosticHint            { fg = green_a700.da(10) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticInformation     { fg = green_a700.da(10) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticWarning         { fg = dorange_500 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		LspDiagnosticsVirtualTextError       { fg = red_900 }, -- Used for "Error" diagnostic virtual text
-		LspDiagnosticsVirtualTextWarning     { fg = dorange_500 }, -- Used for "Warning" diagnostic virtual text
-		LspDiagnosticsVirtualTextInformation { fg = gray_300 }, -- Used for "Information" diagnostic virtual text
-		LspDiagnosticsVirtualTextHint        { fg = green_a700.da(10) }, -- Used for "Hint" diagnostic virtual text
+		-- DiagnosticVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
+		-- DiagnosticVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
+		-- DiagnosticVirtualTextInformation { }, -- Used for "Information" diagnostic virtual text
+		-- DiagnosticVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
 
-		-- LspDiagnosticsUnderlineError         {  }, -- Used to underline "Error" diagnostics
-		-- LspDiagnosticsUnderlineWarning       {  }, -- Used to underline "Warning" diagnostics
-		-- LspDiagnosticsUnderlineInformation   {  }, -- Used to underline "Information" diagnostics
-		-- LspDiagnosticsUnderlineHint          {  }, -- Used to underline "Hint" diagnostics
+		-- DiagnosticUnderlineError         { }, -- Used to underline "Error" diagnostics
+		-- DiagnosticUnderlineWarning       { }, -- Used to underline "Warning" diagnostics
+		-- DiagnosticUnderlineInformation   { }, -- Used to underline "Information" diagnostics
+		-- DiagnosticUnderlineHint          { }, -- Used to underline "Hint" diagnostics
 
-		LspDiagnosticsFloatingError          { LspDiagnosticsVirtualTextError }, -- Used to color "Error" diagnostic messages in diagnostics float
-		LspDiagnosticsFloatingWarning        { LspDiagnosticsVirtualTextWarning }, -- Used to color "Warning" diagnostic messages in diagnostics float
-		LspDiagnosticsFloatingInformation    { LspDiagnosticsVirtualTextInformation }, -- Used to color "Information" diagnostic messages in diagnostics float
-		LspDiagnosticsFloatingHint           { LspDiagnosticsVirtualTextHint }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		DiagnosticFloatingError          { DiagnosticError }, -- Used to color "Error" diagnostic messages in diagnostics float
+		DiagnosticFloatingWarning        { DiagnosticWarning }, -- Used to color "Warning" diagnostic messages in diagnostics float
+		DiagnosticFloatingInformation    { DiagnosticInformation }, -- Used to color "Information" diagnostic messages in diagnostics float
+		DiagnosticFloatingHint           { DiagnosticHint }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-		LspDiagnosticsSignError              { LspDiagnosticsVirtualTextError }, -- Used for "Error" signs in sign column
-		LspDiagnosticsSignWarning            { LspDiagnosticsVirtualTextWarning }, -- Used for "Warning" signs in sign column
-		LspDiagnosticsSignInformation        { LspDiagnosticsVirtualTextInformation }, -- Used for "Information" signs in sign column
-		LspDiagnosticsSignHint               { LspDiagnosticsVirtualTextHint }, -- Used for "Hint" signs in sign column
+		DiagnosticSignError              { DiagnosticError }, -- Used for "Error" signs in sign column
+		DiagnosticSignWarning            { DiagnosticWarning }, -- Used for "Warning" signs in sign column
+		DiagnosticSignInformation        { DiagnosticInformation }, -- Used for "Information" signs in sign column
+		DiagnosticSignHint               { DiagnosticHint }, -- Used for "Hint" signs in sign column
 
-		-- LspCodeLens                          { }, -- Used to color the virtual text of the codelens
+		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
+
+		 LspSignatureActiveParameter      { fg = pink_100 }, -- Used to highlight the active parameter in the signature help
+		 FloatBorder                      { fg = indigo_400 }, -- Used for hovers
 
 		-- Treesitter Highlights
 
@@ -270,8 +274,8 @@ local cosmos = lush(function()
 		CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
 		CmpItemAbbrMatch         { fg = orange_200 }, -- Matched character's highlight
 		CmpItemAbbrMatchFuzzy    { fg = orange_200 }, -- Fuzzy matched character's
-		CmpItemKind              { fg = black }, -- Kind field's group
-		CmpItemMenu              { fg = black }, -- Menu field's group
+		-- CmpItemKind              {}, -- Kind field's group
+		-- CmpItemMenu              {}, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
 		-- CmpItemKindClass         {},
@@ -319,7 +323,7 @@ local cosmos = lush(function()
 		NvimTreeFolderName       { fg = gray_400.da(15) },
 		NvimTreeRootFolder       { fg = amber_800 },
 		NvimTreeEmptyFolderName  { fg = gray_700 },
-		NvimTreeOpenedFolderName { fg = gray_400.da(5) },
+		NvimTreeOpenedFolderName { fg = gray_400.da(5), gui = "bold" },
 		NvimTreeExecFile         { fg = gray_300.da(10) },
 		NvimTreeOpenedFile       { bg = CursorLine.bg },
 		NvimTreeIndentMarker     { Whitespace },
@@ -332,10 +336,10 @@ local cosmos = lush(function()
 		TelescopeSelection       { fg = dpurple_200 },
 		TelescopeSelectionCaret  { fg = purple_300 },
 		TelescopeMultiSelection  { fg = yellow_a100 },
-		TelescopeBorder          { fg = pink_300 },
-		TelescopePromptBorder    { fg = indigo_400 },
-		TelescopeResultsBorder   { fg = indigo_400 },
-		TelescopePreviewBorder   { fg = indigo_400 },
+		TelescopeBorder          { fg = indigo_400 },
+		-- TelescopePromptBorder    { },
+		-- TelescopeResultsBorder   { },
+		-- TelescopePreviewBorder   { },
 	}
 end)
 

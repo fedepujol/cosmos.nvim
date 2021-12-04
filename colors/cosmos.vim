@@ -20,8 +20,6 @@ highlight! link TSCharacter Character
 highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
 highlight CmpItemAbbrMatch guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemAbbrMatchFuzzy guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight CmpItemKind guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight CmpItemMenu guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ColorColumn guifg=#D54215 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#328636 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSComment Comment
@@ -39,6 +37,18 @@ highlight CursorLineNr guifg=#9E9E9E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Debug guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
 highlight! link PreCondit Define
 highlight Delimiter guifg=#FF8A66 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticError guifg=#B51C1C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticFloatingError DiagnosticError
+highlight! link DiagnosticSignError DiagnosticError
+highlight DiagnosticHint guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticFloatingHint DiagnosticHint
+highlight! link DiagnosticSignHint DiagnosticHint
+highlight DiagnosticInformation guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticFloatingInformation DiagnosticInformation
+highlight! link DiagnosticSignInformation DiagnosticInformation
+highlight DiagnosticWarning guifg=#FF5724 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticFloatingWarning DiagnosticWarning
+highlight! link DiagnosticSignWarning DiagnosticWarning
 highlight DiffAdd guifg=#00C251 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
 highlight DiffChange guifg=#FF950A guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -50,6 +60,7 @@ highlight DiffText guifg=#C9C9C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Directory guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ErrorMsg guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSFloat Float
+highlight FloatBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Function guifg=#0096A3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindFunction Function
 highlight! link CmpItemKindMethod Function
@@ -63,18 +74,7 @@ highlight Include guifg=#A78B81 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link Define Include
 highlight Keyword guifg=#61D6E5 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#484242 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsVirtualTextError guifg=#B51C1C guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link LspDiagnosticsFloatingError LspDiagnosticsVirtualTextError
-highlight! link LspDiagnosticsSignError LspDiagnosticsVirtualTextError
-highlight LspDiagnosticsVirtualTextHint guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link LspDiagnosticsFloatingHint LspDiagnosticsVirtualTextHint
-highlight! link LspDiagnosticsSignHint LspDiagnosticsVirtualTextHint
-highlight LspDiagnosticsVirtualTextInformation guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link LspDiagnosticsFloatingInformation LspDiagnosticsVirtualTextInformation
-highlight! link LspDiagnosticsSignInformation LspDiagnosticsVirtualTextInformation
-highlight LspDiagnosticsVirtualTextWarning guifg=#FF5724 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link LspDiagnosticsFloatingWarning LspDiagnosticsVirtualTextWarning
-highlight! link LspDiagnosticsSignWarning LspDiagnosticsVirtualTextWarning
+highlight LspSignatureActiveParameter guifg=#F8BACF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ModeMsg guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MoreMsg guifg=#25C5DA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MsgArea guifg=NONE guibg=#1D262A guisp=NONE gui=NONE cterm=NONE
@@ -98,16 +98,16 @@ highlight NvimTreeGitDirty guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NO
 highlight NvimTreeGitIgnored guifg=#616161 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeGitNew guifg=#14B356 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeOpenedFile guifg=NONE guibg=#212B31 guisp=NONE gui=NONE cterm=NONE
-highlight NvimTreeOpenedFolderName guifg=#A8A8A8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeOpenedFolderName guifg=#A8A8A8 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight NvimTreeRootFolder guifg=#FF9100 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeSpecialFile guifg=#4EB7AC guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Operator guifg=#88AFAB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindOperator Operator
 highlight! link TSOperator Operator
 highlight Pmenu guifg=#00AD9C guibg=#253137 guisp=NONE gui=NONE cterm=NONE
-highlight PmenuSbar guifg=NONE guibg=#008577 guisp=NONE gui=NONE cterm=NONE
-highlight PmenuSel guifg=#23BDD1 guibg=#000000 guisp=NONE gui=NONE cterm=NONE
-highlight PmenuThumb guifg=NONE guibg=#21C8DE guisp=NONE gui=NONE cterm=NONE
+highlight PmenuSbar guifg=NONE guibg=#008A7C guisp=NONE gui=NONE cterm=NONE
+highlight PmenuSel guifg=#23BDD1 guibg=#212121 guisp=NONE gui=NONE cterm=NONE
+highlight PmenuThumb guifg=NONE guibg=#46BEB2 guisp=NONE gui=NONE cterm=NONE
 highlight PreProc guifg=#F06090 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight QuickFixLine guifg=#FFFF7A guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSRepeat Repeat
@@ -156,11 +156,8 @@ highlight TSVariable guifg=#F6A7C3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindVariable TSVariable
 highlight TSVariableBuiltin guifg=#69B7F7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#CC7400 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopeBorder guifg=#F06090 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#FFFF8F guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopePreviewBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopePromptBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopeResultsBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelection guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelectionCaret guifg=#BB69C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TermCursor guifg=NONE guibg=#E0E0E0 guisp=NONE gui=NONE cterm=NONE
