@@ -123,36 +123,39 @@ local theme = lush(function()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		-- LspReferenceRead                     {}, -- used for highlighting "read" references
-		-- LspReferenceText                     {}, -- used for highlighting "text" references
-		-- LspReferenceWrite                    {}, -- used for highlighting "write" references
+		-- LspReferenceRead                 {}, -- used for highlighting "read" references
+		-- LspReferenceText                 {}, -- used for highlighting "text" references
+		-- LspReferenceWrite                {}, -- used for highlighting "write" references
 
-		-- LspDiagnosticsDefaultError           {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultHint            {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultInformation     {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultWarning         {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		-- DiagnosticError                  {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		-- DiagnosticHint                   {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		-- DiagnosticInformation            {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		-- DiagnosticWarning                {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		-- LspDiagnosticsVirtualTextError       {}, -- Used for "Error" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextInformation {}, -- Used for "Information" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextWarning     {}, -- Used for "Warning" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextHint        {}, -- Used for "Hint" diagnostic virtual text
+		-- DiagnosticVirtualTextError       {}, -- Used for "Error" diagnostic virtual text
+		-- DiagnosticVirtualTextInformation {}, -- Used for "Information" diagnostic virtual text
+		-- DiagnosticVirtualTextWarning     {}, -- Used for "Warning" diagnostic virtual text
+		-- DiagnosticVirtualTextHint        {}, -- Used for "Hint" diagnostic virtual text
 
-		-- LspDiagnosticsUnderlineError         {}, -- Used to underline "Error" diagnostics
-		-- LspDiagnosticsUnderlineHint          {}, -- Used to underline "Hint" diagnostics
-		-- LspDiagnosticsUnderlineInformation   {}, -- Used to underline "Information" diagnostics
-		-- LspDiagnosticsUnderlineWarning       {}, -- Used to underline "Warning" diagnostics
+		-- DiagnosticUnderlineError         {}, -- Used to underline "Error" diagnostics
+		-- DiagnosticUnderlineHint          {}, -- Used to underline "Hint" diagnostics
+		-- DiagnosticUnderlineInformation   {}, -- Used to underline "Information" diagnostics
+		-- DiagnosticUnderlineWarning       {}, -- Used to underline "Warning" diagnostics
 
-		-- LspDiagnosticsFloatingError          {}, -- Used to color "Error" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingHint           {}, -- Used to color "Hint" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingInformation    {}, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingWarning        {}, -- Used to color "Warning" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError          {}, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint           {}, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInformation    {}, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarning        {}, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		-- LspDiagnosticsSignError              {}, -- Used for "Error" signs in sign column
-		-- LspDiagnosticsSignHint               {}, -- Used for "Hint" signs in sign column
-		-- LspDiagnosticsSignInformation        {}, -- Used for "Information" signs in sign column
-		-- LspDiagnosticsSignWarning            {}, -- Used for "Warning" signs in sign column
+		-- DiagnosticSignError              {}, -- Used for "Error" signs in sign column
+		-- DiagnosticSignHint               {}, -- Used for "Hint" signs in sign column
+		-- DiagnosticSignInformation        {}, -- Used for "Information" signs in sign column
+		-- DiagnosticSignWarning            {}, -- Used for "Warning" signs in sign column
 
 		-- LspCodeLens                          {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator                 {}. -- Used to color the separator between two of more code lenses
+
+		-- LspSignatureActiveParameter          {}, -- Used to highlight the active parameter in the signature help
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -268,11 +271,26 @@ local theme = lush(function()
 		-- GitSignsDeleteLn         {},
 
 		-- BufferCurrent            {},
+		-- BufferCurrentIcon        {},
+		-- BufferCurrentIndex       {},
 		-- BufferCurrentMod         {},
+		-- BufferCurrentSign        {},
+		-- BufferCurrentTarget      {},
 		-- BufferInactive           {},
+		-- BufferInactiveIcon       {},
+		-- BufferInactiveIndex      {},
 		-- BufferInactiveMod        {},
+		-- BufferInactiveSign       {},
+		-- BufferInactiveTarget     {},
+		-- BufferOffset             {},
+		-- BufferTabpageFill        {},
+		-- BufferTabpages           {},
 		-- BufferVisible            {},
+		-- BufferVisibleIcon        {},
+		-- BufferVisibleIndex       {},
 		-- BufferVisibleMod         {},
+		-- BufferVisibleSign        {},
+		-- BufferVisibleTarget      {},
 
 		-- NvimTreeEmptyFolderName  {},
 		-- NvimTreeExecFile         {},
