@@ -1,3 +1,7 @@
+-- Based on the colorscheme
+-- https://github.com/dracula/vim and colors from
+-- https://github.com/dracula/dracula-theme
+
 local lush = require('lush')
 local hsl = lush.hsl
 
@@ -146,32 +150,36 @@ local dracula = lush(function()
 		 LspReferenceText                     { bg = selection }, -- used for highlighting "text" references
 		 LspReferenceWrite                    { bg = selection }, -- used for highlighting "write" references
 
-		 LspDiagnosticsDefaultError           { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 LspDiagnosticsDefaultHint            { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 LspDiagnosticsDefaultInformation     { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 LspDiagnosticsDefaultWarning         { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticError           { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticHint            { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticInformation     { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticWarning         { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		-- LspDiagnosticsVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextInformation { }, -- Used for "Information" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
+		-- DiagnosticVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
+		-- DiagnosticVirtualTextInformation { }, -- Used for "Information" diagnostic virtual text
+		-- DiagnosticVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
+		-- DiagnosticVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
 
-		 LspDiagnosticsUnderlineError         { LspDiagnosticsDefaultError, gui = "underline" }, -- Used to underline "Error" diagnostics
-		 LspDiagnosticsUnderlineHint          { LspDiagnosticsDefaultHint, gui = "underline" }, -- Used to underline "Hint" diagnostics
-		 LspDiagnosticsUnderlineInformation   { LspDiagnosticsDefaultInformation, gui = "underline" }, -- Used to underline "Information" diagnostics
-		 LspDiagnosticsUnderlineWarning       { LspDiagnosticsDefaultWarning, gui = "underline" }, -- Used to underline "Warning" diagnostics
+		 DiagnosticUnderlineError         { DiagnosticError, gui = "underline" }, -- Used to underline "Error" diagnostics
+		 DiagnosticUnderlineHint          { DiagnosticHint, gui = "underline" }, -- Used to underline "Hint" diagnostics
+		 DiagnosticUnderlineInformation   { DiagnosticInformation, gui = "underline" }, -- Used to underline "Information" diagnostics
+		 DiagnosticUnderlineWarning       { DiagnosticWarning, gui = "underline" }, -- Used to underline "Warning" diagnostics
 
-		-- LspDiagnosticsFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		-- LspDiagnosticsSignError              { }, -- Used for "Error" signs in sign column
-		-- LspDiagnosticsSignHint               { }, -- Used for "Hint" signs in sign column
-		-- LspDiagnosticsSignInformation        { }, -- Used for "Information" signs in sign column
-		-- LspDiagnosticsSignWarning            { }, -- Used for "Warning" signs in sign column
+		-- DiagnosticSignError              { }, -- Used for "Error" signs in sign column
+		-- DiagnosticSignHint               { }, -- Used for "Hint" signs in sign column
+		-- DiagnosticSignInformation        { }, -- Used for "Information" signs in sign column
+		-- DiagnosticSignWarning            { }, -- Used for "Warning" signs in sign column
 
-		-- LspCodeLens                          { }, -- Used to color the virtual text of the codelens
+		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
+
+		 LspSignatureActiveParameter      { fg = cyan, gui = "bold" }, -- Used to highlight the active parameter in the signature help
+		 FloatBorder                      { fg = purple },
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -243,45 +251,92 @@ local dracula = lush(function()
 		-- TSURI                { },    -- Any URI like a link or email.
 
 		-- Plugin specifics
-		-- CmpItemAbbrDeprecated    { },
-		-- CmpItemAbbrMatch         { },
-		-- CmpItemAbbrMatchFuzzy    { },
-		-- CmpItemKind              { },
-		-- CmpItemMenu              { },
 
-		-- GitSignsAdd              { },
-		-- GitSignsChange           { },
-		-- GitSignsCurrentLineBlame { },
-		-- GitSignsDelete           { },
+		-- CmpItemAbbr              {}, -- The abbr field's highlight
+		-- CmpItemAbbrDeprecated    {}, -- The abbr field's highlight only used for deprecated items
+		 CmpItemAbbrMatch         { fg = purple }, -- Matched character's highlight
+		 CmpItemAbbrMatchFuzzy    { fg = cyan }, -- Fuzzy matched character's
+		-- CmpItemKind              {}, -- Kind field's group
+		-- CmpItemMenu              {}, -- Menu field's group
 
-		-- BufferCurrent            { },
-		-- BufferCurrentMod         { },
-		-- BufferInactive           { },
-		-- BufferInactiveMod        { },
-		-- BufferVisible            { },
-		-- BufferVisibleMod         { },
+		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
+		-- CmpItemKindClass         {},
+		-- CmpItemKindColor         {},
+		 CmpItemKindConstant      { Constant },
+		 CmpItemKindConstructor   { TSConstructor },
+		-- CmpItemKindEnum          {},
+		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEvent         {},
+		-- CmpItemKindField         {},
+		-- CmpItemKindFile          {},
+		-- CmpItemKindFolder        {},
+		 CmpItemKindFunction      { Function },
+		-- CmpItemKindInterface     {},
+		-- CmpItemKindKeyword       {},
+		 CmpItemKindMethod        { Function },
+		-- CmpItemKindModule        {},
+		-- CmpItemKindOperator      {},
+		-- CmpItemKindProperty      {},
+		-- CmpItemKindReference     {},
+		-- CmpItemKindSnippet       {},
+		-- CmpItemKindStruct        {},
+		-- CmpItemKindText          {},
+		-- CmpItemKindTypeParameter {},
+		-- CmpItemKindUnit          {},
+		-- CmpItemKindValue         {},
+		-- CmpItemKindVariable      {},
+
+		-- GitSignsAdd              {},
+		-- GitSignsAddLn            {},
+		-- GitSignsChange           {},
+		-- GitSignsChangeLn         {},
+		 GitSignsCurrentLineBlame { fg = comment },
+		-- GitSignsDelete           {},
+		-- GitSignsDeleteLn         {},
+
+		 BufferCurrent            { fg = yellow, bg = bg_dark },
+		 BufferCurrentIcon        { fg = yellow, bg = bg_dark },
+		 BufferCurrentIndex       { fg = yellow, bg = bg_dark },
+		 BufferCurrentMod         { fg = yellow, bg = bg_dark },
+		 BufferCurrentSign        { fg = yellow, bg = bg_dark },
+		 BufferCurrentTarget      { fg = yellow, bg = bg_dark },
+		 BufferInactive           { bg = bg_light },
+		 BufferInactiveIcon       { bg = bg_light },
+		 BufferInactiveIndex      { bg = bg_light },
+		 BufferInactiveMod        { bg = bg_light },
+		 BufferInactiveSign       { bg = bg_light },
+		 BufferInactiveTarget     { bg = bg_light },
+		-- BufferOffset             {},
+		-- BufferTabpageFill        {},
+		-- BufferTabpages           {},
+		 BufferVisible            { fg = purple },
+		-- BufferVisibleIcon        {},
+		-- BufferVisibleIndex       {},
+		-- BufferVisibleMod         {},
+		-- BufferVisibleSign        {},
+		-- BufferVisibleTarget      {},
 
 		-- NvimTreeEmptyFolderName  { },
-		-- NvimTreeExecFile         { },
-		-- NvimTreeFolderIcon       { },
-		-- NvimTreeFolderName       { },
-		-- NvimTreeGitDeleted       { },
-		-- NvimTreeGitDirty         { },
-		-- NvimTreeGitIgnored       { },
-		-- NvimTreeGitNew           { },
-		-- NvimTreeIndentMarker     { },
+		 NvimTreeExecFile         { fg = cyan },
+		 NvimTreeFolderIcon       { fg = yellow },
+		 NvimTreeFolderName       { fg = foreground },
+		 NvimTreeGitDeleted       { DiffDelete },
+		 NvimTreeGitDirty         { DiffChange },
+		 NvimTreeGitIgnored       { fg = bg_lighter.li(10) },
+		 NvimTreeGitNew           { DiffAdd },
+		 NvimTreeIndentMarker     { fg = subtle.li(20) },
 		-- NvimTreeOpenedFile       { },
-		-- NvimTreeOpenedFolderName { },
-		-- NvimTreeRootFolder       { },
-		-- NvimTreeSpecialFile      { },
+		 NvimTreeOpenedFolderName { fg = foreground, gui = "bold" },
+		 NvimTreeRootFolder       { fg = orange },
+		 NvimTreeSpecialFile      { fg = purple },
 
-		-- TelescopeBorder          { },
-		-- TelescopeMultiSelection  { },
+		 TelescopeBorder          { fg = purple },
+		 TelescopeMultiSelection  { fg = pink },
 		-- TelescopePreviewBorder   { },
 		-- TelescopePromptBorder    { },
 		-- TelescopeResultsBorder   { },
-		-- TelescopeSelection       { },
-		-- TelescopeSelectionCaret  { },
+		 TelescopeSelection       { fg = green },
+		 TelescopeSelectionCaret  { fg = yellow },
 	}
 end)
 
