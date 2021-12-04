@@ -152,10 +152,11 @@ local theme = lush(function()
 		-- DiagnosticSignInformation        {}, -- Used for "Information" signs in sign column
 		-- DiagnosticSignWarning            {}, -- Used for "Warning" signs in sign column
 
-		-- LspCodeLens                          {}, -- Used to color the virtual text of the codelens
-		-- LspCodeLensSeparator                 {}. -- Used to color the separator between two of more code lenses
+		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
 
-		-- LspSignatureActiveParameter          {}, -- Used to highlight the active parameter in the signature help
+		-- LspSignatureActiveParameter      {}, -- Used to highlight the active parameter in the signature help
+		-- FloatBorder                      {}, -- Used for hovers
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
