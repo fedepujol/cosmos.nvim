@@ -166,36 +166,40 @@ local vcdark = lush(function()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		-- LspReferenceText                     { }, -- used for highlighting "text" references
-		-- LspReferenceRead                     { }, -- used for highlighting "read" references
-		-- LspReferenceWrite                    { }, -- used for highlighting "write" references
+		-- LspReferenceText                 { }, -- used for highlighting "text" references
+		-- LspReferenceRead                 { }, -- used for highlighting "read" references
+		-- LspReferenceWrite                { }, -- used for highlighting "write" references
 
-		-- LspDiagnosticsDefaultError           { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultWarning         { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultInformation     { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultHint            { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticError                     { fg = red0 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticHint                      { fg = green4 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+	 	DiagnosticInformation               { fg = green6 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticWarning                   { fg = yellow2 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		LspDiagnosticsVirtualTextError       { fg = red0 }, -- Used for "Error" diagnostic virtual text
-		LspDiagnosticsVirtualTextWarning     { fg = yellow2 }, -- Used for "Warning" diagnostic virtual text
-		LspDiagnosticsVirtualTextInformation { fg = green4 }, -- Used for "Information" diagnostic virtual text
-		--LspDiagnosticsVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextError          { DiagnosticError }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextHint           { DiagnosticHint }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextInformation    { DiagnosticInformation }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextWarning        { DiagnosticWarning }, -- Used for "Warning" diagnostic virtual text
 
-		-- LspDiagnosticsUnderlineError         { }, -- Used to underline "Error" diagnostics
-		-- LspDiagnosticsUnderlineWarning       { }, -- Used to underline "Warning" diagnostics
-		-- LspDiagnosticsUnderlineInformation   { }, -- Used to underline "Information" diagnostics
-		-- LspDiagnosticsUnderlineHint          { }, -- Used to underline "Hint" diagnostics
+		-- DiagnosticUnderlineError         { }, -- Used to underline "Error" diagnostics
+		-- DiagnosticUnderlineHint          { }, -- Used to underline "Hint" diagnostics
+		-- DiagnosticUnderlineInformation   { }, -- Used to underline "Information" diagnostics
+		-- DiagnosticUnderlineWarning       { }, -- Used to underline "Warning" diagnostics
 
-		LspDiagnosticsFloatingError          { fg = red0 }, -- Used to color "Error" diagnostic messages in diagnostics float
-		LspDiagnosticsFloatingWarning        { fg = yellow2 }, -- Used to color "Warning" diagnostic messages in diagnostics float
-		LspDiagnosticsFloatingInformation    { fg = green4 }, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		LspDiagnosticsSignError              { fg = red0 }, -- Used for "Error" signs in sign column
-		LspDiagnosticsSignWarning            { fg = yellow2 }, -- Used for "Warning" signs in sign column
-		LspDiagnosticsSignInformation        { fg = green4 }, -- Used for "Information" signs in sign column
-		-- LspDiagnosticsSignHint               { }, -- Used for "Hint" signs in sign column
+		DiagnosticSignError                 { DiagnosticError }, -- Used for "Error" signs in sign column
+		DiagnosticSignHint                  { DiagnosticHint }, -- Used for "Hint" signs in sign column
+		DiagnosticSignInformation           { DiagnosticInformation }, -- Used for "Information" signs in sign column
+		DiagnosticSignWarning               { DiagnosticWarning }, -- Used for "Warning" signs in sign column
 
-		-- LspCodeLens                          { }, -- Used to color the virtual text of the codelens
+		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
+
+		 LspSignatureActiveParameter      { fg = blue1 }, -- Used to highlight the active parameter in the signature help
+		 FloatBorder                      { fg = green4 }, -- Used for hovers
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -203,7 +207,6 @@ local vcdark = lush(function()
 		-- TSError -> Error for example, so you do not have to define these unless
 		-- you explicitly want to support Treesitter's improved syntax awareness.
 
-		-- TSAnnotation         { },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		-- TSAttribute          { },    -- (unstable) TODO: docs
 		TSBoolean            { fg = blue1 },    -- For booleans.
 		TSCharacter          { fg = orange0 },    -- For characters.
@@ -238,8 +241,8 @@ local vcdark = lush(function()
 		TSRepeat             { fg = purple0 },    -- For keywords related to loops.
 		TSString             { fg = orange0 },    -- For strings.
 		TSStringRegex        { fg = orange1 },    -- For regexes.
-		TSStringEscape       { },    -- For escape characters within a string.
-		TSSymbol             { },    -- For identifiers referring to symbols or atoms.
+		-- TSStringEscape       { },    -- For escape characters within a string.
+		-- TSSymbol             { },    -- For identifiers referring to symbols or atoms.
 		TSType               { fg = blue3 },    -- For types.
 		TSTypeBuiltin        { fg = blue3 },    -- For builtin types.
 		TSVariable           { fg = blue2 },    -- Any variable name that does not have another highlight.
@@ -256,23 +259,67 @@ local vcdark = lush(function()
 		-- TSURI                { },    -- Any URI like a link or email.
 
 		-- Plugin specifics
-		-- CmpItemAbbrDeprecated    { },
-		-- CmpItemAbbrMatch         { },
-		-- CmpItemAbbrMatchFuzzy    { },
-		-- CmpItemKind              { },
-		-- CmpItemMenu              { },
+		-- CmpItemAbbr              {}, -- The abbr field's highlight
+		 CmpItemAbbrDeprecated    { gui = "strikethrough"}, -- The abbr field's highlight only used for deprecated items
+		 CmpItemAbbrMatch         { fg = yellow5 }, -- Matched character's highlight
+		-- CmpItemAbbrMatchFuzzy    {}, -- Fuzzy matched character's
+		-- CmpItemKind              {}, -- Kind field's group
+		-- CmpItemMenu              {}, -- Menu field's group
+
+		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
+		-- CmpItemKindClass         {},
+		-- CmpItemKindColor         {},
+		 CmpItemKindConstant      { Constant },
+		-- CmpItemKindConstructor   {},
+		-- CmpItemKindEnum          {},
+		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEvent         {},
+		-- CmpItemKindField         {},
+		-- CmpItemKindFile          {},
+		-- CmpItemKindFolder        {},
+		 CmpItemKindFunction      { fg = purple0 },
+		-- CmpItemKindInterface     {},
+		-- CmpItemKindKeyword       {},
+		 CmpItemKindMethod        { fg = purple0 },
+		-- CmpItemKindModule        {},
+		 CmpItemKindOperator      { TSOperator },
+		-- CmpItemKindProperty      {},
+		-- CmpItemKindReference     {},
+		-- CmpItemKindSnippet       {},
+		-- CmpItemKindStruct        {},
+		-- CmpItemKindText          {},
+		-- CmpItemKindTypeParameter {},
+		-- CmpItemKindUnit          {},
+		-- CmpItemKindValue         {},
+		 CmpItemKindVariable      { TSVariable },
 
 		GitSignsAdd              { fg = green5 },
 		GitSignsChange           { fg = yellow2 },
 		GitSignsDelete           { fg = red0 },
 		GitSignsCurrentLineBlame { fg = gray3, bg = gray0 },
 
+		 BufferCurrent            { fg = white },
+		-- BufferCurrentIcon        {},
+		-- BufferCurrentIndex       {},
+		-- BufferCurrentMod         {},
+		-- BufferCurrentSign        {},
+		-- BufferCurrentTarget      {},
 		BufferInactive           { fg = gray3, bg = black3 },
-		-- BufferInactiveMod        { },
-		-- BufferCurrent            { },
-		-- BufferCurrentMod         { },
+		-- BufferInactiveIcon       {},
+		-- BufferInactiveIndex      {},
+		-- BufferInactiveMod        {},
+		-- BufferInactiveSign       {},
+		-- BufferInactiveTarget     {},
+		-- BufferOffset             {},
+		-- BufferTabpageFill        {},
+		-- BufferTabpages           {},
 		BufferVisible            { fg = blue2, bg = black3 },
-		-- BufferVisibleMod         { },
+		-- BufferVisibleIcon        {},
+		-- BufferVisibleIndex       {},
+		-- BufferVisibleMod         {},
+		-- BufferVisibleSign        {},
+		-- BufferVisibleTarget      {},
+
 
 		NvimTreeFolderIcon       { fg = yellow3 },
 		NvimTreeFolderName       { fg = white },
@@ -292,9 +339,9 @@ local vcdark = lush(function()
 		TelescopeSelectionCaret  { fg = green3 },
 		TelescopeMultiSelection  { fg = gray6 },
 		TelescopeBorder          { fg = green4 },
-		TelescopePromptBorder    { fg = green4 },
-		TelescopeResultsBorder   { fg = green4 },
-		TelescopePreviewBorder   { fg = green4 },
+		-- TelescopePromptBorder    { },
+		-- TelescopeResultsBorder   { },
+		-- TelescopePreviewBorder   { },
 	}
 end)
 

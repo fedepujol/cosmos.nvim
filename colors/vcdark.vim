@@ -1,3 +1,5 @@
+" This theme is base on VSCode dark default
+"
 " Maintainer: Fede Pujol
 
 set background=dark
@@ -8,19 +10,37 @@ endif
 let g:colors_name='vcdark'
 
 highlight Boolean guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight BufferCurrent guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight BufferInactive guifg=#B0B0B0 guibg=#171717 guisp=NONE gui=NONE cterm=NONE
 highlight BufferVisible guifg=#9ADBFE guibg=#171717 guisp=NONE gui=NONE cterm=NONE
 highlight Character guifg=#C4C4C4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
+highlight CmpItemAbbrMatch guifg=#D89B22 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindFunction guifg=#B668B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindMethod guifg=#B668B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#709948 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Conditional guifg=#B668B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link PreCondit Conditional
 highlight Constant guifg=#3976A7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindConstant Constant
 highlight Cursor guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
 highlight CursorColumn guifg=NONE guibg=#FFFFFF guisp=NONE gui=NONE cterm=NONE
 highlight CursorLine guifg=NONE guibg=#2E2E2E guisp=NONE gui=NONE cterm=NONE
 highlight CursorLineNr guifg=#FFFFFF guibg=#2E2E2E guisp=NONE gui=NONE cterm=NONE
 highlight Define guifg=#DCDCA8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Delimiter guifg=#808080 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticError guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignError DiagnosticError
+highlight! link DiagnosticVirtualTextError DiagnosticError
+highlight DiagnosticHint guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignHint DiagnosticHint
+highlight! link DiagnosticVirtualTextHint DiagnosticHint
+highlight DiagnosticInformation guifg=#709948 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignInformation DiagnosticInformation
+highlight! link DiagnosticVirtualTextInformation DiagnosticInformation
+highlight DiagnosticWarning guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignWarning DiagnosticWarning
+highlight! link DiagnosticVirtualTextWarning DiagnosticWarning
 highlight DiffAdd guifg=#61FF61 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffChange guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffDelete guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -28,6 +48,7 @@ highlight DiffText guifg=#FFFFFF guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight Directory guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ErrorMsg guifg=#D30909 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Exception guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight FloatBorder guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight FoldColumn guifg=#9ADBFE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Folded guifg=#9ADBFE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Function guifg=#4FC9B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -40,15 +61,7 @@ highlight Include guifg=#B668B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Keyword guifg=#3976A7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Label guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsFloatingError guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsFloatingInformation guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsFloatingWarning guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsSignError guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsSignInformation guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsSignWarning guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsVirtualTextError guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsVirtualTextInformation guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight LspDiagnosticsVirtualTextWarning guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight LspSignatureActiveParameter guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Macro guifg=#DCDCA8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NonText guifg=#1F1F1F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Normal guifg=#FFFFFF guibg=#1F1F1F guisp=NONE gui=NONE cterm=NONE
@@ -108,6 +121,7 @@ highlight TSLiteral guifg=#CE9178 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSMethod guifg=#DCDCA8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSNumber guifg=#95DF97 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSOperator guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindOperator TSOperator
 highlight TSParameter guifg=#9ADBFE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSParameterReference guifg=#3976A7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSProperty guifg=#9ADBFE guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -116,24 +130,20 @@ highlight TSPunctDelimiter guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NO
 highlight TSPunctSpecial guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSRepeat guifg=#B668B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSString guifg=#CE9178 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSStringEscape guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSStringRegex guifg=#D34509 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSSymbol guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSTag guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSTagDelimiter guifg=#808080 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSText guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSType guifg=#4FC9B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSTypeBuiltin guifg=#4FC9B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSVariable guifg=#9ADBFE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindVariable TSVariable
 highlight TSVariableBuiltin guifg=#3976A7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TabLine guifg=#2E2E2E guibg=#6B6B6B guisp=NONE gui=NONE cterm=NONE
 highlight TabLineSel guifg=#579DD6 guibg=#6B6B6B guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeBorder guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#918273 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopePreviewBorder guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopePromptBorder guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopeResultsBorder guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelection guifg=#D89B22 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelectionCaret guifg=#31AA35 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Title guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
