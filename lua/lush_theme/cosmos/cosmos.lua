@@ -271,11 +271,11 @@ local cosmos = lush(function()
 
 		-- Plugin specifics
 		-- CmpItemAbbr              {}, -- The abbr field's highlight
-		CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
-		CmpItemAbbrMatch         { fg = orange_200 }, -- Matched character's highlight
-		CmpItemAbbrMatchFuzzy    { fg = orange_200 }, -- Fuzzy matched character's
-		-- CmpItemKind              {}, -- Kind field's group
-		-- CmpItemMenu              {}, -- Menu field's group
+		 CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
+		 CmpItemAbbrMatch         { fg = orange_200 }, -- Matched character's highlight
+		 CmpItemAbbrMatchFuzzy    { fg = orange_200 }, -- Fuzzy matched character's
+		 CmpItemKind              { fg = black }, -- Kind field's group
+		 CmpItemMenu              { fg = black }, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
 		-- CmpItemKindClass         {},
@@ -298,7 +298,7 @@ local cosmos = lush(function()
 		-- CmpItemKindReference     {},
 		-- CmpItemKindSnippet       {},
 		-- CmpItemKindStruct        {},
-		-- CmpItemKindText          {},
+		 CmpItemKindText          { fg = Normal.fg },
 		-- CmpItemKindTypeParameter {},
 		-- CmpItemKindUnit          {},
 		-- CmpItemKindValue         {},

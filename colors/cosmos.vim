@@ -20,6 +20,9 @@ highlight! link TSCharacter Character
 highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
 highlight CmpItemAbbrMatch guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemAbbrMatchFuzzy guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKind guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindText guifg=#C9C9C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemMenu guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ColorColumn guifg=#D54215 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#328636 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSComment Comment
