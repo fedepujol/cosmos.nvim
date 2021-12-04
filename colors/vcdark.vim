@@ -1,5 +1,3 @@
-" This theme is base on VSCode dark default
-"
 " Maintainer: Fede Pujol
 
 set background=dark
@@ -70,14 +68,14 @@ highlight! link Float Number
 highlight NvimTreeEmptyFolderName guifg=#E3E3E3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeExecFile guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeFolderIcon guifg=#FFB429 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight NvimTreeFolderName guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeFolderName guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeGitDeleted guifg=#FF3D3D guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeGitDirty guifg=#FFDB99 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeGitIgnored guifg=#C4C4C4 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight NvimTreeGitNew guifg=#95DF97 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeIndentMarker guifg=#2E2E2E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeOpenedFile guifg=#E3E3E3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight NvimTreeOpenedFolderName guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeOpenedFolderName guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeRootFolder guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeSpecialFile guifg=#4FC9B1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Operator guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE

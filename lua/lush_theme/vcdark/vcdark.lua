@@ -320,12 +320,11 @@ local vcdark = lush(function()
 		-- BufferVisibleSign        {},
 		-- BufferVisibleTarget      {},
 
-
 		NvimTreeFolderIcon       { fg = yellow3 },
-		NvimTreeFolderName       { fg = white },
+		NvimTreeFolderName       { fg = gray3 },
 		NvimTreeRootFolder       { fg = yellow2 },
 		NvimTreeEmptyFolderName  { fg = gray4 },
-		NvimTreeOpenedFolderName { fg = gray3 },
+		NvimTreeOpenedFolderName { fg = white },
 		NvimTreeExecFile         { fg = gray3 },
 		NvimTreeOpenedFile       { fg = gray4 },
 		NvimTreeIndentMarker     { fg = gray0 },
