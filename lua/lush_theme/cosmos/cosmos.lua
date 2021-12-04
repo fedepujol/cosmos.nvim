@@ -90,10 +90,10 @@ local cosmos = lush(function()
 		Normal       { fg = gray_300.da(10), bg = bgray_900.da(40) }, -- normal text
 		NormalFloat  { fg = gray_700.li(5) }, -- Normal text in floating windows.
 		NormalNC     { fg = gray_400.da(5) }, -- normal text in non-current windows
-		Pmenu        { fg = black, bg = teal_600.da(5) }, -- Popup menu: normal item.
+		Pmenu        { fg = teal_600.li(10), bg = bgray_900 }, -- Popup menu: normal item.
 		PmenuSel     { fg = cyan_400.da(5), bg = black }, -- Popup menu: selected item.
 		PmenuSbar    { bg = teal_600.da(5) }, -- Popup menu: scrollbar.
-		PmenuThumb   { fg = cyan_400.sa(10) }, -- Popup menu: Thumb of the scrollbar.
+		PmenuThumb   { bg = cyan_400.sa(10) }, -- Popup menu: Thumb of the scrollbar.
 		Question     { Normal }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine { fg = yellow_a100.da(5) }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- Search       { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.

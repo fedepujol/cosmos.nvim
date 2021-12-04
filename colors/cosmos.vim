@@ -104,10 +104,10 @@ highlight NvimTreeSpecialFile guifg=#4EB7AC guibg=NONE guisp=NONE gui=NONE cterm
 highlight Operator guifg=#88AFAB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindOperator Operator
 highlight! link TSOperator Operator
-highlight Pmenu guifg=#000000 guibg=#008577 guisp=NONE gui=NONE cterm=NONE
+highlight Pmenu guifg=#00AD9C guibg=#253137 guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSbar guifg=NONE guibg=#008577 guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSel guifg=#23BDD1 guibg=#000000 guisp=NONE gui=NONE cterm=NONE
-highlight PmenuThumb guifg=#21C8DE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight PmenuThumb guifg=NONE guibg=#21C8DE guisp=NONE gui=NONE cterm=NONE
 highlight PreProc guifg=#F06090 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight QuickFixLine guifg=#FFFF7A guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSRepeat Repeat
@@ -172,4 +172,4 @@ highlight Visual guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
 highlight WarningMsg guifg=#000000 guibg=#D54215 guisp=NONE gui=NONE cterm=NONE
 highlight Whitespace guifg=#484242 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link NvimTreeIndentMarker Whitespace
-highlight WildMenu guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight WildMenu guifg=#00AD9C guibg=NONE guisp=NONE gui=NONE cterm=NONE
