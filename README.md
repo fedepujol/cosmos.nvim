@@ -83,11 +83,11 @@ Inside the folder named `lua/` you’ll find the following structure:
 📁 lua/
 └── 📁 lush_themes/
 	├── 📁cosmos/
-	|	└── cosmos.lua
+	|	└── init.lua
 	├── 📁dracula/
-	|	└── dracula.lua
+	|	└── init.lua
 	└── 📁vcdark/
-		└── vcdark.lua
+		└── init.lua
 ```
 
 Every theme has it’s own folder and it’s `lush_spec`. Open the lush_spec
@@ -115,7 +115,10 @@ paste into a \*.vim file.
 To use the `export.lua` file you need to customize it to fit your needs:
 
 ``` lua
-local theme = require('lush_theme.your_theme.your_theme')
+-- Make lua re-load the module to get the changes
+package.loaded['lush_theme.your_theme'] = nil
+
+local theme = require('lush_theme.your_theme')
 local lushwright = require('shipwright.transform.lush')
 local name = 'your_theme_name'
 
