@@ -56,7 +56,7 @@ local dracula = lush(function()
 		-- MsgArea        { }, -- Area for messages and cmdline
 		-- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		 NonText        { fg = subtle }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		 Normal         { fg = foreground, bg = background }, -- normal text
+		 Normal         { fg = foreground.da(10), bg = background }, -- normal text
 		-- NormalFloat    { }, -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
 		 Pmenu          { bg = bg_dark }, -- Popup menu: normal item.
@@ -253,45 +253,45 @@ local dracula = lush(function()
 		-- Plugin specifics
 
 		-- CmpItemAbbr              {}, -- The abbr field's highlight
-		-- CmpItemAbbrDeprecated    {}, -- The abbr field's highlight only used for deprecated items
+		 CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
 		 CmpItemAbbrMatch         { fg = purple }, -- Matched character's highlight
-		 CmpItemAbbrMatchFuzzy    { fg = cyan }, -- Fuzzy matched character's
+		 CmpItemAbbrMatchFuzzy    { fg = purple }, -- Fuzzy matched character's
 		-- CmpItemKind              {}, -- Kind field's group
 		-- CmpItemMenu              {}, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
-		-- CmpItemKindClass         {},
+		 CmpItemKindClass         { Structure },
 		-- CmpItemKindColor         {},
 		 CmpItemKindConstant      { Constant },
-		 CmpItemKindConstructor   { TSConstructor },
-		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnumMember    {},
-		-- CmpItemKindEvent         {},
-		-- CmpItemKindField         {},
+		 CmpItemKindConstructor   { Function },
+		 CmpItemKindEnum          { CmpItemKindClass },
+		 CmpItemKindEnumMember    { fg = yellow },
+		 CmpItemKindEvent         { CmpItemKindClass },
+		 CmpItemKindField         { CmpItemKindEnumMember },
 		-- CmpItemKindFile          {},
 		-- CmpItemKindFolder        {},
-		 CmpItemKindFunction      { Function },
-		-- CmpItemKindInterface     {},
+		 CmpItemKindFunction      { CmpItemKindConstructor },
+		 CmpItemKindInterface     { CmpItemKindClass },
 		-- CmpItemKindKeyword       {},
-		 CmpItemKindMethod        { Function },
+		 CmpItemKindMethod        { CmpItemKindConstructor },
 		-- CmpItemKindModule        {},
 		-- CmpItemKindOperator      {},
-		-- CmpItemKindProperty      {},
+		 CmpItemKindProperty      { CmpItemKindEnumMember },
 		-- CmpItemKindReference     {},
-		-- CmpItemKindSnippet       {},
-		-- CmpItemKindStruct        {},
-		-- CmpItemKindText          {},
+		 CmpItemKindSnippet       { CmpItemKindEnumMember },
+		 CmpItemKindStruct        { CmpItemKindClass },
+		 CmpItemKindText          { fg = Normal.fg },
 		-- CmpItemKindTypeParameter {},
-		-- CmpItemKindUnit          {},
-		-- CmpItemKindValue         {},
+		 CmpItemKindUnit          { CmpItemKindClass },
+		 CmpItemKindValue         { CmpItemKindConstant },
 		-- CmpItemKindVariable      {},
 
-		-- GitSignsAdd              {},
+		 GitSignsAdd              { DiffAdd },
 		-- GitSignsAddLn            {},
-		-- GitSignsChange           {},
+		 GitSignsChange           { DiffChange },
 		-- GitSignsChangeLn         {},
 		 GitSignsCurrentLineBlame { fg = comment },
-		-- GitSignsDelete           {},
+		 GitSignsDelete           { DiffDelete },
 		-- GitSignsDeleteLn         {},
 
 		 BufferCurrent            { fg = yellow, bg = bg_dark },
@@ -319,14 +319,14 @@ local dracula = lush(function()
 		-- NvimTreeEmptyFolderName  { },
 		 NvimTreeExecFile         { fg = cyan },
 		 NvimTreeFolderIcon       { fg = yellow },
-		 NvimTreeFolderName       { fg = foreground },
+		 NvimTreeFolderName       { fg = foreground.da(10) },
 		 NvimTreeGitDeleted       { DiffDelete },
 		 NvimTreeGitDirty         { DiffChange },
 		 NvimTreeGitIgnored       { fg = bg_lighter.li(10) },
 		 NvimTreeGitNew           { DiffAdd },
 		 NvimTreeIndentMarker     { fg = subtle.li(20) },
 		-- NvimTreeOpenedFile       { },
-		 NvimTreeOpenedFolderName { fg = foreground, gui = "bold" },
+		 NvimTreeOpenedFolderName { fg = foreground.da(10), gui = "bold" },
 		 NvimTreeRootFolder       { fg = orange },
 		 NvimTreeSpecialFile      { fg = purple },
 

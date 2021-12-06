@@ -1,7 +1,3 @@
-" This theme is a port based on the original dracula-theme from
-" 	https://github.com/dracula/dracula-theme and 
-" 	https://github.com/dracula/vim
-"
 " Maintainer: Fede Pujol
 
 set background=dark
@@ -9,7 +5,7 @@ hi clear
 if exists('syntax_on')
 	syntax reset
 endif
-let g:colors_name='dracula'
+let g:colors_name='nv-dracula'
 
 highlight Boolean guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSBoolean Boolean
@@ -28,8 +24,22 @@ highlight BufferInactiveTarget guifg=NONE guibg=#343746 guisp=NONE gui=NONE cter
 highlight BufferVisible guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Character guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSCharacter Character
+highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
 highlight CmpItemAbbrMatch guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight CmpItemAbbrMatchFuzzy guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemAbbrMatchFuzzy guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindEnum CmpItemKindClass
+highlight! link CmpItemKindEvent CmpItemKindClass
+highlight! link CmpItemKindInterface CmpItemKindClass
+highlight! link CmpItemKindStruct CmpItemKindClass
+highlight! link CmpItemKindUnit CmpItemKindClass
+highlight! link CmpItemKindValue CmpItemKindConstant
+highlight! link CmpItemKindFunction CmpItemKindConstructor
+highlight! link CmpItemKindMethod CmpItemKindConstructor
+highlight CmpItemKindEnumMember guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindField CmpItemKindEnumMember
+highlight! link CmpItemKindProperty CmpItemKindEnumMember
+highlight! link CmpItemKindSnippet CmpItemKindEnumMember
+highlight CmpItemKindText guifg=#E6E6D1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ColorColumn guifg=#21222C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSComment Comment
@@ -68,10 +78,13 @@ highlight DiagnosticUnderlineInformation guifg=#8BE8FD guibg=NONE guisp=NONE gui
 highlight DiagnosticUnderlineWarning guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticWarning guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link GitSignsAdd DiffAdd
 highlight! link NvimTreeGitNew DiffAdd
 highlight DiffChange guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link GitSignsChange DiffChange
 highlight! link NvimTreeGitDirty DiffChange
 highlight DiffDelete guifg=#FF5757 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
+highlight! link GitSignsDelete DiffDelete
 highlight! link NvimTreeGitDeleted DiffDelete
 highlight DiffText guifg=#272935 guibg=#FFB86B guisp=NONE gui=NONE cterm=NONE
 highlight Directory guifg=#BF95F9 guibg=NONE guisp=NONE gui=bold cterm=bold
@@ -81,8 +94,7 @@ highlight FloatBorder guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight FoldColumn guifg=#434551 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Folded guifg=#6071A4 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight Function guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link CmpItemKindFunction Function
-highlight! link CmpItemKindMethod Function
+highlight! link CmpItemKindConstructor Function
 highlight GitSignsCurrentLineBlame guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Identifier guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight IncSearch guifg=#272935 guibg=#FFB86B guisp=NONE gui=NONE cterm=NONE
@@ -94,14 +106,14 @@ highlight LspSignatureActiveParameter guifg=#8BE8FD guibg=NONE guisp=NONE gui=bo
 highlight MatchParen guifg=#52FA7C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight MoreMsg guifg=#F8F8F2 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight NonText guifg=#434551 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight Normal guifg=#F8F8F2 guibg=#272935 guisp=NONE gui=NONE cterm=NONE
+highlight Normal guifg=#E6E6D1 guibg=#272935 guisp=NONE gui=NONE cterm=NONE
 highlight! link TabLineSel Normal
 highlight NvimTreeExecFile guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeFolderIcon guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight NvimTreeFolderName guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NvimTreeFolderName guifg=#E6E6D1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeGitIgnored guifg=#535565 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeIndentMarker guifg=#636679 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight NvimTreeOpenedFolderName guifg=#F8F8F2 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight NvimTreeOpenedFolderName guifg=#E6E6D1 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight NvimTreeRootFolder guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeSpecialFile guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Pmenu guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
@@ -122,8 +134,8 @@ highlight SpellRare guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=unde
 highlight StatusLine guifg=NONE guibg=#434551 guisp=NONE gui=NONE cterm=NONE
 highlight StatusLineNC guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
 highlight String guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindClass Structure
 highlight TSConstructor guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link CmpItemKindConstructor TSConstructor
 highlight TSFuncBuiltin guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSFunction guifg=#8BE8FD guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight TSKeyword guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
