@@ -283,7 +283,7 @@ local cosmos = lush(function()
 		 CmpItemKindConstant      { Constant },
 		 CmpItemKindConstructor   { TSConstructor },
 		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEnumMember    {},
 		-- CmpItemKindEvent         {},
 		-- CmpItemKindField         {},
 		-- CmpItemKindFile          {},

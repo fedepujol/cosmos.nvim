@@ -265,7 +265,7 @@ local dracula = lush(function()
 		 CmpItemKindConstant      { Constant },
 		 CmpItemKindConstructor   { TSConstructor },
 		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEnumMember    {},
 		-- CmpItemKindEvent         {},
 		-- CmpItemKindField         {},
 		-- CmpItemKindFile          {},

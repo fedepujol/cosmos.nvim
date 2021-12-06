@@ -242,7 +242,7 @@ local theme = lush(function()
 		-- CmpItemKindConstant      {},
 		-- CmpItemKindConstructor   {},
 		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEnumMember    {},
 		-- CmpItemKindEvent         {},
 		-- CmpItemKindField         {},
 		-- CmpItemKindFile          {},

@@ -272,7 +272,7 @@ local vcdark = lush(function()
 		 CmpItemKindConstant      { Constant },
 		-- CmpItemKindConstructor   {},
 		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEnumMember    {},
 		-- CmpItemKindEvent         {},
 		-- CmpItemKindField         {},
 		-- CmpItemKindFile          {},

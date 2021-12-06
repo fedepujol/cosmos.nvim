@@ -259,7 +259,7 @@ local gruvbox = lush(function()
 		-- CmpItemKindConstant      {},
 		-- CmpItemKindConstructor   {},
 		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnummember    {},
+		-- CmpItemKindEnumMember    {},
 		-- CmpItemKindEvent         {},
 		-- CmpItemKindField         {},
 		-- CmpItemKindFile          {},
