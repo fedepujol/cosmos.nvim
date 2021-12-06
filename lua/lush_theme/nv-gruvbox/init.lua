@@ -42,7 +42,7 @@ local gruvbox = lush(function()
 		 DiffAdd        { fg = bright_green }, -- diff mode: Added line |diff.txt|
 		 DiffChange     { fg = bright_aqua  }, -- diff mode: Changed line |diff.txt|
 		 DiffDelete     { fg = bright_red }, -- diff mode: Deleted line |diff.txt|
-		 DiffText       { fg = bright_yellow  }, -- diff mode: Changed text within a changed line |diff.txt|
+		 DiffText       { fg = bright_yellow.mix(dark0, 30)  }, -- diff mode: Changed text within a changed line |diff.txt|
 		 Directory      { fg = bright_green, gui = "bold" }, -- directory names (and other special names in listings)
 		-- EndOfBuffer    {}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		 ErrorMsg       { fg = dark0, bg = bright_red }, -- error messages on the command line
@@ -131,8 +131,8 @@ local gruvbox = lush(function()
 		-- SpecialComment {}, -- special things inside a comment
 		-- Tag            {}, --    you can use CTRL-] on this
 
-		-- Bold           {},
-		-- Italic         {},
+		 Bold           { gui = "bold" },
+		 Italic         { gui = "italic" },
 		-- Underlined     {}, -- (preferred) text that stands out, HTML links
 
 		-- ("Ignore", below, may be invisible...)
@@ -144,36 +144,40 @@ local gruvbox = lush(function()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		-- LspReferenceRead                     {}, -- used for highlighting "read" references
-		-- LspReferenceText                     {}, -- used for highlighting "text" references
-		-- LspReferenceWrite                    {}, -- used for highlighting "write" references
+		 LspReferenceRead                     { fg = dark4 }, -- used for highlighting "read" references
+		 LspReferenceText                     { fg = dark4 }, -- used for highlighting "text" references
+		 LspReferenceWrite                    { fg = dark4 }, -- used for highlighting "write" references
 
-		-- LspDiagnosticsDefaultError           {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultHint            {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultInformation     {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		-- LspDiagnosticsDefaultWarning         {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticError           { fg = bright_red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticHint            { fg = bright_aqua }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticInformation     { fg = bright_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticWarning         { fg = bright_orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		-- LspDiagnosticsVirtualTextError       {}, -- Used for "Error" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextInformation {}, -- Used for "Information" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextWarning     {}, -- Used for "Warning" diagnostic virtual text
-		-- LspDiagnosticsVirtualTextHint        {}, -- Used for "Hint" diagnostic virtual text
+		 DiagnosticVirtualTextError       { fg = bright_red, bg = dark0.mix(bright_red, 20) }, -- Used for "Error" diagnostic virtual text
+		 DiagnosticVirtualTextHint        { fg = bright_aqua, bg = dark0.mix(bright_aqua, 20) }, -- Used for "Hint" diagnostic virtual text
+		 DiagnosticVirtualTextInformation { fg = bright_green, bg = dark0.mix(bright_green, 20) }, -- Used for "Information" diagnostic virtual text
+		 DiagnosticVirtualTextWarning     { fg = bright_orange, bg = dark0.mix(bright_orange, 20) }, -- Used for "Warning" diagnostic virtual text
 
-		-- LspDiagnosticsUnderlineError         {}, -- Used to underline "Error" diagnostics
-		-- LspDiagnosticsUnderlineHint          {}, -- Used to underline "Hint" diagnostics
-		-- LspDiagnosticsUnderlineInformation   {}, -- Used to underline "Information" diagnostics
-		-- LspDiagnosticsUnderlineWarning       {}, -- Used to underline "Warning" diagnostics
+		 DiagnosticUnderlineError         { fg = bright_red, gui = "underline" }, -- Used to underline "Error" diagnostics
+		 DiagnosticUnderlineHint          { fg = bright_aqua, gui = "underline" }, -- Used to underline "Hint" diagnostics
+		 DiagnosticUnderlineInformation   { fg = bright_green, gui = "underline" }, -- Used to underline "Information" diagnostics
+		 DiagnosticUnderlineWarning       { fg = bright_orange, gui = "underline" }, -- Used to underline "Warning" diagnostics
 
-		-- LspDiagnosticsFloatingError          {}, -- Used to color "Error" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingHint           {}, -- Used to color "Hint" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingInformation    {}, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- LspDiagnosticsFloatingWarning        {}, -- Used to color "Warning" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError          {}, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint           {}, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInformation    {}, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarning        {}, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		-- LspDiagnosticsSignError              {}, -- Used for "Error" signs in sign column
-		-- LspDiagnosticsSignHint               {}, -- Used for "Hint" signs in sign column
-		-- LspDiagnosticsSignInformation        {}, -- Used for "Information" signs in sign column
-		-- LspDiagnosticsSignWarning            {}, -- Used for "Warning" signs in sign column
+		 DiagnosticSignError              { DiagnosticError }, -- Used for "Error" signs in sign column
+		 DiagnosticSignHint               { DiagnosticHint }, -- Used for "Hint" signs in sign column
+		 DiagnosticSignInformation        { DiagnosticInformation }, -- Used for "Information" signs in sign column
+		 DiagnosticSignWarning            { DiagnosticWarning }, -- Used for "Warning" signs in sign column
 
-		-- LspCodeLens                          {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
+
+		 LspSignatureActiveParameter      { fg = light4, gui = "bold" }, -- Used to highlight the active parameter in the signature help
+		 FloatBorder                      { fg = gray_245 }, -- Used for hovers
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -189,7 +193,7 @@ local gruvbox = lush(function()
 		-- TSConstant           {},    -- For constants
 		-- TSConstBuiltin       {},    -- For constant that are built in the language: nil in Lua.
 		-- TSConstMacro         {},    -- For constants that are defined by macros: NULL in C.
-		-- TSConstructor        {}, -- Constructo calls and definitions: {} in Lua, and Java constructors.
+		-- TSConstructor        {},    -- Constructor calls and definitions: {} in Lua, and Java constructors.
 		-- TSError              {},    -- For syntax/parser errors.
 		-- TSException          {},    -- For exception related keywords.
 		-- TSField              {},    -- For fields.
@@ -247,37 +251,37 @@ local gruvbox = lush(function()
 		-- Plugin specifics
 
 		-- CmpItemAbbr              {}, -- The abbr field's highlight
-		-- CmpItemAbbrDeprecated    {}, -- The abbr field's highlight only used for deprecated items
-		-- CmpItemAbbrMatch         {}, -- Matched character's highlight
-		-- CmpItemAbbrMatchFuzzy    {}, -- Fuzzy matched character's
+		 CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
+		 CmpItemAbbrMatch         { fg = bright_yellow }, -- Matched character's highlight
+		 CmpItemAbbrMatchFuzzy    { fg = bright_yellow }, -- Fuzzy matched character's
 		-- CmpItemKind              {}, -- Kind field's group
 		-- CmpItemMenu              {}, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
-		-- CmpItemKindClass         {},
+		 CmpItemKindClass         { Structure },
 		-- CmpItemKindColor         {},
-		-- CmpItemKindConstant      {},
-		-- CmpItemKindConstructor   {},
-		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnumMember    {},
-		-- CmpItemKindEvent         {},
-		-- CmpItemKindField         {},
+		 CmpItemKindConstant      { Constant },
+		 CmpItemKindConstructor   { Function },
+		 CmpItemKindEnum          { CmpItemKindClass },
+		 CmpItemKindEnumMember    { fg = bright_blue },
+		 CmpItemKindEvent         { CmpItemKindClass },
+		 CmpItemKindField         { CmpItemKindEnumMember },
 		-- CmpItemKindFile          {},
 		-- CmpItemKindFolder        {},
-		-- CmpItemKindFunction      {},
-		-- CmpItemKindInterface     {},
+		 CmpItemKindFunction      { CmpItemKindConstructor },
+		 CmpItemKindInterface     { CmpItemKindClass },
 		-- CmpItemKindKeyword       {},
-		-- CmpItemKindMethod        {},
+		 CmpItemKindMethod        { CmpItemKindConstructor },
 		-- CmpItemKindModule        {},
-		-- CmpItemKindOperator      {},
+		 CmpItemKindOperator      { CmpItemKindEnumMember },
 		-- CmpItemKindProperty      {},
 		-- CmpItemKindReference     {},
-		-- CmpItemKindSnippet       {},
-		-- CmpItemKindStruct        {},
-		-- CmpItemKindText          {},
-		-- CmpItemKindTypeParameter {},
+		 CmpItemKindSnippet       { CmpItemKindEnumMember },
+		 CmpItemKindStruct        { CmpItemKindClass },
+		 CmpItemKindText          { fg = light4 },
+		 CmpItemKindTypeParameter { Type },
 		-- CmpItemKindUnit          {},
-		-- CmpItemKindValue         {},
+		 CmpItemKindValue         { CmpItemKindConstant },
 		-- CmpItemKindVariable      {},
 
 		 GitSignsAdd              { DiffAdd },
@@ -288,12 +292,27 @@ local gruvbox = lush(function()
 		 GitSignsDelete           { DiffDelete },
 		-- GitSignsDeleteLn         {},
 
-		-- BufferCurrent            {},
-		-- BufferCurrentMod         {},
-		-- BufferInactive           {},
-		-- BufferInactiveMod        {},
-		-- BufferVisible            {},
-		-- BufferVisibleMod         {},
+		 BufferCurrent            { bg = dark0 },
+		 BufferCurrentIcon        { bg = dark0 },
+		 BufferCurrentIndex       { bg = dark0 },
+		 BufferCurrentMod         { bg = dark0 },
+		 BufferCurrentSign        { bg = dark0 },
+		 BufferCurrentTarget      { bg = dark0 },
+		 BufferInactive           { bg = dark1 },
+		 BufferInactiveIcon       { bg = dark1 },
+		 BufferInactiveIndex      { bg = dark1 },
+		 BufferInactiveMod        { bg = dark1 },
+		 BufferInactiveSign       { bg = dark1 },
+		 BufferInactiveTarget     { bg = dark1 },
+		-- BufferOffset             {},
+		-- BufferTabpageFill        {},
+		-- BufferTabpages           {},
+		 BufferVisible            { bg = dark3 },
+		 BufferVisibleIcon        { bg = dark3 },
+		 BufferVisibleIndex       { bg = dark3 },
+		 BufferVisibleMod         { bg = dark3 },
+		 BufferVisibleSign        { bg = dark3 },
+		 BufferVisibleTarget      { bg = dark3 },
 
 		-- NvimTreeEmptyFolderName  {},
 		-- NvimTreeExecFile         {},
@@ -307,13 +326,13 @@ local gruvbox = lush(function()
 		 NvimTreeOpenedFile       { fg = light4 },
 		-- NvimTreeOpenedFolderName {},
 		 NvimTreeRootFolder       { fg = bright_orange },
-		 NvimTreeSpecialFile      { fg = bright_aqua },
+		 NvimTreeSpecialFile      { fg = bright_aqua, gui = "underline" },
 
 		 TelescopeBorder          { fg = dark4 },
 		 TelescopeMultiSelection  { fg = bright_orange },
-		 TelescopePreviewBorder   { TelescopeBorder },
-		 TelescopePromptBorder    { TelescopeBorder },
-		 TelescopeResultsBorder   { TelescopeBorder },
+		-- TelescopePreviewBorder   {},
+		-- TelescopePromptBorder    {},
+		-- TelescopeResultsBorder   {},
 		 TelescopeSelection       { fg = bright_aqua },
 		 TelescopeSelectionCaret  { fg = bright_green },
 	}
