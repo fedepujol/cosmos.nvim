@@ -5,7 +5,7 @@ hi clear
 if exists('syntax_on')
 	syntax reset
 endif
-let g:colors_name='cosmos'
+let g:colors_name='nv-cosmos'
 
 highlight Boolean guifg=#28B5F6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSBoolean Boolean
@@ -21,7 +21,23 @@ highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrou
 highlight CmpItemAbbrMatch guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemAbbrMatchFuzzy guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemKind guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindEnum CmpItemKindClass
+highlight! link CmpItemKindEvent CmpItemKindClass
+highlight! link CmpItemKindInterface CmpItemKindClass
+highlight! link CmpItemKindStruct CmpItemKindClass
+highlight! link CmpItemKindUnit CmpItemKindClass
+highlight! link CmpItemKindFunction CmpItemKindConstructor
+highlight! link CmpItemKindMethod CmpItemKindConstructor
+highlight CmpItemKindEnumMember guifg=#4EB7AC guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindField CmpItemKindEnumMember
+highlight! link CmpItemKindProperty CmpItemKindEnumMember
+highlight! link CmpItemKindSnippet CmpItemKindEnumMember
+highlight CmpItemKindFile guifg=#F06090 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindFolder guifg=#FFFF8F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindKeyword guifg=#1975D2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindModule guifg=#8D6E62 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemKindText guifg=#C9C9C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindVariable guifg=#F8BACF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemMenu guifg=#000000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ColorColumn guifg=#D54215 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#328636 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -33,8 +49,12 @@ highlight! link Repeat Conditional
 highlight! link TSConditional Conditional
 highlight Constant guifg=#3B91E8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindConstant Constant
+highlight! link CmpItemKindReference Constant
+highlight! link CmpItemKindValue Constant
 highlight! link TSConstant Constant
+highlight Cursor guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
 highlight CursorColumn guifg=#616161 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CursorIM guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
 highlight CursorLine guifg=NONE guibg=#212B31 guisp=NONE gui=NONE cterm=NONE
 highlight CursorLineNr guifg=#9E9E9E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Debug guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
@@ -65,8 +85,7 @@ highlight ErrorMsg guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSFloat Float
 highlight FloatBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Function guifg=#0096A3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link CmpItemKindFunction Function
-highlight! link CmpItemKindMethod Function
+highlight! link CmpItemKindConstructor Function
 highlight! link Macro Function
 highlight! link TSFunction Function
 highlight! link TSMethod Function
@@ -78,6 +97,7 @@ highlight! link Define Include
 highlight Keyword guifg=#61D6E5 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#484242 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LspSignatureActiveParameter guifg=#F8BACF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight MatchParen guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ModeMsg guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MoreMsg guifg=#25C5DA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MsgArea guifg=NONE guibg=#1D262A guisp=NONE gui=NONE cterm=NONE
@@ -131,10 +151,10 @@ highlight StorageClass guifg=#90CAF9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight String guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSString String
 highlight Structure guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindClass Structure
 highlight TSConstBuiltin guifg=#1A7ADB guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSConstMacro TSConstBuiltin
 highlight TSConstructor guifg=#9B7A6F guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link CmpItemKindConstructor TSConstructor
 highlight TSEmphasis guifg=NONE guibg=NONE guisp=NONE gui=bold,reverse cterm=bold,reverse
 highlight TSError guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSException guifg=#212121 guibg=#B51C1C guisp=NONE gui=NONE cterm=NONE
@@ -156,9 +176,9 @@ highlight TSTagAttribute guifg=#79CBD2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSURI guifg=#69B7F7 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight TSUnderline guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight TSVariable guifg=#F6A7C3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link CmpItemKindVariable TSVariable
 highlight TSVariableBuiltin guifg=#69B7F7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#CC7400 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindColor Tag
 highlight TelescopeBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#FFFF8F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelection guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -166,6 +186,7 @@ highlight TelescopeSelectionCaret guifg=#BB69C9 guibg=NONE guisp=NONE gui=NONE c
 highlight TermCursor guifg=NONE guibg=#E0E0E0 guisp=NONE gui=NONE cterm=NONE
 highlight TermCursorNC guifg=NONE guibg=#B3B3B3 guisp=NONE gui=NONE cterm=NONE
 highlight Type guifg=#7B88CC guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindTypeParameter Type
 highlight Typedef guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight VertSplit guifg=#424242 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight Visual guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
@@ -173,3 +194,4 @@ highlight WarningMsg guifg=#000000 guibg=#D54215 guisp=NONE gui=NONE cterm=NONE
 highlight Whitespace guifg=#484242 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link NvimTreeIndentMarker Whitespace
 highlight WildMenu guifg=#00AD9C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight lCursor guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse

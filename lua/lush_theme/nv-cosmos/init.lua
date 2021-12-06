@@ -59,9 +59,9 @@ local cosmos = lush(function()
 		Comment      { fg = green_800.li(3) }, -- any comment
 		ColorColumn  { fg = dorange_800 }, -- used for the columns set with 'colorcolumn'
 		-- Conceal      { fg = gray_300 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		-- Cursor       { gui="reverse" }, -- character under the cursor
-		-- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		-- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
+		Cursor       { gui = "reverse" }, -- character under the cursor
+		lCursor      { gui = "reverse" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM     { gui = "reverse" }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn { fg = gray_700 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine   { bg = bgray_900.da(10) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		Directory    { fg = yellow_700 }, -- directory names (and other special names in listings)
@@ -81,7 +81,7 @@ local cosmos = lush(function()
 		-- Substitute   { }, -- |:substitute| replacement text highlighting
 		LineNr       { fg = black.li(27).sa(4) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr { fg = gray_400.da(10) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		-- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen   { fg = Normal.bg, bg = Normal.fg }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg      { fg = gray_300 }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea      { bg = bgray_900.da(20)}, -- Area for messages and cmdline
 		MsgSeparator { fg = lblue_700.li(10) }, -- Separator for scrolled messages, msgsep flag of 'display'
@@ -201,8 +201,8 @@ local cosmos = lush(function()
 		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
 		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
 
-		 LspSignatureActiveParameter      { fg = pink_100 }, -- Used to highlight the active parameter in the signature help
-		 FloatBorder                      { fg = indigo_400 }, -- Used for hovers
+		LspSignatureActiveParameter      { fg = pink_100 }, -- Used to highlight the active parameter in the signature help
+		FloatBorder                      { fg = indigo_400 }, -- Used for hovers
 
 		-- Treesitter Highlights
 
@@ -278,31 +278,31 @@ local cosmos = lush(function()
 		 CmpItemMenu              { fg = black }, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
-		-- CmpItemKindClass         {},
-		-- CmpItemKindColor         {},
+		 CmpItemKindClass         { Structure },
+		 CmpItemKindColor         { Tag },
 		 CmpItemKindConstant      { Constant },
-		 CmpItemKindConstructor   { TSConstructor },
-		-- CmpItemKindEnum          {},
-		-- CmpItemKindEnumMember    {},
-		-- CmpItemKindEvent         {},
-		-- CmpItemKindField         {},
-		-- CmpItemKindFile          {},
-		-- CmpItemKindFolder        {},
-		 CmpItemKindFunction      { Function },
-		-- CmpItemKindInterface     {},
-		-- CmpItemKindKeyword       {},
-		 CmpItemKindMethod        { Function },
-		-- CmpItemKindModule        {},
+		 CmpItemKindConstructor   { Function },
+		 CmpItemKindEnum          { CmpItemKindClass },
+		 CmpItemKindEnumMember    { fg = teal_300 },
+		 CmpItemKindEvent         { CmpItemKindClass },
+		 CmpItemKindField         { CmpItemKindEnumMember },
+		 CmpItemKindFile          { fg = pink_300 },
+		 CmpItemKindFolder        { fg = yellow_a100 },
+		 CmpItemKindFunction      { CmpItemKindConstructor },
+		 CmpItemKindInterface     { CmpItemKindClass },
+		 CmpItemKindKeyword       { fg = blue_700 },
+		 CmpItemKindMethod        { CmpItemKindConstructor },
+		 CmpItemKindModule        { fg = brown_400 },
 		 CmpItemKindOperator      { Operator },
-		-- CmpItemKindProperty      {},
-		-- CmpItemKindReference     {},
-		-- CmpItemKindSnippet       {},
-		-- CmpItemKindStruct        {},
+		 CmpItemKindProperty      { CmpItemKindEnumMember },
+		 CmpItemKindReference     { Constant },
+		 CmpItemKindSnippet       { CmpItemKindEnumMember },
+		 CmpItemKindStruct        { CmpItemKindClass },
 		 CmpItemKindText          { fg = Normal.fg },
-		-- CmpItemKindTypeParameter {},
-		-- CmpItemKindUnit          {},
-		-- CmpItemKindValue         {},
-		 CmpItemKindVariable      { TSVariable },
+		 CmpItemKindTypeParameter { Type },
+		 CmpItemKindUnit          { CmpItemKindClass },
+		 CmpItemKindValue         { Constant },
+		 CmpItemKindVariable      { fg = pink_100 },
 
 		GitSignsAdd              { DiffAdd },
 		-- GitSignsAddLn            {},
