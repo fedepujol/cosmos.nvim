@@ -1,4 +1,4 @@
--- Based on the colorscheme
+-- This is a port based on the theme
 -- https://github.com/dracula/vim and colors from
 -- https://github.com/dracula/dracula-theme
 

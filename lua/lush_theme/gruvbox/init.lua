@@ -1,3 +1,6 @@
+-- This is a port based on the original themes
+-- see https://gihub.com/morhetz/gruvbox
+
 local lush = require('lush')
 local hsl = lush.hsl
 
