@@ -1,6 +1,6 @@
-package.loaded["lush_theme.cosmos.cosmos"] = nil
+package.loaded["lush_theme.cosmos"] = nil
 
-local theme = require('lush_theme.cosmos.cosmos')
+local theme = require('lush_theme.cosmos')
 local lushwright = require('shipwright.transform.lush')
 local name = 'cosmos'
 
