@@ -70,10 +70,10 @@ highlight DiagnosticUnderlineError guifg=#DC4C4C guibg=NONE guisp=NONE gui=under
 highlight DiagnosticUnderlineHint guifg=#1ABC9C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineInformation guifg=#0DBAD9 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineWarning guifg=#E0AF67 guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticVirtualTextError guifg=#DC4C4C guibg=#100E0E guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextHint guifg=#1ABC9C guibg=#090B0B guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextInformation guifg=#0DBAD9 guibg=#090B0B guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextWarning guifg=#E0AF67 guibg=#10100E guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextError guifg=#DC4C4C guibg=#3C364A guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextHint guifg=#1ABC9C guibg=#283948 guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextInformation guifg=#0DBAD9 guibg=#28384D guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextWarning guifg=#E0AF67 guibg=#3C3B4A guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticWarning guifg=#E0AF67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=NONE guibg=#3A6C73 guisp=NONE gui=NONE cterm=NONE
 highlight DiffChange guifg=NONE guibg=#2D3648 guisp=NONE gui=NONE cterm=NONE
@@ -86,9 +86,9 @@ highlight ErrorMsg guifg=#DC4C4C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight FoldColumn guifg=#56608A guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Folded guifg=#78A0F7 guibg=#3C4362 guisp=NONE gui=NONE cterm=NONE
 highlight Function guifg=#78A0F7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight GitSignsAdd guifg=#164645 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight GitSignsChange guifg=#384B70 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight GitSignsDelete guifg=#813B40 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight GitSignsAdd guifg=#298582 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight GitSignsChange guifg=#AB817C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight GitSignsDelete guifg=#AF5057 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Identifier guifg=#BC9CF7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Italic guifg=NONE guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight Keyword guifg=#80D0FF guibg=NONE guisp=NONE gui=NONE cterm=NONE

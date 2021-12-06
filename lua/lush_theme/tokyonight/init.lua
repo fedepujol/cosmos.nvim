@@ -175,10 +175,10 @@ local tokyonight = lush(function()
 		 DiagnosticInformation            { fg = blue2 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		 DiagnosticWarning                { fg = yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		 DiagnosticVirtualTextError       { fg = red1, bg = black.mix(red1, 10) }, -- Used for "Error" diagnostic virtual text
-		 DiagnosticVirtualTextHint        { fg = teal, bg = black.mix(teal, 10) }, -- Used for "Hint" diagnostic virtual text
-		 DiagnosticVirtualTextInformation { fg = blue2, bg = black.mix(blue2, 10) }, -- Used for "Information" diagnostic virtual text
-		 DiagnosticVirtualTextWarning     { fg = yellow, bg = black.mix(yellow, 10) }, -- Used for "Warning" diagnostic virtual text
+		 DiagnosticVirtualTextError       { fg = red1, bg = bg.mix(red1, 15) }, -- Used for "Error" diagnostic virtual text
+		 DiagnosticVirtualTextHint        { fg = teal, bg = bg.mix(teal, 15) }, -- Used for "Hint" diagnostic virtual text
+		 DiagnosticVirtualTextInformation { fg = blue2, bg = bg.mix(blue2, 15) }, -- Used for "Information" diagnostic virtual text
+		 DiagnosticVirtualTextWarning     { fg = yellow, bg = bg.mix(yellow, 15) }, -- Used for "Warning" diagnostic virtual text
 
 		 DiagnosticUnderlineError         { fg = red1, gui = "underline" }, -- Used to underline "Error" diagnostics
 		 DiagnosticUnderlineHint          { fg = teal, gui = "underline" }, -- Used to underline "Hint" diagnostics
@@ -306,12 +306,12 @@ local tokyonight = lush(function()
 		 CmpItemKindValue         { CmpItemKindConstant },
 		 CmpItemKindVariable      { CmpItemKindConstant },
 
-		 GitSignsAdd              { fg = gs_add },
+		 GitSignsAdd              { fg = gs_add.li(20) },
 		-- GitSignsAddLn            {},
-		 GitSignsChange           { fg = gs_change },
+		 GitSignsChange           { fg = gs_change.mix(orange, 40).li(20) },
 		-- GitSignsChangeLn         {},
 		-- GitSignsCurrentLineBlame {},
-		 GitSignsDelete           { fg = gs_delete },
+		 GitSignsDelete           { fg = gs_delete.li(20) },
 		-- GitSignsDeleteLn         {},
 
 		 BufferCurrent            { fg = fg, bg = fg_gutter },
@@ -350,7 +350,7 @@ local tokyonight = lush(function()
 		 NvimTreeRootFolder       { fg = blue, gui = "bold" },
 		 NvimTreeSpecialFile      { fg = purple, gui = "underline" },
 
-		 TelescopeBorder          { fg = blue0},
+		 TelescopeBorder          { fg = blue0 },
 		-- TelescopeMultiSelection  {},
 		-- TelescopePreviewBorder   {},
 		-- TelescopePromptBorder    {},
