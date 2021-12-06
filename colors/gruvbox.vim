@@ -1,3 +1,6 @@
+" This is a port of the originaly theme 
+" see https://github.com/morhetz/gruvbox
+"
 " Maintainer: Fede Pujol
 
 set background=dark

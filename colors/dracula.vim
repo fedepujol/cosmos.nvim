@@ -1,7 +1,6 @@
-" This theme is based on the original dracula-theme from
+" This theme is a port based on the original dracula-theme from
 " 	https://github.com/dracula/dracula-theme and 
 " 	https://github.com/dracula/vim
-" which are still mantained
 "
 " Maintainer: Fede Pujol
 
