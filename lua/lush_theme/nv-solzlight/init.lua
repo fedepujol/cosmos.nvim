@@ -36,9 +36,9 @@ local theme = lush(function()
 		-- CursorIM       {}, -- like Cursor, but used when in IME mode |CursorIM|
 		 CursorLine     { bg = base02 }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		 CursorLineNr   { fg = base2, bg = base02 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		 DiffAdd        { fg = green, gui = "bold" }, -- diff mode: Added line |diff.txt|
-		 DiffChange     { fg = yellow, gui = "bold" }, -- diff mode: Changed line |diff.txt|
-		 DiffDelete     { fg = red, gui = "bold" }, -- diff mode: Deleted line |diff.txt|
+		 DiffAdd        { fg = green, bg = base02, gui = "bold" }, -- diff mode: Added line |diff.txt|
+		 DiffChange     { fg = yellow, bg = base02, gui = "bold" }, -- diff mode: Changed line |diff.txt|
+		 DiffDelete     { fg = red, bg = base02, gui = "bold" }, -- diff mode: Deleted line |diff.txt|
 		 DiffText       { fg = base1, gui = "bold" }, -- diff mode: Changed text within a changed line |diff.txt|
 		 Directory      { fg = blue }, -- directory names (and other special names in listings)
 		-- EndOfBuffer    {}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -63,7 +63,7 @@ local theme = lush(function()
 		 Question       { fg = cyan, gui = "bold" }, -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine   {}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		 Search         { fg = yellow, gui = "reverse" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		-- SignColumn     {}, -- column where |signs| are displayed
+		 SignColumn     { bg = base02 }, -- column where |signs| are displayed
 		 SpecialKey     { fg = base00, bg = base02, gui = "reverse" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		 SpellBad       { fg = red, gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		 SpellCap       { fg = violet, gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.

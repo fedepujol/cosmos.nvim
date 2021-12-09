@@ -31,13 +31,13 @@ highlight DiagnosticVirtualTextInformation guifg=#278BD3 guibg=NONE guisp=NONE g
 highlight DiagnosticVirtualTextWarning guifg=#B38600 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticWarning guifg=#CA4C16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticSignWarning DiagnosticWarning
-highlight DiffAdd guifg=#859900 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight DiffAdd guifg=#859900 guibg=#073541 guisp=NONE gui=bold cterm=bold
 highlight! link GitSignsAdd DiffAdd
 highlight! link NvimTreeGitNew DiffAdd
-highlight DiffChange guifg=#B38600 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight DiffChange guifg=#B38600 guibg=#073541 guisp=NONE gui=bold cterm=bold
 highlight! link GitSignsChange DiffChange
 highlight! link NvimTreeGitDirty DiffChange
-highlight DiffDelete guifg=#DC312E guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight DiffDelete guifg=#DC312E guibg=#073541 guisp=NONE gui=bold cterm=bold
 highlight! link GitSignsDelete DiffDelete
 highlight! link NvimTreeGitDeleted DiffDelete
 highlight DiffText guifg=#92A0A0 guibg=NONE guisp=NONE gui=bold cterm=bold
@@ -74,6 +74,7 @@ highlight PmenuThumb guifg=#839495 guibg=#002D38 guisp=NONE gui=NONE cterm=NONE
 highlight PreProc guifg=#CA4C16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Question guifg=#2AA298 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Search guifg=#B38600 guibg=NONE guisp=NONE gui=reverse cterm=reverse
+highlight SignColumn guifg=NONE guibg=#073541 guisp=NONE gui=NONE cterm=NONE
 highlight Special guifg=#DC312E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialKey guifg=#647A82 guibg=#073541 guisp=NONE gui=reverse cterm=reverse
 highlight SpellBad guifg=#DC312E guibg=NONE guisp=NONE gui=underline cterm=underline
