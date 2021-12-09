@@ -133,9 +133,9 @@ local theme = lush(function()
 		-- DiagnosticWarning                {}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
 		-- DiagnosticVirtualTextError       {}, -- Used for "Error" diagnostic virtual text
+		-- DiagnosticVirtualTextHint        {}, -- Used for "Hint" diagnostic virtual text
 		-- DiagnosticVirtualTextInformation {}, -- Used for "Information" diagnostic virtual text
 		-- DiagnosticVirtualTextWarning     {}, -- Used for "Warning" diagnostic virtual text
-		-- DiagnosticVirtualTextHint        {}, -- Used for "Hint" diagnostic virtual text
 
 		-- DiagnosticUnderlineError         {}, -- Used to underline "Error" diagnostics
 		-- DiagnosticUnderlineHint          {}, -- Used to underline "Hint" diagnostics
