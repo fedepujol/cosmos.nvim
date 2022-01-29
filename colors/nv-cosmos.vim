@@ -179,10 +179,17 @@ highlight TSVariable guifg=#F6A7C3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSVariableBuiltin guifg=#69B7F7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#CC7400 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindColor Tag
-highlight TelescopeBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeBorder guifg=#151B1E guibg=#151B1E guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#FFFF8F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeNormal guifg=NONE guibg=#151B1E guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePreviewTitle guifg=#151B1E guibg=#4758B8 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptBorder guifg=#253137 guibg=#253137 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptCounter guifg=#25C5DA guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptNormal guifg=#E0E0E0 guibg=#253137 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptTitle guifg=#151B1E guibg=#007A6E guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeResultsTitle guifg=#151B1E guibg=#00B34A guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelection guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopeSelectionCaret guifg=#BB69C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeSelectionCaret guifg=#80DEEA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TermCursor guifg=NONE guibg=#E0E0E0 guisp=NONE gui=NONE cterm=NONE
 highlight TermCursorNC guifg=NONE guibg=#B3B3B3 guisp=NONE gui=NONE cterm=NONE
 highlight Type guifg=#7B88CC guibg=NONE guisp=NONE gui=NONE cterm=NONE
