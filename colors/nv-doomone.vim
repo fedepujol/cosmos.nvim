@@ -44,16 +44,16 @@ highlight! link Macro Define
 highlight Delimiter guifg=#52B0EF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticError guifg=#FF6B6B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticHint guifg=#97BE64 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticInformation guifg=#47DAFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticInfo guifg=#47DAFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticSignError guifg=#FF6B6B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticSignHint guifg=#97BE64 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticSignInformation guifg=#47DAFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticSignWarning guifg=#DA8549 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticSignInfo guifg=#47DAFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticSignWarn guifg=#DA8549 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextError guifg=#FF6B6B guibg=#3C363F guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextHint guifg=#97BE64 guibg=#33393D guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextInformation guifg=#47DAFF guibg=#2E3C47 guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextWarning guifg=#DA8549 guibg=#35353B guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticWarning guifg=#DA8549 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextInfo guifg=#47DAFF guibg=#2E3C47 guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextWarn guifg=#DA8549 guibg=#35353B guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticWarn guifg=#DA8549 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=#97BE64 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
 highlight! link NvimTreeGitNew DiffAdd

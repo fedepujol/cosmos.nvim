@@ -1,6 +1,3 @@
-" This is a port of the orignal theme
-" https://github.com/folke/tokyonight.nvim
-"
 " Maintainer: Fede Pujol
 
 set background=dark
@@ -8,7 +5,7 @@ hi clear
 if exists('syntax_on')
 	syntax reset
 endif
-let g:colors_name='tokyonight'
+let g:colors_name='nv-tokyonight'
 
 highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight BufferCurrent guifg=#C1CBF5 guibg=#3C4362 guisp=NONE gui=NONE cterm=NONE
@@ -65,16 +62,16 @@ highlight CursorLine guifg=NONE guibg=#292E42 guisp=NONE gui=NONE cterm=NONE
 highlight CursorLineNr guifg=#7279A1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticError guifg=#DC4C4C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticHint guifg=#1ABC9C guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticInformation guifg=#0DBAD9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticInfo guifg=#0DBAD9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticUnderlineError guifg=#DC4C4C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineHint guifg=#1ABC9C guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineInformation guifg=#0DBAD9 guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineWarning guifg=#E0AF67 guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineInfo guifg=#0DBAD9 guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineWarn guifg=#E0AF67 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticVirtualTextError guifg=#DC4C4C guibg=#3C364A guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextHint guifg=#1ABC9C guibg=#283948 guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextInformation guifg=#0DBAD9 guibg=#28384D guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextWarning guifg=#E0AF67 guibg=#3C3B4A guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticWarning guifg=#E0AF67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextInfo guifg=#0DBAD9 guibg=#28384D guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextWarn guifg=#E0AF67 guibg=#3C3B4A guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticWarn guifg=#E0AF67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=NONE guibg=#3A6C73 guisp=NONE gui=NONE cterm=NONE
 highlight DiffChange guifg=NONE guibg=#2D3648 guisp=NONE gui=NONE cterm=NONE
 highlight DiffDelete guifg=NONE guibg=#9A3737 guisp=NONE gui=NONE cterm=NONE

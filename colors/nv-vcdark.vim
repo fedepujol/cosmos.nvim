@@ -5,7 +5,7 @@ hi clear
 if exists('syntax_on')
 	syntax reset
 endif
-let g:colors_name='vcdark'
+let g:colors_name='nv-vcdark'
 
 highlight Boolean guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight BufferCurrent guifg=#FFFFFF guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -33,12 +33,12 @@ highlight! link DiagnosticVirtualTextError DiagnosticError
 highlight DiagnosticHint guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticSignHint DiagnosticHint
 highlight! link DiagnosticVirtualTextHint DiagnosticHint
-highlight DiagnosticInformation guifg=#709948 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticSignInformation DiagnosticInformation
-highlight! link DiagnosticVirtualTextInformation DiagnosticInformation
-highlight DiagnosticWarning guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticSignWarning DiagnosticWarning
-highlight! link DiagnosticVirtualTextWarning DiagnosticWarning
+highlight DiagnosticInfo guifg=#709948 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignInfo DiagnosticInfo
+highlight! link DiagnosticVirtualTextInfo DiagnosticInfo
+highlight DiagnosticWarn guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignWarn DiagnosticWarn
+highlight! link DiagnosticVirtualTextWarn DiagnosticWarn
 highlight DiffAdd guifg=#61FF61 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffChange guifg=#FFAB0F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffDelete guifg=#C32D28 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -140,8 +140,15 @@ highlight TSVariableBuiltin guifg=#3976A7 guibg=NONE guisp=NONE gui=NONE cterm=N
 highlight TabLine guifg=#2E2E2E guibg=#6B6B6B guisp=NONE gui=NONE cterm=NONE
 highlight TabLineSel guifg=#579DD6 guibg=#6B6B6B guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopeBorder guifg=#69D36B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeBorder guifg=#1C1C1C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#918273 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeNormal guifg=NONE guibg=#1C1C1C guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePreviewTitle guifg=#1C1C1C guibg=#709948 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptBorder guifg=#2E2E2E guibg=#2E2E2E guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptCounter guifg=#9ADBFE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptNormal guifg=#E3E3E3 guibg=#2E2E2E guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptTitle guifg=#1C1C1C guibg=#3E8ED0 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeResultsTitle guifg=#1C1C1C guibg=#AC53A6 guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelection guifg=#D89B22 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelectionCaret guifg=#31AA35 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Title guifg=#579DD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE

@@ -66,12 +66,12 @@ highlight! link DiagnosticSignError DiagnosticError
 highlight DiagnosticHint guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticFloatingHint DiagnosticHint
 highlight! link DiagnosticSignHint DiagnosticHint
-highlight DiagnosticInformation guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticFloatingInformation DiagnosticInformation
-highlight! link DiagnosticSignInformation DiagnosticInformation
-highlight DiagnosticWarning guifg=#FF5724 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticFloatingWarning DiagnosticWarning
-highlight! link DiagnosticSignWarning DiagnosticWarning
+highlight DiagnosticInfo guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticFloatingInfo DiagnosticInfo
+highlight! link DiagnosticSignInfo DiagnosticInfo
+highlight DiagnosticWarn guifg=#FF5724 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticFloatingWarn DiagnosticWarn
+highlight! link DiagnosticSignWarn DiagnosticWarn
 highlight DiffAdd guifg=#00C251 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
 highlight DiffChange guifg=#FF950A guibg=NONE guisp=NONE gui=NONE cterm=NONE

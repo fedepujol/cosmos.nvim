@@ -146,40 +146,38 @@ local dracula = lush(function()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		 LspReferenceRead                     { bg = selection }, -- used for highlighting "read" references
-		 LspReferenceText                     { bg = selection }, -- used for highlighting "text" references
-		 LspReferenceWrite                    { bg = selection }, -- used for highlighting "write" references
+		 LspReferenceRead              { bg = selection }, -- used for highlighting "read" references
+		 LspReferenceText              { bg = selection }, -- used for highlighting "text" references
+		 LspReferenceWrite             { bg = selection }, -- used for highlighting "write" references
+		-- LspCodeLens                 {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator        {}. -- Used to color the separator between two of more code lenses
+		 LspSignatureActiveParameter   { fg = cyan, gui = "bold" }, -- Used to highlight the active parameter in the signature help
+		 FloatBorder                   { fg = purple },
 
-		 DiagnosticError           { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 DiagnosticHint            { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 DiagnosticInformation     { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 DiagnosticWarning         { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticError               { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticHint                { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticInfo                { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticWarn                { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		-- DiagnosticVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
-		-- DiagnosticVirtualTextInformation { }, -- Used for "Information" diagnostic virtual text
-		-- DiagnosticVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
-		-- DiagnosticVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
+		-- DiagnosticVirtualTextError  { }, -- Used for "Error" diagnostic virtual text
+		-- DiagnosticVirtualTextInfo   { }, -- Used for "Information" diagnostic virtual text
+		-- DiagnosticVirtualTextWarn   { }, -- Used for "Warning" diagnostic virtual text
+		-- DiagnosticVirtualTextHint   { }, -- Used for "Hint" diagnostic virtual text
 
-		 DiagnosticUnderlineError         { DiagnosticError, gui = "underline" }, -- Used to underline "Error" diagnostics
-		 DiagnosticUnderlineHint          { DiagnosticHint, gui = "underline" }, -- Used to underline "Hint" diagnostics
-		 DiagnosticUnderlineInformation   { DiagnosticInformation, gui = "underline" }, -- Used to underline "Information" diagnostics
-		 DiagnosticUnderlineWarning       { DiagnosticWarning, gui = "underline" }, -- Used to underline "Warning" diagnostics
+		 DiagnosticUnderlineError      { DiagnosticError, gui = "underline" }, -- Used to underline "Error" diagnostics
+		 DiagnosticUnderlineHint       { DiagnosticHint, gui = "underline" }, -- Used to underline "Hint" diagnostics
+		 DiagnosticUnderlineInfo       { DiagnosticInfo, gui = "underline" }, -- Used to underline "Information" diagnostics
+		 DiagnosticUnderlineWarn       { DiagnosticWarn, gui = "underline" }, -- Used to underline "Warning" diagnostics
 
-		-- DiagnosticFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError     { }, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint      { }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInfo      { }, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarn      { }, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		-- DiagnosticSignError              { }, -- Used for "Error" signs in sign column
-		-- DiagnosticSignHint               { }, -- Used for "Hint" signs in sign column
-		-- DiagnosticSignInformation        { }, -- Used for "Information" signs in sign column
-		-- DiagnosticSignWarning            { }, -- Used for "Warning" signs in sign column
-
-		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
-		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
-
-		 LspSignatureActiveParameter      { fg = cyan, gui = "bold" }, -- Used to highlight the active parameter in the signature help
-		 FloatBorder                      { fg = purple },
+		-- DiagnosticSignError         { }, -- Used for "Error" signs in sign column
+		-- DiagnosticSignHint          { }, -- Used for "Hint" signs in sign column
+		-- DiagnosticSignInfo          { }, -- Used for "Information" signs in sign column
+		-- DiagnosticSignWarn          { }, -- Used for "Warning" signs in sign column
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.

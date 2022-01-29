@@ -23,14 +23,14 @@ highlight DiagnosticError guifg=#DC312E guibg=NONE guisp=NONE gui=NONE cterm=NON
 highlight! link DiagnosticSignError DiagnosticError
 highlight DiagnosticHint guifg=#2AA298 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticSignHint DiagnosticHint
-highlight DiagnosticInformation guifg=#278BD3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticSignInformation DiagnosticInformation
+highlight DiagnosticInfo guifg=#278BD3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignInfo DiagnosticInfo
 highlight DiagnosticVirtualTextError guifg=#DC312E guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextHint guifg=#2AA298 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextInformation guifg=#278BD3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextWarning guifg=#B38600 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticWarning guifg=#CA4C16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticSignWarning DiagnosticWarning
+highlight DiagnosticVirtualTextInfo guifg=#278BD3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextWarn guifg=#B38600 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticWarn guifg=#CA4C16 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignWarn DiagnosticWarn
 highlight DiffAdd guifg=#859900 guibg=#073541 guisp=NONE gui=bold cterm=bold
 highlight! link GitSignsAdd DiffAdd
 highlight! link NvimTreeGitNew DiffAdd

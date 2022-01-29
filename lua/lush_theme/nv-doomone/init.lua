@@ -152,40 +152,38 @@ local doomone = lush(function()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		-- LspReferenceRead                 {}, -- used for highlighting "read" references
-		-- LspReferenceText                 {}, -- used for highlighting "text" references
-		-- LspReferenceWrite                {}, -- used for highlighting "write" references
+		-- LspReferenceRead          {}, -- used for highlighting "read" references
+		-- LspReferenceText          {}, -- used for highlighting "text" references
+		-- LspReferenceWrite         {}, -- used for highlighting "write" references
+		-- LspCodeLens               {}, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator      {}. -- Used to color the separator between two of more code lenses
+		 LspSignatureActiveParameter { fg = dark_blue, gui = "bold" }, -- Used to highlight the active parameter in the signature help
+		-- FloatBorder               {}, -- Used for hovers
 
-		 DiagnosticError                  { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 DiagnosticHint                   { fg = green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 DiagnosticInformation            { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		 DiagnosticWarning                { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticError             { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticHint              { fg = green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticInfo              { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		 DiagnosticWarn              { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		 DiagnosticVirtualTextError       { fg = red, bg = background.mix(red, 10) }, -- Used for "Error" diagnostic virtual text
-		 DiagnosticVirtualTextHint        { fg = green, bg = background.mix(green, 10) }, -- Used for "Hint" diagnostic virtual text
-		 DiagnosticVirtualTextInformation { fg = cyan, bg = background.mix(cyan, 10) }, -- Used for "Information" diagnostic virtual text
-		 DiagnosticVirtualTextWarning     { fg = orange, bg = background.mix(orange, 10) }, -- Used for "Warning" diagnostic virtual text
+		 DiagnosticVirtualTextError  { fg = red, bg = background.mix(red, 10) }, -- Used for "Error" diagnostic virtual text
+		 DiagnosticVirtualTextHint   { fg = green, bg = background.mix(green, 10) }, -- Used for "Hint" diagnostic virtual text
+		 DiagnosticVirtualTextInfo   { fg = cyan, bg = background.mix(cyan, 10) }, -- Used for "Information" diagnostic virtual text
+		 DiagnosticVirtualTextWarn   { fg = orange, bg = background.mix(orange, 10) }, -- Used for "Warning" diagnostic virtual text
 
-		-- DiagnosticUnderlineError         {}, -- Used to underline "Error" diagnostics
-		-- DiagnosticUnderlineHint          {}, -- Used to underline "Hint" diagnostics
-		-- DiagnosticUnderlineInformation   {}, -- Used to underline "Information" diagnostics
-		-- DiagnosticUnderlineWarning       {}, -- Used to underline "Warning" diagnostics
+		-- DiagnosticUnderlineError  {}, -- Used to underline "Error" diagnostics
+		-- DiagnosticUnderlineHint   {}, -- Used to underline "Hint" diagnostics
+		-- DiagnosticUnderlineInfo   {}, -- Used to underline "Information" diagnostics
+		-- DiagnosticUnderlineWarn   {}, -- Used to underline "Warning" diagnostics
 
-		-- DiagnosticFloatingError          {}, -- Used to color "Error" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingHint           {}, -- Used to color "Hint" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingInformation    {}, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingWarning        {}, -- Used to color "Warning" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError   {}, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint    {}, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInfo    {}, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarn    {}, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		 DiagnosticSignError              { fg = red }, -- Used for "Error" signs in sign column
-		 DiagnosticSignHint               { fg = green }, -- Used for "Hint" signs in sign column
-		 DiagnosticSignInformation        { fg = cyan }, -- Used for "Information" signs in sign column
-		 DiagnosticSignWarning            { fg = orange }, -- Used for "Warning" signs in sign column
-
-		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
-		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
-
-		 LspSignatureActiveParameter      { fg = dark_blue, gui = "bold" }, -- Used to highlight the active parameter in the signature help
-		-- FloatBorder                      {}, -- Used for hovers
+		 DiagnosticSignError         { fg = red }, -- Used for "Error" signs in sign column
+		 DiagnosticSignHint          { fg = green }, -- Used for "Hint" signs in sign column
+		 DiagnosticSignInfo          { fg = cyan }, -- Used for "Information" signs in sign column
+		 DiagnosticSignWarn          { fg = orange }, -- Used for "Warning" signs in sign column
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.

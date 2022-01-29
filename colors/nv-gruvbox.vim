@@ -69,18 +69,18 @@ highlight DiagnosticError guifg=#FB4632 guibg=NONE guisp=NONE gui=NONE cterm=NON
 highlight! link DiagnosticSignError DiagnosticError
 highlight DiagnosticHint guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticSignHint DiagnosticHint
-highlight DiagnosticInformation guifg=#B8BA26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticSignInformation DiagnosticInformation
+highlight DiagnosticInfo guifg=#B8BA26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignInfo DiagnosticInfo
 highlight DiagnosticUnderlineError guifg=#FB4632 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineHint guifg=#8EC07C guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineInformation guifg=#B8BA26 guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineWarning guifg=#FE811B guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineInfo guifg=#B8BA26 guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineWarn guifg=#FE811B guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticVirtualTextError guifg=#FB4632 guibg=#4C3634 guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextHint guifg=#8EC07C guibg=#3E443B guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextInformation guifg=#B8BA26 guibg=#3F3F31 guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticVirtualTextWarning guifg=#FE811B guibg=#493C31 guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticWarning guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link DiagnosticSignWarning DiagnosticWarning
+highlight DiagnosticVirtualTextInfo guifg=#B8BA26 guibg=#3F3F31 guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticVirtualTextWarn guifg=#FE811B guibg=#493C31 guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticWarn guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link DiagnosticSignWarn DiagnosticWarn
 highlight DiffAdd guifg=#B8BA26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
 highlight DiffChange guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE

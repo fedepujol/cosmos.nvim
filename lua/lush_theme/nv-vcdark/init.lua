@@ -166,40 +166,38 @@ local vcdark = lush(function()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		-- LspReferenceText                 { }, -- used for highlighting "text" references
-		-- LspReferenceRead                 { }, -- used for highlighting "read" references
-		-- LspReferenceWrite                { }, -- used for highlighting "write" references
+		-- LspReferenceText          { }, -- used for highlighting "text" references
+		-- LspReferenceRead          { }, -- used for highlighting "read" references
+		-- LspReferenceWrite         { }, -- used for highlighting "write" references
+		-- LspCodeLens               { }, -- Used to color the virtual text of the codelens
+		-- LspCodeLensSeparator      { }. -- Used to color the separator between two of more code lenses
+		 LspSignatureActiveParameter { fg = blue1 }, -- Used to highlight the active parameter in the signature help
+		 FloatBorder                 { fg = green4 }, -- Used for hovers
 
-		DiagnosticError                     { fg = red0 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticHint                      { fg = green4 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-	 	DiagnosticInformation               { fg = green6 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticWarning                   { fg = yellow2 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticError              { fg = red0 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticHint               { fg = green4 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticInfo               { fg = green6 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticWarn               { fg = yellow2 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		DiagnosticVirtualTextError          { DiagnosticError }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextHint           { DiagnosticHint }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticVirtualTextInformation    { DiagnosticInformation }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextWarning        { DiagnosticWarning }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextError   { DiagnosticError }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextHint    { DiagnosticHint }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextInfo    { DiagnosticInfo }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextWarn    { DiagnosticWarn }, -- Used for "Warning" diagnostic virtual text
 
-		-- DiagnosticUnderlineError         { }, -- Used to underline "Error" diagnostics
-		-- DiagnosticUnderlineHint          { }, -- Used to underline "Hint" diagnostics
-		-- DiagnosticUnderlineInformation   { }, -- Used to underline "Information" diagnostics
-		-- DiagnosticUnderlineWarning       { }, -- Used to underline "Warning" diagnostics
+		-- DiagnosticUnderlineError  { }, -- Used to underline "Error" diagnostics
+		-- DiagnosticUnderlineHint   { }, -- Used to underline "Hint" diagnostics
+		-- DiagnosticUnderlineInfo   { }, -- Used to underline "Information" diagnostics
+		-- DiagnosticUnderlineWarn   { }, -- Used to underline "Warning" diagnostics
 
-		-- DiagnosticFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingHint           { }, -- Used to color "Hint" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
-		-- DiagnosticFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingError   { }, -- Used to color "Error" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingHint    { }, -- Used to color "Hint" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingInfo    { }, -- Used to color "Information" diagnostic messages in diagnostics float
+		-- DiagnosticFloatingWarn    { }, -- Used to color "Warning" diagnostic messages in diagnostics float
 
-		DiagnosticSignError                 { DiagnosticError }, -- Used for "Error" signs in sign column
-		DiagnosticSignHint                  { DiagnosticHint }, -- Used for "Hint" signs in sign column
-		DiagnosticSignInformation           { DiagnosticInformation }, -- Used for "Information" signs in sign column
-		DiagnosticSignWarning               { DiagnosticWarning }, -- Used for "Warning" signs in sign column
-
-		-- LspCodeLens                      {}, -- Used to color the virtual text of the codelens
-		-- LspCodeLensSeparator             {}. -- Used to color the separator between two of more code lenses
-
-		 LspSignatureActiveParameter      { fg = blue1 }, -- Used to highlight the active parameter in the signature help
-		 FloatBorder                      { fg = green4 }, -- Used for hovers
+		DiagnosticSignError          { DiagnosticError }, -- Used for "Error" signs in sign column
+		DiagnosticSignHint           { DiagnosticHint }, -- Used for "Hint" signs in sign column
+		DiagnosticSignInfo           { DiagnosticInfo }, -- Used for "Information" signs in sign column
+		DiagnosticSignWarn           { DiagnosticWarn }, -- Used for "Warning" signs in sign column
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -334,13 +332,17 @@ local vcdark = lush(function()
 		NvimTreeGitIgnored       { fg = gray5, gui = "italic"},
 		NvimTreeGitNew           { fg = green2 },
 
+		TelescopeBorder          { fg = Normal.bg.da(10) },
+		TelescopeMultiSelection  { fg = gray6 },
+		TelescopeNormal          { bg = Normal.bg.da(10) },
+		TelescopePreviewTitle    { fg = Normal.bg.da(10), bg = green6 },
+		TelescopePromptBorder    { fg = gray0, bg = gray0 },
+		TelescopePromptCounter   { fg = blue2 },
+		TelescopePromptNormal    { fg = gray4, bg = gray0 },
+		TelescopePromptTitle     { fg = Normal.bg.da(10), bg = blue1.da(10) },
+		TelescopeResultsTitle    { fg = Normal.bg.da(10), bg = purple0.da(10) },
 		TelescopeSelection       { fg = yellow5 },
 		TelescopeSelectionCaret  { fg = green3 },
-		TelescopeMultiSelection  { fg = gray6 },
-		TelescopeBorder          { fg = green4 },
-		-- TelescopePromptBorder    { },
-		-- TelescopeResultsBorder   { },
-		-- TelescopePreviewBorder   { },
 	}
 end)
 
