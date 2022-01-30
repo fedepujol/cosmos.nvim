@@ -71,12 +71,12 @@ highlight CursorLineNr guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Delimiter guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticError guifg=#FF5757 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticHint guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticInformation guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticInfo guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticUnderlineError guifg=#FF5757 guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineHint guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineInformation guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineWarning guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticWarning guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticUnderlineInfo guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
 highlight! link NvimTreeGitNew DiffAdd
@@ -148,8 +148,15 @@ highlight TSVariableBuiltin guifg=#BF95F9 guibg=NONE guisp=NONE gui=italic cterm
 highlight TabLine guifg=#6071A4 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight TabLineFill guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight Tag guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TelescopeBorder guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeBorder guifg=#1E2029 guibg=#1E2029 guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeMultiSelection guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeNormal guifg=NONE guibg=#1E2029 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePreviewTitle guifg=#1E2029 guibg=#07E43E guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptBorder guifg=#3D4051 guibg=#3D4051 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptCounter guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptNormal guifg=#F8F8F2 guibg=#3D4051 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopePromptTitle guifg=#1E2029 guibg=#A76EF7 guisp=NONE gui=NONE cterm=NONE
+highlight TelescopeResultsTitle guifg=#1E2029 guibg=#FFA647 guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelection guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelectionCaret guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Title guifg=#52FA7C guibg=NONE guisp=NONE gui=bold cterm=bold
