@@ -13,6 +13,21 @@ dracula, vcdark, etc).
 If you’ve got your own theme and want to distributed in here, just make
 a PR and I’ll gladly merged it.
 
+## Credit
+
+Original based on [vim-felipec](https://github.com/felipec/vim-felipec)
+
+The `vcdark` theme is based on `VSCode` colorscheme and
+[nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
+
+### Colorschemes
+
+- [doomone](https://github.com/romgrk/doom-one.vim)
+- [dracula](https://github.com/dracula/vim)
+- [gruvbox](https://github.com/morhetz/gruvbox)
+- [solarized](https://github.com/altercation/solarized/tree/master/vim-colors-solarized)
+- [tokyonight](https://github.com/folke/tokyonight.nvim)
+
 ## Requirements
 
 -   [NeoVim](https://github.com/neovim/neovim) 0.5 or nightly
@@ -166,10 +181,3 @@ a few things:
 -   Not having an interactive feedback on how the theme was looking
 
 Lush comes and checks all of my needs (for now).
-
-## Credit
-
-Original based on [vim-felipec](https://github.com/felipec/vim-felipec)
-
-The `vcdark` theme is based on `VSCode` colorscheme and
-[nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
