@@ -130,8 +130,8 @@ highlight SpellBad guifg=#83A598 guibg=NONE guisp=NONE gui=underline cterm=under
 highlight SpellCap guifg=#B8BA26 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight SpellLocal guifg=#8EC07C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight SpellRare guifg=#D4879C guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight StatusLine guifg=#4F4945 guibg=#EBDBB2 guisp=NONE gui=inverse cterm=inverse
-highlight StatusLineNC guifg=#7D6F64 guibg=#A89985 guisp=NONE gui=inverse cterm=inverse
+highlight StatusLine guifg=#EBDBB2 guibg=#4F4945 guisp=NONE gui=NONE cterm=NONE
+highlight StatusLineNC guifg=#A89985 guibg=#7D6F64 guisp=NONE gui=NONE cterm=NONE
 highlight StorageClass guifg=#FE811B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight String guifg=#B8BA26 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight Structure guifg=#8EC07C guibg=NONE guisp=NONE gui=NONE cterm=NONE

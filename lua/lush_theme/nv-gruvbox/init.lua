@@ -72,8 +72,8 @@ local gruvbox = lush(function()
 		 SpellCap       { fg = bright_green, gui = "italic" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		 SpellLocal     { fg = bright_aqua, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		 SpellRare      { fg = bright_purple, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		 StatusLine     { fg = dark2, bg = light1, gui = "inverse" }, -- status line of current window
-		 StatusLineNC   { fg = dark4, bg = light4, gui = "inverse" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		 StatusLine     { fg = light1, bg = dark2 }, -- status line of current window
+		 StatusLineNC   { fg = light4, bg = dark4 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- Substitute     {}, -- |:substitute| replacement text highlighting
 		-- TabLine        {}, -- tab pages line, not active tab page label
 		-- TabLineFill    {}, -- tab pages line, where there are no labels
