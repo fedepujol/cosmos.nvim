@@ -1,6 +1,6 @@
 # NV-Themes
 
-![themes](https://github.com/fedepujol/nv-themes/media/themes.jpg)
+![themes](https://github.com/fedepujol/nv-themes/blob/main/media/themes.jpg)
 
 ## Disclaimer
 
