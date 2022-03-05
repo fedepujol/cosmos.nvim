@@ -74,8 +74,8 @@ local cosmos = lush(function()
 		TermCursorNC { bg = gray_300.da(20) }, -- cursor in an unfocused terminal
 		ErrorMsg     { fg = red_900.li(10) }, -- error messages on the command line
 		VertSplit    { fg = gray_800, bg = bgray_900.da(40) }, -- the column separating vertically split windows
-		-- Folded       { }, -- line used for closed folds
-		-- FoldColumn   { }, -- 'foldcolumn'
+		Folded       { fg = teal_300.da(10), gui = "italic" }, -- line used for closed folds
+		FoldColumn   { fg = teal_300.da(10), gui = "italic" }, -- 'foldcolumn'
 		SignColumn   { bg = bgray_900.da(40) }, -- column where |signs| are displayed
 		IncSearch    { fg = black, bg = teal_300 }, -- 'incsearch' highlighting, also used for the text replaced with ":s///c"
 		-- Substitute   { }, -- |:substitute| replacement text highlighting
@@ -187,10 +187,10 @@ local cosmos = lush(function()
 		-- DiagnosticVirtualTextInfo    { }, -- Used for "Information" diagnostic virtual text
 		-- DiagnosticVirtualTextHint    { }, -- Used for "Hint" diagnostic virtual text
 
-		-- DiagnosticUnderlineError     { }, -- Used to underline "Error" diagnostics
-		-- DiagnosticUnderlineWarn      { }, -- Used to underline "Warning" diagnostics
-		-- DiagnosticUnderlineInfo      { }, -- Used to underline "Information" diagnostics
-		-- DiagnosticUnderlineHint      { }, -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineError     { fg = DiagnosticError.fg, gui = "undercurl" }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn      { fg = DiagnosticWarn.fg, gui = "undercurl" }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo      { fg = DiagnosticInfo.fg, gui = "undercurl" }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint      { fg = DiagnosticHint.fg, gui = "undercurl" }, -- Used to underline "Hint" diagnostics
 
 		DiagnosticFloatingError         { DiagnosticError }, -- Used to color "Error" diagnostic messages in diagnostics float
 		DiagnosticFloatingWarn          { DiagnosticWarn }, -- Used to color "Warning" diagnostic messages in diagnostics float
@@ -215,7 +215,7 @@ local cosmos = lush(function()
 		TSConstMacro         { TSConstBuiltin },    -- For constants that are defined by macros: NULL in C.
 		TSConstructor        { fg = brown_400.li(10) },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
 		TSError              { fg = red_900.li(10) },    -- For syntax/parser errors.
-		TSException          { fg = gray_900, bg = red_900 },    -- For exception related keywords.
+		TSException          { Conditional },    -- For exception related keywords.
 		TSField              { fg = brown_400 },    -- For fields.
 		TSFloat              { Float },    -- For floats.
 		TSFunction           { Function },    -- For function (calls and definitions).

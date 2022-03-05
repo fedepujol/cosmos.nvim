@@ -47,6 +47,7 @@ highlight! link Exception Conditional
 highlight! link Label Conditional
 highlight! link Repeat Conditional
 highlight! link TSConditional Conditional
+highlight! link TSException Conditional
 highlight Constant guifg=#3B91E8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindConstant Constant
 highlight! link CmpItemKindReference Constant
@@ -69,6 +70,10 @@ highlight! link DiagnosticSignHint DiagnosticHint
 highlight DiagnosticInfo guifg=#00B34A guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticFloatingInfo DiagnosticInfo
 highlight! link DiagnosticSignInfo DiagnosticInfo
+highlight DiagnosticUnderlineError guifg=#B51C1C guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineHint guifg=#00B34A guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineInfo guifg=#00B34A guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineWarn guifg=#FF5724 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
 highlight DiagnosticWarn guifg=#FF5724 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link DiagnosticFloatingWarn DiagnosticWarn
 highlight! link DiagnosticSignWarn DiagnosticWarn
@@ -84,6 +89,8 @@ highlight Directory guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ErrorMsg guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSFloat Float
 highlight FloatBorder guifg=#5D6CC0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight FoldColumn guifg=#44A79D guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight Folded guifg=#44A79D guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight Function guifg=#0096A3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindConstructor Function
 highlight! link Macro Function
@@ -157,7 +164,6 @@ highlight! link TSConstMacro TSConstBuiltin
 highlight TSConstructor guifg=#9B7A6F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSEmphasis guifg=NONE guibg=NONE guisp=NONE gui=bold,reverse cterm=bold,reverse
 highlight TSError guifg=#CF2020 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSException guifg=#212121 guibg=#B51C1C guisp=NONE gui=NONE cterm=NONE
 highlight TSField guifg=#8D6E62 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSFuncBuiltin guifg=#00B6C7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSFuncMacro guifg=#00A4B3 guibg=NONE guisp=NONE gui=NONE cterm=NONE
