@@ -45,7 +45,7 @@ local yellow_a100 = hsl('#FFFF8D')
 local cosmos = lush(function()
 	return {
 		-- The following are all the Neovim default highlight groups from the docs
-		-- as of 0.5.0-nightly-446, to aid your theme creation. Your themes should
+		-- as of 0.7.0, to aid your theme creation. Your themes should
 		-- probably style all of these at a bare minimum.
 		--
 		-- Referenced/linked groups must come before being referenced/lined,
@@ -208,12 +208,15 @@ local cosmos = lush(function()
 		-- TSAttribute        { },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 		TSBoolean            { Boolean },    -- For booleans.
 		TSCharacter          { Character },    -- For characters.
+		-- TSCharacterSpecial   { }, -- Special characters.
 		TSComment            { Comment },    -- For comment blocks.
 		TSConditional        { Conditional },    -- For keywords related to conditionnals.
 		TSConstant           { Constant },    -- For constants
 		TSConstBuiltin       { fg = Constant.fg.da(15) },    -- For constant that are built in the language: nil in Lua.
 		TSConstMacro         { TSConstBuiltin },    -- For constants that are defined by macros: NULL in C.
 		TSConstructor        { fg = brown_400.li(10) },    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+		-- TSDebug           { }, -- Debugging statements.
+		-- TSDefine          { }, -- Preprocessor #define statements.
 		TSError              { fg = red_900.li(10) },    -- For syntax/parser errors.
 		TSException          { Conditional },    -- For exception related keywords.
 		TSField              { fg = brown_400 },    -- For fields.
@@ -234,18 +237,22 @@ local cosmos = lush(function()
 		TSOperator           { Operator },    -- For any operator: `+`, but also `->` and `*` in C.
 		-- TSParameter          { },    -- For parameters of a function.
 		-- TSParameterReference { },    -- For references to parameters of a function.
+		-- TSPreProc            { },    -- Preprocessors #if, #else, #endif, etc.
 		-- TSProperty           { },    -- Same as TSField.
 		TSPunctDelimiter     { fg = gray_400 },    -- For delimiters ie: `.`
 		TSPunctBracket       { TSPunctDelimiter },    -- For brackets and parens.
 		TSPunctSpecial       { TSPunctDelimiter },    -- For special punctutation that does not fall in the catagories before.
 		TSRepeat             { Repeat },    -- For keywords related to loops.
+		-- TSStorageClass    { },  -- Keywords that affect how a variable is stored: static, comptime, extern, etc.
 		TSString             { String },    -- For strings.
 		TSStringRegex        { Special },    -- For regexes.
 		TSStringEscape       { SpecialChar },    -- For escape characters within a string.
 		TSStringSpecial      { fg = TSStringEscape.fg.da(15) },    -- Strings with special meaning that don't fit into the previous categories.
 		-- TSSymbol             { },    -- For identifiers referring to symbols or atoms.
-		-- TSType               { },    -- For types.
-		-- TSTypeBuiltin        { },    -- For builtin types.
+		-- TSType               { },    -- For type (and class) definitions and annotations.
+		-- TSTypeBuiltin        { },    -- For builtin types i32 in Rust.
+		-- TSTypeQualifier      { },    -- Qualifiers on types. Eg: const or volatile in C or mut in Rust.
+		-- TSTypeDefinition     { },    -- Type definitions. Eg: typedef in C.
 		TSVariable           { fg = pink_100.da(5) },    -- Any variable name that does not have another highlight.
 		TSVariableBuiltin    { fg = blue_200.da(10) },    -- Variable names that are defined by the languages, like this or self.
 
@@ -266,6 +273,7 @@ local cosmos = lush(function()
 		-- TSNote               { },    -- Text representation of an informational note.
 		-- TSWarning            { },    -- Text representation of a warning note.
 		-- TSDanger             { },    -- Text representation of a danger note.
+		-- TSTodo               { },    -- Anything that needs extra attention, such as keywords like TODO or FIXME
 		TSURI                { fg = blue_200.da(10), gui = "underline" },    -- Any URI like a link or email.
 
 		-- Plugin specifics
@@ -331,6 +339,36 @@ local cosmos = lush(function()
 		NvimTreeGitDirty         { fg = orange_200 },
 		NvimTreeGitIgnored       { fg = gray_700 },
 		NvimTreeGitNew           { fg = green_a700.desaturate(20) },
+
+		-- NeoTreeBufferNumber      {}, -- The buffer number shown in the buffers source.
+		-- NeoTreeCursorLine        {}, -- |hi-CursorLine| override in Neo-tree window.
+		-- NeoTreeDimText           {}, -- Greyed out text used in various places.
+		NeoTreeDirectoryIcon     { NvimTreeFolderIcon }, -- Directory icon.
+		NeoTreeDirectoryName     { NvimTreeFolderName }, -- Directory name.
+		-- NeoTreeDotfile           {}, -- Used for icons and names when dotfiles are filtered.
+		-- NeoTreeFileIcon          {}, -- File icon, when not overriden by devicons.
+		NeoTreeFileName          {}, -- File name, when not overwritten by another status.
+		NeoTreeFileNameOpened    {}, -- File name when the file is open. Not used yet.
+		NeoTreeFilterTerm        {}, -- The filter term, as displayed in the root node.
+		-- NeoTreeFloatBorder       {}, -- The border for pop-up windows.
+		-- NeoTreeFloatTitle        {}, -- Used for the title text of pop-ups when the border-style is set to another style than "NC". This is derived from NeoTreeFloatBorder.
+		-- NeoTreeTitleBar          {}, -- Used for the title bar of pop-ups, when the border-style is set to "NC". This is derived from NeoTreeFloatBorder.
+		NeoTreeGitAdded          { NvimTreeGitNew }, -- File name when the git status is added.
+		-- NeoTreeGitConflict       {}, -- File name when the git status is conflict.
+		NeoTreeGitDeleted        { DiffDelete }, -- File name when the git status is deleted.
+		NeoTreeGitIgnored        { NvimTreeGitIgnored }, -- File name when the git status is ignored.
+		NeoTreeGitModified       { NvimTreeGitDirty }, -- File name when the git status is modified.
+		-- NeoTreeGitUntracked      {}, -- File name when the git status is untracked.
+		-- NeoTreeHiddenByName      {}, -- Used for icons and names when `hide_by_name` is used.
+		NeoTreeIndentMarker      { NvimTreeIndentMarker }, -- The style of indentation markers (guides). By default, the "Normal" highlight is used.
+		-- NeoTreeExpander          {}, -- Used for collapsed/expanded icons.
+		-- NeoTreeNormal            {}, -- |hl-Normal| override in Neo-tree window.
+		-- NeoTreeNormalNC          {}, -- |hi-NormalNC| override in Neo-tree window.
+		-- NeoTreeStatusLine        {}, -- |hl-StatusLine| override in Neo-tree window.
+		-- NeoTreeStatusLineNC      {}, -- |hl-StatusLineNC| override in Neo-tree window.
+		-- NeoTreeVertSplit         {}, -- |hl-VertSplit| override in Neo-tree window.
+		NeoTreeRootName          { fg = amber_800 }, -- The name of the root node.
+		-- NeoTreeSymbolicLinkTarget{}, -- Symbolic link target.
 
 		TelescopeBorder          { fg = Normal.bg.da(10), bg = Normal.bg.da(10) },
 		TelescopeMultiSelection  { fg = yellow_a100 },

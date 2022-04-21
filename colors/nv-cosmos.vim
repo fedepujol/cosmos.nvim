@@ -83,6 +83,7 @@ highlight DiffChange guifg=#FF950A guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsChange DiffChange
 highlight DiffDelete guifg=#FF4B14 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsDelete DiffDelete
+highlight! link NeoTreeGitDeleted DiffDelete
 highlight! link NvimTreeGitDeleted DiffDelete
 highlight DiffText guifg=#C9C9C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Directory guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -109,6 +110,10 @@ highlight ModeMsg guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MoreMsg guifg=#25C5DA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MsgArea guifg=NONE guibg=#1D262A guisp=NONE gui=NONE cterm=NONE
 highlight MsgSeparator guifg=#029BED guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeFileName guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeFileNameOpened guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeFilterTerm guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeRootName guifg=#FF9100 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NonText guifg=#171E21 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Normal guifg=#C9C9C9 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight! link Question Normal
@@ -123,10 +128,16 @@ highlight! link TSNumber Number
 highlight NvimTreeEmptyFolderName guifg=#616161 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeExecFile guifg=#C9C9C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeFolderIcon guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link NeoTreeDirectoryIcon NvimTreeFolderIcon
 highlight NvimTreeFolderName guifg=#969696 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link NeoTreeDirectoryName NvimTreeFolderName
 highlight NvimTreeGitDirty guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link NeoTreeGitModified NvimTreeGitDirty
 highlight NvimTreeGitIgnored guifg=#616161 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link NeoTreeGitIgnored NvimTreeGitIgnored
 highlight NvimTreeGitNew guifg=#14B356 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link NeoTreeGitAdded NvimTreeGitNew
+highlight! link NeoTreeIndentMarker NvimTreeIndentMarker
 highlight NvimTreeOpenedFile guifg=NONE guibg=#212B31 guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeOpenedFolderName guifg=#A8A8A8 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight NvimTreeRootFolder guifg=#FF9100 guibg=NONE guisp=NONE gui=NONE cterm=NONE
