@@ -76,13 +76,11 @@ make sure to enable the `hightlight` option:
 
 ``` lua
 require('nvim-treesiter.configs').setup{
-	ensure_installed = "all", -- one of "all", "maintained" or a list
-	hightlight = {
-		enable = true, 	-- false will disable the whole extension
-		disable = {
-			"c", "rust"
-		}, -- list of language that will be disabled
-	}
+    ensure_installed = "all", -- one of "all", "maintained" or a list
+    hightlight = {
+        enable = true, 	-- false will disable the whole extension
+        disable = { "c", "rust" }, -- list of language that will be disabled
+    }
 }
 ```
 
@@ -103,12 +101,12 @@ Inside the folder named `lua/` you’ll find the following structure:
 ``` text
 📁 lua/
 └── 📁 lush_themes/
-	├── 📁cosmos/
-	|	└── init.lua
-	├── 📁dracula/
-	|	└── init.lua
-	└── 📁vcdark/
-		└── init.lua
+    ├── 📁cosmos/
+    |   └── init.lua
+    ├── 📁dracula/
+    |   └── init.lua
+    └── 📁vcdark/
+        └── init.lua
 ```
 
 Every theme has it’s own folder and it’s `lush_spec`. Open the lush_spec
