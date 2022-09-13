@@ -7,6 +7,8 @@ if exists('syntax_on')
 endif
 let g:colors_name='nv-dracula'
 
+highlight Normal guifg=#E6E6D1 guibg=#272935 guisp=NONE gui=NONE cterm=NONE
+highlight! link TabLineSel Normal
 highlight Boolean guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSBoolean Boolean
 highlight BufferCurrent guifg=#F1FA89 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
@@ -22,7 +24,7 @@ highlight BufferInactiveMod guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=N
 highlight BufferInactiveSign guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
 highlight BufferInactiveTarget guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
 highlight BufferVisible guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight Character guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight Character guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSCharacter Character
 highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
 highlight CmpItemAbbrMatch guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -45,15 +47,8 @@ highlight Comment guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSComment Comment
 highlight Conceal guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Conditional guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight! link Define Conditional
 highlight! link Exception Conditional
-highlight! link Include Conditional
 highlight! link Keyword Conditional
-highlight! link Label Conditional
-highlight! link Macro Conditional
-highlight! link Operator Conditional
-highlight! link PreCondit Conditional
-highlight! link PreProc Conditional
 highlight! link Repeat Conditional
 highlight! link Statement Conditional
 highlight! link StorageClass Conditional
@@ -68,12 +63,17 @@ highlight! link TSConstant Constant
 highlight CursorColumn guifg=NONE guibg=#434551 guisp=NONE gui=NONE cterm=NONE
 highlight! link CursorLine CursorColumn
 highlight CursorLineNr guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight Define guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link Include Define
+highlight! link Macro Define
+highlight! link PreCondit Define
+highlight! link PreProc Define
 highlight Delimiter guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticError guifg=#FF5757 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticHint guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiagnosticHint guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticInfo guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticUnderlineError guifg=#FF5757 guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineHint guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineHint guifg=#52FA7C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineInfo guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticUnderlineWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight DiagnosticWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -95,9 +95,14 @@ highlight FoldColumn guifg=#434551 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Folded guifg=#6071A4 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight Function guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link CmpItemKindConstructor Function
+highlight! link TSFuncBuiltin Function
+highlight! link TSFuncMacro Function
+highlight! link TSFunction Function
 highlight GitSignsCurrentLineBlame guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight Identifier guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight Identifier guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight IncSearch guifg=#272935 guibg=#FFB86B guisp=NONE gui=NONE cterm=NONE
+highlight! link TSInclude Include
+highlight Label guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LspReferenceRead guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
 highlight LspReferenceText guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
@@ -106,8 +111,8 @@ highlight LspSignatureActiveParameter guifg=#8BE8FD guibg=NONE guisp=NONE gui=bo
 highlight MatchParen guifg=#52FA7C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight MoreMsg guifg=#F8F8F2 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight NonText guifg=#434551 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight Normal guifg=#E6E6D1 guibg=#272935 guisp=NONE gui=NONE cterm=NONE
-highlight! link TabLineSel Normal
+highlight! link TSFloat Number
+highlight! link TSNumber Number
 highlight NvimTreeExecFile guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeFolderIcon guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeFolderName guifg=#E6E6D1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -116,12 +121,15 @@ highlight NvimTreeIndentMarker guifg=#636679 guibg=NONE guisp=NONE gui=NONE cter
 highlight NvimTreeOpenedFolderName guifg=#E6E6D1 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight NvimTreeRootFolder guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeSpecialFile guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight Operator guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Pmenu guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSbar guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSel guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
 highlight PmenuThumb guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
+highlight! link TSPreProc PreProc
 highlight Question guifg=#F8F8F2 guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight Search guifg=#52FA7C guibg=NONE guisp=NONE gui=inverse cterm=inverse
+highlight! link TSRepeat Repeat
+highlight Search guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SignColumn guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Special guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialChar guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -131,19 +139,46 @@ highlight SpellBad guifg=#FF5757 guibg=NONE guisp=NONE gui=underline cterm=under
 highlight SpellCap guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight SpellLocal guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight SpellRare guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight StatusLine guifg=NONE guibg=#434551 guisp=NONE gui=NONE cterm=NONE
+highlight StatusLine guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight StatusLineNC guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
+highlight StatusLineTerm guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
+highlight StatusLineTermNC guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
 highlight String guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link TSString String
 highlight! link CmpItemKindClass Structure
+highlight TSAttribute guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSCharacterSpecial guifg=#FF9524 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSConstBuiltin guifg=#A76EF7 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSConstMacro guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSConstructor guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSFuncBuiltin guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSFunction guifg=#8BE8FD guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight TSError guifg=#FF7A7A guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSException guifg=#FF7A7A guibg=#563E4D guisp=NONE gui=NONE cterm=NONE
+highlight TSField guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSKeyword guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSKeywordFunction guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSKeywordOperator guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSKeywordReturn guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSLabel guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSMethod guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSNamespace guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSOperator guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSParameter guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSParameterReference guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSProperty guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSStorageClass guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSStrike guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
+highlight TSStringEscape guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSStringRegex guifg=#FF5757 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSTag guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight TSTagAttribute guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSStringSpecial guifg=#ECF862 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSStrong guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight TSTag guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSTagAttribute guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSTagDelimiter guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSType guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSTypeBuiltin guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight TSURI guifg=#18D2FB guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight TSUnderline guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight TSVariable guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TSVariableBuiltin guifg=#BF95F9 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight TabLine guifg=#6071A4 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight TabLineFill guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
@@ -160,8 +195,8 @@ highlight TelescopeResultsTitle guifg=#1E2029 guibg=#FFA647 guisp=NONE gui=NONE 
 highlight TelescopeSelection guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight TelescopeSelectionCaret guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Title guifg=#52FA7C guibg=NONE guisp=NONE gui=bold cterm=bold
-highlight Todo guifg=#8BE8FD guibg=NONE guisp=NONE gui=bold,inverse cterm=bold,inverse
-highlight Type guifg=#8BE8FD guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight Todo guifg=#8BE8FD guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight Type guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight VertSplit guifg=#6071A4 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight Visual guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
 highlight! link VisualNOS Visual
