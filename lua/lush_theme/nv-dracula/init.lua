@@ -323,6 +323,36 @@ local dracula = lush(function()
 		-- BufferVisibleSign        {},
 		-- BufferVisibleTarget      {},
 
+		-- NeoTreeBufferNumber      {}, -- The buffer number shown in the buffers source.
+		-- NeoTreeCursorLine        {}, -- |hi-CursorLine| override in Neo-tree window.
+		-- NeoTreeDimText           {}, -- Greyed out text used in various places.
+		NeoTreeDirectoryIcon     { fg = purple }, -- Directory icon.
+		NeoTreeDirectoryName     { fg = foreground.da(10) }, -- Directory name.
+		-- NeoTreeDotfile           {}, -- Used for icons and names when dotfiles are filtered.
+		-- NeoTreeFileIcon          {}, -- File icon, when not overriden by devicons.
+		NeoTreeFileName          {}, -- File name, when not overwritten by another status.
+		NeoTreeFileNameOpened    {}, -- File name when the file is open. Not used yet.
+		NeoTreeFilterTerm        {}, -- The filter term, as displayed in the root node.
+		-- NeoTreeFloatBorder       {}, -- The border for pop-up windows.
+		-- NeoTreeFloatTitle        {}, -- Used for the title text of pop-ups when the border-style is set to another style than "NC". This is derived from NeoTreeFloatBorder.
+		-- NeoTreeTitleBar          {}, -- Used for the title bar of pop-ups, when the border-style is set to "NC". This is derived from NeoTreeFloatBorder.
+		NeoTreeGitAdded          { DiffAdd }, -- File name when the git status is added.
+		-- NeoTreeGitConflict       {}, -- File name when the git status is conflict.
+		NeoTreeGitDeleted        { DiffDelete }, -- File name when the git status is deleted.
+		NeoTreeGitIgnored        { fg = bg_lighter.li(10) }, -- File name when the git status is ignored.
+		NeoTreeGitModified       { DiffChange }, -- File name when the git status is modified.
+		-- NeoTreeGitUntracked      {}, -- File name when the git status is untracked.
+		-- NeoTreeHiddenByName      {}, -- Used for icons and names when `hide_by_name` is used.
+		NeoTreeIndentMarker      { fg = subtle.li(20) }, -- The style of indentation markers (guides). By default, the "Normal" highlight is used.
+		-- NeoTreeExpander          {}, -- Used for collapsed/expanded icons.
+		-- NeoTreeNormal            {}, -- |hl-Normal| override in Neo-tree window.
+		-- NeoTreeNormalNC          {}, -- |hi-NormalNC| override in Neo-tree window.
+		-- NeoTreeStatusLine        {}, -- |hl-StatusLine| override in Neo-tree window.
+		-- NeoTreeStatusLineNC      {}, -- |hl-StatusLineNC| override in Neo-tree window.
+		-- NeoTreeVertSplit         {}, -- |hl-VertSplit| override in Neo-tree window.
+		NeoTreeRootName          { fg = orange.da(20) }, -- The name of the root node.
+		-- NeoTreeSymbolicLinkTarget{}, -- Symbolic link target.
+
 		-- NvimTreeEmptyFolderName  { },
 		NvimTreeExecFile         { fg = cyan },
 		NvimTreeFolderIcon       { fg = yellow },

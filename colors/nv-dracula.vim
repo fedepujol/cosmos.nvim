@@ -79,12 +79,15 @@ highlight DiagnosticUnderlineWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=underl
 highlight DiagnosticWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
+highlight! link NeoTreeGitAdded DiffAdd
 highlight! link NvimTreeGitNew DiffAdd
 highlight DiffChange guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsChange DiffChange
+highlight! link NeoTreeGitModified DiffChange
 highlight! link NvimTreeGitDirty DiffChange
 highlight DiffDelete guifg=#FF5757 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsDelete DiffDelete
+highlight! link NeoTreeGitDeleted DiffDelete
 highlight! link NvimTreeGitDeleted DiffDelete
 highlight DiffText guifg=#272935 guibg=#FFB86B guisp=NONE gui=NONE cterm=NONE
 highlight Directory guifg=#BF95F9 guibg=NONE guisp=NONE gui=bold cterm=bold
@@ -110,6 +113,14 @@ highlight LspReferenceWrite guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=N
 highlight LspSignatureActiveParameter guifg=#8BE8FD guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight MatchParen guifg=#52FA7C guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight MoreMsg guifg=#F8F8F2 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight NeoTreeDirectoryIcon guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeDirectoryName guifg=#E6E6D1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeFileName guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeFileNameOpened guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeFilterTerm guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeGitIgnored guifg=#535565 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeIndentMarker guifg=#636679 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NeoTreeRootName guifg=#FF9524 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NonText guifg=#434551 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSFloat Number
 highlight! link TSNumber Number
