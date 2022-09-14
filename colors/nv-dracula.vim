@@ -118,7 +118,7 @@ highlight NeoTreeFilterTerm guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeGitIgnored guifg=#535565 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeIndentMarker guifg=#636679 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeRootName guifg=#FF9524 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight NonText guifg=#434551 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight NonText guifg=#5C5F70 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Number guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeExecFile guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeFolderIcon guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
