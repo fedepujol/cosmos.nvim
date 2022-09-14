@@ -7,6 +7,11 @@ if exists('syntax_on')
 endif
 let g:colors_name='nv-cosmos'
 
+highlight Normal guifg=#C9C9C9 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
+highlight! link Question Normal
+highlight! link TSLiteral Normal
+highlight! link TSTagDelimiter Normal
+highlight! link TSText Normal
 highlight Boolean guifg=#28B5F6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSBoolean Boolean
 highlight BufferCurrent guifg=#3B91E8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -104,6 +109,9 @@ highlight Include guifg=#A78B81 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link Define Include
 highlight Keyword guifg=#61D6E5 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#484242 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight LspReferenceRead guifg=NONE guibg=#B51C1C guisp=NONE gui=NONE cterm=NONE
+highlight LspReferenceText guifg=NONE guibg=NONE guisp=NONE gui=reverse cterm=reverse
+highlight LspReferenceWrite guifg=NONE guibg=#F8BACF guisp=NONE gui=NONE cterm=NONE
 highlight LspSignatureActiveParameter guifg=#F8BACF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight MatchParen guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ModeMsg guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -115,11 +123,6 @@ highlight NeoTreeFileNameOpened guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=
 highlight NeoTreeFilterTerm guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeRootName guifg=#FF9100 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NonText guifg=#171E21 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight Normal guifg=#C9C9C9 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
-highlight! link Question Normal
-highlight! link TSLiteral Normal
-highlight! link TSTagDelimiter Normal
-highlight! link TSText Normal
 highlight NormalFloat guifg=#696969 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NormalNC guifg=#A8A8A8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Number guifg=#CBDC38 guibg=NONE guisp=NONE gui=NONE cterm=NONE

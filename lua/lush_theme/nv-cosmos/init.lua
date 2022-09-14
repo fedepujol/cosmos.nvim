@@ -98,17 +98,17 @@ local cosmos = lush(function()
 		QuickFixLine { fg = yellow_a100.da(5) }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- Search       { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		-- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad     { DiffDelete, gui="underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap     { fg = lime_600, gui="underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal   { fg = green_a700.sa(2), gui="underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare    { DiffChange, gui="underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellBad     { DiffDelete, gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap     { fg = lime_600, gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal   { fg = green_a700.sa(2), gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare    { DiffChange, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine   { bg = gray_900 }, -- status line of current window
 		StatusLineNC { bg = gray_800 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- TabLine      { }, -- tab pages line, not active tab page label
 		-- TabLineFill  { }, -- tab pages line, where there are no labels
 		-- TabLineSel   { }, -- tab pages line, active tab page label
 		-- Title        { }, -- titles for output from ":set all", ":autocmd" etc.
-		Visual       { gui="reverse" }, -- Visual mode selection
+		Visual       { gui = "reverse" }, -- Visual mode selection
 		-- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg   { fg = black, bg = dorange_800 }, -- warning messages
 		Whitespace   { fg = LineNr.fg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
@@ -154,7 +154,7 @@ local cosmos = lush(function()
 		Tag            { fg = amber_800.da(20) }, --    you can use CTRL-] on this
 		Delimiter      { fg = dorange_300 }, --  character that needs attention
 		SpecialComment { fg = teal_300.da(20) }, -- special things inside a comment
-		Debug          { gui="reverse" }, --    debugging statements
+		Debug          { gui = "reverse" }, --    debugging statements
 
 		-- Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
 		-- Bold       { gui = "bold" },
@@ -278,38 +278,38 @@ local cosmos = lush(function()
 
 		-- Plugin specifics
 		-- CmpItemAbbr              {}, -- The abbr field's highlight
-		 CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
-		 CmpItemAbbrMatch         { fg = orange_200 }, -- Matched character's highlight
-		 CmpItemAbbrMatchFuzzy    { fg = orange_200 }, -- Fuzzy matched character's
-		 CmpItemKind              { fg = black }, -- Kind field's group
-		 CmpItemMenu              { fg = black }, -- Menu field's group
+		CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
+		CmpItemAbbrMatch         { fg = orange_200 }, -- Matched character's highlight
+		CmpItemAbbrMatchFuzzy    { fg = orange_200 }, -- Fuzzy matched character's
+		CmpItemKind              { fg = black }, -- Kind field's group
+		CmpItemMenu              { fg = black }, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
-		 CmpItemKindClass         { Structure },
-		 CmpItemKindColor         { Tag },
-		 CmpItemKindConstant      { Constant },
-		 CmpItemKindConstructor   { Function },
-		 CmpItemKindEnum          { CmpItemKindClass },
-		 CmpItemKindEnumMember    { fg = teal_300 },
-		 CmpItemKindEvent         { CmpItemKindClass },
-		 CmpItemKindField         { CmpItemKindEnumMember },
-		 CmpItemKindFile          { fg = pink_300 },
-		 CmpItemKindFolder        { fg = yellow_a100 },
-		 CmpItemKindFunction      { CmpItemKindConstructor },
-		 CmpItemKindInterface     { CmpItemKindClass },
-		 CmpItemKindKeyword       { fg = blue_700 },
-		 CmpItemKindMethod        { CmpItemKindConstructor },
-		 CmpItemKindModule        { fg = brown_400 },
-		 CmpItemKindOperator      { Operator },
-		 CmpItemKindProperty      { CmpItemKindEnumMember },
-		 CmpItemKindReference     { Constant },
-		 CmpItemKindSnippet       { CmpItemKindEnumMember },
-		 CmpItemKindStruct        { CmpItemKindClass },
-		 CmpItemKindText          { fg = Normal.fg },
-		 CmpItemKindTypeParameter { Type },
-		 CmpItemKindUnit          { CmpItemKindClass },
-		 CmpItemKindValue         { Constant },
-		 CmpItemKindVariable      { fg = pink_100 },
+		CmpItemKindClass         { Structure },
+		CmpItemKindColor         { Tag },
+		CmpItemKindConstant      { Constant },
+		CmpItemKindConstructor   { Function },
+		CmpItemKindEnum          { CmpItemKindClass },
+		CmpItemKindEnumMember    { fg = teal_300 },
+		CmpItemKindEvent         { CmpItemKindClass },
+		CmpItemKindField         { CmpItemKindEnumMember },
+		CmpItemKindFile          { fg = pink_300 },
+		CmpItemKindFolder        { fg = yellow_a100 },
+		CmpItemKindFunction      { CmpItemKindConstructor },
+		CmpItemKindInterface     { CmpItemKindClass },
+		CmpItemKindKeyword       { fg = blue_700 },
+		CmpItemKindMethod        { CmpItemKindConstructor },
+		CmpItemKindModule        { fg = brown_400 },
+		CmpItemKindOperator      { Operator },
+		CmpItemKindProperty      { CmpItemKindEnumMember },
+		CmpItemKindReference     { Constant },
+		CmpItemKindSnippet       { CmpItemKindEnumMember },
+		CmpItemKindStruct        { CmpItemKindClass },
+		CmpItemKindText          { fg = Normal.fg },
+		CmpItemKindTypeParameter { Type },
+		CmpItemKindUnit          { CmpItemKindClass },
+		CmpItemKindValue         { Constant },
+		CmpItemKindVariable      { fg = pink_100 },
 
 		GitSignsAdd              { DiffAdd },
 		-- GitSignsAddLn            {},
