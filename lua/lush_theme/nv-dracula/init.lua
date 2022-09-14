@@ -3,26 +3,7 @@
 -- https://github.com/dracula/dracula-theme
 
 local lush = require('lush')
-local hsl = lush.hsl
-
--- Palette
-local foreground = hsl('#F8F8F2')
-local bg_lighter = hsl('#424450')
-local bg_light = hsl('#343746')
-local background = hsl('#282A36')
-local bg_dark = hsl('#21222C')
-
-local comment = hsl('#6272A4')
-local selection = hsl('#44475A')
-local subtle = hsl('#424450')
-
-local cyan = hsl('#8BE9FD')
-local green = hsl('#50FA7B')
-local orange = hsl('#FFB86C')
-local pink = hsl('#FF79C6')
-local purple = hsl('#BD93F9')
-local red = hsl('#FF5555')
-local yellow = hsl('#F1FA8C')
+local palette = require('lush_theme.nv-dracula.palette')
 
 ---@diagnostic disable = undefined-global
 local dracula = lush(function()
@@ -31,64 +12,64 @@ local dracula = lush(function()
 		-- so the order shown ((mostly) alphabetical) is likely
 		-- not the order you will end up with.
 
-		ColorColumn    { fg = bg_dark }, -- used for the columns set with 'colorcolumn'
-		Comment        { fg = comment }, -- any comment
-		Conceal        { fg = cyan }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		ColorColumn    { fg = palette.bg_dark }, -- used for the columns set with 'colorcolumn'
+		Comment        { fg = palette.comment }, -- any comment
+		Conceal        { fg = palette.cyan }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		-- Cursor         { }, -- character under the cursor
-		CursorColumn   { bg = bg_lighter }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+		CursorColumn   { bg = palette.bg_lighter }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		-- CursorIM       { }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorLine     { CursorColumn }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		CursorLineNr   { fg = yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		DiffAdd        { fg = green }, -- diff mode: Added line |diff.txt|
-		DiffChange     { fg = orange }, -- diff mode: Changed line |diff.txt|
-		DiffDelete     { fg = red, bg = bg_dark }, -- diff mode: Deleted line |diff.txt|
-		DiffText       { fg = background, bg = orange }, -- diff mode: Changed text within a changed line |diff.txt|
-		Directory      { fg = purple, gui = "bold" }, -- directory names (and other special names in listings)
+		CursorLineNr   { fg = palette.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		DiffAdd        { fg = palette.green }, -- diff mode: Added line |diff.txt|
+		DiffChange     { fg = palette.orange }, -- diff mode: Changed line |diff.txt|
+		DiffDelete     { fg = palette.red, bg = palette.bg_dark }, -- diff mode: Deleted line |diff.txt|
+		DiffText       { fg = palette.background, bg = palette.orange }, -- diff mode: Changed text within a changed line |diff.txt|
+		Directory      { fg = palette.purple, gui = "bold" }, -- directory names (and other special names in listings)
 		-- EndOfBuffer    { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg       { fg = foreground, bg = red }, -- error messages on the command line
-		FoldColumn     { fg = bg_lighter }, -- 'foldcolumn'
-		Folded         { fg = comment, bg = bg_dark }, -- line used for closed folds
-		IncSearch      { fg = background, bg = orange }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		LineNr         { fg = comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		MatchParen     { fg = green, gui = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ErrorMsg       { fg = palette.foreground, bg = palette.red }, -- error messages on the command line
+		FoldColumn     { fg = palette.subtle }, -- 'foldcolumn'
+		Folded         { fg = palette.comment, bg = palette.bg_dark }, -- line used for closed folds
+		IncSearch      { fg = palette.background, bg = palette.orange }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		LineNr         { fg = palette.comment }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		MatchParen     { fg = palette.green, gui = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		-- ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MoreMsg        { fg = foreground, gui = "bold" }, -- |more-prompt|
+		MoreMsg        { fg = palette.foreground, gui = "bold" }, -- |more-prompt|
 		-- MsgArea        { }, -- Area for messages and cmdline
 		-- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
-		NonText        { fg = subtle }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal         { fg = foreground.da(10), bg = background }, -- normal text
+		NonText        { fg = palette.subtle }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal         { fg = palette.foreground.da(10), bg = palette.background }, -- normal text
 		-- NormalFloat    { }, -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
-		Pmenu          { bg = bg_dark }, -- Popup menu: normal item.
-		PmenuSbar      { bg = bg_dark }, -- Popup menu: scrollbar.
-		PmenuSel       { bg = selection }, -- Popup menu: selected item.
-		PmenuThumb     { bg = selection }, -- Popup menu: Thumb of the scrollbar.
-		Question       { fg = foreground, gui = "bold" }, -- |hit-enter| prompt and yes/no questions
+		Pmenu          { bg = palette.bg_dark }, -- Popup menu: normal item.
+		PmenuSbar      { bg = palette.bg_dark }, -- Popup menu: scrollbar.
+		PmenuSel       { bg = palette.selection }, -- Popup menu: selected item.
+		PmenuThumb     { bg = palette.selection }, -- Popup menu: Thumb of the scrollbar.
+		Question       { fg = palette.foreground, gui = "bold" }, -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine   { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search         { fg = green, gui = "inverse" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		SignColumn     { fg = comment }, -- column where |signs| are displayed
-		SpecialKey     { fg = pink }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad       { fg = red, gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap       { fg = cyan, gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal     { fg = orange, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare      { fg = cyan, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine     { bg = bg_dark }, -- status line of current window
-		StatusLineNC   { bg = bg_light }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		StatusLineTerm { bg = bg_dark }, -- Status line of terminal buffers
-		StatusLineTermNC { bg = bg_light }, -- Status line of terminal buffers not-current
+		Search         { fg = palette.green, gui = "inverse" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		SignColumn     { fg = palette.comment }, -- column where |signs| are displayed
+		SpecialKey     { fg = palette.pink }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad       { fg = palette.red, gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap       { fg = palette.cyan, gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal     { fg = palette.orange, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare      { fg = palette.cyan, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine     { bg = palette.bg_dark }, -- status line of current window
+		StatusLineNC   { bg = palette.bg_light }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLineTerm { bg = palette.bg_dark }, -- Status line of terminal buffers
+		StatusLineTermNC { bg = palette.bg_light }, -- Status line of terminal buffers not-current
 		-- Substitute     { }, -- |:substitute| replacement text highlighting
-		TabLine        { fg = comment, bg = bg_dark }, -- tab pages line, not active tab page label
-		TabLineFill    { bg = bg_dark }, -- tab pages line, where there are no labels
+		TabLine        { fg = palette.comment, bg = palette.bg_dark }, -- tab pages line, not active tab page label
+		TabLineFill    { bg = palette.bg_dark }, -- tab pages line, where there are no labels
 		TabLineSel     { Normal }, -- tab pages line, active tab page label
 		-- TermCursor     { }, -- cursor in a focused terminal
 		-- TermCursorNC   { }, -- cursor in an unfocused terminal
-		Title          { fg = green, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
-		VertSplit      { fg = comment, bg = bg_dark }, -- the column separating vertically split windows
-		Visual         { bg = selection }, -- Visual mode selection
+		Title          { fg = palette.green, gui = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
+		VertSplit      { fg = palette.comment, bg = palette.bg_dark }, -- the column separating vertically split windows
+		Visual         { bg = palette.selection }, -- Visual mode selection
 		VisualNOS      { Visual }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg     { fg = background, bg = orange }, -- warning messages
+		WarningMsg     { fg = palette.background, bg = palette.orange }, -- warning messages
 		-- Whitespace     { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu       { fg = background, bg = purple, gui = "bold" }, -- current match in 'wildmenu' completion
+		WildMenu       { fg = palette.background, bg = palette.purple, gui = "bold" }, -- current match in 'wildmenu' completion
 		-- lCursor        { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
 		-- These groups are not listed as default vim groups,
@@ -97,41 +78,41 @@ local dracula = lush(function()
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Boolean        { fg = purple }, --  a boolean constant: TRUE, false
-		Character      { fg = orange }, --  a character constant: 'c', '\n'
-		Constant       { fg = purple }, -- (preferred) any constant
-		Float          { Constant }, --    a floating point constant: 2.3e10
-		Number         { Constant }, --   a number constant: 234, 0xff
-		String         { fg = yellow }, --   a string constant: "this is a string"
+		Boolean        { fg = palette.purple }, --  a boolean constant: TRUE, false
+		Character      { fg = palette.pink }, --  a character constant: 'c', '\n'
+		Constant       { fg = palette.purple }, -- (preferred) any constant
+		Float          { fg = palette.purple }, --    a floating point constant: 2.3e10
+		Number         { fg = palette.purple }, --   a number constant: 234, 0xff
+		String         { fg = palette.yellow }, --   a string constant: "this is a string"
 
-		Function       { fg = green }, -- function name (also: methods for classes)
-		Identifier     { fg = cyan }, -- (preferred) any variable name
+		Function       { fg = palette.green }, -- function name (also: methods for classes)
+		Identifier     { fg = palette.foreground }, -- (preferred) any variable name
 
-		Conditional    { fg = pink }, --  if, then, else, endif, switch, etc.
-		Exception      { Conditional }, --  try, catch, throw
-		Keyword        { Conditional }, --  any other keyword
-		Label          { fg = cyan }, --    case, default, etc.
-		Operator       { fg = purple }, -- "sizeof", "+", "*", etc.
-		Repeat         { Conditional }, --   for, do, while, etc.
-		Statement      { Conditional }, -- (preferred) any statement
+		Conditional    { fg = palette.pink }, --  if, then, else, endif, switch, etc.
+		Exception      { fg = palette.pink }, --  try, catch, throw
+		Keyword        { fg = palette.pink }, --  any other keyword
+		Label          { fg = palette.pink }, --    case, default, etc.
+		Operator       { fg = palette.pink }, -- "sizeof", "+", "*", etc.
+		Repeat         { fg = palette.pink }, --   for, do, while, etc.
+		Statement      { fg = palette.pink }, -- (preferred) any statement
 
-		Define         { fg = purple}, --   preprocessor #define
-		Include        { Define }, --  preprocessor #include
-		Macro          { Define }, --    same as Define
-		PreCondit      { Define }, --  preprocessor #if, #else, #endif, etc.
-		PreProc        { Define }, -- (preferred) generic Preprocessor
+		Define         { fg = palette.pink }, --   preprocessor #define
+		Include        { fg = palette.pink }, --  preprocessor #include
+		Macro          { fg = palette.pink }, --    same as Define
+		PreCondit      { fg = palette.pink }, --  preprocessor #if, #else, #endif, etc.
+		PreProc        { fg = palette.pink }, -- (preferred) generic Preprocessor
 
-		StorageClass   { Conditional }, -- static, register, volatile, etc.
-		Structure      { Conditional }, --  struct, union, enum, etc.
-		Type           { fg = cyan }, -- (preferred) int, long, char, etc.
-		Typedef        { Conditional }, --  A typedef
+		StorageClass   { fg = palette.pink }, -- static, register, volatile, etc.
+		Structure      { fg = palette.pink }, --  struct, union, enum, etc.
+		Type           { fg = palette.cyan }, -- (preferred) int, long, char, etc.
+		Typedef        { fg = palette.pink }, --  A typedef
 
 		-- Debug          { }, --    debugging statements
-		Delimiter      { fg = foreground }, --  character that needs attention
-		Special        { fg = pink }, -- (preferred) any special symbol
-		SpecialChar    { fg = orange }, --  special character in a constant
-		SpecialComment { fg = cyan, gui = "italic" }, -- special things inside a comment
-		Tag            { fg = cyan }, --    you can use CTRL-] on this
+		Delimiter      { fg = palette.foreground }, --  character that needs attention
+		Special        { fg = palette.pink }, -- (preferred) any special symbol
+		SpecialChar    { fg = palette.orange }, --  special character in a constant
+		SpecialComment { fg = palette.cyan, gui = "italic" }, -- special things inside a comment
+		Tag            { fg = palette.cyan }, --    you can use CTRL-] on this
 
 		-- Bold           { },
 		-- Italic         { },
@@ -140,26 +121,26 @@ local dracula = lush(function()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-		Error          { fg = red }, -- (preferred) any erroneous construct
+		Error          { fg = palette.red }, -- (preferred) any erroneous construct
 
-		Todo           { fg = cyan, gui = "bold, inverse" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo           { fg = palette.cyan, gui = "bold, inverse" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 
-		LspReferenceRead              { bg = selection }, -- used for highlighting "read" references
-		LspReferenceText              { bg = selection }, -- used for highlighting "text" references
-		LspReferenceWrite             { bg = selection }, -- used for highlighting "write" references
+		LspReferenceRead              { bg = palette.selection }, -- used for highlighting "read" references
+		LspReferenceText              { bg = palette.selection }, -- used for highlighting "text" references
+		LspReferenceWrite             { bg = palette.selection }, -- used for highlighting "write" references
 		-- LspCodeLens                 {}, -- Used to color the virtual text of the codelens
 		-- LspCodeLensSeparator        {}. -- Used to color the separator between two of more code lenses
-		LspSignatureActiveParameter   { fg = cyan, gui = "bold" }, -- Used to highlight the active parameter in the signature help
-		FloatBorder                   { fg = purple },
+		LspSignatureActiveParameter   { fg = palette.cyan, gui = "bold" }, -- Used to highlight the active parameter in the signature help
+		FloatBorder                   { fg = palette.purple },
 
-		DiagnosticError               { fg = red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticHint                { fg = green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticInfo                { fg = cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticWarn                { fg = orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticError               { fg = palette.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticHint                { fg = palette.green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticInfo                { fg = palette.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticWarn                { fg = palette.orange }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
 		-- DiagnosticVirtualTextError  { }, -- Used for "Error" diagnostic virtual text
 		-- DiagnosticVirtualTextInfo   { }, -- Used for "Information" diagnostic virtual text
@@ -187,67 +168,67 @@ local dracula = lush(function()
 		-- TSError -> Error for example, so you do not have to define these unless
 		-- you explicitly want to support Treesitter's improved syntax awareness.
 
-		TSAttribute          { fg = cyan },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-		TSBoolean            { Boolean },    -- For booleans.
-		TSCharacter          { Character },    -- For characters.
-		TSCharacterSpecial   { fg = orange.da(20) }, -- Special Characters
-		TSComment            { Comment },    -- For comment blocks.
-		TSConditional        { Conditional },    -- For keywords related to conditionnals.
-		TSConstant           { Constant },    -- For constants
-		TSConstBuiltin       { fg = purple.da(10) },    -- For constant that are built in the language: nil in Lua.
-		TSConstMacro         { fg = cyan },    -- For constants that are defined by macros: NULL in C.
-		TSConstructor        { fg = cyan },     -- Constructor calls and definitions: {} in Lua, and Java constructors.
+		TSAttribute          { fg = palette.gree, gui = "italic"},    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+		-- TSBoolean            { },    -- For booleans.
+		-- TSCharacter          { },    -- For characters.
+		-- TSCharacterSpecial   { }, -- Special Characters
+		-- TSComment            { },    -- For comment blocks.
+		-- TSConditional        { },    -- For keywords related to conditionnals.
+		-- TSConstant           { },    -- For constants
+		TSConstBuiltin       { fg = palette.purple.da(10) },    -- For constant that are built in the language: nil in Lua.
+		TSConstMacro         { Macro },    -- For constants that are defined by macros: NULL in C.
+		TSConstructor        { fg = palette.cyan },     -- Constructor calls and definitions: {} in Lua, and Java constructors.
 		-- TSDebug              { }, -- Debuggin statements
 		-- TSDefine             { }, -- Preporcessor #define statements.
-		TSError              { fg = red.li(20) },    -- For syntax/parser errors.
-		TSException          { fg = red.li(20), bg = red.li(20).mix(Normal.bg, 80) },    -- For exception related keywords.
-		TSField              { fg = orange },    -- For fields.
-		TSFloat              { Number },    -- For floats.
+		-- TSError              { },    -- For syntax/parser errors.
+		-- TSException          { },    -- For exception related keywords.
+		TSField              { fg = palette.orange },    -- For fields.
+		-- TSFloat              { },    -- For floats.
 		TSFunction           { Function },    -- For function (calls and definitions).
-		TSFuncBuiltin        { Function },    -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin        { fg = palette.cyan },    -- For builtin functions: `table.insert` in Lua.
 		TSFuncMacro          { Function },    -- For macro defined fuctions (calls and definitions): each macro_rules in Rust.
-		TSInclude            { Include },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
-		TSKeyword            { fg = pink },    -- For keywords that don't fall in previous categories.
-		TSKeywordFunction    { fg = green },    -- For keywords used to define a fuction.
-		TSKeywordOperator    { fg = pink },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
-		TSKeywordReturn      { fg = pink },    -- Keywords like return and yield.
-		TSLabel              { fg = cyan },    -- For labels: `label:` in C and `:label:` in Lua.
-		TSMethod             { fg = green },    -- For method calls and definitions.
-		TSNamespace          { fg = orange },    -- For identifiers referring to modules and namespaces.
+		-- TSInclude            { },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
+		-- TSKeyword            { },    -- For keywords that don't fall in previous categories.
+		-- TSKeywordFunction    { },    -- For keywords used to define a fuction.
+		-- TSKeywordOperator    { },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
+		-- TSKeywordReturn      { },    -- Keywords like return and yield.
+		TSLabel              { fg = palette.purple, gui = "italic"},    -- For labels: `label:` in C and `:label:` in Lua.
+		-- TSMethod             { },    -- For method calls and definitions.
+		-- TSNamespace          { },    -- For identifiers referring to modules and namespaces.
 		-- TSNone               { },    -- TODO: docs
-		TSNumber             { Number },    -- For all numbers
-		TSOperator           { fg = pink },    -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter          { fg = orange },    -- For parameters of a function.
-		TSParameterReference { fg = orange },    -- For references to parameters of a function.
-		TSPreProc            { PreProc },    -- Preprocessors #if, #else, #endif
-		TSProperty           { fg = green },    -- Same as TSField.
+		-- TSNumber             { },    -- For all numbers
+		-- TSOperator           { },    -- For any operator: `+`, but also `->` and `*` in C.
+		TSParameter          { fg = palette.orange, gui = "italic" },    -- For parameters of a function.
+		TSParameterReference { fg = palette.orange },    -- For references to parameters of a function.
+		-- TSPreProc            { },    -- Preprocessors #if, #else, #endif
+		-- TSProperty           { },    -- Same as TSField.
 		-- TSPunctDelimiter     { },    -- For delimiters ie: `.`
 		-- TSPunctBracket       { },    -- For brackets and parens.
-		-- TSPunctSpecial       { },    -- For special punctutation that does not fall in the catagories before.
-		TSRepeat             { Repeat },    -- For keywords related to loops.
-		TSStorageClass       { fg = pink },    -- Keyword that affect how a variable is stored: static, comptime, extend
-		TSString             { String },    -- For strings.
-		TSStringRegex        { fg = red },    -- For regexes.
-		TSStringEscape       { fg = cyan },    -- For escape characters within a string.
-		TSStringSpecial      { fg = yellow.da(10) },    -- Strings with special meaning that don't fit into the previous categories.
-		-- TSSymbol             { },    -- For identifiers referring to symbols or atoms.
-		TSType               { fg = pink },    -- For types.
-		TSTypeBuiltin        { fg = cyan },    -- For builtin types.
+		TSPunctSpecial       { Special },    -- For special punctutation that does not fall in the catagories before.
+		-- TSRepeat             { },    -- For keywords related to loops.
+		-- TSStorageClass       { },    -- Keyword that affect how a variable is stored: static, comptime, extend
+		-- TSString             { },    -- For strings.
+		-- TSStringRegex        { },    -- For regexes.
+		TSStringEscape       { Character },    -- For escape characters within a string.
+		-- TSStringSpecial      { },    -- Strings with special meaning that don't fit into the previous categories.
+		TSSymbol             { fg = palette.purple },    -- For identifiers referring to symbols or atoms.
+		-- TSType               { },    -- For types.
+		-- TSTypeBuiltin        { },    -- For builtin types.
 		-- TSTypeQualifier      { },    -- Qualifiers on types
 		-- TSTypeDefinition     { },    -- Type definitions; typedef in C
-		TSVariable           { fg = cyan },    -- Any variable name that does not have another highlight.
-		TSVariableBuiltin    { fg = purple, gui = "italic" },    -- Variable names that are defined by the languages, like this or self.
+		-- TSVariable           { },    -- Any variable name that does not have another highlight.
+		TSVariableBuiltin    { fg = palette.purple, gui = "italic" },    -- Variable names that are defined by the languages, like this or self.
 
-		TSTag                { fg = cyan },    -- Tags like html tag names.
-		TSTagAttribute       { fg = pink },    -- HTML tag attributes.
-		TSTagDelimiter       { fg = foreground },    -- Tag delimiter like `<` `>` `/`
+		TSTag                { fg = palette.cyan },    -- Tags like html tag names.
+		TSTagAttribute       { fg = palette.green, gui = "italic" },    -- HTML tag attributes.
+		TSTagDelimiter       { fg = palette.foreground },    -- Tag delimiter like `<` `>` `/`
 		-- TSText               { },    -- For strings considered text in a markup language.
-		TSStrong             { gui = "bold" },    -- Text to be represented in bold.
-		-- TSEmphasis           { },    -- For text to be represented with emphasis.
+		TSStrong             { fg = palette.foreground, gui = "bold" },    -- Text to be represented in bold.
+		TSEmphasis           { fg = palette.foreground },    -- For text to be represented with emphasis.
 		TSUnderline          { gui = "underline" },    -- For text to be represented with an underline.
 		TSStrike             { gui = "strikethrough" },    -- For strikethrough text.
-		-- TSTitle              { },    -- Text that is part of a title.
-		-- TSLiteral            { },    -- Literal text.
+		TSTitle              { fg = palette.yellow },    -- Text that is part of a title.
+		TSLiteral            { fg = palette.yellow },    -- Literal text.
 		-- TSMath               { },    -- Math environments like LaTeX's `$ ... $`
 		-- TSTextReference      { },    -- Footnotes, text references, citations, etc.
 		-- TSEnvironment        { },    -- Text environments of markup languages.
@@ -255,68 +236,68 @@ local dracula = lush(function()
 		-- TSNote               { },    -- Text representation of an informational note.
 		-- TSWarning            { },    -- Text representation of a warning note.
 		-- TSDanger             { },    -- Text representation of a danger note.
-		TSURI                { fg = cyan.da(30), gui = "underline" },    -- Any URI like a link or email.
+		TSURI                { fg = palette.cyan.da(30), gui = "underline" },    -- Any URI like a link or email.
 
 		-- Plugin specifics
 
 		-- CmpItemAbbr              {}, -- The abbr field's highlight
-		 CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
-		 CmpItemAbbrMatch         { fg = purple }, -- Matched character's highlight
-		 CmpItemAbbrMatchFuzzy    { fg = purple }, -- Fuzzy matched character's
+		CmpItemAbbrDeprecated    { fg = palette.red, gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
+		CmpItemAbbrMatch         { fg = palette.cyan }, -- Matched character's highlight
+		CmpItemAbbrMatchFuzzy    { fg = palette.cyan }, -- Fuzzy matched character's
 		-- CmpItemKind              {}, -- Kind field's group
 		-- CmpItemMenu              {}, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
-		 CmpItemKindClass         { Structure },
-		-- CmpItemKindColor         {},
-		 CmpItemKindConstant      { Constant },
-		 CmpItemKindConstructor   { Function },
-		 CmpItemKindEnum          { CmpItemKindClass },
-		 CmpItemKindEnumMember    { fg = yellow },
-		 CmpItemKindEvent         { CmpItemKindClass },
-		 CmpItemKindField         { CmpItemKindEnumMember },
-		-- CmpItemKindFile          {},
-		-- CmpItemKindFolder        {},
-		 CmpItemKindFunction      { CmpItemKindConstructor },
-		 CmpItemKindInterface     { CmpItemKindClass },
-		-- CmpItemKindKeyword       {},
-		 CmpItemKindMethod        { CmpItemKindConstructor },
-		-- CmpItemKindModule        {},
-		-- CmpItemKindOperator      {},
-		 CmpItemKindProperty      { CmpItemKindEnumMember },
-		-- CmpItemKindReference     {},
-		 CmpItemKindSnippet       { CmpItemKindEnumMember },
-		 CmpItemKindStruct        { CmpItemKindClass },
-		 CmpItemKindText          { fg = Normal.fg },
-		-- CmpItemKindTypeParameter {},
-		 CmpItemKindUnit          { CmpItemKindClass },
-		 CmpItemKindValue         { CmpItemKindConstant },
-		-- CmpItemKindVariable      {},
+		CmpItemKindClass         { fg = palette.cyan },
+		CmpItemKindColor         { fg = palette.yellow },
+		CmpItemKindConstant      { fg = palette.purple },
+		CmpItemKindConstructor   { fg = palette.cyan },
+		CmpItemKindEnum          { fg = palette.pink },
+		CmpItemKindEnumMember    { fg = palette.purple },
+		CmpItemKindEvent         { fg = palette.foreground },
+		CmpItemKindField         { fg = palette.orange },
+		CmpItemKindFile          { fg = palette.yellow },
+		CmpItemKindFolder        { fg = palette.yellow },
+		CmpItemKindFunction      { Function },
+		CmpItemKindInterface     { fg = palette.cyan },
+		CmpItemKindKeyword       { fg = palette.pink },
+		CmpItemKindMethod        { Function },
+		CmpItemKindModule        { fg = palette.yellow },
+		CmpItemKindOperator      { fg = palette.pink },
+		CmpItemKindProperty      { fg = palette.pink },
+		CmpItemKindReference     { fg = palette.orange },
+		CmpItemKindSnippet       { fg = palette.foreground },
+		CmpItemKindStruct        { fg = palette.pink },
+		CmpItemKindText          { fg = palette.foreground },
+		CmpItemKindTypeParameter { fg = palette.cyan },
+		CmpItemKindUnit          { fg = palette.foreground },
+		CmpItemKindValue         { fg = palette.yellow },
+		CmpItemKindVariable      { fg = palette.purple, gui = "italic" },
 
 		GitSignsAdd              { DiffAdd },
 		-- GitSignsAddLn            {},
 		GitSignsChange           { DiffChange },
 		-- GitSignsChangeLn         {},
-		GitSignsCurrentLineBlame { fg = comment },
+		GitSignsCurrentLineBlame { fg = palette.comment },
 		GitSignsDelete           { DiffDelete },
 		-- GitSignsDeleteLn         {},
 
-		BufferCurrent            { fg = yellow, bg = bg_dark },
-		BufferCurrentIcon        { fg = yellow, bg = bg_dark },
-		BufferCurrentIndex       { fg = yellow, bg = bg_dark },
-		BufferCurrentMod         { fg = yellow, bg = bg_dark },
-		BufferCurrentSign        { fg = yellow, bg = bg_dark },
-		BufferCurrentTarget      { fg = yellow, bg = bg_dark },
-		BufferInactive           { bg = bg_light },
-		BufferInactiveIcon       { bg = bg_light },
-		BufferInactiveIndex      { bg = bg_light },
-		BufferInactiveMod        { bg = bg_light },
-		BufferInactiveSign       { bg = bg_light },
-		BufferInactiveTarget     { bg = bg_light },
+		BufferCurrent            { fg = palette.yellow, bg = palette.bg_dark },
+		BufferCurrentIcon        { fg = palette.yellow, bg = palette.bg_dark },
+		BufferCurrentIndex       { fg = palette.yellow, bg = palette.bg_dark },
+		BufferCurrentMod         { fg = palette.yellow, bg = palette.bg_dark },
+		BufferCurrentSign        { fg = palette.yellow, bg = palette.bg_dark },
+		BufferCurrentTarget      { fg = palette.yellow, bg = palette.bg_dark },
+		BufferInactive           { bg = palette.bg_light },
+		BufferInactiveIcon       { bg = palette.bg_light },
+		BufferInactiveIndex      { bg = palette.bg_light },
+		BufferInactiveMod        { bg = palette.bg_light },
+		BufferInactiveSign       { bg = palette.bg_light },
+		BufferInactiveTarget     { bg = palette.bg_light },
 		-- BufferOffset             {},
 		-- BufferTabpageFill        {},
 		-- BufferTabpages           {},
-		BufferVisible            { fg = purple },
+		BufferVisible            { fg = palette.purple },
 		-- BufferVisibleIcon        {},
 		-- BufferVisibleIndex       {},
 		-- BufferVisibleMod         {},
@@ -326,8 +307,8 @@ local dracula = lush(function()
 		-- NeoTreeBufferNumber      {}, -- The buffer number shown in the buffers source.
 		-- NeoTreeCursorLine        {}, -- |hi-CursorLine| override in Neo-tree window.
 		-- NeoTreeDimText           {}, -- Greyed out text used in various places.
-		NeoTreeDirectoryIcon     { fg = purple }, -- Directory icon.
-		NeoTreeDirectoryName     { fg = foreground.da(10) }, -- Directory name.
+		NeoTreeDirectoryIcon     { fg = palette.purple }, -- Directory icon.
+		NeoTreeDirectoryName     { fg = palette.foreground.da(10) }, -- Directory name.
 		-- NeoTreeDotfile           {}, -- Used for icons and names when dotfiles are filtered.
 		-- NeoTreeFileIcon          {}, -- File icon, when not overriden by devicons.
 		NeoTreeFileName          {}, -- File name, when not overwritten by another status.
@@ -339,45 +320,45 @@ local dracula = lush(function()
 		NeoTreeGitAdded          { DiffAdd }, -- File name when the git status is added.
 		-- NeoTreeGitConflict       {}, -- File name when the git status is conflict.
 		NeoTreeGitDeleted        { DiffDelete }, -- File name when the git status is deleted.
-		NeoTreeGitIgnored        { fg = bg_lighter.li(10) }, -- File name when the git status is ignored.
+		NeoTreeGitIgnored        { fg = palette.bg_lighter.li(10) }, -- File name when the git status is ignored.
 		NeoTreeGitModified       { DiffChange }, -- File name when the git status is modified.
 		-- NeoTreeGitUntracked      {}, -- File name when the git status is untracked.
 		-- NeoTreeHiddenByName      {}, -- Used for icons and names when `hide_by_name` is used.
-		NeoTreeIndentMarker      { fg = subtle.li(20) }, -- The style of indentation markers (guides). By default, the "Normal" highlight is used.
+		NeoTreeIndentMarker      { fg = palette.subtle.li(20) }, -- The style of indentation markers (guides). By default, the "Normal" highlight is used.
 		-- NeoTreeExpander          {}, -- Used for collapsed/expanded icons.
 		-- NeoTreeNormal            {}, -- |hl-Normal| override in Neo-tree window.
 		-- NeoTreeNormalNC          {}, -- |hi-NormalNC| override in Neo-tree window.
 		-- NeoTreeStatusLine        {}, -- |hl-StatusLine| override in Neo-tree window.
 		-- NeoTreeStatusLineNC      {}, -- |hl-StatusLineNC| override in Neo-tree window.
 		-- NeoTreeVertSplit         {}, -- |hl-VertSplit| override in Neo-tree window.
-		NeoTreeRootName          { fg = orange.da(20) }, -- The name of the root node.
+		NeoTreeRootName          { fg = palette.orange.da(20) }, -- The name of the root node.
 		-- NeoTreeSymbolicLinkTarget{}, -- Symbolic link target.
 
 		-- NvimTreeEmptyFolderName  { },
-		NvimTreeExecFile         { fg = cyan },
-		NvimTreeFolderIcon       { fg = yellow },
-		NvimTreeFolderName       { fg = foreground.da(10) },
+		NvimTreeExecFile         { fg = palette.cyan },
+		NvimTreeFolderIcon       { fg = palette.yellow },
+		NvimTreeFolderName       { fg = palette.foreground.da(10) },
 		NvimTreeGitDeleted       { DiffDelete },
 		NvimTreeGitDirty         { DiffChange },
-		NvimTreeGitIgnored       { fg = bg_lighter.li(10) },
+		NvimTreeGitIgnored       { fg = palette.bg_lighter.li(10) },
 		NvimTreeGitNew           { DiffAdd },
-		NvimTreeIndentMarker     { fg = subtle.li(20) },
+		NvimTreeIndentMarker     { fg = palette.subtle.li(20) },
 		-- NvimTreeOpenedFile       { },
-		NvimTreeOpenedFolderName { fg = foreground.da(10), gui = "bold" },
-		NvimTreeRootFolder       { fg = orange },
-		NvimTreeSpecialFile      { fg = purple },
+		NvimTreeOpenedFolderName { fg = palette.foreground.da(10), gui = "bold" },
+		NvimTreeRootFolder       { fg = palette.orange },
+		NvimTreeSpecialFile      { fg = palette.purple },
 
-		TelescopeBorder          { fg = background.da(20), bg = background.da(20) },
-		TelescopeMultiSelection  { fg = pink },
-		TelescopeNormal          { bg = background.da(20) },
-		TelescopePreviewTitle    { fg = background.da(20), bg = green.da(30) },
-		TelescopePromptBorder    { fg = selection.da(10), bg = selection.da(10) },
-		TelescopePromptCounter   { fg = cyan },
-		TelescopePromptNormal    { fg = foreground, bg = selection.da(10) },
-		TelescopePromptTitle     { fg = background.da(20), bg = purple.da(10) },
-		TelescopeResultsTitle    { fg = background.da(20), bg = orange.da(10) },
-		TelescopeSelection       { fg = green },
-		TelescopeSelectionCaret  { fg = yellow },
+		TelescopeBorder          { fg = palette.background.da(20), bg = palette.background.da(20) },
+		TelescopeMultiSelection  { fg = palette.pink },
+		TelescopeNormal          { bg = palette.background.da(20) },
+		TelescopePreviewTitle    { fg = palette.background.da(20), bg = palette.green.da(30) },
+		TelescopePromptBorder    { fg = palette.selection.da(10), bg = palette.selection.da(10) },
+		TelescopePromptCounter   { fg = palette.cyan },
+		TelescopePromptNormal    { fg = palette.foreground, bg = palette.selection.da(10) },
+		TelescopePromptTitle     { fg = palette.background.da(20), bg = palette.purple.da(10) },
+		TelescopeResultsTitle    { fg = palette.background.da(20), bg = palette.orange.da(10) },
+		TelescopeSelection       { fg = palette.green },
+		TelescopeSelectionCaret  { fg = palette.yellow },
 	}
 end)
 
