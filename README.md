@@ -17,20 +17,19 @@ a PR and I’ll gladly merged it.
 
 Original based on [vim-felipec](https://github.com/felipec/vim-felipec)
 
-The `vcdark` theme is based on `VSCode` colorscheme and
-[nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
-
 ### Colorschemes
 
+The themes in this repo are ports based on:
 - [doomone](https://github.com/romgrk/doom-one.vim)
 - [dracula](https://github.com/dracula/vim)
 - [gruvbox](https://github.com/morhetz/gruvbox)
 - [solarized](https://github.com/altercation/solarized/tree/master/vim-colors-solarized)
 - [tokyonight](https://github.com/folke/tokyonight.nvim)
+- [nvcode-colorschemes](https://github.com/ChristianChiarulli/nvcode-color-schemes.vim).
 
 ## Requirements
 
--   [NeoVim](https://github.com/neovim/neovim) 0.5 or nightly
+-   [NeoVim](https://github.com/neovim/neovim) 0.7 or nightly
 
 ### Optionals
 
@@ -76,9 +75,9 @@ make sure to enable the `hightlight` option:
 
 ``` lua
 require('nvim-treesiter.configs').setup{
-    ensure_installed = "all", -- one of "all", "maintained" or a list
+    ensure_installed = "all",      -- one of "all", "maintained" or a list
     hightlight = {
-        enable = true, 	-- false will disable the whole extension
+        enable = true,             -- false will disable the whole extension
         disable = { "c", "rust" }, -- list of language that will be disabled
     }
 }
@@ -87,9 +86,9 @@ require('nvim-treesiter.configs').setup{
 Finally, enable the theme in your settings:
 
 ``` lua
-vim.bo.syntax = "ON" 		 	 -- Enable syntax
-vim.cmd(":colo name_of_theme") 	 -- Change the colorscheme
-vim.o.termuicolors = true 	 	-- Enable 24Bit colors
+vim.bo.syntax = "ON"            -- Enable syntax
+vim.cmd(":colo name_of_theme")  -- Change the colorscheme
+vim.o.termuicolors = true       -- Enable 24Bit colors
 ```
 
 Or use the command `:colo name_of_theme`
