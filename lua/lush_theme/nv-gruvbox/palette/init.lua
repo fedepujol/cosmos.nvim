@@ -1,6 +1,6 @@
 local hsl = require('lush.hsl')
 
----@enum palette
+---@enum
 local palette = {
 	bright_aqua = hsl('#8ec07c'),
 	bright_blue = hsl('#83a598'),

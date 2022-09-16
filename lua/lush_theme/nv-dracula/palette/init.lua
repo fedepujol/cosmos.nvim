@@ -1,7 +1,7 @@
 local hsl = require('lush.hsl')
 
----@enum colors
-local colors = {
+---@enum
+local palette = {
 	foreground = hsl('#F8F8F2'),
 	bg_lighter = hsl('#424450'),
 	bg_light = hsl('#343746'),
@@ -21,4 +21,4 @@ local colors = {
 	yellow = hsl('#F1FA8C'),
 }
 
-return colors
+return palette
