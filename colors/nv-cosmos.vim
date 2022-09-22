@@ -33,10 +33,10 @@ highlight Delimiter guifg=#FFCC80 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticError guifg=#DF3030 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticHint guifg=#00C753 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticInfo guifg=#80DEEA guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticUnderlineError guifg=#DF3030 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
-highlight DiagnosticUnderlineHint guifg=#00C753 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
-highlight DiagnosticUnderlineInfo guifg=#80DEEA guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
-highlight DiagnosticUnderlineWarn guifg=#FF5724 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineError guifg=NONE guibg=NONE guisp=#DF3030 gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineHint guifg=NONE guibg=NONE guisp=#00C753 gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE guisp=#80DEEA gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE guisp=#FF5724 gui=undercurl cterm=undercurl
 highlight DiagnosticVirtualTextError guifg=#DF3030 guibg=#413034 guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextHint guifg=#00C753 guibg=#1F4D3C guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticVirtualTextInfo guifg=#80DEEA guibg=#336570 guisp=NONE gui=NONE cterm=NONE
@@ -96,10 +96,10 @@ highlight SignColumn guifg=NONE guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight Special guifg=#7B88CC guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialChar guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialComment guifg=#00C753 guibg=NONE guisp=NONE gui=italic cterm=italic
-highlight SpellBad guifg=#D54215 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
-highlight SpellCap guifg=#90CAF9 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
-highlight SpellLocal guifg=#00838F guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
-highlight SpellRare guifg=#BB69C9 guibg=NONE guisp=NONE gui=undercurl cterm=undercurl
+highlight SpellBad guifg=NONE guibg=NONE guisp=#D54215 gui=undercurl cterm=undercurl
+highlight SpellCap guifg=NONE guibg=NONE guisp=#90CAF9 gui=undercurl cterm=undercurl
+highlight SpellLocal guifg=NONE guibg=NONE guisp=#00838F gui=undercurl cterm=undercurl
+highlight SpellRare guifg=NONE guibg=NONE guisp=#BB69C9 gui=undercurl cterm=undercurl
 highlight Statement guifg=#F8BACF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight StatusLine guifg=NONE guibg=#212121 guisp=NONE gui=NONE cterm=NONE
 highlight! link TabLineFill StatusLine

@@ -50,10 +50,10 @@ local cosmos = lush(function()
 		-- Search         { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn     { bg = Normal.bg }, -- column where |signs| are displayed
 		-- SpecialKey     { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad       { fg = palette.dorange_800, gui = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap       { fg = palette.blue_200, gui = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal     { fg = palette.cyan_800, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare      { fg = palette.purple_300, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellBad       { sp = palette.dorange_800, gui = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap       { sp = palette.blue_200, gui = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal     { sp = palette.cyan_800, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare      { sp = palette.purple_300, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine     { bg = palette.gray_900 }, -- status line of current window
 		StatusLineNC   { bg = palette.bgray_900 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- Substitute     { }, -- |:substitute| replacement text highlighting
@@ -142,15 +142,15 @@ local cosmos = lush(function()
 		DiagnosticInfo               { fg = palette.cyan_200 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 		DiagnosticWarn               { fg = palette.dorange_500 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		DiagnosticVirtualTextError   { fg = DiagnosticError.fg, bg = Normal.bg.mix(palette.red_900, 35) }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextHint    { fg = DiagnosticHint.fg, bg = Normal.bg.mix(palette.green_a700, 35) }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticVirtualTextInfo    { fg = DiagnosticInfo.fg, bg = Normal.bg.mix(palette.cyan_200, 35) }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextWarn    { fg = DiagnosticWarn.fg, bg = Normal.bg.mix(palette.dorange_500, 35) }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextError   { DiagnosticError, bg = Normal.bg.mix(palette.red_900, 35) }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextHint    { DiagnosticHint, bg = Normal.bg.mix(palette.green_a700, 35) }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextInfo    { DiagnosticInfo, bg = Normal.bg.mix(palette.cyan_200, 35) }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextWarn    { DiagnosticWarn, bg = Normal.bg.mix(palette.dorange_500, 35) }, -- Used for "Warning" diagnostic virtual text
 
-		DiagnosticUnderlineError     { DiagnosticError, gui = "undercurl" }, -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineHint      { DiagnosticHint, gui = "undercurl" }, -- Used to underline "Hint" diagnostics
-		DiagnosticUnderlineInfo      { DiagnosticInfo, gui = "undercurl" }, -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineWarn      { DiagnosticWarn, gui = "undercurl" }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineError     { sp = DiagnosticError.fg, gui = "undercurl" }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineHint      { sp = DiagnosticHint.fg, gui = "undercurl" }, -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineInfo      { sp = DiagnosticInfo.fg, gui = "undercurl" }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineWarn      { sp = DiagnosticWarn.fg, gui = "undercurl" }, -- Used to underline "Warning" diagnostics
 
 		-- DiagnosticFloatingError      { }, -- Used to color "Error" diagnostic messages in diagnostics float
 		-- DiagnosticFloatingHint       { }, -- Used to color "Hint" diagnostic messages in diagnostics float
