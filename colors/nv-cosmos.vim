@@ -11,6 +11,12 @@ highlight Normal guifg=#B0B0B0 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Boolean guifg=#0287CF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSBoolean Boolean
+highlight BufferCurrent guifg=#90CAF9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight BufferCurrentMod guifg=#90CAF9 guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight BufferInactive guifg=#BB69C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight BufferInactiveMod guifg=#BB69C9 guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight BufferVisible guifg=#F8BACF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight BufferVisibleMod guifg=#F8BACF guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight CmpItemAbbr guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight CmpItemAbbrDeprecated guifg=#FF5724 guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
 highlight CmpItemAbbrMatch guifg=#4EB7AC guibg=NONE guisp=NONE gui=bold cterm=bold
