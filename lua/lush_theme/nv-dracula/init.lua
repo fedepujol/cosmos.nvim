@@ -49,10 +49,10 @@ local dracula = lush(function()
 		Search         { fg = palette.green, gui = "inverse" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn     { fg = palette.comment }, -- column where |signs| are displayed
 		SpecialKey     { fg = palette.pink }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad       { fg = palette.red, gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap       { fg = palette.cyan, gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal     { fg = palette.orange, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare      { fg = palette.cyan, gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		SpellBad       { sp = palette.red, gui = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap       { sp = palette.cyan, gui = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal     { sp = palette.orange, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare      { sp = palette.cyan, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine     { bg = palette.bg_dark }, -- status line of current window
 		StatusLineNC   { bg = palette.bg_light }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		StatusLineTerm { bg = palette.bg_dark }, -- Status line of terminal buffers
@@ -120,9 +120,7 @@ local dracula = lush(function()
 
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
-
 		Error          { fg = palette.red }, -- (preferred) any erroneous construct
-
 		Todo           { fg = palette.cyan, gui = "bold, inverse" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		-- These groups are for the native LSP client. Some other LSP clients may
@@ -147,10 +145,10 @@ local dracula = lush(function()
 		-- DiagnosticVirtualTextWarn   { }, -- Used for "Warning" diagnostic virtual text
 		-- DiagnosticVirtualTextHint   { }, -- Used for "Hint" diagnostic virtual text
 
-		DiagnosticUnderlineError      { DiagnosticError, gui = "underline" }, -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineHint       { DiagnosticHint, gui = "underline" }, -- Used to underline "Hint" diagnostics
-		DiagnosticUnderlineInfo       { DiagnosticInfo, gui = "underline" }, -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineWarn       { DiagnosticWarn, gui = "underline" }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineError      { sp = DiagnosticError.fg, gui = "undercurl" }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineHint       { sp = DiagnosticHint.fg, gui = "undercurl" }, -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineInfo       { sp = DiagnosticInfo.fg, gui = "undercurl" }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineWarn       { sp = DiagnosticWarn.fg, gui = "undercurl" }, -- Used to underline "Warning" diagnostics
 
 		-- DiagnosticFloatingError     { }, -- Used to color "Error" diagnostic messages in diagnostics float
 		-- DiagnosticFloatingHint      { }, -- Used to color "Hint" diagnostic messages in diagnostics float
@@ -161,6 +159,123 @@ local dracula = lush(function()
 		-- DiagnosticSignHint          { }, -- Used for "Hint" signs in sign column
 		-- DiagnosticSignInfo          { }, -- Used for "Information" signs in sign column
 		-- DiagnosticSignWarn          { }, -- Used for "Warning" signs in sign column
+
+
+		-- Languages
+		--
+
+		-- CSS
+		--
+		cssAttrComma                { fg = palette.purple },
+		cssAttributeSelector        { fg = palette.green, gui = "italic" },
+		cssBraces                   { Delimiter },
+		cssFunctionComma            { fg = palette.purple },
+		cssNoise                    { fg = palette.pink },
+		cssProp                     { fg = palette.cyan },
+		cssPseudoClassId            { fg = palette.green, gui = "italic" },
+		cssUnitDecorators           { fg = palette.purple },
+		cssVendor                   { fg = palette.green, gui = "italic" },
+
+		-- Html
+		--
+		htmlArg                     { fg = palette.green },
+		htmlH1                      { fg = palette.foreground },
+		htmlSpecialChar             { fg = palette.purple },
+		htmlTag                     { fg = palette.foreground },
+		htmlTitle                   { fg = palette.foreground },
+
+		-- Json
+		--
+		jsonKeyword              { fg = palette.cyan },
+
+		-- Markdown
+		--
+		markdownBlockquote           { fg = palette.cyan },
+		markdownBold                 { fg = palette.orange, gui = "bold" },
+		markdownBoldItalic           { fg = palette.orange, gui = "bold,italic" },
+		markdownCode                 { fg = palette.green },
+		markdownCodeDelimiter        { fg = palette.green },
+		markdownH1                   { fg = palette.purple, gui = "bold" },
+		markdownH2                   { markdownH1 },
+		markdownH3                   { markdownH1 },
+		markdownH4                   { markdownH1 },
+		markdownH5                   { markdownH1 },
+		markdownH6                   { markdownH1 },
+		markdownHeadingDelimiter     { markdownH1 },
+		markdownHeadingRule          { markdownH1 },
+		markdownItalic               { fg = palette.yellow, gui = "italic" },
+		markdownLinkText             { fg = palette.pink },
+		markdownListMarker           { fg = palette.cyan },
+		markdownRule                 { Comment },
+		markdownUrl                  { fg = palette.cyan, gui = "underline" },
+		--
+
+		-- Python
+		--
+		pythonBuiltin        { Type },
+
+		-- TypeScript
+		--
+		typescriptAliasDeclaration       { Type },
+		typescriptArrayMethod            { Function },
+		typescriptArrowFunc              { Operator },
+		typescriptArrowFuncArg           { fg = palette.orange, gui = "italic" },
+		typescriptBOMWindowProp          { Constant },
+		typecsriptBraces                 { Delimiter },
+		typescriptCall                   { typescriptArrowFuncArg },
+		typescriptClassHeritage          { Type },
+		typescriptClassName              { Type },
+		typescriptDateMethod             { fg = palette.cyan },
+		typescriptDateStaticMethod       { fg = palette.cyan },
+		typescriptDecorator              { fg = palette.green, gui = "italic" },
+		typescriptEndColons              { Delimiter },
+		typescriptEnum                   { Type },
+		typescriptEnumKeyword            { Keyword },
+		typescriptES6SetMethod           { fg = palette.cyan },
+		typescriptFuncComma              { Delimiter },
+		typescriptFuncKeyword            { Keyword },
+		typescriptFuncType               { fg = palette.orange, gui = "italic" },
+		typescriptFuncTypeArrow          { Operator },
+		typescriptGlobal                 { Type },
+		typescriptGlobalMethod           { fg = palette.cyan },
+		typescriptGlobalObject           { Type },
+		typescriptIdentifier             { fg = palette.purple, gui = "italic" },
+		typescriptInterfaceHeritage      { Type },
+		typescriptInterfaceName          { Type },
+		typescriptInterpolationDelimiter { Keyword },
+		typescriptKeywordOp              { Keyword },
+		typescriptLogicSymbols           { Operator },
+		typescriptMember                 { Function },
+		typescriptMemberOptionality      { Special },
+		typescriptObjectColon            { Special },
+		typescriptObjectLabel            { Type },
+		typescriptParamImpl              { fg = palette.orange, gui = "italic" },
+		typescriptParens                 { Delimiter },
+		typescriptPredefinedType         { Type },
+		typescriptRestOrSpread           { Operator },
+		typescriptTernaryOp              { Operator },
+		typescriptTypeCast               { Operator },
+		typescriptTypeAnnotation         { Special },
+		typescriptTypeParameter          { fg = palette.orange, gui = "italic" },
+		typescriptTypeReference          { Type },
+		typescriptUnaryOp                { Operator },
+		typescriptVariable               { Keyword },
+
+		-- Xml
+		--
+		xmlAttrib           { fg = palette.green, gui = "italic" },
+		xmlEqual            { Operator },
+		xmlTag              { Delimiter },
+		xmlTagName          { Statement },
+
+		-- Yml
+		--
+		yamlAlias                    { fg = palette.green, gui = "italic, underline"},
+		yamlAnchor                   { fg = palette.pink, gui = "italic" },
+		yamlBlockMappingKey          { fg = palette.cyan },
+		yamlFlowIndicator            { Delimiter },
+		yamlNodeTag                  { fg = palette.pink },
+
 
 		-- These groups are for the neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.

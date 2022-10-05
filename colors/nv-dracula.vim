@@ -53,21 +53,30 @@ highlight CmpItemKindValue guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NO
 highlight CmpItemKindVariable guifg=#BF95F9 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight ColorColumn guifg=#21222C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link markdownRule Comment
 highlight Conceal guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Conditional guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Constant guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link typescriptBOMWindowProp Constant
 highlight CursorColumn guifg=NONE guibg=#434551 guisp=NONE gui=NONE cterm=NONE
 highlight! link CursorLine CursorColumn
 highlight CursorLineNr guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Define guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Delimiter guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link cssBraces Delimiter
+highlight! link typecsriptBraces Delimiter
+highlight! link typescriptEndColons Delimiter
+highlight! link typescriptFuncComma Delimiter
+highlight! link typescriptParens Delimiter
+highlight! link xmlTag Delimiter
+highlight! link yamlFlowIndicator Delimiter
 highlight DiagnosticError guifg=#FF5757 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticHint guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiagnosticInfo guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiagnosticUnderlineError guifg=#FF5757 guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineHint guifg=#52FA7C guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineInfo guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight DiagnosticUnderlineWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight DiagnosticUnderlineError guifg=NONE guibg=NONE guisp=#FF5757 gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineHint guifg=NONE guibg=NONE guisp=#52FA7C gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE guisp=#8BE8FD gui=undercurl cterm=undercurl
+highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE guisp=#FFB86B gui=undercurl cterm=undercurl
 highlight DiagnosticWarn guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffAdd guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link GitSignsAdd DiffAdd
@@ -95,11 +104,18 @@ highlight! link CmpItemKindFunction Function
 highlight! link CmpItemKindMethod Function
 highlight! link TSFuncMacro Function
 highlight! link TSFunction Function
+highlight! link typescriptArrayMethod Function
+highlight! link typescriptMember Function
 highlight GitSignsCurrentLineBlame guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Identifier guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight IncSearch guifg=#272935 guibg=#FFB86B guisp=NONE gui=NONE cterm=NONE
 highlight Include guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Keyword guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link typescriptEnumKeyword Keyword
+highlight! link typescriptFuncKeyword Keyword
+highlight! link typescriptInterpolationDelimiter Keyword
+highlight! link typescriptKeywordOp Keyword
+highlight! link typescriptVariable Keyword
 highlight Label guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight LspReferenceRead guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
@@ -129,6 +145,14 @@ highlight NvimTreeOpenedFolderName guifg=#E6E6D1 guibg=NONE guisp=NONE gui=bold 
 highlight NvimTreeRootFolder guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NvimTreeSpecialFile guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Operator guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link typescriptArrowFunc Operator
+highlight! link typescriptFuncTypeArrow Operator
+highlight! link typescriptLogicSymbols Operator
+highlight! link typescriptRestOrSpread Operator
+highlight! link typescriptTernaryOp Operator
+highlight! link typescriptTypeCast Operator
+highlight! link typescriptUnaryOp Operator
+highlight! link xmlEqual Operator
 highlight Pmenu guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSbar guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSel guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
@@ -141,14 +165,18 @@ highlight Search guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SignColumn guifg=#6071A4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Special guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSPunctSpecial Special
+highlight! link typescriptMemberOptionality Special
+highlight! link typescriptObjectColon Special
+highlight! link typescriptTypeAnnotation Special
 highlight SpecialChar guifg=#FFB86B guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialComment guifg=#8BE8FD guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight SpecialKey guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight SpellBad guifg=#FF5757 guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight SpellCap guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight SpellLocal guifg=#FFB86B guibg=NONE guisp=NONE gui=underline cterm=underline
-highlight SpellRare guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight SpellBad guifg=NONE guibg=NONE guisp=#FF5757 gui=undercurl cterm=undercurl
+highlight SpellCap guifg=NONE guibg=NONE guisp=#8BE8FD gui=undercurl cterm=undercurl
+highlight SpellLocal guifg=NONE guibg=NONE guisp=#FFB86B gui=undercurl cterm=undercurl
+highlight SpellRare guifg=NONE guibg=NONE guisp=#8BE8FD gui=undercurl cterm=undercurl
 highlight Statement guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link xmlTagName Statement
 highlight StatusLine guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight StatusLineNC guifg=NONE guibg=#343746 guisp=NONE gui=NONE cterm=NONE
 highlight StatusLineTerm guifg=NONE guibg=#21222C guisp=NONE gui=NONE cterm=NONE
@@ -193,9 +221,68 @@ highlight TelescopeSelectionCaret guifg=#F1FA89 guibg=NONE guisp=NONE gui=NONE c
 highlight Title guifg=#52FA7C guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Todo guifg=#8BE8FD guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Type guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link pythonBuiltin Type
+highlight! link typescriptAliasDeclaration Type
+highlight! link typescriptClassHeritage Type
+highlight! link typescriptClassName Type
+highlight! link typescriptEnum Type
+highlight! link typescriptGlobal Type
+highlight! link typescriptGlobalObject Type
+highlight! link typescriptInterfaceHeritage Type
+highlight! link typescriptInterfaceName Type
+highlight! link typescriptObjectLabel Type
+highlight! link typescriptPredefinedType Type
+highlight! link typescriptTypeReference Type
 highlight Typedef guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight VertSplit guifg=#6071A4 guibg=#21222C guisp=NONE gui=NONE cterm=NONE
 highlight Visual guifg=NONE guibg=#44475A guisp=NONE gui=NONE cterm=NONE
 highlight! link VisualNOS Visual
 highlight WarningMsg guifg=#272935 guibg=#FFB86B guisp=NONE gui=NONE cterm=NONE
 highlight WildMenu guifg=#272935 guibg=#BF95F9 guisp=NONE gui=bold cterm=bold
+highlight cssAttrComma guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight cssAttributeSelector guifg=#52FA7C guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight cssFunctionComma guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight cssNoise guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight cssProp guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight cssPseudoClassId guifg=#52FA7C guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight cssUnitDecorators guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight cssVendor guifg=#52FA7C guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight htmlArg guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlH1 guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlSpecialChar guifg=#BF95F9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTag guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTitle guifg=#F8F8F2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight jsonKeyword guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownBlockquote guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownBold guifg=#FFB86B guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight markdownBoldItalic guifg=#FFB86B guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
+highlight markdownCode guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownCodeDelimiter guifg=#52FA7C guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownH1 guifg=#BF95F9 guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight! link markdownH2 markdownH1
+highlight! link markdownH3 markdownH1
+highlight! link markdownH4 markdownH1
+highlight! link markdownH5 markdownH1
+highlight! link markdownH6 markdownH1
+highlight! link markdownHeadingDelimiter markdownH1
+highlight! link markdownHeadingRule markdownH1
+highlight markdownItalic guifg=#F1FA89 guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight markdownLinkText guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownListMarker guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownUrl guifg=#8BE8FD guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight typescriptArrowFuncArg guifg=#FFB86B guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight! link typescriptCall typescriptArrowFuncArg
+highlight typescriptDateMethod guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight typescriptDateStaticMethod guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight typescriptDecorator guifg=#52FA7C guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight typescriptES6SetMethod guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight typescriptFuncType guifg=#FFB86B guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight typescriptGlobalMethod guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight typescriptIdentifier guifg=#BF95F9 guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight typescriptParamImpl guifg=#FFB86B guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight typescriptTypeParameter guifg=#FFB86B guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight xmlAttrib guifg=#52FA7C guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight yamlAlias guifg=#52FA7C guibg=NONE guisp=NONE gui=italic,underline cterm=italic,underline
+highlight yamlAnchor guifg=#FF7AC6 guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight yamlBlockMappingKey guifg=#8BE8FD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight yamlNodeTag guifg=#FF7AC6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
