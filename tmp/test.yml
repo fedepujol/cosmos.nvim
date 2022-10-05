@@ -1,0 +1,9 @@
+test:
+  property1:
+    - option1
+    - option2
+    - option3
+  property2: 1
+  property3: false
+  property4: ""
+  property5: ABCDEDFJK

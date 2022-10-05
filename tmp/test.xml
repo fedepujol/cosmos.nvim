@@ -1,0 +1,8 @@
+<Request>
+	<Header>
+		<SomeTag prop1="some property text">SomeValue</SomeTag>
+	</Header>
+	<ATag>Foo</ATag>
+	<AnoterTag>Bar/<AnotherTag>
+	<Bool>true</Bool>
+</Request>
