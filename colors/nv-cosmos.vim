@@ -7,7 +7,6 @@ if exists('syntax_on')
 endif
 let g:colors_name='nv-cosmos'
 
-highlight Normal guifg=#B0B0B0 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight Bold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight Boolean guifg=#0287CF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link TSBoolean Boolean
@@ -87,6 +86,7 @@ highlight NeoTreeFileNameOpened guifg=NONE guibg=#424242 guisp=NONE gui=NONE cte
 highlight NeoTreeGitConflict guifg=#FF8A66 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeRootName guifg=#FF9100 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NonText guifg=#171E21 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight Normal guifg=#B0B0B0 guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight NormalFloat guifg=NONE guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight NormalNC guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Number guifg=#00C753 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -101,6 +101,7 @@ highlight Repeat guifg=#BB69C9 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SignColumn guifg=NONE guibg=#171E21 guisp=NONE gui=NONE cterm=NONE
 highlight Special guifg=#7B88CC guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialChar guifg=#FBC02D guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link markdownCodeDelimiter SpecialChar
 highlight SpecialComment guifg=#00C753 guibg=NONE guisp=NONE gui=italic cterm=italic
 highlight SpellBad guifg=NONE guibg=NONE guisp=#D54215 gui=undercurl cterm=undercurl
 highlight SpellCap guifg=NONE guibg=NONE guisp=#90CAF9 gui=undercurl cterm=undercurl
@@ -146,3 +147,24 @@ highlight! link VisualNOS Visual
 highlight WarningMsg guifg=#212121 guibg=#FF5724 guisp=NONE gui=NONE cterm=NONE
 highlight Whitespace guifg=#424242 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link WinSeparator Whitespace
+highlight htmlArg guifg=#0287CF guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlEndTag guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlH1 guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTag guifg=#B0B0B0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTagName guifg=#FF8A66 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTitle guifg=#E0E0E0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight jsonKeyword guifg=#FF8A66 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownBlockquote guifg=#00C753 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownBold guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight markdownBoldItalic guifg=NONE guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
+highlight markdownH1 guifg=#00838F guibg=NONE guisp=NONE gui=bold cterm=bold
+highlight! link markdownH2 markdownH1
+highlight! link markdownH3 markdownH1
+highlight! link markdownH4 markdownH1
+highlight! link markdownH5 markdownH1
+highlight! link markdownH6 markdownH1
+highlight! link markdownHeadingDelimiter markdownH1
+highlight markdownItalic guifg=NONE guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight markdownLinkText guifg=#B49EDB guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownListMarker guifg=#FFFF8F guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight markdownUrl guifg=#90CAF9 guibg=NONE guisp=NONE gui=underline cterm=underline

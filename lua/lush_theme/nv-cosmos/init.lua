@@ -128,7 +128,7 @@ local cosmos = lush(function()
 		Todo           { fg = palette.green_a700, gui = "reverse" }, -- (preferred) anything that needs extra attention, mostly the keywords TODO FIXME and XXX
 
 		-- LSP Highlights
-		-- 
+		--
 		LspReferenceText             { fg = palette.yellow_a100 }, -- used for highlighting "text" references
 		LspReferenceRead             { fg = palette.yellow_a100 }, -- used for highlighting "read" references
 		LspReferenceWrite            { fg = palette.dorange_300 }, -- used for highlighting "write" references
@@ -161,6 +161,39 @@ local cosmos = lush(function()
 		-- DiagnosticSignHint           { }, -- Used for "Hint" signs in sign column
 		-- DiagnosticSignInfo           { }, -- Used for "Information" signs in sign column
 		-- DiagnosticSignWarn           { }, -- Used for "Warning" signs in sign column
+
+		-- Languages
+		--
+		-- Html
+		--
+		htmlArg                     { fg = palette.lblue_700 },
+		htmlEndTag                  { fg = palette.gray_400 },
+		htmlH1                      { fg = palette.gray_300 },
+		htmlTag                     { fg = palette.gray_400 },
+		htmlTagName                 { fg = palette.dorange_300 },
+		htmlTitle                   { fg = palette.gray_300 },
+
+		-- Json
+		jsonKeyword              { fg = palette.dorange_300 },
+
+		-- Markdown
+		--
+		markdownBlockquote           { fg = palette.green_a700 },
+		markdownBold                 { gui = "bold" },
+		markdownBoldItalic           { gui = "bold, italic" },
+		markdownCodeDelimiter        { SpecialChar },
+		markdownH1                   { fg = palette.cyan_800, gui = "bold" },
+		markdownH2                   { markdownH1 },
+		markdownH3                   { markdownH1 },
+		markdownH4                   { markdownH1 },
+		markdownH5                   { markdownH1 },
+		markdownH6                   { markdownH1 },
+		markdownHeadingDelimiter     { markdownH1 },
+		markdownItalic               { gui = "italic" },
+		markdownLinkText             { fg = palette.dpurple_200 },
+		markdownListMarker           { fg = palette.yellow_a100 },
+		markdownUrl                  { fg = palette.blue_200, gui = "underline" },
+		--
 
 		-- Treesitter Highlights
 		--
