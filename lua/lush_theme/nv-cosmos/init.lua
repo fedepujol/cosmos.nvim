@@ -9,30 +9,30 @@ local cosmos = lush(function()
 		-- probably style all of these at a bare minimum.
 
 		-- ColorColumn    { }, -- used for the columns set with 'colorcolumn'
-		Comment        { fg = palette.green_800 }, -- any comment
+		Comment        { fg = palette.green_200 }, -- any comment
 		-- Conceal        { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		-- CurSearch      { }, -- Used for highlighting a search pattern under the cursor (see 'hlsearch')
-		Cursor         { bg = palette.gray_900 }, -- character under the cursor
+		CurSearch      { bg = palette.gray_800 }, -- Used for highlighting a search pattern under the cursor (see 'hlsearch')
+		Cursor         { gui = "reverse" }, -- character under the cursor
 		-- CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorIM       { Cursor }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorLine     { bg = palette.bgray_900 }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		-- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line.
 		CursorLineNr   { fg = palette.gray_300, bg = palette.bgray_900 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		-- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line.
-		DiffAdd        { fg = palette.green_a700 }, -- diff mode: Added line |diff.txt|
-		DiffChange     { fg = palette.dorange_300 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete     { fg = palette.red_900 }, -- diff mode: Deleted line |diff.txt|
+		DiffAdd        { fg = palette.lgreen_500 }, -- diff mode: Added line |diff.txt|
+		DiffChange     { fg = palette.orange_400 }, -- diff mode: Changed line |diff.txt|
+		DiffDelete     { fg = palette.red_500 }, -- diff mode: Deleted line |diff.txt|
 		DiffText       { fg = palette.gray_700 }, -- diff mode: Changed text within a changed line |diff.txt|
-		Directory      { fg = palette.yellow_700 }, -- directory names (and other special names in listings)
+		Directory      { fg = palette.yellow_600 }, -- directory names (and other special names in listings)
 		-- EndOfBuffer    { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		ErrorMsg       { fg = palette.gray_300, bg = palette.red_900 }, -- error messages on the command line
+		-- ErrorMsg       { fg = palette.gray_300, bg = palette.red_900 }, -- error messages on the command line
 		FoldColumn     { fg = palette.blue_200 }, -- 'foldcolumn'
 		Folded         { fg = palette.blue_200 }, -- line used for closed folds
 		-- IncSearch      { }, -- 'incsearch' highlighting, also used for the text replaced with ":s///c"
 		LineNr         { fg = palette.gray_700 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line.
 		-- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line.
-		MatchParen     { fg = palette.lime_500 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen     { gui = "reverse" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		-- ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MoreMsg        { }, -- |more-prompt|
 		-- MsgArea        { }, -- Area for messages and cmdline
@@ -42,7 +42,7 @@ local cosmos = lush(function()
 		NormalFloat    { bg = Normal.bg }, -- Normal text in floating windows.
 		NormalNC       { fg = palette.gray_400 }, -- normal text in non-current windows
 		Pmenu          { fg = palette.gray_400, bg = palette.bgray_900.da(20) }, -- Popup menu: normal item.
-		PmenuSbar      { bg = palette.gray_700 }, -- Popup menu: scrollbar.
+		-- PmenuSbar      { }, -- Popup menu: scrollbar.
 		PmenuSel       { fg = palette.gray_900, bg = palette.blue_700 }, -- Popup menu: selected item.
 		PmenuThumb     { bg = palette.blue_700.da(20) }, -- Popup menu: Thumb of the scrollbar.
 		-- Question       { }, -- |hit-enter| prompt and yes/no questions
@@ -50,9 +50,9 @@ local cosmos = lush(function()
 		-- Search         { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn     { bg = Normal.bg }, -- column where |signs| are displayed
 		-- SpecialKey     { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad       { sp = palette.dorange_800, gui = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap       { sp = palette.blue_200, gui = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal     { sp = palette.cyan_800, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellBad       { sp = palette.red_500, gui = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap       { sp = palette.blue_300, gui = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal     { sp = palette.yellow_700, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare      { sp = palette.purple_300, gui = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine     { bg = palette.gray_900 }, -- status line of current window
 		StatusLineNC   { bg = palette.bgray_900 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
@@ -62,11 +62,11 @@ local cosmos = lush(function()
 		TabLineSel     { StatusLine }, -- tab pages line, active tab page label
 		-- TermCursor     { }, -- cursor in a focused terminal
 		-- TermCursorNC   { }, -- cursor in an unfocused terminal
-		-- Title          { }, -- titles for output from ":set all", ":autocmd" etc.
+		Title          { fg = palette.gray_300 }, -- titles for output from ":set all", ":autocmd" etc.
 		VertSplit      { fg = palette.gray_800 }, -- the column separating vertically split windows
 		Visual         { gui = "reverse" }, -- Visual mode selection
 		VisualNOS      { Visual }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg     { fg = palette.gray_900, bg = palette.dorange_500 }, -- warning messages
+		WarningMsg     { fg = palette.gray_900, bg = palette.orange_700 }, -- warning messages
 		Whitespace     { fg = palette.gray_800 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- WildMenu       { }, -- current match in 'wildmenu' completion
 		-- WinBar         { }, -- Window bar of current window.
@@ -82,40 +82,40 @@ local cosmos = lush(function()
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Constant       { fg = palette.cyan_200 }, -- (preferred) any constant
-		String         { fg = palette.orange_200.da(10) }, --  a string constant: "this is a string"
-		Character      { String }, --  a character constant: 'c', '\n'
-		Number         { fg = palette.green_a700 }, --  a number constant: 234, 0xff
-		Boolean        { fg = palette.lblue_700 }, --  a boolean constant: TRUE, false
-		Float          { Number }, --  a floating point constant: 2.3e10
+		Constant       { fg = palette.blue_300 }, -- (preferred) any constant
+		String         { fg = palette.orange_200 }, --  a string constant: "this is a string"
+		Character      { fg = palette.yellow_700 }, --  a character constant: 'c', '\n'
+		Number         { fg = palette.pink_300 }, --  a number constant: 234, 0xff
+		Boolean        { fg = palette.lblue_400 }, --  a boolean constant: TRUE, false
+		-- Float          { }, --  a floating point constant: 2.3e10
 
-		Identifier     { fg = palette.lblue_400 }, -- (preferred) any variable name
-		Function       { fg = palette.cyan_800 }, -- function name (also: methods for classes)
+		Identifier     { fg = palette.blue_200 }, -- (preferred) any variable name
+		Function       { fg = palette.teal_300 }, -- function name (also: methods for classes)
 
-		Statement      { fg = palette.pink_100 }, -- (preferred) any statement
-		Conditional    { fg = palette.purple_300 }, -- if, then, else, endif, switch, etc.
-		Repeat         { fg = palette.purple_300 }, -- for, do, while, etc.
-		Label          { fg = palette.purple_300 }, -- case, default, etc.
-		Operator       { fg = palette.teal_300 }, -- "sizeof", "+", "*", etc.
-		Keyword        { fg = palette.purple_300 }, -- any other keyword
-		Exception      { fg = palette.purple_300 }, -- try, catch, throw
+		Statement      { fg = palette.purple_200 }, -- (preferred) any statement
+		-- Conditional    { }, -- if, then, else, endif, switch, etc.
+		-- Repeat         { }, -- for, do, while, etc.
+		-- Label          { }, -- case, default, etc.
+		Operator       { fg = palette.gray_300 }, -- "sizeof", "+", "*", etc.
+		-- Keyword        { }, -- any other keyword
+		-- Exception      { }, -- try, catch, throw
 
-		PreProc        { fg = palette.indigo_400 }, -- (preferred) generic Preprocessor
+		PreProc        { fg = palette.purple_200 }, -- (preferred) generic Preprocessor
 		-- Include        { }, -- preprocessor #include
 		-- Define         { }, -- preprocessor #define
 		-- Macro          { }, -- same as Define
 		-- PreCondit      { }, -- preprocessor #if, #else, #endif, etc.
 
-		Type           { fg = palette.teal_300 }, -- (preferred) int, long, char, etc.
-		StorageClass   { fg = palette.teal_600 }, -- static, register, volatile, etc.
+		Type           { fg = palette.cyan_400 }, -- (preferred) int, long, char, etc.
+		StorageClass   { fg = palette.purple_200 }, -- static, register, volatile, etc.
 		-- Structure      { }, -- struct, union, enum, etc.
 		-- Typedef        { }, -- A typedef
 
-		Special        { fg = palette.indigo_300 }, -- (preferred) any special symbol
-		SpecialChar    { fg = palette.yellow_700 }, -- special character in a constant
+		Special        { fg = palette.yellow_600 }, -- (preferred) any special symbol
+		SpecialChar    { fg = palette.yellow_800 }, -- special character in a constant
 		-- Tag            { }, -- you can use CTRL-] on this
-		Delimiter      { fg = palette.orange_200 }, -- character that needs attention
-		SpecialComment { fg = palette.green_a700, gui = "italic" }, -- special things inside a comment
+		Delimiter      { fg = palette.gray_300 }, -- character that needs attention
+		SpecialComment { fg = palette.lgreen_500 }, -- special things inside a comment
 		-- Debug          { }, -- debugging statements
 
 		Underlined { fg = palette.blue_200, gui = "underline" }, -- (preferred) text that stands out, HTML links
@@ -125,27 +125,27 @@ local cosmos = lush(function()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 		-- Error          { }, -- (preferred) any erroneous construct
-		Todo           { fg = palette.green_a700, gui = "reverse" }, -- (preferred) anything that needs extra attention, mostly the keywords TODO FIXME and XXX
+		Todo           { fg = palette.green_200, gui = "reverse" }, -- (preferred) anything that needs extra attention, mostly the keywords TODO FIXME and XXX
 
 		-- LSP Highlights
 		--
-		LspReferenceText             { fg = palette.yellow_a100 }, -- used for highlighting "text" references
-		LspReferenceRead             { fg = palette.yellow_a100 }, -- used for highlighting "read" references
-		LspReferenceWrite            { fg = palette.dorange_300 }, -- used for highlighting "write" references
+		LspReferenceText             { fg = palette.orange_200 }, -- used for highlighting "text" references
+		LspReferenceRead             { fg = palette.orange_200 }, -- used for highlighting "read" references
+		LspReferenceWrite            { fg = palette.yellow_600 }, -- used for highlighting "write" references
 		-- LspCodeLens                  { }, -- Used to color the virtual text of the codelens
 		-- LspCodeLensSeparator         { }. -- Used to color the separator between two of more code lenses
-		LspSignatureActiveParameter  { fg = palette.cyan_200 }, -- Used to highlight the active parameter in the signature help
-		FloatBorder                  { fg = palette.teal_600 }, -- Used for hovers
+		LspSignatureActiveParameter  { fg = palette.purple_200 }, -- Used to highlight the active parameter in the signature help
+		FloatBorder                  { fg = palette.cyan_400 }, -- Used for hovers
 
-		DiagnosticError              { fg = palette.red_900.li(20) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticHint               { fg = palette.green_a700 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticInfo               { fg = palette.cyan_200 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-		DiagnosticWarn               { fg = palette.dorange_500 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticError              { fg = palette.red_700.li(10) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticHint               { fg = palette.green_200 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticInfo               { fg = palette.cyan_400 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+		DiagnosticWarn               { fg = palette.orange_700 }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-		DiagnosticVirtualTextError   { DiagnosticError, bg = Normal.bg.mix(palette.red_900, 35) }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextHint    { DiagnosticHint, bg = Normal.bg.mix(palette.green_a700, 35) }, -- Used for "Hint" diagnostic virtual text
-		DiagnosticVirtualTextInfo    { DiagnosticInfo, bg = Normal.bg.mix(palette.cyan_200, 35) }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextWarn    { DiagnosticWarn, bg = Normal.bg.mix(palette.dorange_500, 35) }, -- Used for "Warning" diagnostic virtual text
+		-- DiagnosticVirtualTextError   { }, -- Used for "Error" diagnostic virtual text
+		-- DiagnosticVirtualTextHint    { }, -- Used for "Hint" diagnostic virtual text
+		-- DiagnosticVirtualTextInfo    { }, -- Used for "Information" diagnostic virtual text
+		-- DiagnosticVirtualTextWarn    { }, -- Used for "Warning" diagnostic virtual text
 
 		DiagnosticUnderlineError     { sp = DiagnosticError.fg, gui = "undercurl" }, -- Used to underline "Error" diagnostics
 		DiagnosticUnderlineHint      { sp = DiagnosticHint.fg, gui = "undercurl" }, -- Used to underline "Hint" diagnostics
@@ -164,25 +164,34 @@ local cosmos = lush(function()
 
 		-- Languages
 		--
+
+		-- CSS
+		--
+		cssAttr                     { fg = palette.blue_200 },
+		cssBraces                   { fg = palette.gray_400 },
+		cssClassName                { fg = palette.lblue_400 },
+		cssFunction                 { Function },
+		cssFunctionComma            { Function },
+		cssTagName                  { fg = palette.purple_300 },
+
 		-- Html
 		--
-		htmlArg                     { fg = palette.lblue_700 },
-		htmlEndTag                  { fg = palette.gray_400 },
-		htmlH1                      { fg = palette.gray_300 },
-		htmlTag                     { fg = palette.gray_400 },
-		htmlTagName                 { fg = palette.dorange_300 },
-		htmlTitle                   { fg = palette.gray_300 },
+		htmlEndTag                  { fg = palette.blue_200 },
+		htmlH1                      { fg = palette.gray_400 },
+		htmlTag                     { fg = palette.blue_200 },
+		htmlTitle                   { fg = palette.gray_400 },
 
-		-- Json
-		jsonKeyword              { fg = palette.dorange_300 },
+		-- Lua
+		luaCommentDelimiter { Delimiter },
+		luaString2          { fg = palette.yellow_700 },
 
 		-- Markdown
 		--
-		markdownBlockquote           { fg = palette.green_a700 },
+		markdownBlockquote           { fg = palette.lgreen_500 },
 		markdownBold                 { gui = "bold" },
 		markdownBoldItalic           { gui = "bold, italic" },
 		markdownCodeDelimiter        { SpecialChar },
-		markdownH1                   { fg = palette.cyan_800, gui = "bold" },
+		markdownH1                   { fg = palette.purple_200, gui = "bold" },
 		markdownH2                   { markdownH1 },
 		markdownH3                   { markdownH1 },
 		markdownH4                   { markdownH1 },
@@ -190,32 +199,51 @@ local cosmos = lush(function()
 		markdownH6                   { markdownH1 },
 		markdownHeadingDelimiter     { markdownH1 },
 		markdownItalic               { gui = "italic" },
-		markdownLinkText             { fg = palette.dpurple_200 },
-		markdownListMarker           { fg = palette.yellow_a100 },
+		markdownLinkText             { fg = palette.orange_700 },
+		markdownListMarker           { fg = palette.yellow_600 },
 		markdownUrl                  { fg = palette.blue_200, gui = "underline" },
+
+		-- TypeScript
 		--
+		typescriptBraces                { Delimiter },
+		typescriptClassName             { fg = palette.blue_300 },
+		typescriptDecorator             { fg = palette.blue_300 },
+		typescriptExport                { fg = palette.purple_300 },
+		typescriptImport                { fg = palette.purple_300 },
+
+		-- Xml
+		--
+		xmlAttrib           { fg = palette.lblue_400 },
+		xmlEndTag           { fg = palette.blue_200 },
+		xmlTag              { fg = palette.blue_200 },
+		xmlTagName          { fg = palette.purple_200 },
+
+		-- Yml
+		--
+		yamlBool                     { Boolean },
+		yamlKeyValueDelimiter        { Delimiter },
 
 		-- Treesitter Highlights
 		--
 		-- TSAttribute          { },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-		TSBoolean            { Boolean },    -- For booleans.
+		-- TSBoolean            { },    -- For booleans.
 		-- TSCharacter          { },    -- For characters.
 		-- TSCharacterSpecial   { },    -- Special characters.
-		TSComment            { Comment },    -- For comment blocks.
+		-- TSComment            { },    -- For comment blocks.
 		-- TSConditional        { },    -- For keywords related to conditionnals.
 		-- TSConstant           { },    -- For constants
-		-- TSConstBuiltin       { },    -- For constant that are built in the language: nil in Lua.
-		-- TSConstMacro         { },    -- For constants that are defined by macros: NULL in C.
-		-- TSConstructor        { },    -- Constructor calls and definitions: {} in Lua, and Java constructors.
+		TSConstBuiltin       { Constant },    -- For constant that are built in the language: nil in Lua.
+		TSConstMacro         { Constant },    -- For constants that are defined by macros: NULL in C.
+		TSConstructor        { Function },    -- Constructor calls and definitions: {} in Lua, and Java constructors.
 		-- TSDebug              { },    -- Debugging statements.
 		-- TSDefine             { },    -- Preprocessor #define statements.
-		-- TSError              { },    -- For syntax/parser errors.
+		TSError              { fg = palette.red_500 },    -- For syntax/parser errors.
 		-- TSException          { },    -- For exception related keywords.
 		-- TSField              { },    -- For fields.
 		-- TSFloat              { },    -- For floats.
-		TSFunction           { Function },    -- For function (calls and definitions).
+		-- TSFunction           { },    -- For function (calls and definitions).
 		-- TSFunctionCall       { },    -- Function calls.
-		-- TSFuncBuiltin        { },    -- For builtin functions: `table.insert` in Lua.
+		TSFuncBuiltin        { fg = Function.fg.da(20) },    -- For builtin functions: `table.insert` in Lua.
 		-- TSFuncMacro          { },    -- For macro defined fuctions (calls and definitions): each macro_rules in Rust.
 		-- TSInclude            { },    -- For includes: `#include` in C, use or `extern crate` in Rust, or require in Lua.
 		-- TSKeyword            { },    -- For keywords that don't fall in previous categories.
@@ -223,7 +251,7 @@ local cosmos = lush(function()
 		-- TSKeywordOperator    { },    -- Unary and binary operators that are English words: and, or in Python, sizeof in C.
 		-- TSKeywordReturn      { },    -- Keywords like return and yield.
 		-- TSLabel              { },    -- For labels: `label:` in C and `:label:` in Lua.
-		TSMethod             { Function },    -- For method calls and definitions.
+		-- TSMethod             { },    -- For method calls and definitions.
 		-- TSMethodCall         { },    -- Method calls.
 		-- TSNamespace          { },    -- For identifiers referring to modules and namespaces.
 		-- TSNone               { },    -- TODO: docs
@@ -247,11 +275,11 @@ local cosmos = lush(function()
 		-- TSTypeBuiltin        { },    -- For builtin types i32 in Rust.
 		-- TSTypeQualifier      { },    -- Qualifiers on types. Eg: const or volatile in C or mut in Rust.
 		-- TSTypeDefinition     { },    -- Type definitions. Eg: typedef in C.
-		TSVariable           { fg = palette.pink_100 },    -- Any variable name that does not have another highlight.
-		-- TSVariableBuiltin    { },    -- Variable names that are defined by the languages, like this or self.
+		TSVariable           { fg = palette.blue_200 },    -- Any variable name that does not have another highlight.
+		TSVariableBuiltin    { fg = palette.purple_200 },    -- Variable names that are defined by the languages, like this or self.
 
-		TSTag                { fg = palette.pink_100 },    -- Tags like html tag names.
-		TSTagAttribute       { fg = palette.teal_600 },    -- HTML tag attributes.
+		-- TSTag                { },    -- Tags like html tag names.
+		-- TSTagAttribute       { },    -- HTML tag attributes.
 		-- TSTagDelimiter       { },    -- Tag delimiter like `<` `>` `/`
 		-- TSText               { },    -- For strings considered text in a markup language.
 		-- TSTextReference      { },    -- Footnotes, text references, citations, etc.
@@ -260,30 +288,30 @@ local cosmos = lush(function()
 		TSUnderline          { gui = "underline" },    -- For text to be represented with an underline.
 		TSStrike             { gui = "strikethrough" },    -- For strikethrough text.
 		-- TSTitle              { },    -- Text that is part of a title.
-		TSLiteral            { gui = "italic" },    -- Literal or verbatim text.
+		-- TSLiteral            { },    -- Literal or verbatim text.
 		-- TSMath               { },    -- Math environments like LaTeX's `$ ... $`
 		-- TSTextReference      { },    -- Footnotes, text references, citations, etc.
 		-- TSEnvironment        { },    -- Text environments of markup languages.
 		-- TSEnvironmentName    { },    -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
 		-- TSNote               { },    -- Text representation of an informational note.
-		-- TSWarning            { },    -- Text representation of a warning note.
-		-- TSDanger             { },    -- Text representation of a danger note.
+		TSWarning            { fg = palette.gray_900, bg = palette.orange_700 },    -- Text representation of a warning note.
+		TSDanger             { fg = palette.gray_900, bg = palette.red_700 },    -- Text representation of a danger note.
 		-- TSTodo               { },    -- Anything that needs extra attention, such as keywords like TODO or FIXME
 		-- TSURI                { },    -- Any URI like a link or email.
 
 		-- Plugin specifics
 		CmpItemAbbr              { fg = palette.gray_400 }, -- The abbr field's highlight
-		CmpItemAbbrDeprecated    { fg = palette.dorange_500, gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
+		CmpItemAbbrDeprecated    { fg = palette.orange_700, gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
 		CmpItemAbbrMatch         { fg = palette.teal_300, gui = "bold" }, -- Matched character's highlight
 		CmpItemAbbrMatchFuzzy    { fg = palette.teal_300, gui = "underline" }, -- Fuzzy matched character's
 		-- CmpItemKind              { }, -- Kind field's group
 		-- CmpItemMenu              { }, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
-		-- CmpItemKindClass         { },
+		CmpItemKindClass         { Type },
 		-- CmpItemKindColor         { },
 		CmpItemKindConstant      { Constant },
-		-- CmpItemKindConstructor   { },
+		CmpItemKindConstructor   { Function },
 		-- CmpItemKindEnum          { },
 		-- CmpItemKindEnumMember    { },
 		-- CmpItemKindEvent         { },
@@ -292,7 +320,7 @@ local cosmos = lush(function()
 		CmpItemKindFolder        { Directory },
 		CmpItemKindFunction      { Function },
 		-- CmpItemKindInterface     { },
-		CmpItemKindKeyword       { Keyword },
+		CmpItemKindKeyword       { fg = palette.purple_200 },
 		CmpItemKindMethod        { Function },
 		-- CmpItemKindModule        { },
 		-- CmpItemKindOperator      { },
@@ -304,35 +332,35 @@ local cosmos = lush(function()
 		CmpItemKindTypeParameter { Type },
 		-- CmpItemKindUnit          { },
 		-- CmpItemKindValue         { },
-		CmpItemKindVariable      { fg = palette.pink_100 },
+		CmpItemKindVariable      { fg = palette.blue_200 },
 
-		GitSignsAdd              { fg = palette.green_a700 },
+		GitSignsAdd              { fg = palette.lgreen_500 },
 		-- GitSignsAddLn            { },
-		GitSignsChange           { fg = palette.dorange_300 },
+		GitSignsChange           { fg = palette.orange_200 },
 		-- GitSignsChangeLn         { },
-		GitSignsDelete           { fg = palette.red_900 },
+		GitSignsDelete           { fg = palette.red_500 },
 		-- GitSignsDeleteLn         { },
 		GitSignsCurrentLineBlame { fg = palette.gray_700 },
 
-		BufferCurrent            { fg = palette.blue_200 },
+		-- BufferCurrent            { fg = palette.blue_200 },
 		-- BufferCurrentIcon        { fg = palette.blue_200 },
 		-- BufferCurrentIndex       { fg = palette.blue_200 },
-		BufferCurrentMod         { fg = palette.blue_200, gui = "italic" },
+		-- BufferCurrentMod         { fg = palette.blue_200, gui = "italic" },
 		-- BufferCurrentSign        { fg = palette.blue_200 },
 		-- BufferCurrentTarget      { fg = palette.blue_200 },
-		BufferInactive           { fg = palette.purple_300 },
+		-- BufferInactive           { fg = palette.purple_300 },
 		-- BufferInactiveIcon       { },
 		-- BufferInactiveIndex      { },
-		BufferInactiveMod        { fg = palette.purple_300, gui = "italic" },
+		-- BufferInactiveMod        { fg = palette.purple_300, gui = "italic" },
 		-- BufferInactiveSign       { },
 		-- BufferInactiveTarget     { },
 		-- BufferOffset             { },
 		-- BufferTabpageFill        { },
 		-- BufferTabpages           { },
-		BufferVisible            { fg = palette.pink_100 },
+		-- BufferVisible            { fg = palette.pink_100 },
 		-- BufferVisibleIcon        { },
 		-- BufferVisibleIndex       { },
-		BufferVisibleMod         { fg = palette.pink_100, gui = "italic" },
+		-- BufferVisibleMod         { fg = palette.pink_100, gui = "italic" },
 		-- BufferVisibleSign        { },
 		-- BufferVisibleTarget      { },
 
@@ -353,7 +381,7 @@ local cosmos = lush(function()
 		-- NeoTreeBufferNumber      { }, -- The buffer number shown in the buffers source.
 		-- NeoTreeCursorLine        { }, -- |hi-CursorLine| override in Neo-tree window.
 		NeoTreeDimText           { fg = palette.gray_700 }, -- Greyed out text used in various places.
-		NeoTreeDirectoryIcon     { Directory }, -- Directory icon.
+		-- NeoTreeDirectoryIcon     { Directory }, -- Directory icon.
 		NeoTreeDirectoryName     { fg = palette.gray_300 }, -- Directory name.
 		-- NeoTreeDotfile           { }, -- Used for icons and names when dotfiles are filtered.
 		-- NeoTreeFileIcon          { }, -- File icon, when not overriden by devicons.
@@ -363,9 +391,9 @@ local cosmos = lush(function()
 		-- NeoTreeFloatBorder       { }, -- The border for pop-up windows.
 		-- NeoTreeFloatTitle        { }, -- Used for the title text of pop-ups when the border-style is set to another style than "NC". This is derived from NeoTreeFloatBorder.
 		-- NeoTreeTitleBar          { }, -- Used for the title bar of pop-ups, when the border-style is set to "NC". This is derived from NeoTreeFloatBorder.
-		-- NeoTreeGitAdded          { }, -- File name when the git status is added.
-		NeoTreeGitConflict       { fg = palette.dorange_300 }, -- File name when the git status is conflict.
-		-- NeoTreeGitDeleted        { }, -- File name when the git status is deleted.
+		NeoTreeGitAdded          { fg = palette.lgreen_500 }, -- File name when the git status is added.
+		NeoTreeGitConflict       { fg = palette.orange_400 }, -- File name when the git status is conflict.
+		NeoTreeGitDeleted        { fg = palette.red_500 }, -- File name when the git status is deleted.
 		-- NeoTreeGitIgnored        { }, -- File name when the git status is ignored.
 		-- NeoTreeGitModified       { }, -- File name when the git status is modified.
 		-- NeoTreeGitUntracked      { }, -- File name when the git status is untracked.
@@ -377,19 +405,19 @@ local cosmos = lush(function()
 		-- NeoTreeStatusLine        { }, -- |hl-StatusLine| override in Neo-tree window.
 		-- NeoTreeStatusLineNC      { }, -- |hl-StatusLineNC| override in Neo-tree window.
 		-- NeoTreeVertSplit         { }, -- |hl-VertSplit| override in Neo-tree window.
-		NeoTreeRootName          { fg = palette.amber_800 }, -- The name of the root node.
+		NeoTreeRootName          { fg = palette.orange_700 }, -- The name of the root node.
 		-- NeoTreeSymbolicLinkTarget{ }, -- Symbolic link target.
 
 		TelescopeBorder          { fg = Normal.bg.da(10), bg = Normal.bg.da(10) },
-		TelescopeMultiSelection  { fg = palette.yellow_a100 },
+		TelescopeMultiSelection  { fg = palette.yellow_600 },
 		TelescopeNormal          { bg = Normal.bg.da(10) },
-		TelescopePreviewTitle    { fg = Normal.bg.da(10), bg = palette.indigo_400.da(10) },
+		TelescopePreviewTitle    { fg = Normal.bg.da(10), bg = palette.purple_200.da(10) },
 		TelescopePromptBorder    { fg = palette.bgray_900, bg = palette.bgray_900 },
 		TelescopePromptCounter   { fg = palette.cyan_400 },
 		TelescopePromptNormal    { fg = palette.gray_300, bg = palette.bgray_900 },
-		TelescopePromptTitle     { fg = Normal.bg.da(10), bg = palette.teal_600.da(10) },
-		TelescopeResultsTitle    { fg = Normal.bg.da(10), bg = palette.green_a700.da(10) },
-		TelescopeSelection       { fg = palette.dpurple_200 },
+		TelescopePromptTitle     { fg = Normal.bg.da(10), bg = palette.teal_300.da(10) },
+		TelescopeResultsTitle    { fg = Normal.bg.da(10), bg = palette.green_800.da(10) },
+		TelescopeSelection       { fg = palette.purple_300 },
 		TelescopeSelectionCaret  { fg = palette.cyan_200 },
 	}
 end)

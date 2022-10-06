@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Request>
 	<Header>
 		<SomeTag prop1="some property text">SomeValue</SomeTag>
@@ -5,4 +6,12 @@
 	<ATag>Foo</ATag>
 	<AnoterTag>Bar/<AnotherTag>
 	<Bool>true</Bool>
+	<Data>
+		<![CDATA[
+		<tag1>
+			<sub-tag1>
+			</sub-tag1>
+		</tag1>
+		]]>
+	</Data>
 </Request>

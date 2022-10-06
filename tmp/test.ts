@@ -14,6 +14,7 @@ export class Test implements OnInit {
 	constructor() { }
 
 	static world(): string {
+		let aux = "aux"
 		return `${bar}`
 	}
 	

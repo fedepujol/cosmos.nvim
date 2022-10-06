@@ -5,5 +5,5 @@ test:
     - option3
   property2: 1
   property3: false
-  property4: ""
+  property4: null
   property5: ABCDEDFJK
