@@ -254,6 +254,23 @@ local languages = lush(function()
 	-- jsonTrailingCommaError   { },
 	-- jsonTripleQuotesError    { },
 
+	-- Lua
+	-- luaCond            { },
+	-- luaConstant        { },
+	-- luaFor             { },
+	-- luaFunc            { },
+	-- luaFunction        { },
+	-- luaLabel           { },
+	-- luaNumber          { },
+	-- luaOperator        { },
+	-- luaRepeat          { },
+	-- luaStatement       { },
+	-- luaString          { },
+	-- luaString2         { },
+	-- luaStringDelimiter { },
+	-- luaSymbolOperator  { },
+	-- luaTable           { },
+
 	-- Markdown
 	--
 	-- markdownAutomaticLink        { },
