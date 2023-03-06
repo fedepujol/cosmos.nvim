@@ -13,9 +13,17 @@ highlight Boolean guifg=#80A8FF guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight! link yamlBool Boolean
 highlight BufferCurrent guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight BufferCurrentIndex guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemAbbrMatchFuzzy guifg=#4CB5BD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindField guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindKeyword guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindOperator guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindProperty guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindText guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight CmpItemKindVariable guifg=#B4A4F4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight ColorColumn guifg=NONE guibg=#E82626 guisp=NONE gui=NONE cterm=NONE
 highlight Comment guifg=#7C8083 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Constant guifg=#F6935A guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindConstant Constant
 highlight CursorLine guifg=NONE guibg=#223249 guisp=NONE gui=NONE cterm=NONE
 highlight CursorLineNr guifg=#68B1E8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Delimiter guifg=#B0BEC4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -28,17 +36,22 @@ highlight DiagnosticUnderlineHint guifg=NONE guibg=NONE guisp=#6CC468 gui=underc
 highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE guisp=#4CB5BD gui=undercurl cterm=undercurl
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE guisp=#F6935A gui=undercurl cterm=undercurl
 highlight DiagnosticWarn guifg=#F6935A guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiffAdd guifg=NONE guibg=#ACCF77 guisp=NONE gui=NONE cterm=NONE
-highlight DiffChange guifg=NONE guibg=#F6935A guisp=NONE gui=NONE cterm=NONE
-highlight DiffDelete guifg=NONE guibg=#FF5C61 guisp=NONE gui=NONE cterm=NONE
+highlight DiffAdd guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiffChange guifg=#F6935A guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight DiffDelete guifg=#FF5C61 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight DiffText guifg=#B0BEC4 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight DiffviewStatusAdded guifg=NONE guibg=#8D3F53 guisp=NONE gui=NONE cterm=NONE
 highlight Directory guifg=#FFCC00 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindFile Directory
+highlight! link CmpItemKindFolder Directory
+highlight! link CmpItemKindModule Directory
 highlight ErrorMsg guifg=#E82626 guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight FloatBorder guifg=#68B1E8 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight FoldColumn guifg=#BCC2C1 guibg=#1C4373 guisp=NONE gui=italic cterm=italic
 highlight Folded guifg=#BCC2C1 guibg=#1C4373 guisp=NONE gui=italic cterm=italic
 highlight Function guifg=#96C563 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight! link CmpItemKindConstructor Function
+highlight! link CmpItemKindFunction Function
+highlight! link CmpItemKindMethod Function
 highlight! link @constructor Function
 highlight GitSignsAdd guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight GitSignsAddLn guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -93,17 +106,23 @@ highlight VertSplit guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Whitespace guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight WinSeparator guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight cssTagName guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight htmlTag guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-highlight htmlTagName guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTag guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight htmlTagName guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @constant.builtin guifg=#F57D38 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @function.builtin guifg=#79915F guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @operator guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @punctuation.bracket guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @punctuation.delimiter guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @punctuation.special guifg=#E5F3FA guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight @tag guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight @tag.attribute guifg=#4CB5BD guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight @tag.delimiter guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight @text.danger guifg=#FF5C61 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight @text.note guifg=#7FBB72 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @text.strike guifg=NONE guibg=NONE guisp=NONE gui=strikethrough cterm=strikethrough
 highlight @text.strong guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 highlight @text.underline guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight @text.uri guifg=#4CB5BD guibg=NONE guisp=NONE gui=underline cterm=underline
+highlight @text.warning guifg=#FF8800 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @variable guifg=#ECB2F0 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight @variable.builtin guifg=#B4A4F4 guibg=NONE guisp=NONE gui=NONE cterm=NONE

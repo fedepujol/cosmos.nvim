@@ -60,9 +60,9 @@ local cosmos = lush(function(injected_functions)
 		-- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line.
 		CursorLineNr   { fg = blue04 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		-- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line.
-		DiffAdd        { bg = green04 }, -- diff mode: Added line |diff.txt|
-		DiffChange     { bg = yellow02 }, -- diff mode: Changed line |diff.txt|
-		DiffDelete     { bg = red04 }, -- diff mode: Deleted line |diff.txt|
+		DiffAdd        { fg = green04 }, -- diff mode: Added line |diff.txt|
+		DiffChange     { fg = yellow02 }, -- diff mode: Changed line |diff.txt|
+		DiffDelete     { fg = red04 }, -- diff mode: Deleted line |diff.txt|
 		DiffText       { fg = gray01 }, -- diff mode: Changed text within a changed line |diff.txt|
 		Directory      { fg = yellow04 }, -- directory names (and other special names in listings)
 		-- EndOfBuffer    { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -219,9 +219,9 @@ local cosmos = lush(function(injected_functions)
 		--
 		-- htmlEndTag                  { },
 		-- htmlH1                      { },
-		htmlTag                     { fg = blue03 },
+		htmlTag                     { fg = green04 },
 		-- htmlTitle                   { },
-		htmlTagName                 { fg = green04 },
+		htmlTagName                 { fg = blue03 },
 
 		-- Lua
 		-- luaCommentDelimiter { },
@@ -320,9 +320,9 @@ local cosmos = lush(function(injected_functions)
 		sym('@variable')                { fg = pink02 },    -- Any variable name that does not have another highlight.
 		sym('@variable.builtin')        { fg = pink01 },    -- Variable names that are defined by the languages, like this or self.
 
-		-- sym('@tag')                     { },    -- Tags like html tag names.
-		-- sym('@tag.attribute')           { },    -- HTML tag attributes.
-		-- sym('@tag.delimiter')           { },    -- Tag delimiter like `<` `>` `/`
+		sym('@tag')                     { fg = green04 },    -- Tags like html tag names.
+		sym('@tag.attribute')           { fg = blue01 },    -- HTML tag attributes.
+		sym('@tag.delimiter')           { fg = blue03 },    -- Tag delimiter like `<` `>` `/`
 
 		-- sym('@text')                    { },    -- For strings considered text in a markup language.
 		-- sym('@text.reference')          { },    -- Footnotes, text references, citations, etc.
@@ -336,9 +336,9 @@ local cosmos = lush(function(injected_functions)
 		-- sym('@text.reference')          { },    -- Footnotes, text references, citations, etc.
 		-- sym('@text.environment')        { },    -- Text environments of markup languages.
 		-- sym('@text.environment.name')   { },    -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
-		-- sym('@text.note')               { },    -- Text representation of an informational note.
-		-- sym('@text.warning')            { },    -- Text representation of a warning note.
-		-- sym('@text.danger')             { },    -- Text representation of a danger note.
+		sym('@text.note')               { fg = Todo.bg },    -- Text representation of an informational note.
+		sym('@text.warning')            { fg = yellow03 },    -- Text representation of a warning note.
+		sym('@text.danger')             { fg = red04 },    -- Text representation of a danger note.
 		sym('@text.todo')               { Todo },    -- Anything that needs extra attention, such as keywords like TODO or FIXME
 		sym('@text.uri')                { fg = blue01, gui = "underline" },    -- Any URI like a link or email.
 
@@ -346,36 +346,36 @@ local cosmos = lush(function(injected_functions)
 		-- CmpItemAbbr              { }, -- The abbr field's highlight
 		-- CmpItemAbbrDeprecated    { }, -- The abbr field's highlight only used for deprecated items
 		-- CmpItemAbbrMatch         { }, -- Matched character's highlight
-		-- CmpItemAbbrMatchFuzzy    { }, -- Fuzzy matched character's
+		CmpItemAbbrMatchFuzzy    { fg = blue01 }, -- Fuzzy matched character's
 		-- CmpItemKind              { }, -- Kind field's group
 		-- CmpItemMenu              { }, -- Menu field's group
 
 		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
 		-- CmpItemKindClass         { },
 		-- CmpItemKindColor         { },
-		-- CmpItemKindConstant      { },
-		-- CmpItemKindConstructor   { },
+		CmpItemKindConstant      { Constant },
+		CmpItemKindConstructor   { Function },
 		-- CmpItemKindEnum          { },
 		-- CmpItemKindEnumMember    { },
 		-- CmpItemKindEvent         { },
-		-- CmpItemKindField         { },
-		-- CmpItemKindFile          { },
-		-- CmpItemKindFolder        { },
-		-- CmpItemKindFunction      { },
+		CmpItemKindField         { fg = blue03 },
+		CmpItemKindFile          { Directory },
+		CmpItemKindFolder        { Directory },
+		CmpItemKindFunction      { Function },
 		-- CmpItemKindInterface     { },
-		-- CmpItemKindKeyword       { },
-		-- CmpItemKindMethod        { },
-		-- CmpItemKindModule        { },
-		-- CmpItemKindOperator      { },
-		-- CmpItemKindProperty      { },
+		CmpItemKindKeyword       { fg = Normal.fg },
+		CmpItemKindMethod        { Function },
+		CmpItemKindModule        { Directory },
+		CmpItemKindOperator      { fg = Normal.fg },
+		CmpItemKindProperty      { fg = blue03 },
 		-- CmpItemKindReference     { },
 		-- CmpItemKindSnippet       { },
 		-- CmpItemKindStruct        { },
-		-- CmpItemKindText          { },
+		CmpItemKindText          { fg = Normal.fg },
 		-- CmpItemKindTypeParameter { },
 		-- CmpItemKindUnit          { },
 		-- CmpItemKindValue         { },
-		-- CmpItemKindVariable      { },
+		CmpItemKindVariable      { fg = pink01 },
 
 		GitSignsAdd              { fg = green04 },
 		GitSignsAddLn            { fg = green04 },
@@ -465,33 +465,6 @@ local cosmos = lush(function(injected_functions)
 		TelescopeSelection       { bg = blue07 },
 		TelescopeSelectionCaret  { fg = pink03, bg = blue07 },
 
-		-- DiffView
-		-- DiffviewCursorLine           { }, -- xxx links to CursorLine
-		-- DiffviewEndOfBuffer          { }, -- xxx links to EndOfBuffer
-		-- DiffviewFilePanelCounter     { }, -- xxx gui=bold guifg=#bb9af7
-		-- DiffviewFilePanelDeletions   { }, -- xxx links to diffRemoved
-		-- DiffviewFilePanelFileName    { }, -- xxx guifg=#c0caf5
-		-- DiffviewFilePanelInsertions  { }, -- xxx links to diffAdded
-		-- DiffviewFilePanelPath        { }, -- xxx links to Comment
-		-- DiffviewFilePanelRootPath    { }, -- xxx links to DiffviewFilePanelTitle
-		-- DiffviewFilePanelTitle       { }, -- xxx gui=bold guifg=#7aa2f7
-		-- DiffviewNormal               { }, -- xxx links to NormalSB
-		-- DiffviewSignColumn           { }, -- xxx links to Normal
-		-- DiffviewStatusAdded          { }, -- xxx links to diffAdded
-		-- DiffviewStatusBroken         { }, -- xxx links to diffRemoved
-		-- DiffviewStatusCopied         { }, -- xxx links to diffChanged
-		-- DiffviewStatusDeleted        { }, -- xxx links to diffRemoved
-		-- DiffviewStatusIgnored        { }, -- xxx links to StatusLineNC
-		-- DiffviewStatusLine           { }, -- xxx links to StatusLine
-		-- DiffviewStatusLineNC         { }, --
-		-- DiffviewStatusModified       { }, -- xxx links to diffChanged
-		-- DiffviewStatusRenamed        { }, -- xxx links to diffChanged
-		-- DiffviewStatusTypeChange     { }, -- xxx links to diffChanged
-		-- DiffviewStatusTypeChanged    { },
-		-- DiffviewStatusUnknown        { }, -- xxx links to diffRemoved
-		-- DiffviewStatusUnmerged       { }, -- xxx links to diffChanged
-		-- DiffviewStatusUntracked      { }, -- xxx links to diffAdded
-		-- DiffviewVertSplit            { }, -- xxx links to VertSplit
 	}
 end)
 
