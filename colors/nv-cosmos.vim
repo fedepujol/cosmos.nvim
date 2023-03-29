@@ -61,6 +61,8 @@ highlight GitSignsCurrentLineBlame guifg=#7C8083 guibg=NONE guisp=NONE gui=NONE 
 highlight GitSignsDelete guifg=#FF5C61 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Identifier guifg=#73BBF2 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Italic guifg=NONE guibg=NONE guisp=NONE gui=italic cterm=italic
+highlight LazyDimmed guifg=NONE guibg=#18222F guisp=NONE gui=NONE cterm=NONE
+highlight LazyProp guifg=NONE guibg=#18222F guisp=NONE gui=NONE cterm=NONE
 highlight LineNr guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeDirectoryName guifg=#BCC2C1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight NeoTreeDotfile guifg=#7C8083 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -76,6 +78,7 @@ highlight Number guifg=#7FBB72 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Pmenu guifg=#F9E1AE guibg=#18222F guisp=NONE gui=NONE cterm=NONE
 highlight PmenuSel guifg=#FAB285 guibg=#232B2E guisp=NONE gui=NONE cterm=NONE
 highlight PreProc guifg=#9E7AD6 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight QuickFixLine guifg=NONE guibg=#131B25 guisp=NONE gui=NONE cterm=NONE
 highlight SignColumn guifg=NONE guibg=#131B25 guisp=NONE gui=NONE cterm=NONE
 highlight Special guifg=#FB4632 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight SpecialChar guifg=#FF8800 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -103,6 +106,8 @@ highlight! link @text.todo Todo
 highlight Type guifg=#4CB5BD guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Underlined guifg=NONE guibg=NONE guisp=NONE gui=underline cterm=underline
 highlight VertSplit guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+highlight Visual guifg=NONE guibg=#2D3948 guisp=NONE gui=NONE cterm=NONE
+highlight WarningMsg guifg=#FF8800 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight Whitespace guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight WinSeparator guifg=#2D4F67 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 highlight cssTagName guifg=#ACCF77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
