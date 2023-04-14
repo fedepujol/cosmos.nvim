@@ -9,8 +9,6 @@ local name = 'nv-cosmos'
 run(theme,
 	-- convert to a list of vimscript commands
 	lushwright.to_vimscript,
-	-- pass it through a vim-compatible script (removes blend)
-	lushwright.vim_compatible_vimscript,
 	-- Add a few housekeeping lines to make it work
 	{prepend, {
 		'" Maintainer: Fede Pujol',
