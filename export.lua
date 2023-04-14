@@ -1,8 +1,8 @@
-package.loaded["lush_theme.nv-cosmos"] = nil
+package.loaded["lush_theme.cosmos"] = nil
 
-local theme = require('lush_theme.nv-cosmos')
+local theme = require('lush_theme.cosmos')
 local lushwright = require('shipwright.transform.lush')
-local name = 'nv-cosmos'
+local name = 'cosmos'
 
 -- Call run and give the colorscheme theme
 ---@diagnostic disable = undefined-global
