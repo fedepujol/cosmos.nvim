@@ -10,7 +10,7 @@ run(theme,
 	-- convert to a list of vimscript commands
 	lushwright.to_vimscript,
 	-- Add a few housekeeping lines to make it work
-	{prepend, {
+	{ prepend, {
 		'" Maintainer: Fede Pujol',
 		"",
 		"set background=dark",
@@ -18,9 +18,9 @@ run(theme,
 		"if exists('syntax_on')",
 		"\tsyntax reset",
 		"endif",
-		"let g:colors_name='"..name.."'",
+		"let g:colors_name='" .. name .. "'",
 		""
-	}},
+	} },
 	-- write the theme to a file
-	{overwrite, "colors/"..name..".vim"}
+	{ overwrite, "colors/" .. name .. ".vim" }
 )
