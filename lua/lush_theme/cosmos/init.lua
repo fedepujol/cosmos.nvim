@@ -1,6 +1,5 @@
 local lush = require('lush')
 local hsl = lush.hsl
--- local palette = require('lush_theme.nv-cosmos.)
 
 local black00 = hsl('#000000')
 local black01 = hsl('#1A1A1A')
@@ -498,5 +497,4 @@ local cosmos = lush(function(injected_functions)
 	}
 end)
 
--- return our parsed theme for extension or use else where.
 return cosmos
