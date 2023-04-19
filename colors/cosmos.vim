@@ -7,18 +7,21 @@ if exists('syntax_on')
 endif
 let g:colors_name='cosmos'
 
-highlight Normal guifg=#E5F3FA guibg=#131B25 guisp=NONE blend=NONE gui=NONE
+highlight Normal guifg=#BFE1F3 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight Bold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight Boolean guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link yamlBool Boolean
 highlight BufferCurrent guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrentIndex guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BufferInactiveIndex guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
+highlight BufferInactiveSign guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
+highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight CmpItemAbbrMatchFuzzy guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindField guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight CmpItemKindKeyword guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight CmpItemKindOperator guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindKeyword guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindOperator guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindProperty guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight CmpItemKindText guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindText guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindVariable guifg=#B4A4F4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight ColorColumn guifg=NONE guibg=#E82626 guisp=NONE blend=NONE gui=NONE
 highlight Comment guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -46,8 +49,8 @@ highlight! link CmpItemKindFolder Directory
 highlight! link CmpItemKindModule Directory
 highlight ErrorMsg guifg=#E82626 guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight FloatBorder guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight FoldColumn guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=italic
-highlight Folded guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=italic
+highlight FoldColumn guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=NONE
+highlight Folded guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=NONE
 highlight Function guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link CmpItemKindConstructor Function
 highlight! link CmpItemKindFunction Function
@@ -59,6 +62,7 @@ highlight GitSignsChange guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsChangeLn guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsCurrentLineBlame guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsDelete guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight GitSignsDeleteLn guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Identifier guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Italic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight LazyDimmed guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
@@ -103,6 +107,10 @@ highlight TelescopeSelectionCaret guifg=#D48AEA guibg=#223249 guisp=NONE blend=N
 highlight Title guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Todo guifg=#000000 guibg=#7FBB72 guisp=NONE blend=NONE gui=NONE
 highlight! link @text.todo Todo
+highlight TroubleTextError guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight TroubleTextHint guifg=#6CC468 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight TroubleTextInformation guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight TroubleTextWarning guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Type guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Underlined guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=underline
 highlight VertSplit guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
