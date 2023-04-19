@@ -66,8 +66,8 @@ local cosmos = lush(function(injected_functions)
 		Directory { fg = yellow04 },                       -- directory names (and other special names in listings)
 		-- EndOfBuffer    { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg { fg = red01, gui = "bold" },             -- error messages on the command line
-		FoldColumn { fg = gray02, bg = blue06, gui = "italic" }, -- 'foldcolumn'
-		Folded { fg = gray02, bg = blue06, gui = "italic" }, -- line used for closed folds
+		FoldColumn { fg = gray02, bg = blue06 }, -- 'foldcolumn'
+		Folded { fg = gray02, bg = blue06 }, -- line used for closed folds
 		-- IncSearch      { }, -- 'incsearch' highlighting, also used for the text replaced with ":s///c"
 		LineNr { fg = blue05 },                            -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line.
@@ -78,7 +78,7 @@ local cosmos = lush(function(injected_functions)
 		-- MsgArea        { }, -- Area for messages and cmdline
 		-- MsgSeparator   { }, -- Separator for scrolled messages, msgsep flag of 'display'
 		NonText { fg = blue09 },        -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal { fg = white00, bg = blue09 }, -- normal text
+		Normal { fg = white00.da(10), bg = blue09 }, -- normal text
 		-- NormalFloat    { }, -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
 		Pmenu { fg = yellow00, bg = blue08 }, -- Popup menu: normal item.
@@ -207,57 +207,12 @@ local cosmos = lush(function(injected_functions)
 
 		-- CSS
 		--
-		-- cssAttr                     { },
-		-- cssBraces                   { },
-		-- cssClassName                { },
-		-- cssFunction                 { },
-		-- cssFunctionComma            { },
 		cssTagName { fg = green04 },
 
 		-- Html
 		--
-		-- htmlEndTag                  { },
-		-- htmlH1                      { },
 		htmlTag { fg = green04 },
-		-- htmlTitle                   { },
 		htmlTagName { fg = blue03 },
-
-		-- Lua
-		-- luaCommentDelimiter { },
-		-- luaString2          { },
-
-		-- Markdown
-		--
-		-- markdownBlockquote           { },
-		-- markdownBold                 { },
-		-- markdownBoldItalic           { },
-		-- markdownCodeDelimiter        { },
-		-- markdownH1                   { },
-		-- markdownH2                   { },
-		-- markdownH3                   { },
-		-- markdownH4                   { },
-		-- markdownH5                   { },
-		-- markdownH6                   { },
-		-- markdownHeadingDelimiter     { },
-		-- markdownItalic               { },
-		-- markdownLinkText             { },
-		-- markdownListMarker           { },
-		-- markdownUrl                  { },
-
-		-- TypeScript
-		--
-		-- typescriptBraces                { },
-		-- typescriptClassName             { },
-		-- typescriptDecorator             { },
-		-- typescriptExport                { },
-		-- typescriptImport                { },
-
-		-- Xml
-		--
-		-- xmlAttrib           { },
-		-- xmlEndTag           { },
-		-- xmlTag              { },
-		-- xmlTagName          { },
 
 		-- Yml
 		--
@@ -341,9 +296,12 @@ local cosmos = lush(function(injected_functions)
 		sym('@text.todo') { Todo },                    -- Anything that needs extra attention, such as keywords like TODO or FIXME
 		sym('@text.uri') { fg = blue01, gui = "underline" }, -- Any URI like a link or email.
 
-		-- Plugin specifics
+		-- Plugins
+		--
+
+		-- nvim-cmp
 		-- CmpItemAbbr              { }, -- The abbr field's highlight
-		-- CmpItemAbbrDeprecated    { }, -- The abbr field's highlight only used for deprecated items
+		CmpItemAbbrDeprecated    { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
 		-- CmpItemAbbrMatch         { }, -- Matched character's highlight
 		CmpItemAbbrMatchFuzzy { fg = blue01 }, -- Fuzzy matched character's
 		-- CmpItemKind              { }, -- Kind field's group
@@ -376,14 +334,16 @@ local cosmos = lush(function(injected_functions)
 		-- CmpItemKindValue         { },
 		CmpItemKindVariable { fg = pink01 },
 
+		-- gitsigns.nvim
 		GitSignsAdd { fg = green04 },
 		GitSignsAddLn { fg = green04 },
 		GitSignsChange { fg = yellow02 },
 		GitSignsChangeLn { fg = yellow02 },
 		GitSignsDelete { fg = red04 },
-		-- GitSignsDeleteLn         { },
+		GitSignsDeleteLn { fg = red04 },
 		GitSignsCurrentLineBlame { fg = gray06 },
 
+		-- barbar.nvim
 		BufferCurrent { fg = blue03 },
 		-- BufferCurrentIcon        { },
 		BufferCurrentIndex { fg = blue03 },
@@ -392,9 +352,9 @@ local cosmos = lush(function(injected_functions)
 		-- BufferCurrentTarget      { },
 		-- BufferInactive           { },
 		-- BufferInactiveIcon       { },
-		-- BufferInactiveIndex      { },
+		BufferInactiveIndex      { fg = gray06, bg = black03 },
 		-- BufferInactiveMod        { },
-		-- BufferInactiveSign       { },
+		BufferInactiveSign       { fg = gray06, bg = black03 },
 		-- BufferInactiveTarget     { },
 		-- BufferOffset             { },
 		-- BufferTabpageFill        { },
@@ -406,94 +366,36 @@ local cosmos = lush(function(injected_functions)
 		-- BufferVisibleSign        { },
 		-- BufferVisibleTarget      { },
 
-		-- NvimTreeFolderIcon       { },
-		-- NvimTreeFolderName       { },
-		-- NvimTreeRootFolder       { },
-		-- NvimTreeEmptyFolderName  { },
-		-- NvimTreeOpenedFolderName { },
-		-- NvimTreeExecFile         { },
-		-- NvimTreeOpenedFile       { },
-		-- NvimTreeIndentMarker     { },
-		-- NvimTreeSpecialFile      { },
-		-- NvimTreeGitDeleted       { },
-		-- NvimTreeGitDirty         { },
-		-- NvimTreeGitIgnored       { },
-		-- NvimTreeGitNew           { },
-
-		-- NeoTreeBufferNumber      { }, -- The buffer number shown in the buffers source.
-		-- NeoTreeCursorLine        { }, -- |hi-CursorLine| override in Neo-tree window.
-		-- NeoTreeDimText           { }, -- Greyed out text used in various places.
-		-- NeoTreeDirectoryIcon     { }, -- Directory icon.
+		-- neo-tree.nvim
 		NeoTreeDirectoryName { fg = gray02 }, -- Directory name.
 		NeoTreeDotfile { fg = gray06 }, -- Used for icons and names when dotfiles are filtered.
-		-- NeoTreeFileIcon          { }, -- File icon, when not overriden by devicons.
-		-- NeoTreeFileName          { }, -- File name, when not overwritten by another status.
-		-- NeoTreeFileNameOpened    { }, -- File name when the file is open. Not used yet.
-		-- NeoTreeFilterTerm        { }, -- The filter term, as displayed in the root node.
-		-- NeoTreeFloatBorder       { }, -- The border for pop-up windows.
-		-- NeoTreeFloatTitle        { }, -- Used for the title text of pop-ups when the border-style is set to another style than "NC". This is derived from NeoTreeFloatBorder.
-		-- NeoTreeTitleBar          { }, -- Used for the title bar of pop-ups, when the border-style is set to "NC". This is derived from NeoTreeFloatBorder.
 		NeoTreeGitAdded { fg = green04 }, -- File name when the git status is added.
 		NeoTreeGitConflict { fg = yellow02 }, -- File name when the git status is conflict.
 		NeoTreeGitDeleted { fg = red04 }, -- File name when the git status is deleted.
 		NeoTreeGitIgnored { fg = blue05 }, -- File name when the git status is ignored.
 		NeoTreeGitModified { fg = yellow02 }, -- File name when the git status is modified.
 		NeoTreeGitUntracked { fg = green04 }, -- File name when the git status is untracked.
-		-- NeoTreeHiddenByName      { }, -- Used for icons and names when `hide_by_name` is used.
-		-- NeoTreeIndentMarker      { }, -- The style of indentation markers (guides). By default, the "Normal" highlight is used.
-		-- NeoTreeExpander          { }, -- Used for collapsed/expanded icons.
-		-- NeoTreeNormal            { }, -- |hl-Normal| override in Neo-tree window.
-		-- NeoTreeNormalNC          { }, -- |hi-NormalNC| override in Neo-tree window.
-		-- NeoTreeStatusLine        { }, -- |hl-StatusLine| override in Neo-tree window.
-		-- NeoTreeStatusLineNC      { }, -- |hl-StatusLineNC| override in Neo-tree window.
-		-- NeoTreeVertSplit         { }, -- |hl-VertSplit| override in Neo-tree window.
 		NeoTreeRootName { fg = yellow03 }, -- The name of the root node.
-		-- NeoTreeSymbolicLinkTarget{ }, -- Symbolic link target.
 
+		-- telescope.nvim
 		TelescopeBorder { fg = blue04 },
 		TelescopeMatching { fg = yellow02 },
-		-- TelescopeMultiSelection  { },
 		TelescopeNormal { fg = gray02 },
-		-- TelescopePreviewTitle    { },
-		-- TelescopePromptBorder    { },
 		TelescopePromptCounter { fg = gray02 },
-		-- TelescopePromptNormal    { },
-		-- TelescopePromptPrefix    { fg = palette.bright_red },
 		TelescopePromptTitle { fg = pink01 },
 		TelescopeResultsTitle { fg = green02 },
 		TelescopeSelection { bg = blue07 },
 		TelescopeSelectionCaret { fg = pink03, bg = blue07 },
 
-		-- LazyButton         {}, -- Defaults to: CursorLine
-		-- LazyButtonActive   {}, -- Defaults to: Visual
-		-- LazyComment        {}, -- Defaults to: Comment
-		-- LazyCommit         {}, -- Defaults to: _@variable.builtin_      commitref
-		-- LazyCommitIssue    {}, -- Defaults to: Number
-		-- LazyCommitScope    {}, -- Defaults to: Italic                   conventional commit scope
-		-- LazyCommitType     {}, -- Defaults to: Title                    conventional commit type
-		LazyDimmed { bg = blue08 },   -- Defaults to: Conceal                  property
-		-- LazyDir            {}, -- Defaults to: _@text.reference_        directory
-		-- LazyH1             {}, -- Defaults to: IncSearch                homebutton
-		-- LazyH2             {}, -- Defaults to: Bold                     titles
-		-- LazyNoCond         {}, -- Defaults to: DiagnosticWarn           unloaded icon for a plugin where
-		-- LazyNormal         {}, -- Defaults to: NormalFloat
-		-- LazyProgressDone   {}, -- Defaults to: Constant                 progress bar done
-		-- LazyProgressTodo   {}, -- Defaults to: LineNr                   progress bar todo
-		LazyProp { bg = blue08 },     -- Defaults to: Conceal                  property
-		-- LazyReasonCmd      {}, -- Defaults to: Operator
-		-- LazyReasonEvent    {}, -- Defaults to: Constant
-		-- LazyReasonFt       {}, -- Defaults to: Character
-		-- LazyReasonImport   {}, -- Defaults to: Identifier
-		-- LazyReasonKeys     {}, -- Defaults to: Statement
-		-- LazyReasonPlugin   {}, -- Defaults to: Special
-		-- LazyReasonRuntime  {}, -- Defaults to: _@macro_
-		-- LazyReasonSource   {}, -- Defaults to: Character
-		-- LazyReasonStart    {}, -- Defaults to: _@field_
-		-- LazySpecial        {}, -- Defaults to: _@punctuation.special_
-		-- LazyTaskError      {}, -- Defaults to: ErrorMsg                 taskerrors
-		-- LazyTaskOutput     {}, -- Defaults to: MsgArea                  task output
-		-- LazyUrl            {}, -- Defaults to: _@text.reference_        url
-		-- LazyValue          {}, -- Defaults to: _@string_                valueof a property
+		-- lazy.nvim
+		LazyDimmed { bg = blue08 }, -- Defaults to: Conceal                  property
+		LazyProp { bg = blue08 }, -- Defaults to: Conceal                  property
+
+		-- trouble.nvim
+		TroubleTextInformation { fg = DiagnosticInfo.fg },
+		TroubleTextError { fg = DiagnosticError.fg },
+		TroubleTextWarning { fg = DiagnosticWarn.fg },
+		TroubleTextHint { fg = DiagnosticHint.fg },
 	}
 end)
 
