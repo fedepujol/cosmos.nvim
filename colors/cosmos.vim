@@ -7,7 +7,7 @@ if exists('syntax_on')
 endif
 let g:colors_name='cosmos'
 
-highlight Normal guifg=#BFE1F3 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
+highlight Normal guifg=#9CD0EC guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight Bold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight Boolean guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link yamlBool Boolean
@@ -17,8 +17,15 @@ highlight BufferInactiveIndex guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE 
 highlight BufferInactiveSign guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight CmpItemAbbrMatchFuzzy guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindConstant guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindConstructor guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindField guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindFile guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindFolder guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindFunction guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindKeyword guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindMethod guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight CmpItemKindModule guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindOperator guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindProperty guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindText guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -26,7 +33,6 @@ highlight CmpItemKindVariable guifg=#B4A4F4 guibg=NONE guisp=NONE blend=NONE gui
 highlight ColorColumn guifg=NONE guibg=#E82626 guisp=NONE blend=NONE gui=NONE
 highlight Comment guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Constant guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight! link CmpItemKindConstant Constant
 highlight CursorLine guifg=NONE guibg=#223249 guisp=NONE blend=NONE gui=NONE
 highlight CursorLineNr guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Delimiter guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -44,18 +50,11 @@ highlight DiffChange guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiffDelete guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiffText guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Directory guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight! link CmpItemKindFile Directory
-highlight! link CmpItemKindFolder Directory
-highlight! link CmpItemKindModule Directory
 highlight ErrorMsg guifg=#E82626 guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight FloatBorder guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight FoldColumn guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=NONE
 highlight Folded guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=NONE
 highlight Function guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight! link CmpItemKindConstructor Function
-highlight! link CmpItemKindFunction Function
-highlight! link CmpItemKindMethod Function
-highlight! link @constructor Function
 highlight GitSignsAdd guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsAddLn guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsChange guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -106,7 +105,6 @@ highlight TelescopeSelection guifg=NONE guibg=#223249 guisp=NONE blend=NONE gui=
 highlight TelescopeSelectionCaret guifg=#D48AEA guibg=#223249 guisp=NONE blend=NONE gui=NONE
 highlight Title guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Todo guifg=#000000 guibg=#7FBB72 guisp=NONE blend=NONE gui=NONE
-highlight! link @text.todo Todo
 highlight TroubleTextError guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TroubleTextHint guifg=#6CC468 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TroubleTextInformation guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -122,11 +120,12 @@ highlight cssTagName guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight htmlTag guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight htmlTagName guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @constant.builtin guifg=#F57D38 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @constructor guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @function.builtin guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @operator guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @punctuation.bracket guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @punctuation.delimiter guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @punctuation.special guifg=#E5F3FA guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @operator guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @punctuation.bracket guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @punctuation.delimiter guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @punctuation.special guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @tag guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @tag.attribute guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @tag.delimiter guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -134,6 +133,7 @@ highlight @text.danger guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @text.note guifg=#7FBB72 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @text.strike guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight @text.strong guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight @text.todo guifg=#000000 guibg=#7FBB72 guisp=NONE blend=NONE gui=NONE
 highlight @text.underline guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=underline
 highlight @text.uri guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=underline
 highlight @text.warning guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
