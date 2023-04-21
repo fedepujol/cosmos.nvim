@@ -1,8 +1,21 @@
-package.loaded["lush_theme.cosmos"] = nil
+local modules = {
+	'cosmos.base',
+	'cosmos.plugins',
+}
 
-local theme = require('lush_theme.cosmos')
+-- Remove loaded packages
+for _, name in pairs(modules) do
+	package.loaded[name] = nil
+end
+
+local base = require('cosmos.base')
+local plugins = require('cosmos.plugins')
+
+local lush = require('lush')
 local lushwright = require('shipwright.transform.lush')
 local name = 'cosmos'
+
+local theme = lush.merge({ base, plugins })
 
 -- Call run and give the colorscheme theme
 ---@diagnostic disable = undefined-global
