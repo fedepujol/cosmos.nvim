@@ -2,22 +2,17 @@
 
 ## Requirements
 
-- [NeoVim](https://github.com/neovim/neovim) 0.9 or nightly
+- [Neovim](https://github.com/neovim/neovim) 0.9 or nightly
 
 ### Optionals
 
-If you want enhanced highlighting: -
-[Nvim-Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+If you want enhanced highlighting:
+
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Installation
 
 Add this repo as a plugin to your nvim/vim config:
-
-- Vundle
-
-```vim-script
-    Plugin 'fedepujol/nv-themes'
-```
 
 - Vim-Plug
 
@@ -28,46 +23,51 @@ Add this repo as a plugin to your nvim/vim config:
 - Paq
 
 ```lua
-    'fedepujol/nv-themes';
+    'fedepujol/cosmos.nvim';
 ```
 
 - Packer
 
 ```lua
-    use 'fedepujol/nv-themes'
+    use 'fedepujol/cosmos.nvim'
 ```
 
-### Treesitter
-
-If you’re already using treesitter and want an enhanced hightlight, just
-make sure to enable the `hightlight` option:
+- Lazy
 
 ```lua
-require('nvim-treesiter.configs').setup{
-    ensure_installed = "all",      -- one of "all", "maintained" or a list
-    hightlight = {
-        enable = true,             -- false will disable the whole extension
-        disable = { "c", "rust" }, -- list of language that will be disabled
+    {
+        'fedepujol/cosmos.nvim',
+        lazy = false
     }
-}
 ```
 
-Finally, enable the theme in your settings:
+### Usage
 
 ```lua
 vim.opt.syntax = "ON"           -- Enable syntax
 vim.opt.termuicolors = true     -- Enable 24Bit colors
-vim.cmd(":colo name_of_theme")  -- Change the colorscheme
+vim.cmd(":colo cosmos")         -- Change the colorscheme
 ```
 
-Or use the command `:colo name_of_theme`
+Or use the command `:colo cosmos`
+
+## Showcase
+
+![barbar](https://user-images.githubusercontent.com/26419570/233708690-24461581-0f26-4944-9a8f-2ee778d8d809.png)
+![diagnostic](https://user-images.githubusercontent.com/26419570/233708742-ebf387bf-2970-4f4d-bd1c-8a9bda238417.png)
+![gitsigns](https://user-images.githubusercontent.com/26419570/233708750-b0b4f642-b50a-427c-94d0-200654c1f56e.png)
+![lazy](https://user-images.githubusercontent.com/26419570/233708755-44c00932-ea45-4eb2-81d0-84b55d6879a6.png)
+![neo-tree](https://user-images.githubusercontent.com/26419570/233708762-bcdd5a76-9dc0-488e-b282-f29b5791421e.png)
+![nvim-cmp](https://user-images.githubusercontent.com/26419570/233708775-ecd623d4-4167-4fe5-a91a-984abcfdfd37.png)
+![telescope](https://user-images.githubusercontent.com/26419570/233708782-29dda0a4-bbf8-4e4c-b2cd-ae835abc0733.png)
+![which-key](https://user-images.githubusercontent.com/26419570/233708790-bc9997f6-f35f-4f0e-b625-baba8c94b593.png)
 
 ## FAQ
 
 ### Why lush?
 
 This repo was originally based on
-[vim-felipec](https://github.com/felipec/vim-felipec) and I didn’t like
+[vim-felipec](https://github.com/felipec/vim-felipec), and I didn’t like
 a few things:
 
 - Ruby dependency script
