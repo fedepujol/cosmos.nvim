@@ -13,6 +13,7 @@ return lush(function()
 		NeoTreeGitModified { fg = colors.yellow02 }, -- File name when the git status is modified.
 		NeoTreeGitUntracked { fg = colors.green04 }, -- File name when the git status is untracked.
 		NeoTreeRootName { fg = colors.yellow03 }, -- The name of the root node.
+		NeoTreeFileName { fg = colors.white00 }, -- File name, whe not overwritten by another status
 	}
 end)
 

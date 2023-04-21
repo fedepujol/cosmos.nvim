@@ -69,6 +69,7 @@ highlight LazyProp guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight LineNr guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeDirectoryName guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeDotfile guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight NeoTreeFileName guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeGitAdded guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeGitConflict guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeGitDeleted guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
