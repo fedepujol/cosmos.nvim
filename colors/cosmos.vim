@@ -7,7 +7,7 @@ if exists('syntax_on')
 endif
 let g:colors_name='cosmos'
 
-highlight Normal guifg=#9CD0EC guibg=#131B25 guisp=NONE blend=NONE gui=NONE
+highlight Normal guifg=#BFE1F3 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight Bold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight Boolean guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link yamlBool Boolean

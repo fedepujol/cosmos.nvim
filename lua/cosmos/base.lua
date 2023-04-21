@@ -40,7 +40,7 @@ return lush(function()
 		-- MsgArea        { }, -- Area for messages and cmdline
 		-- MsgSeparator   { }, -- Separator for scrolled messages, msgsep flag of 'display'
 		NonText { fg = colors.blue09 },               -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal { fg = colors.white00.da(10), bg = colors.blue09 }, -- normal text
+		Normal { fg = colors.white00, bg = colors.blue09 }, -- normal text
 		-- NormalFloat    { }, -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
 		Pmenu { fg = colors.yellow00, bg = colors.blue08 }, -- Popup menu: normal item.
