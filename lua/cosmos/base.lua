@@ -41,7 +41,7 @@ return lush(function()
 		-- MsgSeparator   { }, -- Separator for scrolled messages, msgsep flag of 'display'
 		NonText { fg = colors.blue09 },               -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal { fg = colors.white00, bg = colors.blue09 }, -- normal text
-		-- NormalFloat    { }, -- Normal text in floating windows.
+		NormalFloat    { fg = colors.yellow00, bg = Normal.bg }, -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
 		Pmenu { fg = colors.yellow00, bg = colors.blue08 }, -- Popup menu: normal item.
 		-- PmenuExtra        { }, -- Popup menu: Normal item "extra text"
@@ -140,7 +140,7 @@ return lush(function()
 		-- LspReferenceWrite            { }, -- used for highlighting "write" references
 		-- LspCodeLens                  { }, -- Used to color the virtual text of the codelens
 		-- LspCodeLensSeparator         { }. -- Used to color the separator between two of more code lenses
-		-- LspSignatureActiveParameter  { fg = color10 }, -- Used to highlight the active parameter in the signature help
+		LspSignatureActiveParameter  { fg = colors.green00 }, -- Used to highlight the active parameter in the signature help
 		--
 		-- LSP Semantic Tokens
 		--
