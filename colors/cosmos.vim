@@ -67,6 +67,7 @@ highlight Italic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight LazyDimmed guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight LazyProp guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight LineNr guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight LspSignatureActiveParameter guifg=#AFD600 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeDirectoryName guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeDotfile guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeFileName guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -78,6 +79,7 @@ highlight NeoTreeGitModified guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=
 highlight NeoTreeGitUntracked guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeRootName guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NonText guifg=#131B25 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight NormalFloat guifg=#F9E1AE guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight Number guifg=#7FBB72 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Pmenu guifg=#F9E1AE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight PmenuSel guifg=#FAB285 guibg=#232B2E guisp=NONE blend=NONE gui=NONE
