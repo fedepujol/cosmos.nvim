@@ -13,8 +13,13 @@ highlight Boolean guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link yamlBool Boolean
 highlight BufferCurrent guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrentIndex guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BufferCurrentMod guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BufferInactive guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight BufferInactiveIndex guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight BufferInactiveSign guifg=#7C8083 guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
+highlight BufferVisible guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
+highlight BufferVisibleIndex guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
+highlight BufferVisibleMod guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight CmpItemAbbrDeprecated guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight CmpItemAbbrMatchFuzzy guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindConstant guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
