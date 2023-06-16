@@ -5,12 +5,12 @@ local colors = require('cosmos.colors')
 return lush(function()
 	return {
 		BufferCurrent { fg = colors.blue03 },
-		-- BufferCurrentIcon        { },
+		-- BufferCurrentIcon        { } ,
 		BufferCurrentIndex { fg = colors.blue03 },
-		-- BufferCurrentMod         { },
-		-- BufferCurrentSign        { },
+		BufferCurrentMod         { fg = colors.green01 },
+		-- BufferCurrentSign        { }
 		-- BufferCurrentTarget      { },
-		-- BufferInactive           { },
+		BufferInactive           { fg = colors.gray06, bg = colors.black03 },
 		-- BufferInactiveIcon       { },
 		BufferInactiveIndex { fg = colors.gray06, bg = colors.black03 },
 		-- BufferInactiveMod        { },
@@ -19,10 +19,10 @@ return lush(function()
 		-- BufferOffset             { },
 		-- BufferTabpageFill        { },
 		-- BufferTabpages           { },
-		-- BufferVisible            { },
+		BufferVisible            { bg = colors.blue08 },
 		-- BufferVisibleIcon        { },
-		-- BufferVisibleIndex       { },
-		-- BufferVisibleMod         { },
+		BufferVisibleIndex       { bg = colors.blue08 },
+		BufferVisibleMod         { bg = colors.blue08 },
 		-- BufferVisibleSign        { },
 		-- BufferVisibleTarget      { },
 	}
