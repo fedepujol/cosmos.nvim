@@ -57,8 +57,8 @@ highlight DiffText guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Directory guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight ErrorMsg guifg=#E82626 guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight FloatBorder guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight FoldColumn guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=NONE
-highlight Folded guifg=#BCC2C1 guibg=#1C4373 guisp=NONE blend=NONE gui=NONE
+highlight FoldColumn guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Folded guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight Function guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsAdd guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsAddLn guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -103,6 +103,7 @@ highlight StatusLine guifg=NONE guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineNC guifg=NONE guibg=#1A1A1A guisp=NONE blend=NONE gui=NONE
 highlight String guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link Character String
+highlight TabLine guifg=NONE guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight TelescopeBorder guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TelescopeMatching guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TelescopeNormal guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE

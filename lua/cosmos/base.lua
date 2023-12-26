@@ -28,8 +28,8 @@ return lush(function()
 		ErrorMsg { fg = colors.red01, gui = "bold" }, -- error messages on the command line
 		FloatBorder { fg = colors.blue04 },       -- Border of floating windows
 		-- FloatTitle { }, -- Title of floating windows
-		FoldColumn { fg = colors.gray02, bg = colors.blue06 }, -- 'foldcolumn'
-		Folded { fg = colors.gray02, bg = colors.blue06 }, -- line used for closed folds
+		FoldColumn { fg = colors.blue05 }, -- 'foldcolumn'
+		Folded { bg = colors.blue08 }, -- line used for closed folds
 		-- IncSearch      { }, -- 'incsearch' highlighting, also used for the text replaced with ":s///c"
 		LineNr { fg = colors.blue05 },            -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line.
@@ -63,7 +63,7 @@ return lush(function()
 		StatusLine { bg = colors.black03 },              -- status line of current window
 		StatusLineNC { bg = colors.black01 },            -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- Substitute     { }, -- |:substitute| replacement text highlighting
-		-- TabLine        { }, -- tab pages line, not active tab page label
+		TabLine        { bg = colors.black03 }, -- tab pages line, not active tab page label
 		-- TabLineFill    { }, -- tab pages line, where there are no labels
 		-- TabLineSel     { }, -- tab pages line, active tab page label
 		-- TermCursor     { }, -- cursor in a focused terminal
