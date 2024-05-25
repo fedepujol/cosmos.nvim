@@ -1,49 +1,61 @@
 local hsl = require('lush.hsl')
 
 return {
-	black00 = hsl('#000000'),
-	black01 = hsl('#1A1A1A'),
-	black03 = hsl('#1E2326'),
-	black04 = hsl('#232A2D'),
+	-- Backgrounds
+	background00 = hsl('#000000'),
+	background01 = hsl('#1A1A1A'),
+	background03 = hsl('#232A2D'),
+	background04 = hsl('#192330'),
+	background05 = hsl('#141C26'),
+	background06 = hsl('#14161B'),
 
-	yellow00 = hsl('#F9E2AF'),
-	yellow01 = hsl('#FAB387'),
-	yellow02 = hsl('#F6955B'),
-	yellow03 = hsl('#FF8700'),
+	-- Foregrounds
+	foreground01 = hsl('#DFDFE0'),
+	foreground02 = hsl('#B0BEC5'),
+	foreground03 = hsl('#BDC3C2'),
+
+	-- General
+	boolean = hsl('#7EBA71'),
+	character = hsl('#F6955B'),
+	comment = hsl('#7C8083'),
+	comment_special = hsl('#D38AEA'),
+	constant = hsl('#67B0E8'),
+	error = hsl('#E82424'),
+	funct = hsl('#4DB5BD'),
+	number = hsl('#71BAF2'),
+	parameter = hsl('#ABCF76'),
+	preproc = hsl('#82AAFF'),
+	statement = hsl('#B4A4F4'),
+	statusline = hsl('#1E2326'),
+	string = hsl('#F9E2AF'),
+	type = hsl('#9D79D6'),
+	variable = hsl('#A6DBFF'),
+
+	-- tags -- niidea
+	-- debug -- rosa
+
 	yellow04 = hsl('#FFCC00'),
 
 	green00 = hsl('#AFD700'),
-	green01 = hsl('#95C561'),
-	green02 = hsl('#6BC568'),
 	green03 = hsl('#79925F'),
-	green04 = hsl('#ABCF76'),
-	green05 = hsl('#7EBA71'),
-
-	red00 = hsl('#FB4934'),
-	red01 = hsl('#E82424'),
-	red04 = hsl('#FF5D62'),
-
-	white00 = hsl('#BFE1F3'),
-
-	gray00 = hsl('#DFDFE0'),
-	gray01 = hsl('#B0BEC5'),
-	gray02 = hsl('#BDC3C2'),
-	gray06 = hsl('#7C8083'),
 
 	blue00 = hsl('#2DF4C0'),
-	blue01 = hsl('#4DB5BD'),
-	blue03 = hsl('#71BAF2'),
-	blue04 = hsl('#67B0E8'),
+	blue02 = hsl('#223249'),
 	blue05 = hsl('#2D4F67'),
 	blue06 = hsl('#1C4474'),
-	blue07 = hsl('#223249'),
-	blue08 = hsl('#192330'),
-	blue09 = hsl('#141C26'),
+	blue10 = hsl('#49698F'),
 
-	pink00 = hsl('#82AAFF'),
-	pink01 = hsl('#B4A4F4'),
 	pink02 = hsl('#ECB2F0'),
-	pink03 = hsl('#D38AEA'),
 	pink04 = hsl('#D67AD2'),
-	pink05 = hsl('#9D79D6')
+
+	-- Diff
+	diff_add = hsl('#6BC568'),
+	diff_change = hsl('#FAB387'),
+	diff_delete = hsl('#FB4934'),
+
+	-- LSP
+	lsp_error = hsl('#FF5D62'),
+	lsp_hint = hsl('#95C561'),
+	lsp_info = hsl('#BFE1F3'),
+	lsp_warning = hsl('#FF8700'),
 }
