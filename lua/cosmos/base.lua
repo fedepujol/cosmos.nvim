@@ -18,7 +18,7 @@ return lush(function(injected_functions)
 		-- CursorIM       { }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorLine { bg = colors.background04 },                                                 -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		-- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line.
-		CursorLineNr { fg = colors.comment, gui = "bold" },                                      -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		CursorLineNr { gui = "bold" },                                                           -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		-- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line.
 		DiffAdd { fg = colors.background00, bg = colors.diff_add.mix(colors.background05, 60) }, -- diff mode: Added line |diff.txt|
 		DiffChange { fg = colors.background00, bg = colors.diff_change.mix(colors.background05, 60) }, -- diff mode: Changed line |diff.txt|
@@ -27,13 +27,13 @@ return lush(function(injected_functions)
 		-- Directory {},     -- directory names (and other special names in listings)
 		EndOfBuffer { fg = colors.background05 },                                                -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		ErrorMsg { fg = colors.lsp_error },                                                      -- error messages on the command line
-		FloatBorder { fg = colors.pink04 },                                                      -- Border of floating windows
+		FloatBorder { fg = colors.float_border },                                                -- Border of floating windows
 		FloatTitle { fg = colors.foreground02 },                                                 -- Title of floating windows
 		FloatFooter { fg = FloatTitle.fg },                                                      -- Footer of floating windows
 		-- FoldColumn {}, -- 'foldcolumn'
 		-- Folded {}, -- line used for closed folds
 		-- IncSearch      { }, -- 'incsearch' highlighting, also used for the text replaced with ":s///c"
-		-- LineNr {}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		LineNr { fg = colors.blue10 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line.
 		-- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line.
 		MatchParen { gui = "reverse" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -42,8 +42,8 @@ return lush(function(injected_functions)
 		-- MsgArea        { }, -- Area for messages and cmdline
 		-- MsgSeparator   { }, -- Separator for scrolled messages, msgsep flag of 'display'
 		-- NonText {}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal { fg = colors.foreground03, bg = colors.background05 }, -- normal text
-		NormalFloat { Normal },                                  -- Normal text in floating windows.
+		Normal { fg = colors.delimiter, bg = colors.background05 }, -- normal text
+		NormalFloat { Normal },                               -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
 		-- Pmenu {}, -- Popup menu: normal item.
 		-- PmenuExtra        { }, -- Popup menu: Normal item "extra text"
@@ -66,13 +66,13 @@ return lush(function(injected_functions)
 		StatusLine { bg = colors.statusline },    -- status line of current window
 		StatusLineNC { bg = colors.statusline.da(20) }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- Substitute {}, -- |:substitute| replacement text highlighting
-		-- TabLine {},                    -- tab pages line, not active tab page label
+		TabLine { bg = colors.statusline },       -- tab pages line, not active tab page label
 		-- TabLineFill    { }, -- tab pages line, where there are no labels
 		-- TabLineSel     { }, -- tab pages line, active tab page label
 		-- TermCursor     { }, -- cursor in a focused terminal
 		-- TermCursorNC   { }, -- cursor in an unfocused terminal
 		-- Title {},               -- titles for output from ":set all", ":autocmd" etc.
-		-- VertSplit {},           -- the column separating vertically split windows
+		-- VertSplit {}, -- the column separating vertically split windows
 		-- Visual {}, -- Visual mode selection
 		-- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg { fg = colors.lsp_warning }, -- warning messages
@@ -80,7 +80,7 @@ return lush(function(injected_functions)
 		-- WildMenu       { }, -- current match in 'wildmenu' completion
 		-- WinBar         { }, -- Window bar of current window.
 		-- WinBarNC       { }, -- Windo bar of not-current windows.
-		-- WinSeparator {}, -- Separators between window splits.
+		WinSeparator { fg = colors.background03 }, -- Separators between window splits.
 		-- iCursor        { }, --
 		-- lCursor        { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- vCursor        { }, --
@@ -92,16 +92,16 @@ return lush(function(injected_functions)
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
 		Constant { fg = colors.constant, gui = "bold" }, -- (preferred) any constant
-		String { fg = colors.string.mix(Normal.bg, 20) }, --  a string constant: "this is a string"
-		Character { fg = colors.character },        --  a character constant: 'c', '\n'
-		Number { fg = colors.number },              --  a number constant: 234, 0xff
-		Boolean { fg = colors.boolean },            --  a boolean constant: TRUE, false
+		String { fg = colors.string },             --  a string constant: "this is a string"
+		Character { fg = colors.character },       --  a character constant: 'c', '\n'
+		-- Number {},            --  a number constant: 234, 0xff
+		Boolean { fg = colors.boolean },           --  a boolean constant: TRUE, false
 		-- Float          { }, --  a floating point constant: 2.3e10
 
-		-- Identifier {}, -- (preferred) any variable name
-		Function { fg = colors.green03 }, -- function name (also: methods for classes)
+		Identifier { fg = colors.constant },         -- (preferred) any variable name
+		Function { fg = colors.funct },              -- function name (also: methods for classes)
 
-		Statement { fg = colors.type }, -- (preferred) any statement
+		Statement { fg = colors.statement, gui = "bold" }, -- (preferred) any statement
 		-- Conditional {}, -- if, then, else, endif, switch, etc.
 		-- Repeat {}, -- for, do, while, etc.
 		-- Label {}, -- case, default, etc.
@@ -109,21 +109,21 @@ return lush(function(injected_functions)
 		-- Keyword {}, -- any other keyword
 		Exception { fg = colors.diff_delete }, -- try, catch, throw
 
-		PreProc { fg = colors.preproc }, -- (preferred) generic Preprocessor
+		PreProc { fg = colors.preproc.da(10) }, -- (preferred) generic Preprocessor
 		-- Include        { }, -- preprocessor #include
 		-- Define         { }, -- preprocessor #define
 		-- Macro          { }, -- same as Define
 		-- PreCondit      { }, -- preprocessor #if, #else, #endif, etc.
 
-		Type { fg = colors.statement }, -- (preferred) int, long, char, etc.
+		Type { fg = colors.type }, -- (preferred) int, long, char, etc.
 		-- StorageClass   { }, -- static, register, volatile, etc.
 		-- Structure      { }, -- struct, union, enum, etc.
 		-- Typedef        { }, -- A typedef
 
-		Special { fg = colors.funct }, -- (preferred) any special symbol
+		Special { fg = colors.special }, -- (preferred) any special symbol
 		-- SpecialChar      { },                               -- special character in a constant
 		-- Tag {},                            -- you can use CTRL-] on this
-		Delimiter { fg = colors.foreground03 },   -- character that needs attention
+		Delimiter { fg = colors.delimiter },      -- character that needs attention
 		SpecialComment { fg = colors.comment_special }, -- special things inside a comment
 		-- Debug {},                          -- debugging statements
 
@@ -169,7 +169,7 @@ return lush(function(injected_functions)
 		-- sym('@lsp.type.struct')       { },  -- Identifiers that declare or reference a struct type
 		-- sym('@lsp.type.type')         { },  -- Identifiers that declare or reference a type that is not covered above
 		-- sym('@lsp.type.typeParameter'){ },  -- Identifiers that declare or reference a type parameter
-		-- sym('@lsp.type.variable') { fg = colors.pink02 }, -- Identifiers that declare or reference a local or global variable
+		-- sym('@lsp.type.variable') {}, -- Identifiers that declare or reference a local or global variable
 
 		-- sym('@lsp.mod.abstract')      { },  -- Types and member functions that are abstract
 		-- sym('@lsp.mod.async')         { },  -- Functions that are marked async
@@ -238,15 +238,15 @@ return lush(function(injected_functions)
 
 		-- Treesitter
 
-		-- sym('@variable') { fg = colors.pink02 },                       -- Various variable names
-		sym('@variable.builtin') { fg = colors.variable.da(10) },      -- Built-in variable names (e.g. this / self)
+		sym('@variable') { fg = Identifier.fg },                       -- Various variable names
+		sym('@variable.builtin') { fg = Identifier.fg.da(15) },        -- Built-in variable names (e.g. this / self)
 		sym('@variable.parameter') { fg = colors.parameter },          -- Parameters of a function
 		sym('@variable.parameter.builtin') { fg = colors.parameter.da(10) }, -- Special parameters (e.g. _, it)
-		-- sym('@variable.member') {},     -- Object and struct fields
+		-- sym('@variable.member') {},                  -- Object and struct fields
 
 		-- sym('@constant') {},                            -- Constant identifiers
-		sym('@constant.builtin') { fg = colors.constant.da(10), gui = "bold" }, -- Built-in constant values
-		sym('@constant.macro') { fg = colors.constant.da(30), gui = "bold" }, -- Constants defined by the pre-processor
+		sym('@constant.builtin') { fg = Constant.fg.da(10) }, -- Built-in constant values
+		sym('@constant.macro') { fg = Constant.fg.da(30) }, -- Constants defined by the pre-processor
 
 		-- sym('@module')                          { },    -- Modules or Namespaces
 		-- sym('@module.builtin')                  { },    -- Built-in modules or Namespaces
@@ -255,10 +255,10 @@ return lush(function(injected_functions)
 		-- sym('@string')                          { },    -- Strings literals
 		sym('@string.documentation') { fg = String.fg, gui = "italic" }, -- String documenting code (e.g. Python docstrings)
 		sym('@string.regexp') { fg = String.fg.da(30) },           -- Regular expressions
-		sym('@string.escape') { fg = String.fg.da(20), gui = "bold" }, -- Escape sequences
+		sym('@string.escape') { fg = String.fg.da(30), gui = "bold" }, -- Escape sequences
 		-- sym('@string.special')                  { },    -- Other special strings (e.g. dates)
 		-- sym('@string.special.symbol')           { },    -- Symbols or atoms
-		sym('@string.special.path') { fg = String.fg.da(40) },              -- Filenames
+		sym('@string.special.path') { fg = String.fg.da(30) },              -- Filenames
 		sym('@string.special.url') { fg = String.fg, gui = "italic, underline" }, -- URIs (e.g. hyperlinks)
 
 		-- sym('@character')                       { },    -- Character literals
@@ -277,12 +277,12 @@ return lush(function(injected_functions)
 		-- sym('@property') {}, -- The key in key/value pairs
 
 		-- sym('@function')                        { },    -- Function definitions
-		-- sym('@function.builtin') {}, -- For built-in functions
-		sym('@function.call') { fg = colors.green03, gui = "italic" }, -- Function calls
+		sym('@function.builtin') { fg = Function.fg.da(30) }, -- For built-in functions
+		sym('@function.call') { gui = "italic" },       -- Function calls
 		-- sym('@function.macro') {},           -- Pre-processor macros
 
 		-- sym('@function.method')                 { },    -- Method definitions
-		sym('@function.method.call') { fg = colors.green03, gui = "italic" }, -- Method calls
+		sym('@function.method.call') { gui = "italic" }, -- Method calls
 
 		-- sym('@constructor') {}, -- Constructor calls and definitions
 		-- sym('@operator') {}, -- Symbolic operators (e.g. + / *)
@@ -309,7 +309,7 @@ return lush(function(injected_functions)
 		-- sym('@punctuation.special') {}, -- Special symbols (e.g. {} in string interpolation)
 
 		-- sym('@comment')                         { },    -- Line and block comments
-		-- sym('@comment.documentation')           { },    -- Comments documeting code
+		-- sym('@comment.documentation')           {},    -- Comments documeting code
 
 		sym('@comment.error') { fg = colors.lsp_error, gui = "italic" }, -- Error-type comments (e.g. ERROR, FIXME, DEPRECATED)
 		sym('@comment.warning') { fg = colors.lsp_warning, gui = "italic" }, -- Warning-type comments (e.g. WARNING, FIX, HACK)
@@ -342,10 +342,10 @@ return lush(function(injected_functions)
 		sym('@diff.minus') { fg = colors.diff_delete }, -- Deleted text (for diff files)
 		sym('@diff.delta') { fg = colors.diff_change }, -- Changed text (for diff files)
 
-		-- sym('@tag') {},                 -- XML-style tag names (e.g. in XML, HTML, etc)
-		-- sym('@tag.builtin') {}, -- XML-style tag names (e.g. in XML, HTML, etc)
-		-- sym('@tag.attribute') {},      -- XML-style tag attributes
-		-- sym('@tag.delimiter') {},       -- XML-style tag delimiters
+		sym('@tag') { fg = Special.fg },           -- XML-style tag names (e.g. in XML, HTML, etc)
+		sym('@tag.builtin') { fg = Function.fg.da(30) }, -- XML-style tag names (e.g. in XML, HTML, etc)
+		sym('@tag.attribute') { fg = Statement.fg }, -- XML-style tag attributes
+		sym('@tag.delimiter') { fg = Delimiter.fg }, -- XML-style tag delimiters
 
 		-- Languages
 		--
