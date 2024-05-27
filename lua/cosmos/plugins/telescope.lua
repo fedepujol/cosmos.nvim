@@ -4,13 +4,13 @@ local colors = require('cosmos.colors')
 ---@diagnostic disable: undefined-global
 return lush(function()
 	return {
-		TelescopeBorder { fg = colors.constant },
-		TelescopeMatching { fg = colors.yellow02 },
-		TelescopeNormal { fg = colors.gray02 },
-		TelescopePromptCounter { fg = colors.gray02 },
-		TelescopePromptTitle { fg = colors.pink01 },
-		TelescopeResultsTitle { fg = colors.green02 },
-		TelescopeSelection { bg = colors.blue07 },
-		TelescopeSelectionCaret { fg = colors.pink03, bg = colors.blue07 },
+		TelescopeBorder { fg = colors.float_border },
+		TelescopeMatching { fg = colors.lsp_hint },
+		TelescopeNormal { fg = colors.foreground02 },
+		TelescopePromptCounter { fg = colors.foreground02 },
+		TelescopePromptTitle { fg = colors.type },
+		TelescopeResultsTitle { fg = colors.lsp_hint },
+		TelescopeSelection { fg = colors.lsp_warning },
+		TelescopeSelectionCaret { fg = colors.type },
 	}
 end)
