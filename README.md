@@ -1,5 +1,7 @@
 # cosmos.nvim
 
+The never-ending, in-development-hell neovim colorscheme.
+
 ## :zap: Requirements
 
 - [Neovim](https://github.com/neovim/neovim) 0.9 or nightly
@@ -13,12 +15,6 @@ If you want enhanced highlighting:
 ## :package: Installation
 
 Add this repo as a plugin to your nvim/vim config:
-
-- Vim-Plug
-
-```vim-script
-    Plug 'fedepujol/nv-themes'
-```
 
 - Paq
 

@@ -10,7 +10,7 @@ let g:colors_name='cosmos'
 highlight Normal guifg=#BCC2C1 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight! link NormalFloat Normal
 highlight Bold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
-highlight Boolean guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Boolean guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight BufferCurrent guifg=#68B1E8 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrentIndex guifg=#68B1E8 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrentMod guifg=#7FBB72 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
@@ -66,6 +66,7 @@ highlight DiffAdd guifg=#000000 guibg=#3A5F57 guisp=NONE blend=NONE gui=NONE
 highlight DiffChange guifg=#000000 guibg=#70544C guisp=NONE blend=NONE gui=NONE
 highlight DiffDelete guifg=#000000 guibg=#5E3B44 guisp=NONE blend=NONE gui=NONE
 highlight DiffText guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Directory guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight EndOfBuffer guifg=#131B25 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Error guifg=NONE guibg=#E82626 guisp=NONE blend=NONE gui=NONE
 highlight ErrorMsg guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -78,7 +79,7 @@ highlight GitSignsAdd guifg=#6CC468 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsAddLn guifg=#6CC468 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsChange guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsChangeLn guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight GitSignsCurrentLineBlame guifg=#E0E0E1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight GitSignsCurrentLineBlame guifg=#B1B1B4 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight GitSignsDelete guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsDeleteLn guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Identifier guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -125,6 +126,9 @@ highlight Underlined guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=underline
 highlight WarningMsg guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Whitespace guifg=#232B2E guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight WinSeparator guifg=#232B2E guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight healthError guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight healthSuccess guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight healthWarning guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @character.special guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight @comment.error guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @comment.note guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=italic
@@ -136,8 +140,8 @@ highlight @diff.delta guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @diff.minus guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @diff.plus guifg=#6CC468 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @function.builtin guifg=#0AC291 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @function.call guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
-highlight @function.method.call guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight @function.call guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight @function.method.call guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @keyword.exception guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @lsp.mod.deprecated guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight @lsp.type.parameter guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE

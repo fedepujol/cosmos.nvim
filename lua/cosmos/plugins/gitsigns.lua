@@ -10,6 +10,6 @@ return lush(function()
 		GitSignsChangeLn { fg = colors.diff_change },
 		GitSignsDelete { fg = colors.diff_delete },
 		GitSignsDeleteLn { fg = colors.diff_delete },
-		GitSignsCurrentLineBlame { fg = colors.foreground01 },
+		GitSignsCurrentLineBlame { fg = colors.foreground01.da(20), gui = "italic" },
 	}
 end)
