@@ -41,6 +41,7 @@ return {
 	blue05 = hsl('#2D4F67'),
 	blue06 = hsl('#1C4474'),
 	blue10 = hsl('#49698F'),
+	blue11 = hsl('#8cf8f7'),
 
 	pink02 = hsl('#ECB2F0'),
 
@@ -49,6 +50,11 @@ return {
 	diff_change = hsl('#FAB387'),
 	diff_delete = hsl('#FB4934'),
 
+	default_lsp_error = hsl('#eeb4ae'),
+	default_lsp_hint = hsl('#a6dbff'),
+	default_lsp_info = hsl('#8bf5f4'),
+	default_lsp_ok = hsl('#b0f2bd'),
+	default_lsp_warn = hsl('#fce094'),
 	-- LSP
 	lsp_error = hsl('#FF5D62'),
 	lsp_hint = hsl('#95C561'),
