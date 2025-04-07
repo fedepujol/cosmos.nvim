@@ -11,7 +11,7 @@ highlight Normal guifg=#BCC2C1 guibg=#14151A guisp=NONE blend=NONE gui=NONE
 highlight! link NormalFloat Normal
 highlight Bold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight Boolean guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight BufferCurrent guifg=#68B1E8 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
+highlight BufferCurrent guifg=#68B1E8 guibg=#14151A guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrentIndex guifg=#68B1E8 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrentMod guifg=#7FBB72 guibg=#131B25 guisp=NONE blend=NONE gui=NONE
 highlight BufferInactive guifg=#7C8083 guibg=#1A1A1A guisp=NONE blend=NONE gui=NONE
@@ -51,7 +51,7 @@ highlight Constant guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight CursorLine guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight CursorLineNr guifg=#8BF8F6 guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight Delimiter guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight DiagnosticDeprecated guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=undercurl
+highlight DiagnosticDeprecated guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight DiagnosticError guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticHint guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticInfo guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -84,8 +84,6 @@ highlight GitSignsDelete guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsDeleteLn guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Identifier guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Italic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
-highlight LazyDimmed guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight LazyProp guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight LineNr guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MatchParen guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=reverse
 highlight NeoTreeDirectoryName guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -105,7 +103,9 @@ highlight SpecialComment guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Statement guifg=#D48AEA guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight StatusLine guifg=NONE guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineNC guifg=NONE guibg=#161A1D guisp=NONE blend=NONE gui=NONE
+highlight StorageClass guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight String guifg=#F9E1AE guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Structure guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Substitute guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight TabLine guifg=NONE guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight TelescopeBorder guifg=#D67AD2 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -121,9 +121,9 @@ highlight TroubleTextError guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TroubleTextHint guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TroubleTextInformation guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight TroubleTextWarning guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight Type guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Type guifg=#D48AEA guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Underlined guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=underline
-highlight Visual guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
+highlight Visual guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=reverse
 highlight WarningMsg guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Whitespace guifg=#232B2E guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight WinSeparator guifg=#232B2E guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -143,8 +143,13 @@ highlight @diff.plus guifg=#6CC468 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @function.builtin guifg=#DF590C guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @function.call guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @function.method.call guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=italic
-highlight @lsp.mod.deprecated guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=undercurl
+highlight @lsp.mod.deprecated guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=strikethrough
+highlight @lsp.type.class guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight @lsp.type.enum guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @lsp.type.interface guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @lsp.type.parameter guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @lsp.type.struct guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight @lsp.type.typeParameter guifg=#C96CE5 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @punctuation.special guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight @string.documentation guifg=#F9E1AE guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @string.escape guifg=#F0B638 guibg=NONE guisp=NONE blend=NONE gui=bold

@@ -74,7 +74,7 @@ return lush(function(injected_functions)
 		-- TermCursorNC   { }, -- cursor in an unfocused terminal
 		-- Title {},               -- titles for output from ":set all", ":autocmd" etc.
 		-- VertSplit {}, -- the column separating vertically split windows
-		Visual { bg = CursorLine.bg },     -- Visual mode selection
+		Visual { gui = "reverse" },        -- Visual mode selection
 		-- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg { fg = colors.lsp_warning }, -- warning messages
 		Whitespace { fg = colors.background03 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
@@ -116,10 +116,10 @@ return lush(function(injected_functions)
 		-- Macro          { }, -- same as Define
 		-- PreCondit      { }, -- preprocessor #if, #else, #endif, etc.
 
-		Type { fg = colors.preproc }, -- (preferred) int, long, char, etc.
-		-- StorageClass   { }, -- static, register, volatile, etc.
-		-- Structure      { }, -- struct, union, enum, etc.
-		-- Typedef        { }, -- A typedef
+		Type { fg = colors.comment_special }, -- (preferred) int, long, char, etc.
+		StorageClass { fg = colors.preproc }, -- static, register, volatile, etc.
+		Structure { fg = colors.preproc }, -- struct, union, enum, etc.
+		-- Typedef {}, -- A typedef
 
 		Special { fg = colors.special }, -- (preferred) any special symbol
 		-- SpecialChar      { },                               -- special character in a constant
@@ -149,18 +149,18 @@ return lush(function(injected_functions)
 		-- LspReferenceWrite            { }, -- used for highlighting "write" references
 		-- LspCodeLens                  { }, -- Used to color the virtual text of the codelens
 		-- LspCodeLensSeparator         { }. -- Used to color the separator between two of more code lenses
-		-- LspSignatureActiveParameter{ fg = colors.parameter }, -- Used to highlight the active parameter in the signature help
+		-- LspSignatureActiveParameter  { }, -- Used to highlight the active parameter in the signature help
 
 		-- Semantic Tokens
 		--
-		-- sym('@lsp.type.class') {}, -- Identifiers that declare or reference a class type
+		sym('@lsp.type.class') { fg = colors.preproc, gui = "bold" }, -- Identifiers that declare or reference a class type
 		-- sym('@lsp.type.comment')      { },  -- Tokens that represent a comment
 		-- sym('@lsp.type.decorator')    { },  -- Identifiers that declare or reference decorators and annotations
-		-- sym('@lsp.type.enum')         { },  -- Identifiers that declare or reference an enumeration type
+		sym('@lsp.type.enum') { fg = colors.preproc }, -- Identifiers that declare or reference an enumeration type
 		-- sym('@lsp.type.enumMember')   { },  -- Identifiers that declare or reference an enumeration property, constant, or member
 		-- sym('@lsp.type.event')        { },  -- Identifiers that declare an event property
 		-- sym('@lsp.type.function')     { },  -- Identifiers that declare a function
-		-- sym('@lsp.type.interface')    { },  -- Identifiers that declare or reference an interface type
+		sym('@lsp.type.interface') { fg = colors.preproc, gui = "italic" }, -- Identifiers that declare or reference an interface type
 		-- sym('@lsp.type.keyword')      { },  -- Tokens that represent a language keyword
 		-- sym('@lsp.type.macro')        { },  -- Identifiers that declare a macro
 		-- sym('@lsp.type.method')       { },  -- Identifiers that declare a member function or method
@@ -172,9 +172,9 @@ return lush(function(injected_functions)
 		-- sym('@lsp.type.property')     { },  -- Identifiers that declare or reference a member property, member field, or member variable
 		-- sym('@lsp.type.regexp')       { },  -- Tokens that represent a regular expression literal
 		-- sym("@lsp.type.string") {}, -- Tokens that represent a string literal
-		-- sym('@lsp.type.struct')       { },  -- Identifiers that declare or reference a struct type
-		-- sym('@lsp.type.type')         { },  -- Identifiers that declare or reference a type that is not covered above
-		-- sym('@lsp.type.typeParameter'){ },  -- Identifiers that declare or reference a type parameter
+		sym('@lsp.type.struct') { fg = colors.preproc, gui = "bold" }, -- Identifiers that declare or reference a struct type
+		-- sym('@lsp.type.type') {}, -- Identifiers that declare or reference a type that is not covered above
+		sym('@lsp.type.typeParameter') { fg = Type.fg.da(10) },  -- Identifiers that declare or reference a type parameter
 		-- sym('@lsp.type.variable') {}, -- Identifiers that declare or reference a local or global variable
 
 		-- sym('@lsp.mod.abstract')      { },  -- Types and member functions that are abstract
@@ -182,7 +182,7 @@ return lush(function(injected_functions)
 		-- sym('@lsp.mod.declaration')   { },  -- Declarations of symbols
 		-- sym('@lsp.mod.defaultLibrary'){ },  -- Symbols that are part of the standard library
 		-- sym('@lsp.mod.definition')    { },  -- Definitions of symbols, for example, in header files
-		sym("@lsp.mod.deprecated") { gui = "undercurl" }, -- Symbols that should no longer be used
+		sym("@lsp.mod.deprecated") { gui = "strikethrough" }, -- Symbols that should no longer be used
 		-- sym('@lsp.mod.documentation') { },  -- Occurrences of symbols in documentation
 		-- sym('@lsp.mod.modification')  { },  -- Variable references where the variable is assigned to
 		-- sym('@lsp.mod.readonly')      { },  -- Readonly variables and member fields (constants)
@@ -239,8 +239,8 @@ return lush(function(injected_functions)
 		-- DiagnosticSignOk             { }, -- Used for "Ok" signs in sign column
 		-- DiagnosticSignWarn           { }, -- Used for "Warning" signs in sign column
 		--
-		DiagnosticDeprecated { fg = colors.lsp_warning, gui = "undercurl" }, -- Used for deprecated or obsolete code
-		DiagnosticUnnecessary { fg = Comment.fg, gui = "strikethrough" }, --Used for unnecessary or unused code.
+		DiagnosticDeprecated { fg = colors.lsp_warning, gui = "strikethrough" }, -- Used for deprecated or obsolete code
+		DiagnosticUnnecessary { fg = Comment.fg, gui = "strikethrough" },  --Used for unnecessary or unused code.
 
 		-- Treesitter
 
@@ -352,5 +352,166 @@ return lush(function(injected_functions)
 		sym("@tag.builtin") { fg = Function.fg.da(20) }, -- XML-style tag names (e.g. in XML, HTML, etc)
 		sym("@tag.attribute") { fg = Function.fg }, -- XML-style tag attributes
 		sym("@tag.delimiter") { fg = Delimiter.fg }, -- XML-style tag delimiters
+
+
+		-- Plugins
+		--
+		-- Barbar
+		BufferCurrent { fg = colors.blue01, bg = colors.background06 },
+		-- BufferCurrentIcon        { } ,
+		BufferCurrentIndex { fg = colors.blue01, bg = colors.background05 },
+		BufferCurrentMod { fg = colors.green01, bg = colors.background05 },
+		-- BufferCurrentSign        { }
+		-- BufferCurrentTarget      { },
+		BufferInactive { fg = colors.comment, bg = colors.background01 },
+		-- BufferInactiveIcon       { },
+		BufferInactiveIndex { fg = colors.comment, bg = colors.background01 },
+		-- BufferInactiveMod        { },
+		BufferInactiveSign { fg = colors.comment, bg = colors.background01 },
+		-- BufferInactiveTarget     { },
+		-- BufferOffset             { },
+		-- BufferTabpageFill        { },
+		-- BufferTabpages           { },
+		-- BufferVisible {},
+		-- BufferVisibleIcon        { },
+		-- BufferVisibleIndex {},
+		-- BufferVisibleMod {},
+		-- BufferVisibleSign        { },
+		-- BufferVisibleTarget      { },
+
+		-- GitSigns
+		GitSignsAdd { fg = colors.diff_add }, -- Used for the text of add signs
+		GitSignsAddLn { fg = colors.diff_add },
+		GitSignsChange { fg = colors.diff_change }, -- Used for the text of change signs
+		GitSignsChangeLn { fg = colors.diff_change },
+		GitSignsDelete { fg = colors.diff_delete }, -- Used for the text of delete signs
+		GitSignsDeleteLn { fg = colors.diff_delete },
+		GitSignsCurrentLineBlame { fg = colors.foreground01.da(20), gui = "italic" },
+		-- GitSignsChangedelete {}, -- Used of the text of changedelete signs
+		-- GitSignsTopdelete {}, -- Used for the text of topdelete signs
+		-- GitSignsUntracked {}, -- Used for the text of untracked signs
+		-- GitSignsAddNr {},
+		--         Used for number column (when `config.numhl == true`) of 'add' signs.
+		-- GitSignsChangeNr {},
+		--         Used for number column (when `config.numhl == true`) of 'change' signs.
+		-- GitSignsDeleteNr {},
+		--         Used for number column (when `config.numhl == true`) of 'delete' signs.
+		-- GitSignsChangedeleteNr {},
+		--         Used for number column (when `config.numhl == true`) of 'changedelete' signs.
+		-- GitSignsTopdeleteNr {},
+		--         Used for number column (when `config.numhl == true`) of 'topdelete' signs.
+		-- GitSignsUntrackedNr {},
+		--         Used for number column (when `config.numhl == true`) of 'untracked' signs.
+		-- GitSignsAddLn {},
+		--         Used for buffer line (when `config.linehl == true`) of 'add' signs.
+		-- GitSignsChangeLn {},
+		--         Used for buffer line (when `config.linehl == true`) of 'change' signs.
+		-- GitSignsChangedeleteLn {},
+		--         Used for buffer line (when `config.linehl == true`) of 'changedelete' signs.
+		-- GitSignsUntrackedLn {},
+		--         Used for buffer line (when `config.linehl == true`) of 'untracked' signs.
+		-- GitSignsAddCul {},
+		--         Used for the text of 'add' signs when the cursor is on the same line as the sign.
+		-- GitSignsChangeCul {},
+		--         Used for the text of 'change' signs when the cursor is on the same line as the sign.
+		-- GitSignsDeleteCul {},
+		--         Used for the text of 'delete' signs when the cursor is on the same line as the sign.
+		-- GitSignsChangedeleteCul {},
+		--         Used for the text of 'changedelete' signs when the cursor is on the same line as the sign.
+		-- GitSignsTopdeleteCul {},
+		--         Used for the text of 'topdelete' signs when the cursor is on the same line as the sign.
+		-- GitSignsUntrackedCul {},
+		--         Used for the text of 'untracked' signs when the cursor is on the same line as the sign.
+		-- GitSignsAddPreview {},
+		--         Used for added lines in previews.
+		-- GitSignsDeletePreview {},
+		--         Used for deleted lines in previews.
+		-- GitSignsCurrentLineBlame {},
+		--         Used for current line blame.
+		-- GitSignsAddInline {},
+		--         Used for added word diff regions in inline previews.
+		-- GitSignsDeleteInline {},
+		--         Used for deleted word diff regions in inline previews.
+		-- GitSignsChangeInline {},
+		--         Used for changed word diff regions in inline previews.
+		-- GitSignsAddLnInline {},
+		--         Used for added word diff regions when `config.word_diff == true`.
+		-- GitSignsChangeLnInline {},
+		--         Used for changed word diff regions when `config.word_diff == true`.
+		-- GitSignsDeleteLnInline {},
+		--         Used for deleted word diff regions when `config.word_diff == true`.
+		-- GitSignsDeleteVirtLn {},
+		--         Used for deleted lines shown by inline `preview_hunk_inline()` or `show_deleted()`.
+		-- GitSignsDeleteVirtLnInLine {},
+		--         Used for word diff regions in lines shown by inline `preview_hunk_inline()` or `show_deleted()`.
+		-- GitSignsVirtLnum {},
+		--         Used for line numbers in inline hunks previews.
+
+		-- Lazy
+		-- LazyDimmed {}, -- Defaults to: Conceal                  property
+		-- LazyProp {}, -- Defaults to: Conceal                  property
+
+		-- NeoTree
+		NeoTreeDirectoryName { fg = colors.foreground02 }, -- Directory name.
+		NeoTreeDotfile { fg = colors.comment },      -- Used for icons and names when dotfiles are filtered.
+		NeoTreeGitAdded { fg = colors.diff_add },    -- File name when the git status is added.
+		NeoTreeGitConflict { fg = colors.character }, -- File name when the git status is conflict.
+		NeoTreeGitDeleted { fg = colors.diff_delete }, -- File name when the git status is deleted.
+		-- NeoTreeGitIgnored {},    -- File name when the git status is ignored.
+		NeoTreeGitModified { fg = colors.diff_change }, -- File name when the git status is modified.
+		NeoTreeGitUntracked { fg = colors.preproc }, -- File name when the git status is untracked.
+		NeoTreeRootName { fg = colors.lsp_warning }, -- The name of the root node.
+		NeoTreeFileName { fg = colors.foreground01 }, -- File name, whe not overwritten by another status
+
+		-- CMP
+		-- CmpItemAbbr              { }, -- The abbr field's highlight
+		CmpItemAbbrDeprecated { gui = "strikethrough" }, -- The abbr field's highlight only used for deprecated items
+		-- CmpItemAbbrMatch         { }, -- Matched character's highlight
+		CmpItemAbbrMatchFuzzy { fg = colors.green01 }, -- Fuzzy matched character's
+		-- CmpItemKind              { }, -- Kind field's group
+		-- CmpItemMenu              { }, -- Menu field's group
+
+		-- CmpItemKind%KIND_NAME%       -- LspKind field's group for specific lsp.CompletionItemKind
+		CmpItemKindClass { fg = colors.type },
+		CmpItemKindColor { fg = colors.delimiter },
+		CmpItemKindConstant { fg = colors.constant, gui = "bold" },
+		CmpItemKindConstructor { fg = colors.funct },
+		CmpItemKindEnum { fg = colors.type },
+		CmpItemKindEnumMember { fg = colors.constant, gui = "bold" },
+		CmpItemKindEvent { fg = colors.type },
+		CmpItemKindField { fg = colors.constant },
+		CmpItemKindFile { fg = colors.string.da(30) },
+		CmpItemKindFolder { fg = colors.character },
+		CmpItemKindFunction { fg = colors.funct },
+		CmpItemKindInterface { fg = colors.type },
+		CmpItemKindKeyword { fg = colors.statement },
+		CmpItemKindMethod { fg = colors.funct },
+		CmpItemKindModule { fg = colors.yellow04 },
+		CmpItemKindOperator { fg = colors.delimiter },
+		CmpItemKindProperty { fg = colors.constant },
+		CmpItemKindReference { fg = colors.pink02 },
+		CmpItemKindSnippet { fg = colors.pink02 },
+		CmpItemKindStruct { fg = colors.type },
+		CmpItemKindText { fg = colors.foreground01 },
+		CmpItemKindTypeParameter { fg = colors.type },
+		CmpItemKindUnit { fg = colors.delimiter },
+		CmpItemKindValue { fg = colors.delimiter },
+		CmpItemKindVariable { fg = colors.constant },
+
+		-- Telescope
+		TelescopeBorder { fg = colors.float_border },
+		TelescopeMatching { fg = colors.lsp_hint },
+		TelescopeNormal { fg = colors.foreground02 },
+		TelescopePromptCounter { fg = colors.foreground02 },
+		TelescopePromptTitle { fg = colors.type },
+		TelescopeResultsTitle { fg = colors.lsp_hint },
+		TelescopeSelection { fg = colors.lsp_warning },
+		TelescopeSelectionCaret { fg = colors.type },
+
+		-- Trouble
+		TroubleTextError { fg = colors.red04 },
+		TroubleTextHint { fg = colors.green02 },
+		TroubleTextInformation { fg = colors.blue01 },
+		TroubleTextWarning { fg = colors.yellow02 },
 	}
 end)
