@@ -46,14 +46,14 @@ return lush(function(injected_functions)
 		Normal { fg = colors.delimiter, bg = colors.background06 }, -- normal text
 		NormalFloat { Normal },                               -- Normal text in floating windows.
 		-- NormalNC       { }, -- normal text in non-current windows
-		-- Pmenu {}, -- Popup menu: normal item.
+		Pmenu { bg = Normal.bg },                             -- Popup menu: normal item.
 		-- PmenuExtra        { }, -- Popup menu: Normal item "extra text"
 		-- PmenuExtraSel     { }, -- Popup menu: Selected item "extra text"
 		-- PmenuKind         { }, -- Popup menu: Normal item "kind"
 		-- PmenuKindSel      { }, -- Popup menu: Selected item "kind"
-		-- PmenuSbar      { }, -- Popup menu: scrollbar.
-		-- PmenuSel {}, -- Popup menu: selected item.
-		-- PmenuThumb     { }, -- Popup menu: Thumb of the scrollbar.
+		-- PmenuSbar         { }, -- Popup menu: scrollbar.
+		PmenuSel { bg = Normal.bg.li(10) }, -- Popup menu: selected item.
+		PmenuThumb { bg = FloatBorder.fg }, -- Popup menu: Thumb of the scrollbar.
 		-- Question       {}, -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine {}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search { gui = "reverse" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -497,6 +497,57 @@ return lush(function(injected_functions)
 		CmpItemKindUnit { fg = colors.delimiter },
 		CmpItemKindValue { fg = colors.delimiter },
 		CmpItemKindVariable { fg = colors.constant },
+
+		-- Blink.cmp
+		-- BlinkCmpMenu                              {}, --
+		BlinkCmpMenuBorder { FloatBorder }, --
+		-- BlinkCmpMenuSelection                     {}, --
+		-- BlinkCmpScrollBarThumb                    {}, --
+		-- BlinkCmpScrollBarGutter                   {}, --
+		-- BlinkCmpLabel                             {}, --
+		BlinkCmpLabelDeprecated { fg = colors.lsp_warning, gui = "italic, strikethrough" }, --
+		-- BlinkCmpLabelMatch                        {}, --
+		-- BlinkCmpLabelDetail                       {}, --
+		-- BlinkCmpLabelDescription                  {}, --
+		-- BlinkCmpKind {}, --
+
+		-- BlinkCmpKind<kind>                        {}, --
+		--
+		BlinkCmpKindClass { fg = colors.type },
+		BlinkCmpKindColor { fg = colors.delimiter },
+		BlinkCmpKindConstant { fg = colors.constant, gui = "bold" },
+		BlinkCmpKindConstructor { fg = colors.funct },
+		BlinkCmpKindEnum { fg = colors.type },
+		BlinkCmpKindEnumMember { fg = colors.constant, gui = "bold" },
+		BlinkCmpKindEvent { fg = colors.type },
+		BlinkCmpKindField { fg = colors.constant },
+		BlinkCmpKindFile { fg = colors.string.da(30) },
+		BlinkCmpKindFolder { fg = colors.character },
+		BlinkCmpKindFunction { fg = colors.funct },
+		BlinkCmpKindInterface { fg = colors.type },
+		BlinkCmpKindKeyword { fg = colors.statement },
+		BlinkCmpKindMethod { fg = colors.funct },
+		BlinkCmpKindModule { fg = colors.yellow04 },
+		BlinkCmpKindOperator { fg = colors.delimiter },
+		BlinkCmpKindProperty { fg = colors.constant },
+		BlinkCmpKindReference { fg = colors.pink02 },
+		BlinkCmpKindSnippet { fg = colors.pink02 },
+		BlinkCmpKindStruct { fg = colors.type },
+		BlinkCmpKindText { fg = colors.foreground01 },
+		BlinkCmpKindTypeParameter { fg = colors.type },
+		BlinkCmpKindUnit { fg = colors.delimiter },
+		BlinkCmpKindValue { fg = colors.delimiter },
+		BlinkCmpKindVariable { fg = colors.constant },
+
+		BlinkCmpSource { gui = "italic" },     --
+		BlinkCmpGhostText { fg = Comment.fg }, --
+		-- BlinkCmpDoc                               {}, --
+		BlinkCmpDocBorder { FloatBorder },     --
+		-- BlinkCmpDocSeparator                      {}, --
+		BlinkCmpDocCursorLine { CursorLine },  --
+		-- BlinkCmpSignatureHelp                     {}, --
+		BlinkCmpSignatureHelpBorder { FloatBorder }, --
+		-- BlinkCmpSignatureHelpActiveParameter      {}, --
 
 		-- Telescope
 		TelescopeBorder { fg = colors.float_border },

@@ -9,6 +9,34 @@ let g:colors_name='cosmos'
 
 highlight Normal guifg=#BCC2C1 guibg=#14151A guisp=NONE blend=NONE gui=NONE
 highlight! link NormalFloat Normal
+highlight BlinkCmpGhostText guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindClass guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindColor guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindConstant guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight BlinkCmpKindConstructor guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindEnum guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindEnumMember guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight BlinkCmpKindEvent guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindField guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindFile guifg=#F0B638 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindFolder guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindFunction guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindInterface guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindKeyword guifg=#B4A4F4 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindMethod guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindModule guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindOperator guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindProperty guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindReference guifg=#ECB2F0 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindSnippet guifg=#ECB2F0 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindStruct guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindText guifg=#E0E0E1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindTypeParameter guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindUnit guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindValue guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpKindVariable guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpLabelDeprecated guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=italic,strikethrough
+highlight BlinkCmpSource guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight Bold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight Boolean guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight BufferCurrent guifg=#68B1E8 guibg=#14151A guisp=NONE blend=NONE gui=NONE
@@ -49,6 +77,7 @@ highlight ColorColumn guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Comment guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight Constant guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight CursorLine guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
+highlight! link BlinkCmpDocCursorLine CursorLine
 highlight CursorLineNr guifg=#8BF8F6 guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight Delimiter guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticDeprecated guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=strikethrough
@@ -72,6 +101,9 @@ highlight EndOfBuffer guifg=#14151A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Error guifg=NONE guibg=#E82626 guisp=NONE blend=NONE gui=NONE
 highlight ErrorMsg guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight FloatBorder guifg=#D67AD2 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight! link BlinkCmpDocBorder FloatBorder
+highlight! link BlinkCmpMenuBorder FloatBorder
+highlight! link BlinkCmpSignatureHelpBorder FloatBorder
 highlight FloatFooter guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight FloatTitle guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Function guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -96,6 +128,9 @@ highlight NeoTreeGitModified guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=
 highlight NeoTreeGitUntracked guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeRootName guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NonText guifg=#14151A guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Pmenu guifg=NONE guibg=#14151A guisp=NONE blend=NONE gui=NONE
+highlight PmenuSel guifg=NONE guibg=#272B35 guisp=NONE blend=NONE gui=NONE
+highlight PmenuThumb guifg=NONE guibg=#D67AD2 guisp=NONE blend=NONE gui=NONE
 highlight PreProc guifg=#AFD600 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Search guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=reverse
 highlight Special guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
