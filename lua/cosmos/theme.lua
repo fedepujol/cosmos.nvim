@@ -1,6 +1,7 @@
 local lush = require("lush")
 local colors = require("cosmos.colors")
 
+-- stylua: ignore
 ---@diagnostic disable: undefined-global
 return lush(function(injected_functions)
 	-- stylua: ignore
@@ -37,7 +38,7 @@ return lush(function(injected_functions)
 		LineNr { fg = colors.blue05 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line.
 		-- LineNrBelow    { }, -- Line number for when the 'relativenumber' option is set, below the cursor line.
-		MatchParen { gui = "reverse" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen { fg = colors.character, gui = "italic" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		-- ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MoreMsg        { }, -- |more-prompt|
 		-- MsgArea        { }, -- Area for messages and cmdline
@@ -244,8 +245,8 @@ return lush(function(injected_functions)
 
 		-- Treesitter
 
-		sym("@variable") { fg = Identifier.fg.da(10) },                -- Various variable names
-		sym("@variable.builtin") { fg = Identifier.fg.da(20) },        -- Built-in variable names (e.g. this / self)
+		sym("@variable") { fg = Identifier.fg.da(15) },                -- Various variable names
+		sym("@variable.builtin") { fg = Identifier.fg.da(25) },        -- Built-in variable names (e.g. this / self)
 		sym("@variable.parameter") { fg = colors.parameter },          -- Parameters of a function
 		sym("@variable.parameter.builtin") { fg = colors.parameter.da(10) }, -- Special parameters (e.g. _, it)
 		sym('@variable.member') { fg = Identifier.fg, gui = "italic" }, -- Object and struct fields
@@ -283,12 +284,12 @@ return lush(function(injected_functions)
 		-- sym('@property') {}, -- The key in key/value pairs
 
 		-- sym('@function')                        { },    -- Function definitions
-		sym("@function.builtin") { fg = Function.fg.da(30) }, -- For built-in functions
+		sym("@function.builtin") { fg = Function.fg.da(25) }, -- For built-in functions
 		sym("@function.call") { fg = Function.fg, gui = "italic" }, -- Function calls
-		-- sym('@function.macro') {},           -- Pre-processor macros
+		sym('@function.macro') { gui = "bold" },           -- Pre-processor macros
 
-		-- sym('@function.method')                 { },    -- Method definitions
-		sym("@function.method.call") { fg = Function.fg, gui = "italic" }, -- Method calls
+		sym('@function.method')                 { fg = Function.fg.da(10) },    -- Method definitions
+		sym("@function.method.call") { fg = Function.fg.da(10), gui = "italic" }, -- Method calls
 
 		-- sym('@constructor') {}, -- Constructor calls and definitions
 		-- sym('@operator') {}, -- Symbolic operators (e.g. + / *)
@@ -314,8 +315,8 @@ return lush(function(injected_functions)
 		-- sym('@punctuation.bracket') {}, -- Brackets (e.g. () / {} / [])
 		sym('@punctuation.special') { gui = "bold" }, -- Special symbols (e.g. {} in string interpolation)
 
-		-- sym('@comment')                         { },    -- Line and block comments
-		-- sym('@comment.documentation')           {},    -- Comments documeting code
+		-- sym('@comment')                         {},    -- Line and block comments
+		sym('@comment.documentation')           { SpecialComment },    -- Comments documeting code
 
 		sym("@comment.error") { fg = colors.default_lsp_error, gui = "italic" }, -- Error-type comments (e.g. ERROR, FIXME, DEPRECATED)
 		sym("@comment.warning") { fg = colors.default_lsp_warn, gui = "italic" }, -- Warning-type comments (e.g. WARNING, FIX, HACK)
@@ -327,22 +328,22 @@ return lush(function(injected_functions)
 		-- sym('@markup.strikethrough')            { },    -- Struck-through text
 		-- sym('@markup.underline')                { },    -- Underlined text (only for literal underline markup!)
 
-		-- sym('@markup.heading')                  { },    -- Headings, titles (including markers)
+		-- sym('@markup.heading')                  { fg = colors.parameter, gui = "bold" },    -- Headings, titles (including markers)
 
-		-- sym('@markup.quote')                    { },    -- Block quotes
+		sym('@markup.quote')                    { fg = colors.comment, gui = "italic" },    -- Block quotes
 		-- sym('@markup.math')                     { },    -- Math environments (e.g. $ ... $ in LaTeX)
 		-- sym('@markup.environment')              { },    -- Environments (e.g. in LaTeX)
 
-		-- sym('@markup.link')                     { },    -- Text references, footnotes, citations, etc
-		-- sym('@markup.link.label')               { },    -- Link, reference descriptions
+		sym('@markup.link')                     { fg = colors.preproc, gui = "underline" },    -- Text references, footnotes, citations, etc
+		sym('@markup.link.label')               { fg = colors.string },    -- Link, reference descriptions
 		-- sym('@markup.link.url')                 { },    -- URL-style links
 
 		-- sym('@markup.raw')                      { },    -- Literal or verbatim text (e.g. inline code)
 		-- sym('@markup.raw.block')                { },    -- Literal or verbatim text as a stand-alone block
 
 		-- sym('@markup.list')                     { },    -- List markers
-		-- sym('@markup.list.checked')             { },    -- Checked todo-style list markers
-		-- sym('@markup.list.unchecked')           { },    -- Uncheckd todo-style list markers
+		sym('@markup.list.checked')             { fg = colors.default_lsp_ok },    -- Checked todo-style list markers
+		sym('@markup.list.unchecked')           { fg = colors.parameter },    -- Uncheckd todo-style list markers
 
 		sym("@diff.plus") { fg = colors.diff_add }, -- Added text (for diff files)
 		sym("@diff.minus") { fg = colors.diff_delete }, -- Deleted text (for diff files)
@@ -559,10 +560,65 @@ return lush(function(injected_functions)
 		TelescopeSelection { fg = colors.lsp_warning },
 		TelescopeSelectionCaret { fg = colors.type },
 
-		-- Trouble
-		TroubleTextError { fg = colors.red04 },
-		TroubleTextHint { fg = colors.green02 },
-		TroubleTextInformation { fg = colors.blue01 },
-		TroubleTextWarning { fg = colors.yellow02 },
+		-- Markview
+		-- 
+		MarkviewPalette1          { fg = colors.diff_delete, bg = colors.background01.mix(colors.diff_delete, 20)}, -- has a background & foreground.
+		MarkviewPalette1Fg        { fg = MarkviewPalette1.fg }, -- only the foreground
+		MarkviewPalette1Sign      { fg = MarkviewPalette1.fg }, -- background of the sign column(LineNr) & foreground.
+
+		MarkviewPalette2          { fg = colors.lsp_warning, bg = colors.background01.mix(colors.lsp_warning, 20) },
+		MarkviewPalette2Fg        { fg = MarkviewPalette2.fg },
+		MarkviewPalette2Sign      { fg = MarkviewPalette2.fg },
+
+		MarkviewPalette0          { fg = colors.diff_change, bg = colors.background01.mix(colors.diff_change, 20) },
+		MarkviewPalette0Fg        { fg = MarkviewPalette0.fg },
+		MarkviewPalette0Sign      { fg = MarkviewPalette0.fg },
+
+		MarkviewPalette6          { fg = colors.blue01, bg = colors.background01.mix(colors.blue01, 20) },
+		MarkviewPalette6Fg        { fg = MarkviewPalette6.fg },
+		MarkviewPalette6Sign      { fg = MarkviewPalette6.fg },
+
+		MarkviewPalette5          { fg = colors.blue00, bg = colors.background01.mix(colors.blue00, 20) },
+		MarkviewPalette5Fg        { fg = MarkviewPalette5.fg },
+		MarkviewPalette5Sign      { fg = MarkviewPalette5.fg },
+
+		MarkviewPalette4          { fg = colors.parameter, bg = colors.background01.mix(colors.parameter, 20) },
+		MarkviewPalette4Fg        { fg = MarkviewPalette4.fg },
+		MarkviewPalette4Sign      { fg = MarkviewPalette4.fg },
+
+		MarkviewPalette3          { fg = colors.type, bg = colors.background01.mix(colors.type, 20) },
+		MarkviewPalette3Fg        { fg = MarkviewPalette3.fg },
+		MarkviewPalette3Sign      { fg = MarkviewPalette3.fg },
+		
+		-- MarkviewCode.             {},
+		-- MarkviewCodeInfo.         {},
+		-- MarkviewCodeFg.           {},
+		-- MarkviewInlineCode.       {},
+		-- 
+		-- MarkviewGradient0         {},
+		-- MarkviewGradient1         {},
+		-- MarkviewGradient2         {},
+		-- MarkviewGradient3         {},
+		-- MarkviewGradient4         {},
+		-- MarkviewGradient5         {},
+		-- MarkviewGradient6         {},
+		-- MarkviewGradient7         {},
+		-- MarkviewGradient8         {},
+		-- MarkviewGradient9         {},
+		-- 
+
+		-- 
+		-- MarkviewHyperlink, links to @markup.link.label.markdown_inline.
+		-- MarkviewImage, links to @markup.link.label.markdown_inline.
+		-- MarkviewEmail, links to @markup.link.url.markdown_inline.
+		-- 
+		-- MarkviewTableHeader, links to @markup.heading.markdown.
+		-- 
+		-- MarkviewTableBorder, links to MarkviewPalette5Fg.
+		-- 
+		-- MarkviewTableAlignLeft, links to @markup.heading.markdown.
+		-- MarkviewTableAlignCenter, links to @markup.heading.markdown.
+		-- MarkviewTableAlignRight, links to @markup.heading.markdown.
+
 	}
 end)
