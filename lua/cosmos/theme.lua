@@ -316,7 +316,7 @@ return lush(function(injected_functions)
 		sym('@punctuation.special') { gui = "bold" }, -- Special symbols (e.g. {} in string interpolation)
 
 		-- sym('@comment')                         {},    -- Line and block comments
-		sym('@comment.documentation')           { SpecialComment },    -- Comments documeting code
+		-- sym('@comment.documentation')           {},    -- Comments documeting code
 
 		sym("@comment.error") { fg = colors.default_lsp_error, gui = "italic" }, -- Error-type comments (e.g. ERROR, FIXME, DEPRECATED)
 		sym("@comment.warning") { fg = colors.default_lsp_warn, gui = "italic" }, -- Warning-type comments (e.g. WARNING, FIX, HACK)

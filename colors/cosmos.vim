@@ -156,7 +156,6 @@ highlight PreProc guifg=#AFD600 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Search guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=reverse
 highlight Special guifg=#ACCF77 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight SpecialComment guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight! link @comment.documentation SpecialComment
 highlight Statement guifg=#D48AEA guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight StatusLine guifg=NONE guibg=#1D2225 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineNC guifg=NONE guibg=#161A1D guisp=NONE blend=NONE gui=NONE
