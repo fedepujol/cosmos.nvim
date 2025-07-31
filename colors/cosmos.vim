@@ -9,7 +9,7 @@ let g:colors_name='cosmos'
 
 highlight Normal guifg=#BCC2C1 guibg=#14151A guisp=NONE blend=NONE gui=NONE
 highlight! link NormalFloat Normal
-highlight BlinkCmpGhostText guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight BlinkCmpGhostText guifg=#5E6164 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight BlinkCmpKindClass guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight BlinkCmpKindColor guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight BlinkCmpKindConstant guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=bold
@@ -74,12 +74,27 @@ highlight CmpItemKindUnit guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NON
 highlight CmpItemKindValue guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKindVariable guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight ColorColumn guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight Comment guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight Comment guifg=#5E6164 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight Constant guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight CursorLine guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight! link BlinkCmpDocCursorLine CursorLine
 highlight CursorLineNr guifg=#8BF8F6 guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight Delimiter guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.anchors.declaration.delimiter Delimiter
+highlight! link @neorg.anchors.definition.delimiter Delimiter
+highlight! link @neorg.links.description.delimiter Delimiter
+highlight! link @neorg.links.file.delimiter Delimiter
+highlight! link @neorg.links.location.delimiter Delimiter
+highlight! link @neorg.markup.bold.delimiter Delimiter
+highlight! link @neorg.markup.italic.delimiter Delimiter
+highlight! link @neorg.markup.spoiler.delimiter Delimiter
+highlight! link @neorg.markup.strikethrough.delimiter Delimiter
+highlight! link @neorg.markup.subscript.delimiter Delimiter
+highlight! link @neorg.markup.superscript.delimiter Delimiter
+highlight! link @neorg.markup.underline.delimiter Delimiter
+highlight! link @neorg.markup.variable.delimiter Delimiter
+highlight! link @neorg.markup.verbatim.delimiter Delimiter
+highlight! link @neorg.tags.ranged_verbatim.name.delimiter Delimiter
 highlight DiagnosticDeprecated guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight DiagnosticError guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticHint guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -90,7 +105,7 @@ highlight DiagnosticUnderlineHint guifg=NONE guibg=NONE guisp=#96C563 blend=NONE
 highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE guisp=#BFE1F3 blend=NONE gui=undercurl
 highlight DiagnosticUnderlineOk guifg=NONE guibg=NONE guisp=#B0F2BD blend=NONE gui=undercurl
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE guisp=#FF8800 blend=NONE gui=undercurl
-highlight DiagnosticUnnecessary guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=strikethrough
+highlight DiagnosticUnnecessary guifg=#5E6164 guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight DiagnosticWarn guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiffAdd guifg=#14151A guibg=#44694F guisp=NONE blend=NONE gui=NONE
 highlight DiffChange guifg=#14151A guibg=#955C41 guisp=NONE blend=NONE gui=NONE
@@ -118,24 +133,36 @@ highlight Identifier guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Italic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight LineNr guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette0 guifg=#FAB285 guibg=#453830 guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.headings.1.title MarkviewPalette0
+highlight! link @neorg.quotes.1.content MarkviewPalette0
 highlight MarkviewPalette0Fg guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette0Sign guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette1 guifg=#FB4632 guibg=#3D2B29 guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette1Fg guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette1Sign guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette2 guifg=#FF8800 guibg=#372F25 guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.headings.2.title MarkviewPalette2
+highlight! link @neorg.quotes.2.content MarkviewPalette2
 highlight MarkviewPalette2Fg guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette2Sign guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette3 guifg=#9E7AD6 guibg=#34303B guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.headings.3.title MarkviewPalette3
+highlight! link @neorg.quotes.3.content MarkviewPalette3
 highlight MarkviewPalette3Fg guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette3Sign guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette4 guifg=#79915F guibg=#2B2D2A guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.headings.4.title MarkviewPalette4
+highlight! link @neorg.quotes.4.content MarkviewPalette4
 highlight MarkviewPalette4Fg guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette4Sign guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette5 guifg=#4CB5BD guibg=#2A3132 guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.headings.5.title MarkviewPalette5
+highlight! link @neorg.quotes.5.content MarkviewPalette5
 highlight MarkviewPalette5Fg guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette5Sign guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette6 guifg=#68B1E8 guibg=#2E373E guisp=NONE blend=NONE gui=NONE
+highlight! link @neorg.headings.6.title MarkviewPalette6
+highlight! link @neorg.quotes.6.content MarkviewPalette6
 highlight MarkviewPalette6Fg guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette6Sign guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MatchParen guifg=#F6935A guibg=NONE guisp=NONE blend=NONE gui=italic
@@ -209,6 +236,32 @@ highlight @markup.link.label guifg=#F9E1AE guibg=NONE guisp=NONE blend=NONE gui=
 highlight @markup.list.checked guifg=#B0F2BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @markup.list.unchecked guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @markup.quote guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight @neorg.delimiters.strong guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight @neorg.error guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=undercurl
+highlight @neorg.headings.1.prefix guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.headings.2.prefix guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.headings.3.prefix guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.headings.4.prefix guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.headings.5.prefix guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.headings.6.prefix guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.markup.bold guifg=#ECB2F0 guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight @neorg.markup.variable guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.markup.verbatim guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.modifiers.link guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.quotes.1.prefix guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.quotes.2.prefix guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.quotes.3.prefix guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.quotes.4.prefix guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.quotes.5.prefix guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.quotes.6.prefix guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.tags.carryover.parameters guifg=#92C587 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.tags.ranged_verbatim.name.word guifg=#D48AEA guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight @neorg.tags.ranged_verbatim.parameters guifg=#63AC53 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.todo_items.cancelled guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.todo_items.done guifg=#AFD600 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.todo_items.on_hold guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.todo_items.pending guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.todo_items.urgent guifg=#EEB5AF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @punctuation.special guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight @string.documentation guifg=#F9E1AE guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @string.escape guifg=#F0B638 guibg=NONE guisp=NONE blend=NONE gui=bold
