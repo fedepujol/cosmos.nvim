@@ -323,12 +323,12 @@ return lush(function(injected_functions)
 		sym("@comment.todo") { fg = colors.default_lsp_ok, gui = "italic" }, -- Todo-type comments (e.g. TODO, WIP, FIXME)
 		sym("@comment.note") { fg = colors.default_lsp_info, gui = "italic" }, -- Note-type comments (e.g. NOTE, INFO, XXX)
 
-		-- sym('@markup.strong')                   {},    -- Bold text
-		-- sym('@markup.italic')                   { },    -- Italic text
+		sym('@markup.strong')                   { fg = colors.pink02, gui = "bold" },    -- Bold text
+		sym('@markup.italic')                   { fg = colors.yellow04, gui = "italic" },    -- Italic text
 		-- sym('@markup.strikethrough')            { },    -- Struck-through text
 		-- sym('@markup.underline')                { },    -- Underlined text (only for literal underline markup!)
 
-		-- sym('@markup.heading')                  { fg = colors.parameter, gui = "bold" },    -- Headings, titles (including markers)
+		-- sym('@markup.heading')                  {},    -- Headings, titles (including markers)
 
 		sym('@markup.quote')                    { fg = colors.comment, gui = "italic" },    -- Block quotes
 		-- sym('@markup.math')                     { },    -- Math environments (e.g. $ ... $ in LaTeX)
@@ -650,6 +650,8 @@ return lush(function(injected_functions)
 		sym("@neorg.tags.ranged_verbatim.parameters")                    { fg = colors.green01.da(15) }, --
 
 		sym("@neorg.delimiters.strong")                                  { fg = Delimiter.fg, gui = "bold" }, --
+		sym("@neorg.markup.bold")                                        { fg = colors.pink02, gui = "bold" }, --
+		sym("@neorg.markup.italic")                                      { fg = colors.yellow04, gui = "italic" }, --
 
 		-- sym("@neorg.anchors.declaration")                                {}, --
 		-- sym("@neorg.definitions.content")                                {}, --
@@ -689,13 +691,11 @@ return lush(function(injected_functions)
 		-- sym("@neorg.links.location.url")                                 {}, --
 		-- sym("@neorg.lists.ordered.prefix")                               {}, --
 		-- sym("@neorg.lists.unordered.prefix")                             {}, --
-		sym("@neorg.markup.bold")                                        { fg = colors.pink02, gui = "bold" }, --
 		-- sym("@neorg.markup.free_form_delimiter")                         {}, --
 		-- sym("@neorg.markup.inline_comment")                              {}, --
 		-- sym("@neorg.markup.inline_comment.delimiter")                    {}, --
 		-- sym("@neorg.markup.inline_math")                                 {}, --
 		-- sym("@neorg.markup.inline_math.delimiter")                       {}, --
-		-- sym("@neorg.markup.italic")                                      {}, --
 		-- sym("@neorg.markup.spoiler")                                     {}, --
 		-- sym("@neorg.markup.strikethrough")                               {}, --
 		-- sym("@neorg.markup.subscript")                                   {}, --

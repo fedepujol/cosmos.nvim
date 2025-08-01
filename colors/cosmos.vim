@@ -231,11 +231,13 @@ highlight @lsp.type.interface guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui
 highlight @lsp.type.parameter guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @lsp.type.struct guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight @lsp.type.typeParameter guifg=#C96CE5 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @markup.italic guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @markup.link guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=underline
 highlight @markup.link.label guifg=#F9E1AE guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @markup.list.checked guifg=#B0F2BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @markup.list.unchecked guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @markup.quote guifg=#7C8083 guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight @markup.strong guifg=#ECB2F0 guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight @neorg.delimiters.strong guifg=#BCC2C1 guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight @neorg.error guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=undercurl
 highlight @neorg.headings.1.prefix guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -245,6 +247,7 @@ highlight @neorg.headings.4.prefix guifg=#79915F guibg=NONE guisp=NONE blend=NON
 highlight @neorg.headings.5.prefix guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.headings.6.prefix guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.markup.bold guifg=#ECB2F0 guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight @neorg.markup.italic guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @neorg.markup.variable guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.markup.verbatim guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.modifiers.link guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
