@@ -4,6 +4,7 @@ return {
 	-- Backgrounds
 	background00 = hsl("#000000"),
 	background01 = hsl("#1A1A1A"),
+	background02 = hsl("#2A2C36"),
 	background03 = hsl("#232A2D"),
 	background04 = hsl("#192330"),
 	background05 = hsl("#141C26"),
@@ -50,7 +51,7 @@ return {
 	diff_change = hsl("#FAB387"),
 	diff_delete = hsl("#FB4934"),
 
-	default_lsp_error = hsl("#eeb4ae"),
+	default_lsp_error = hsl("#EEB4AE"),
 	default_lsp_hint = hsl("#a6dbff"),
 	default_lsp_info = hsl("#8bf5f4"),
 	default_lsp_ok = hsl("#b0f2bd"),

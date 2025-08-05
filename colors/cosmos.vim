@@ -246,10 +246,9 @@ highlight @neorg.headings.3.prefix guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NON
 highlight @neorg.headings.4.prefix guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.headings.5.prefix guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.headings.6.prefix guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @neorg.markup.bold guifg=#ECB2F0 guibg=NONE guisp=NONE blend=NONE gui=bold
-highlight @neorg.markup.italic guifg=#FFCC00 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @neorg.markup.variable guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight @neorg.markup.verbatim guifg=#79915F guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.markup.verbatim guifg=#ACCF77 guibg=#2A2C37 guisp=NONE blend=NONE gui=NONE
+highlight @neorg.markup.verbatim.norg guifg=#ACCF77 guibg=#2A2C37 guisp=NONE blend=NONE gui=NONE
 highlight @neorg.modifiers.link guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.quotes.1.prefix guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.quotes.2.prefix guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -258,6 +257,7 @@ highlight @neorg.quotes.4.prefix guifg=#79915F guibg=NONE guisp=NONE blend=NONE 
 highlight @neorg.quotes.5.prefix guifg=#4CB5BD guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.quotes.6.prefix guifg=#68B1E8 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.tags.carryover.parameters guifg=#92C587 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight @neorg.tags.ranged_verbatim.code_block guifg=NONE guibg=#2A2C37 guisp=NONE blend=NONE gui=NONE
 highlight @neorg.tags.ranged_verbatim.name.word guifg=#D48AEA guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight @neorg.tags.ranged_verbatim.parameters guifg=#63AC53 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight @neorg.todo_items.cancelled guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE

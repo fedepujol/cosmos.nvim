@@ -592,11 +592,6 @@ return lush(function(injected_functions)
 
 		-- Neorg
 		-- 
-		sym("@neorg.error")                                              { fg = MarkviewPalette1.fg, gui = "undercurl" }, --
-		sym("@neorg.modifiers.link")                                     { fg = colors.blue05 }, --
-		sym("@neorg.markup.variable")                                    { fg = colors.boolean }, --
-		sym("@neorg.markup.verbatim")                                    { fg = MarkviewPalette4.fg }, --
-
 		sym("@neorg.quotes.1.prefix")                                    { fg = MarkviewPalette0.fg }, --
 		sym("@neorg.quotes.2.prefix")                                    { fg = MarkviewPalette2.fg }, --
 		sym("@neorg.quotes.3.prefix")                                    { fg = MarkviewPalette3.fg }, --
@@ -631,9 +626,11 @@ return lush(function(injected_functions)
 
 		sym("@neorg.anchors.declaration.delimiter")                      { Delimiter }, --
 		sym("@neorg.anchors.definition.delimiter")                       { Delimiter }, --
+
 		sym("@neorg.links.description.delimiter")                        { Delimiter }, --
 		sym("@neorg.links.file.delimiter")                               { Delimiter }, --
 		sym("@neorg.links.location.delimiter")                           { Delimiter }, --
+
 		sym("@neorg.markup.bold.delimiter")                              { Delimiter }, --
 		sym("@neorg.markup.italic.delimiter")                            { Delimiter }, --
 		sym("@neorg.markup.spoiler.delimiter")                           { Delimiter }, --
@@ -641,17 +638,21 @@ return lush(function(injected_functions)
 		sym("@neorg.markup.subscript.delimiter")                         { Delimiter }, --
 		sym("@neorg.markup.superscript.delimiter")                       { Delimiter }, --
 		sym("@neorg.markup.underline.delimiter")                         { Delimiter }, --
-		sym("@neorg.markup.variable.delimiter")                          { Delimiter }, --
+		sym("@neorg.markup.variable")                                    { fg = colors.boolean }, --
+		sym("@neorg.markup.variable.delimiter")                          { Delimiter },
+		sym("@neorg.markup.verbatim")                                    { fg = Special.fg, bg = colors.background02 }, --
+		sym("@neorg.markup.verbatim.norg")                               { fg = Special.fg, bg = colors.background02 }, --
 		sym("@neorg.markup.verbatim.delimiter")                          { Delimiter }, --
 
 		sym("@neorg.tags.carryover.parameters")                          { fg = colors.green01.li(15) }, --
 		sym("@neorg.tags.ranged_verbatim.name.delimiter")                { Delimiter }, --
 		sym("@neorg.tags.ranged_verbatim.name.word")                     { fg = Statement.fg, gui = "italic" }, --
 		sym("@neorg.tags.ranged_verbatim.parameters")                    { fg = colors.green01.da(15) }, --
+		sym("@neorg.tags.ranged_verbatim.code_block")                    { bg = colors.background02 }, --
 
 		sym("@neorg.delimiters.strong")                                  { fg = Delimiter.fg, gui = "bold" }, --
-		sym("@neorg.markup.bold")                                        { fg = colors.pink02, gui = "bold" }, --
-		sym("@neorg.markup.italic")                                      { fg = colors.yellow04, gui = "italic" }, --
+		sym("@neorg.error")                                              { fg = MarkviewPalette1.fg, gui = "undercurl" }, --
+		sym("@neorg.modifiers.link")                                     { fg = colors.blue05 }, --
 
 		-- sym("@neorg.anchors.declaration")                                {}, --
 		-- sym("@neorg.definitions.content")                                {}, --
@@ -714,7 +715,6 @@ return lush(function(injected_functions)
 		-- sym("@neorg.tags.carryover.name.word")                           {}, --
 		-- sym("@neorg.tags.comment.content")                               {}, --
 		-- sym("@neorg.tags.ranged_verbatim.begin")                         {}, --
-		-- sym("@neorg.tags.ranged_verbatim.code_block")                    {}, --
 		-- sym("@neorg.tags.ranged_verbatim.document_meta.array.bracket")   {}, --
 		-- sym("@neorg.tags.ranged_verbatim.document_meta.array.value")     {}, --
 		-- sym("@neorg.tags.ranged_verbatim.document_meta.authors")         {}, --
