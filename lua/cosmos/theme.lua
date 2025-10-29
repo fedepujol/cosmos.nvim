@@ -11,7 +11,7 @@ return lush(function(injected_functions)
 		-- as of 0.9.0, to aid your theme creation. Your themes should
 		-- probably style all of these at a bare minimum.
 
-		ColorColumn { fg = colors.diff_delete },  -- used for the columns set with 'colorcolumn'
+		ColorColumn { fg = colors.diff_delete },          -- used for the columns set with 'colorcolumn'
 		Comment { fg = colors.comment.da(25), gui = "italic" }, -- any comment
 		-- Conceal        { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		-- CurSearch {}, -- Used for highlighting a search pattern under the cursor (see 'hlsearch')
@@ -96,7 +96,7 @@ return lush(function(injected_functions)
 		Constant { fg = colors.funct, gui = "bold" }, -- (preferred) any constant
 		String { fg = colors.string },          --  a string constant: "this is a string"
 		Character { fg = String.fg.da(20) },    --  a character constant: 'c', '\n'
-		-- Number {},            --  a number constant: 234, 0xff
+		Number { fg = CursorLineNr.fg },            --  a number constant: 234, 0xff
 		Boolean { fg = colors.constant },       --  a boolean constant: TRUE, false
 		-- Float          { }, --  a floating point constant: 2.3e10
 
@@ -284,11 +284,11 @@ return lush(function(injected_functions)
 		-- sym('@property') {}, -- The key in key/value pairs
 
 		-- sym('@function')                        { },    -- Function definitions
-		sym("@function.builtin") { fg = Function.fg.da(25) }, -- For built-in functions
-		sym("@function.call") { fg = Function.fg, gui = "italic" }, -- Function calls
-		sym('@function.macro') { gui = "bold" },           -- Pre-processor macros
+		sym("@function.builtin") { fg = Function.fg.da(25) },               -- For built-in functions
+		sym("@function.call") { fg = Function.fg, gui = "italic" },         -- Function calls
+		sym('@function.macro') { gui = "bold" },                            -- Pre-processor macros
 
-		sym('@function.method')                 { fg = Function.fg.da(10) },    -- Method definitions
+		sym('@function.method') { fg = Function.fg.da(10) },                -- Method definitions
 		sym("@function.method.call") { fg = Function.fg.da(10), gui = "italic" }, -- Method calls
 
 		-- sym('@constructor') {}, -- Constructor calls and definitions
@@ -323,36 +323,36 @@ return lush(function(injected_functions)
 		sym("@comment.todo") { fg = colors.default_lsp_ok, gui = "italic" }, -- Todo-type comments (e.g. TODO, WIP, FIXME)
 		sym("@comment.note") { fg = colors.default_lsp_info, gui = "italic" }, -- Note-type comments (e.g. NOTE, INFO, XXX)
 
-		sym('@markup.strong')                   { fg = colors.pink02, gui = "bold" },    -- Bold text
-		sym('@markup.italic')                   { fg = colors.yellow04, gui = "italic" },    -- Italic text
+		sym('@markup.strong') { fg = colors.pink02, gui = "bold" },         -- Bold text
+		sym('@markup.italic') { fg = colors.yellow04, gui = "italic" },     -- Italic text
 		-- sym('@markup.strikethrough')            { },    -- Struck-through text
 		-- sym('@markup.underline')                { },    -- Underlined text (only for literal underline markup!)
 
 		-- sym('@markup.heading')                  {},    -- Headings, titles (including markers)
 
-		sym('@markup.quote')                    { fg = colors.comment, gui = "italic" },    -- Block quotes
+		sym('@markup.quote') { fg = colors.comment, gui = "italic" }, -- Block quotes
 		-- sym('@markup.math')                     { },    -- Math environments (e.g. $ ... $ in LaTeX)
 		-- sym('@markup.environment')              { },    -- Environments (e.g. in LaTeX)
 
-		sym('@markup.link')                     { fg = colors.preproc, gui = "underline" },    -- Text references, footnotes, citations, etc
-		sym('@markup.link.label')               { fg = colors.string },    -- Link, reference descriptions
+		sym('@markup.link') { fg = colors.preproc, gui = "underline" }, -- Text references, footnotes, citations, etc
+		sym('@markup.link.label') { fg = colors.string },         -- Link, reference descriptions
 		-- sym('@markup.link.url')                 { },    -- URL-style links
 
 		-- sym('@markup.raw')                      { },    -- Literal or verbatim text (e.g. inline code)
 		-- sym('@markup.raw.block')                { },    -- Literal or verbatim text as a stand-alone block
 
 		-- sym('@markup.list')                     { },    -- List markers
-		sym('@markup.list.checked')             { fg = colors.default_lsp_ok },    -- Checked todo-style list markers
-		sym('@markup.list.unchecked')           { fg = colors.parameter },    -- Uncheckd todo-style list markers
+		sym('@markup.list.checked') { fg = colors.default_lsp_ok }, -- Checked todo-style list markers
+		sym('@markup.list.unchecked') { fg = colors.parameter }, -- Uncheckd todo-style list markers
 
-		sym("@diff.plus") { fg = colors.diff_add }, -- Added text (for diff files)
-		sym("@diff.minus") { fg = colors.diff_delete }, -- Deleted text (for diff files)
-		sym("@diff.delta") { fg = colors.diff_change }, -- Changed text (for diff files)
+		sym("@diff.plus") { fg = colors.diff_add },           -- Added text (for diff files)
+		sym("@diff.minus") { fg = colors.diff_delete },       -- Deleted text (for diff files)
+		sym("@diff.delta") { fg = colors.diff_change },       -- Changed text (for diff files)
 
-		sym("@tag") { fg = Character.fg },         -- XML-style tag names (e.g. in XML, HTML, etc)
-		sym("@tag.builtin") { fg = Function.fg.da(20) }, -- XML-style tag names (e.g. in XML, HTML, etc)
-		sym("@tag.attribute") { fg = Function.fg }, -- XML-style tag attributes
-		sym("@tag.delimiter") { fg = Delimiter.fg }, -- XML-style tag delimiters
+		sym("@tag") { fg = Character.fg },                    -- XML-style tag names (e.g. in XML, HTML, etc)
+		sym("@tag.builtin") { fg = Function.fg.da(20) },      -- XML-style tag names (e.g. in XML, HTML, etc)
+		sym("@tag.attribute") { fg = Function.fg },           -- XML-style tag attributes
+		sym("@tag.delimiter") { fg = Delimiter.fg },          -- XML-style tag delimiters
 
 
 		-- Plugins
@@ -449,8 +449,44 @@ return lush(function(injected_functions)
 		--         Used for line numbers in inline hunks previews.
 
 		-- Lazy
-		-- LazyDimmed {}, -- Defaults to: Conceal                  property
-		-- LazyProp {}, -- Defaults to: Conceal                  property
+		--
+		LazyBold          { gui = "bold"},
+		-- LazyButton        {},      -- CursorLine              
+		-- LazyButtonActive  {},      -- Visual                  
+		-- LazyComment       {},      -- Comment                 
+		-- LazyCommit        {},      -- @variable.builtin       commit ref
+		-- LazyCommitIssue   {},      -- Number                  
+		-- LazyCommitScope   {},      -- Italic                  conventional commit scope
+		-- LazyCommitType    {},      -- Title                   conventional commit type 
+		-- LazyDimmed        {},      -- Conceal                 property
+		LazyDir           { Directory },      -- @markup.link            directory
+		-- LazyError         {},      -- DiagnosticError         task errors
+		-- LazyH1            {},      -- IncSearch               home button
+		-- LazyH2            {},      -- Bold                    titles
+		-- LazyInfo          {},      -- DiagnosticInfo          task errors
+		LazyItalic        { gui = "italic" },
+		LazyLocal         { DiagnosticWarn },      -- Constant                
+		-- LazyNoCond        {},      -- DiagnosticWarn          unloaded icon for a plugin where cond() was false
+		-- LazyNormal        {},      -- NormalFloat             
+		-- LazyProgressDone  {},      -- Constant                progress bar done
+		-- LazyProgressTodo  {},      -- LineNr                  progress bar todo
+		-- LazyProp          { },      -- Conceal                 property
+		-- 
+		LazyReasonCmd     { Constant },      -- Operator                
+		LazyReasonEvent   { fg = colors.type },      -- Constant                
+		LazyReasonFt      { fg = colors.string.da(30) },      -- Character               
+		-- LazyReasonImport  {},      -- Identifier              
+		-- LazyReasonKeys    {},      -- Statement               
+		-- LazyReasonPlugin  {},      -- Special                 
+		-- LazyReasonRequire {},      -- @variable.parameter     
+		-- LazyReasonRuntime {},      -- @macro                  
+		-- LazyReasonSource  {},      -- Character               
+		-- LazyReasonStart   {},      -- @variable.member        
+		LazySpecial       { DiagnosticOk },      -- @punctuation.special    
+		-- LazyTaskOutput    {},      -- MsgArea                 task output
+		-- LazyUrl           {},      -- @markup.link            url
+		-- LazyValue         {},      -- @string                 value of a property
+		-- LazyWarning       {},      -- DiagnosticWarn          task errors
 
 		-- NeoTree
 		NeoTreeDirectoryName { fg = colors.foreground02 }, -- Directory name.
@@ -561,178 +597,98 @@ return lush(function(injected_functions)
 		TelescopeSelectionCaret { fg = colors.type },
 
 		-- Markview
-		-- 
-		MarkviewPalette1          { fg = colors.diff_delete, bg = colors.background01.mix(colors.diff_delete, 20)}, -- has a background & foreground.
-		MarkviewPalette1Fg        { fg = MarkviewPalette1.fg }, -- only the foreground
-		MarkviewPalette1Sign      { fg = MarkviewPalette1.fg }, -- background of the sign column(LineNr) & foreground.
+		--
+		MarkviewPalette1 { fg = colors.diff_delete, bg = colors.background01.mix(colors.diff_delete, 20) }, -- has a background & foreground.
+		MarkviewPalette1Fg { fg = MarkviewPalette1.fg },                                              -- only the foreground
+		MarkviewPalette1Sign { fg = MarkviewPalette1.fg },                                            -- background of the sign column(LineNr) & foreground.
 
-		MarkviewPalette2          { fg = colors.lsp_warning, bg = colors.background01.mix(colors.lsp_warning, 20) },
-		MarkviewPalette2Fg        { fg = MarkviewPalette2.fg },
-		MarkviewPalette2Sign      { fg = MarkviewPalette2.fg },
+		MarkviewPalette2 { fg = colors.lsp_warning, bg = colors.background01.mix(colors.lsp_warning, 20) },
+		MarkviewPalette2Fg { fg = MarkviewPalette2.fg },
+		MarkviewPalette2Sign { fg = MarkviewPalette2.fg },
 
-		MarkviewPalette0          { fg = colors.diff_change, bg = colors.background01.mix(colors.diff_change, 20) },
-		MarkviewPalette0Fg        { fg = MarkviewPalette0.fg },
-		MarkviewPalette0Sign      { fg = MarkviewPalette0.fg },
+		MarkviewPalette0 { fg = colors.diff_change, bg = colors.background01.mix(colors.diff_change, 20) },
+		MarkviewPalette0Fg { fg = MarkviewPalette0.fg },
+		MarkviewPalette0Sign { fg = MarkviewPalette0.fg },
 
-		MarkviewPalette6          { fg = colors.blue01, bg = colors.background01.mix(colors.blue01, 20) },
-		MarkviewPalette6Fg        { fg = MarkviewPalette6.fg },
-		MarkviewPalette6Sign      { fg = MarkviewPalette6.fg },
+		MarkviewPalette6 { fg = colors.blue01, bg = colors.background01.mix(colors.blue01, 20) },
+		MarkviewPalette6Fg { fg = MarkviewPalette6.fg },
+		MarkviewPalette6Sign { fg = MarkviewPalette6.fg },
 
-		MarkviewPalette5          { fg = colors.blue00, bg = colors.background01.mix(colors.blue00, 20) },
-		MarkviewPalette5Fg        { fg = MarkviewPalette5.fg },
-		MarkviewPalette5Sign      { fg = MarkviewPalette5.fg },
+		MarkviewPalette5 { fg = colors.blue00, bg = colors.background01.mix(colors.blue00, 20) },
+		MarkviewPalette5Fg { fg = MarkviewPalette5.fg },
+		MarkviewPalette5Sign { fg = MarkviewPalette5.fg },
 
-		MarkviewPalette4          { fg = colors.parameter, bg = colors.background01.mix(colors.parameter, 20) },
-		MarkviewPalette4Fg        { fg = MarkviewPalette4.fg },
-		MarkviewPalette4Sign      { fg = MarkviewPalette4.fg },
+		MarkviewPalette4 { fg = colors.parameter, bg = colors.background01.mix(colors.parameter, 20) },
+		MarkviewPalette4Fg { fg = MarkviewPalette4.fg },
+		MarkviewPalette4Sign { fg = MarkviewPalette4.fg },
 
-		MarkviewPalette3          { fg = colors.type, bg = colors.background01.mix(colors.type, 20) },
-		MarkviewPalette3Fg        { fg = MarkviewPalette3.fg },
-		MarkviewPalette3Sign      { fg = MarkviewPalette3.fg },
+		MarkviewPalette3 { fg = colors.type, bg = colors.background01.mix(colors.type, 20) },
+		MarkviewPalette3Fg { fg = MarkviewPalette3.fg },
+		MarkviewPalette3Sign { fg = MarkviewPalette3.fg },
 
 		-- Neorg
-		-- 
-		sym("@neorg.quotes.1.prefix")                                    { fg = MarkviewPalette0.fg }, --
-		sym("@neorg.quotes.2.prefix")                                    { fg = MarkviewPalette2.fg }, --
-		sym("@neorg.quotes.3.prefix")                                    { fg = MarkviewPalette3.fg }, --
-		sym("@neorg.quotes.4.prefix")                                    { fg = MarkviewPalette4.fg }, --
-		sym("@neorg.quotes.5.prefix")                                    { fg = MarkviewPalette5.fg }, --
-		sym("@neorg.quotes.6.prefix")                                    { fg = MarkviewPalette6.fg }, --
-		sym("@neorg.quotes.1.content")                                   { MarkviewPalette0 }, --
-		sym("@neorg.quotes.2.content")                                   { MarkviewPalette2 }, --
-		sym("@neorg.quotes.3.content")                                   { MarkviewPalette3 }, --
-		sym("@neorg.quotes.4.content")                                   { MarkviewPalette4 }, --
-		sym("@neorg.quotes.5.content")                                   { MarkviewPalette5 }, --
-		sym("@neorg.quotes.6.content")                                   { MarkviewPalette6 }, --
+		--
+		sym("@neorg.quotes.1.prefix") { fg = MarkviewPalette0.fg },                   --
+		sym("@neorg.quotes.2.prefix") { fg = MarkviewPalette2.fg },                   --
+		sym("@neorg.quotes.3.prefix") { fg = MarkviewPalette3.fg },                   --
+		sym("@neorg.quotes.4.prefix") { fg = MarkviewPalette4.fg },                   --
+		sym("@neorg.quotes.5.prefix") { fg = MarkviewPalette5.fg },                   --
+		sym("@neorg.quotes.6.prefix") { fg = MarkviewPalette6.fg },                   --
+		sym("@neorg.quotes.1.content") { MarkviewPalette0 },                          --
+		sym("@neorg.quotes.2.content") { MarkviewPalette2 },                          --
+		sym("@neorg.quotes.3.content") { MarkviewPalette3 },                          --
+		sym("@neorg.quotes.4.content") { MarkviewPalette4 },                          --
+		sym("@neorg.quotes.5.content") { MarkviewPalette5 },                          --
+		sym("@neorg.quotes.6.content") { MarkviewPalette6 },                          --
 
-		sym("@neorg.headings.1.prefix")                                  { fg = MarkviewPalette0.fg }, --
-		sym("@neorg.headings.2.prefix")                                  { fg = MarkviewPalette2.fg }, --
-		sym("@neorg.headings.3.prefix")                                  { fg = MarkviewPalette3.fg }, --
-		sym("@neorg.headings.4.prefix")                                  { fg = MarkviewPalette4.fg }, --
-		sym("@neorg.headings.5.prefix")                                  { fg = MarkviewPalette5.fg }, --
-		sym("@neorg.headings.6.prefix")                                  { fg = MarkviewPalette6.fg }, --
-		sym("@neorg.headings.1.title")                                   { MarkviewPalette0 }, --
-		sym("@neorg.headings.2.title")                                   { MarkviewPalette2 }, --
-		sym("@neorg.headings.3.title")                                   { MarkviewPalette3 }, --
-		sym("@neorg.headings.4.title")                                   { MarkviewPalette4 }, --
-		sym("@neorg.headings.5.title")                                   { MarkviewPalette5 }, --
-		sym("@neorg.headings.6.title")                                   { MarkviewPalette6 }, --
+		sym("@neorg.headings.1.prefix") { fg = MarkviewPalette0.fg },                 --
+		sym("@neorg.headings.2.prefix") { fg = MarkviewPalette2.fg },                 --
+		sym("@neorg.headings.3.prefix") { fg = MarkviewPalette3.fg },                 --
+		sym("@neorg.headings.4.prefix") { fg = MarkviewPalette4.fg },                 --
+		sym("@neorg.headings.5.prefix") { fg = MarkviewPalette5.fg },                 --
+		sym("@neorg.headings.6.prefix") { fg = MarkviewPalette6.fg },                 --
+		sym("@neorg.headings.1.title") { MarkviewPalette0 },                          --
+		sym("@neorg.headings.2.title") { MarkviewPalette2 },                          --
+		sym("@neorg.headings.3.title") { MarkviewPalette3 },                          --
+		sym("@neorg.headings.4.title") { MarkviewPalette4 },                          --
+		sym("@neorg.headings.5.title") { MarkviewPalette5 },                          --
+		sym("@neorg.headings.6.title") { MarkviewPalette6 },                          --
 
-		sym("@neorg.todo_items.cancelled")                               { fg = colors.lsp_error }, --
-		sym("@neorg.todo_items.done")                                    { fg = colors.green00 }, --
-		sym("@neorg.todo_items.on_hold")                                 { fg = colors.blue05 }, --
-		sym("@neorg.todo_items.pending")                                 { fg = colors.blue01 }, --
-		sym("@neorg.todo_items.urgent")                                  { fg = colors.default_lsp_error }, --
+		sym("@neorg.todo_items.cancelled") { fg = colors.lsp_error },                 --
+		sym("@neorg.todo_items.done") { fg = colors.green00 },                        --
+		sym("@neorg.todo_items.on_hold") { fg = colors.blue05 },                      --
+		sym("@neorg.todo_items.pending") { fg = colors.blue01 },                      --
+		sym("@neorg.todo_items.urgent") { fg = colors.default_lsp_error },            --
 
-		sym("@neorg.anchors.declaration.delimiter")                      { Delimiter }, --
-		sym("@neorg.anchors.definition.delimiter")                       { Delimiter }, --
+		sym("@neorg.anchors.declaration.delimiter") { Delimiter },                    --
+		sym("@neorg.anchors.definition.delimiter") { Delimiter },                     --
 
-		sym("@neorg.links.description.delimiter")                        { Delimiter }, --
-		sym("@neorg.links.file.delimiter")                               { Delimiter }, --
-		sym("@neorg.links.location.delimiter")                           { Delimiter }, --
+		sym("@neorg.links.description.delimiter") { Delimiter },                      --
+		sym("@neorg.links.file.delimiter") { Delimiter },                             --
+		sym("@neorg.links.location.delimiter") { Delimiter },                         --
 
-		sym("@neorg.markup.bold.delimiter")                              { Delimiter }, --
-		sym("@neorg.markup.italic.delimiter")                            { Delimiter }, --
-		sym("@neorg.markup.spoiler.delimiter")                           { Delimiter }, --
-		sym("@neorg.markup.strikethrough.delimiter")                     { Delimiter }, --
-		sym("@neorg.markup.subscript.delimiter")                         { Delimiter }, --
-		sym("@neorg.markup.superscript.delimiter")                       { Delimiter }, --
-		sym("@neorg.markup.underline.delimiter")                         { Delimiter }, --
-		sym("@neorg.markup.variable")                                    { fg = colors.boolean }, --
-		sym("@neorg.markup.variable.delimiter")                          { Delimiter },
-		sym("@neorg.markup.verbatim")                                    { fg = Special.fg, bg = colors.background02 }, --
-		sym("@neorg.markup.verbatim.norg")                               { fg = Special.fg, bg = colors.background02 }, --
-		sym("@neorg.markup.verbatim.delimiter")                          { Delimiter }, --
+		sym("@neorg.markup.bold.delimiter") { Delimiter },                            --
+		sym("@neorg.markup.italic.delimiter") { Delimiter },                          --
+		sym("@neorg.markup.spoiler.delimiter") { Delimiter },                         --
+		sym("@neorg.markup.strikethrough.delimiter") { Delimiter },                   --
+		sym("@neorg.markup.subscript.delimiter") { Delimiter },                       --
+		sym("@neorg.markup.superscript.delimiter") { Delimiter },                     --
+		sym("@neorg.markup.underline.delimiter") { Delimiter },                       --
+		sym("@neorg.markup.variable") { fg = colors.boolean },                        --
+		sym("@neorg.markup.variable.delimiter") { Delimiter },
+		sym("@neorg.markup.verbatim") { fg = Special.fg, bg = colors.background02 },  --
+		sym("@neorg.markup.verbatim.norg") { fg = Special.fg, bg = colors.background02 }, --
+		sym("@neorg.markup.verbatim.delimiter") { Delimiter },                        --
 
-		sym("@neorg.tags.carryover.parameters")                          { fg = colors.green01.li(15) }, --
-		sym("@neorg.tags.ranged_verbatim.name.delimiter")                { Delimiter }, --
-		sym("@neorg.tags.ranged_verbatim.name.word")                     { fg = Statement.fg, gui = "italic" }, --
-		sym("@neorg.tags.ranged_verbatim.parameters")                    { fg = colors.green01.da(15) }, --
-		sym("@neorg.tags.ranged_verbatim.code_block")                    { bg = colors.background02 }, --
+		sym("@neorg.tags.carryover.parameters") { fg = colors.green01.li(15) },       --
+		sym("@neorg.tags.ranged_verbatim.name.delimiter") { Delimiter },              --
+		sym("@neorg.tags.ranged_verbatim.name.word") { fg = Statement.fg, gui = "italic" }, --
+		sym("@neorg.tags.ranged_verbatim.parameters") { fg = colors.green01.da(15) }, --
+		sym("@neorg.tags.ranged_verbatim.code_block") { bg = colors.background02 },   --
 
-		sym("@neorg.delimiters.strong")                                  { fg = Delimiter.fg, gui = "bold" }, --
-		sym("@neorg.error")                                              { fg = MarkviewPalette1.fg, gui = "undercurl" }, --
-		sym("@neorg.modifiers.link")                                     { fg = colors.blue05 }, --
+		sym("@neorg.delimiters.strong") { fg = Delimiter.fg, gui = "bold" },          --
+		sym("@neorg.error") { fg = MarkviewPalette1.fg, gui = "undercurl" },          --
+		sym("@neorg.modifiers.link") { fg = colors.blue05 },                          --
 
-		-- sym("@neorg.anchors.declaration")                                {}, --
-		-- sym("@neorg.definitions.content")                                {}, --
-		-- sym("@neorg.definitions.prefix")                                 {}, --
-		-- sym("@neorg.definitions.suffix")                                 {}, --
-		-- sym("@neorg.definitions.title")                                  {}, --
-		-- sym("@neorg.delimiters.horizontal_line")                         {}, --
-		-- sym("@neorg.delimiters.weak")                                    {}, --
-		-- sym("@neorg.footnotes.content")                                  {}, --
-		-- sym("@neorg.footnotes.prefix")                                   {}, --
-		-- sym("@neorg.footnotes.suffix")                                   {}, --
-		-- sym("@neorg.footnotes.title")                                    {}, --
-		-- sym("@neorg.links.description")                                  {}, --
-		-- sym("@neorg.links.file")                                         {}, --
-		-- sym("@neorg.links.location.definition")                          {}, --
-		-- sym("@neorg.links.location.definition.prefix")                   {}, --
-		-- sym("@neorg.links.location.external_file")                       {}, --
-		-- sym("@neorg.links.location.external_file.prefix")                {}, --
-		-- sym("@neorg.links.location.footnote")                            {}, --
-		-- sym("@neorg.links.location.footnote.prefix")                     {}, --
-		-- sym("@neorg.links.location.generic")                             {}, --
-		-- sym("@neorg.links.location.generic.prefix")                      {}, --
-		-- sym("@neorg.links.location.heading.1")                           {}, --
-		-- sym("@neorg.links.location.heading.1.prefix")                    {}, --
-		-- sym("@neorg.links.location.heading.2")                           {}, --
-		-- sym("@neorg.links.location.heading.2.prefix")                    {}, --
-		-- sym("@neorg.links.location.heading.3")                           {}, --
-		-- sym("@neorg.links.location.heading.3.prefix")                    {}, --
-		-- sym("@neorg.links.location.heading.4")                           {}, --
-		-- sym("@neorg.links.location.heading.4.prefix")                    {}, --
-		-- sym("@neorg.links.location.heading.5")                           {}, --
-		-- sym("@neorg.links.location.heading.5.prefix")                    {}, --
-		-- sym("@neorg.links.location.heading.6")                           {}, --
-		-- sym("@neorg.links.location.heading.6.prefix")                    {}, --
-		-- sym("@neorg.links.location.marker")                              {}, --
-		-- sym("@neorg.links.location.marker.prefix")                       {}, --
-		-- sym("@neorg.links.location.url")                                 {}, --
-		-- sym("@neorg.lists.ordered.prefix")                               {}, --
-		-- sym("@neorg.lists.unordered.prefix")                             {}, --
-		-- sym("@neorg.markup.free_form_delimiter")                         {}, --
-		-- sym("@neorg.markup.inline_comment")                              {}, --
-		-- sym("@neorg.markup.inline_comment.delimiter")                    {}, --
-		-- sym("@neorg.markup.inline_math")                                 {}, --
-		-- sym("@neorg.markup.inline_math.delimiter")                       {}, --
-		-- sym("@neorg.markup.spoiler")                                     {}, --
-		-- sym("@neorg.markup.strikethrough")                               {}, --
-		-- sym("@neorg.markup.subscript")                                   {}, --
-		-- sym("@neorg.markup.superscript")                                 {}, --
-		-- sym("@neorg.markup.underline")                                   {}, --
-		-- sym("@neorg.modifiers.escape")                                   {}, --
-		-- sym("@neorg.rendered.latex")                                     {}, --
-		-- sym("@neorg.selection_window.arrow")                             {}, --
-		-- sym("@neorg.selection_window.heading")                           {}, --
-		-- sym("@neorg.selection_window.key")                               {}, --
-		-- sym("@neorg.selection_window.keyname")                           {}, --
-		-- sym("@neorg.selection_window.nestedkeyname")                     {}, --
-		-- sym("@neorg.tags.carryover.begin")                               {}, --
-		-- sym("@neorg.tags.carryover.name")                                {}, --
-		-- sym("@neorg.tags.carryover.name.delimiter")                      {}, --
-		-- sym("@neorg.tags.carryover.name.word")                           {}, --
-		-- sym("@neorg.tags.comment.content")                               {}, --
-		-- sym("@neorg.tags.ranged_verbatim.begin")                         {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.array.bracket")   {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.array.value")     {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.authors")         {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.categories")      {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.created")         {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.description")     {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.key")             {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.number")          {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.object.bracket")  {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.title")           {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.trailing")        {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.updated")         {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.value")           {}, --
-		-- sym("@neorg.tags.ranged_verbatim.document_meta.version")         {}, --
-		-- sym("@neorg.tags.ranged_verbatim.end")                           {}, --
-		-- sym("@neorg.tags.ranged_verbatim.name")                          {}, --
-		-- sym("@neorg.todo_items.recurring")                               {}, --
-		-- sym("@neorg.todo_items.uncertain")                               {}, --
-		-- sym("@neorg.todo_items.undone")                                  {}, --
 	}
 end)

@@ -1,6 +1,6 @@
 # cosmos.nvim
 
-The never-ending, in-development-hell neovim colorscheme.
+The *never-ending*, in-development-hell neovim colorscheme.
 
 ## :zap: Requirements
 
@@ -17,13 +17,11 @@ If you want enhanced highlighting:
 Add this repo as a plugin to your nvim/vim config:
 
 - Paq
-
 ```lua
     'fedepujol/cosmos.nvim';
 ```
 
 - Packer
-
 ```lua
     use 'fedepujol/cosmos.nvim'
 ```
@@ -101,11 +99,7 @@ Or use the command `:colo cosmos`
 
 ### Why lush?
 
-This repo was originally based on
-[vim-felipec](https://github.com/felipec/vim-felipec), and I didn’t like
-a few things:
+This repo was originally based on [vim-felipec](https://github.com/felipec/vim-felipec), and I didn’t like a few things:
 
 - Ruby dependency script
 - Not having an interactive feedback on how the theme was looking
-
-Lush comes and checks all of my needs (for now).

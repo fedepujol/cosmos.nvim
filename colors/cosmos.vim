@@ -76,6 +76,7 @@ highlight CmpItemKindVariable guifg=#73BBF2 guibg=NONE guisp=NONE blend=NONE gui
 highlight ColorColumn guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Comment guifg=#5E6164 guibg=NONE guisp=NONE blend=NONE gui=italic
 highlight Constant guifg=#2FF4BF guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight! link LazyReasonCmd Constant
 highlight CursorLine guifg=NONE guibg=#18222F guisp=NONE blend=NONE gui=NONE
 highlight! link BlinkCmpDocCursorLine CursorLine
 highlight CursorLineNr guifg=#8BF8F6 guibg=#18222F guisp=NONE blend=NONE gui=NONE
@@ -100,6 +101,7 @@ highlight DiagnosticError guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NON
 highlight DiagnosticHint guifg=#96C563 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticInfo guifg=#BFE1F3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticOk guifg=#B0F2BD guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight! link LazySpecial DiagnosticOk
 highlight DiagnosticUnderlineError guifg=NONE guibg=NONE guisp=#FF5C61 blend=NONE gui=undercurl
 highlight DiagnosticUnderlineHint guifg=NONE guibg=NONE guisp=#96C563 blend=NONE gui=undercurl
 highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE guisp=#BFE1F3 blend=NONE gui=undercurl
@@ -107,11 +109,13 @@ highlight DiagnosticUnderlineOk guifg=NONE guibg=NONE guisp=#B0F2BD blend=NONE g
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE guisp=#FF8800 blend=NONE gui=undercurl
 highlight DiagnosticUnnecessary guifg=#5E6164 guibg=NONE guisp=NONE blend=NONE gui=strikethrough
 highlight DiagnosticWarn guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight! link LazyLocal DiagnosticWarn
 highlight DiffAdd guifg=#14151A guibg=#44694F guisp=NONE blend=NONE gui=NONE
 highlight DiffChange guifg=#14151A guibg=#955C41 guisp=NONE blend=NONE gui=NONE
 highlight DiffDelete guifg=#14151A guibg=#7B3232 guisp=NONE blend=NONE gui=NONE
 highlight DiffText guifg=#B0BEC4 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Directory guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight! link LazyDir Directory
 highlight EndOfBuffer guifg=#14151A guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Error guifg=NONE guibg=#E82626 guisp=NONE blend=NONE gui=NONE
 highlight ErrorMsg guifg=#FF5C61 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -131,6 +135,10 @@ highlight GitSignsDelete guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight GitSignsDeleteLn guifg=#FB4632 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Identifier guifg=#A8DCFF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Italic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight LazyBold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
+highlight LazyItalic guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=italic
+highlight LazyReasonEvent guifg=#9E7AD6 guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight LazyReasonFt guifg=#F0B638 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight LineNr guifg=#2D4F67 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MarkviewPalette0 guifg=#FAB285 guibg=#453830 guisp=NONE blend=NONE gui=NONE
 highlight! link @neorg.headings.1.title MarkviewPalette0
@@ -176,6 +184,7 @@ highlight NeoTreeGitModified guifg=#FAB285 guibg=NONE guisp=NONE blend=NONE gui=
 highlight NeoTreeGitUntracked guifg=#80A8FF guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NeoTreeRootName guifg=#FF8800 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight NonText guifg=#14151A guibg=NONE guisp=NONE blend=NONE gui=NONE
+highlight Number guifg=#8BF8F6 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Pmenu guifg=NONE guibg=#14151A guisp=NONE blend=NONE gui=NONE
 highlight PmenuSel guifg=NONE guibg=#272B35 guisp=NONE blend=NONE gui=NONE
 highlight PmenuThumb guifg=NONE guibg=#D67AD2 guisp=NONE blend=NONE gui=NONE
