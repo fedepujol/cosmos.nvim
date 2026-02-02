@@ -11,7 +11,7 @@ return lush(function(injected_functions)
 		-- as of 0.9.0, to aid your theme creation. Your themes should
 		-- probably style all of these at a bare minimum.
 
-		ColorColumn { fg = colors.diff_delete },          -- used for the columns set with 'colorcolumn'
+		-- ColorColumn { fg = colors.diff_delete },          -- used for the columns set with 'colorcolumn'
 		Comment { fg = colors.comment.da(25), gui = "italic" }, -- any comment
 		-- Conceal        { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		-- CurSearch {}, -- Used for highlighting a search pattern under the cursor (see 'hlsearch')
@@ -148,8 +148,8 @@ return lush(function(injected_functions)
 		-- LspReferenceText             { }, -- used for highlighting "text" references
 		-- LspReferenceRead             { }, -- used for highlighting "read" references
 		-- LspReferenceWrite            { }, -- used for highlighting "write" references
-		-- LspCodeLens                  { }, -- Used to color the virtual text of the codelens
-		-- LspCodeLensSeparator         { }. -- Used to color the separator between two of more code lenses
+		LspCodeLens                  { fg = colors.blue10 }, -- Used to color the virtual text of the codelens
+		LspCodeLensSeparator         { fg = colors.blue10, gui = "bold" }, -- Used to color the separator between two of more code lenses
 		-- LspSignatureActiveParameter  { }, -- Used to highlight the active parameter in the signature help
 
 		-- Semantic Tokens
@@ -626,69 +626,16 @@ return lush(function(injected_functions)
 		MarkviewPalette3Fg { fg = MarkviewPalette3.fg },
 		MarkviewPalette3Sign { fg = MarkviewPalette3.fg },
 
-		-- Neorg
-		--
-		sym("@neorg.quotes.1.prefix") { fg = MarkviewPalette0.fg },                   --
-		sym("@neorg.quotes.2.prefix") { fg = MarkviewPalette2.fg },                   --
-		sym("@neorg.quotes.3.prefix") { fg = MarkviewPalette3.fg },                   --
-		sym("@neorg.quotes.4.prefix") { fg = MarkviewPalette4.fg },                   --
-		sym("@neorg.quotes.5.prefix") { fg = MarkviewPalette5.fg },                   --
-		sym("@neorg.quotes.6.prefix") { fg = MarkviewPalette6.fg },                   --
-		sym("@neorg.quotes.1.content") { MarkviewPalette0 },                          --
-		sym("@neorg.quotes.2.content") { MarkviewPalette2 },                          --
-		sym("@neorg.quotes.3.content") { MarkviewPalette3 },                          --
-		sym("@neorg.quotes.4.content") { MarkviewPalette4 },                          --
-		sym("@neorg.quotes.5.content") { MarkviewPalette5 },                          --
-		sym("@neorg.quotes.6.content") { MarkviewPalette6 },                          --
-
-		sym("@neorg.headings.1.prefix") { fg = MarkviewPalette0.fg },                 --
-		sym("@neorg.headings.2.prefix") { fg = MarkviewPalette2.fg },                 --
-		sym("@neorg.headings.3.prefix") { fg = MarkviewPalette3.fg },                 --
-		sym("@neorg.headings.4.prefix") { fg = MarkviewPalette4.fg },                 --
-		sym("@neorg.headings.5.prefix") { fg = MarkviewPalette5.fg },                 --
-		sym("@neorg.headings.6.prefix") { fg = MarkviewPalette6.fg },                 --
-		sym("@neorg.headings.1.title") { MarkviewPalette0 },                          --
-		sym("@neorg.headings.2.title") { MarkviewPalette2 },                          --
-		sym("@neorg.headings.3.title") { MarkviewPalette3 },                          --
-		sym("@neorg.headings.4.title") { MarkviewPalette4 },                          --
-		sym("@neorg.headings.5.title") { MarkviewPalette5 },                          --
-		sym("@neorg.headings.6.title") { MarkviewPalette6 },                          --
-
-		sym("@neorg.todo_items.cancelled") { fg = colors.lsp_error },                 --
-		sym("@neorg.todo_items.done") { fg = colors.green00 },                        --
-		sym("@neorg.todo_items.on_hold") { fg = colors.blue05 },                      --
-		sym("@neorg.todo_items.pending") { fg = colors.blue01 },                      --
-		sym("@neorg.todo_items.urgent") { fg = colors.default_lsp_error },            --
-
-		sym("@neorg.anchors.declaration.delimiter") { Delimiter },                    --
-		sym("@neorg.anchors.definition.delimiter") { Delimiter },                     --
-
-		sym("@neorg.links.description.delimiter") { Delimiter },                      --
-		sym("@neorg.links.file.delimiter") { Delimiter },                             --
-		sym("@neorg.links.location.delimiter") { Delimiter },                         --
-
-		sym("@neorg.markup.bold.delimiter") { Delimiter },                            --
-		sym("@neorg.markup.italic.delimiter") { Delimiter },                          --
-		sym("@neorg.markup.spoiler.delimiter") { Delimiter },                         --
-		sym("@neorg.markup.strikethrough.delimiter") { Delimiter },                   --
-		sym("@neorg.markup.subscript.delimiter") { Delimiter },                       --
-		sym("@neorg.markup.superscript.delimiter") { Delimiter },                     --
-		sym("@neorg.markup.underline.delimiter") { Delimiter },                       --
-		sym("@neorg.markup.variable") { fg = colors.boolean },                        --
-		sym("@neorg.markup.variable.delimiter") { Delimiter },
-		sym("@neorg.markup.verbatim") { fg = Special.fg, bg = colors.background02 },  --
-		sym("@neorg.markup.verbatim.norg") { fg = Special.fg, bg = colors.background02 }, --
-		sym("@neorg.markup.verbatim.delimiter") { Delimiter },                        --
-
-		sym("@neorg.tags.carryover.parameters") { fg = colors.green01.li(15) },       --
-		sym("@neorg.tags.ranged_verbatim.name.delimiter") { Delimiter },              --
-		sym("@neorg.tags.ranged_verbatim.name.word") { fg = Statement.fg, gui = "italic" }, --
-		sym("@neorg.tags.ranged_verbatim.parameters") { fg = colors.green01.da(15) }, --
-		sym("@neorg.tags.ranged_verbatim.code_block") { bg = colors.background02 },   --
-
-		sym("@neorg.delimiters.strong") { fg = Delimiter.fg, gui = "bold" },          --
-		sym("@neorg.error") { fg = MarkviewPalette1.fg, gui = "undercurl" },          --
-		sym("@neorg.modifiers.link") { fg = colors.blue05 },                          --
-
+		-- snacks.nvim picker
+		-- 
+		SnacksPickerDir { fg = Comment.fg }, -- 
+		SnacksPickerTotals { fg = colors.green01 }, -- 
+		SnacksPickerBufFlags { fg = colors.blue01 }, -- 
+		SnacksPickerKeymapRhs { fg = Comment.fg }, -- 
+		SnacksPickerPathHidden { fg = Comment.fg }, -- 
+		SnacksPickerUnselected { fg = Comment.fg }, -- 
+		SnacksPickerPathIgnored { fg = Comment.fg }, -- 
+		SnacksPickerGitStatusIgnored { fg = Comment.fg }, -- 
+		SnacksPickerGitStatusUntracked { fg = Comment.fg }, -- 
 	}
 end)
